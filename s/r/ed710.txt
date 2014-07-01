@@ -1,0 +1,10 @@
+Submitted at: Wednesday 28th of May 2014 11:36:24 PM
+
+Here's a free script for easy running of the Linux XAMPP panel.
+
+It's easy to use. Just save this on  a text file and mod it as executable, then click it.
+
+#!/bin/bash
+
+echo 'Welcome to the opener for XAMPP, by Alphasquare. Please input your password when requested.'
+sudo '/opt/lampp/manager-linux-x64.run'

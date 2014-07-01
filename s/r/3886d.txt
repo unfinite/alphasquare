@@ -1,0 +1,11 @@
+Submitted at: Monday 26th of May 2014 12:24:55 AM
+
+#include <iostream>
+using namespace std; //Don't fuss at me for this
+
+int main() {
+    cout << "Hi!";
+
+    cin.get();
+    return 0;
+}

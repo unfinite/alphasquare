@@ -1,0 +1,45 @@
+Submitted at: Saturday 21st of June 2014 03:24:34 AM
+
+<?php 
+session_start();
+
+/*
+
+Alphasquare X
+My idiotic attempt into OOP (Object-Oriented programming)
+
+
+*/
+
+
+class Notification
+{
+	var $text;
+
+	function set_text($var) 
+	{
+		$this->text = $var;
+		$_SESSION['text'] = $this->text;
+	}
+	function get_text()
+	{	
+		if (isset($_SESSION['text'])) {
+		echo $_SESSION['text'];
+		} else {
+			echo 'No value set. Type something in to create a notification!';
+		}
+	}
+}
+
+class SessionManage {
+
+	function __construct($action) {
+		if ($action = "unset") {
+			session_destroy();
+		}
+		if ($action = "create") {
+			session_start();
+		}
+	}
+}
+?>

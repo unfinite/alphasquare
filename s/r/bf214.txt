@@ -1,0 +1,23 @@
+Submitted at: 
+
+***************************************************
+Changelog for 1.1 Quasar Update
+***************************************************
+This update included various improvements and bugfixes. List:
+
+Time before asset retrieval on dashboard changed 
+
+Performance improvements 
+
+Code cleaning
+
+***************************************************
+UPDATE LYRICS (lol)
+***************************************************
+Our update brings all users to Alphasquare,
+And they're like,
+It's better than Pastie,
+Damn right it's better than that
+***************************************************
+
+

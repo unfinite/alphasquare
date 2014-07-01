@@ -1,0 +1,230 @@
+Submitted at: Friday 30th of May 2014 07:06:04 PM
+
+****************************
+DEDICATED TO NATHAN LOOOL
+Here are a few parts of my FB chats with Jeremy, for your entertainment & enjoyment. I'll add notes on the way
+****************************
+Farewell everybody.
+I've been chasing dreams of a successful website.
+I'm no longer procrastinating. Things are just about done and ready to go!
+For about three years I've had plans of launching my website and it required four other websites... two are finished(one being bannerbits, formerly ran by sergio... anything posted from there on isnt me)
+If you have me on facebook I've probably unadded you.
+Email: CraftingPixelsWebDesign@gmail.com
+The next time you see me will be on a tecrunch (note: amazing grammar thar and HA yeah ok) interview article on my empire.
+Shout outs:
+@Joey - I like what you did with TCP... keep it going!
+@Cody - You got the skills, I had the same problem. The key is simply doing what matters. Don't watch any tv/anime/youtube/etc, don't go on facebook, twitter, buddyweb, etc... just code. When you're finished with postreme I'd like you to email me.
+@Leonhitchens - I like that site you got going there...
+@AnthonyRossbach - Bro I'd have to say you are really good at coding and I like your style. I'll be emailing you after my sites launch about some stuff. 
+@Frank - You've dropped the ball... enough said.
+@Zane - I just added you on facebook, accept the request bro... stuff we need to talk about a bit.
+@Sergio - I see you. Enough said.
+@JamesWhitworth - Ma nigga... not really but keep shit going.
+@Niall - You have the name of a Juan-Direction member. Haha,
+@Neq3 - I've always thought of you as a distant cousin I never talked to... haha not really but I had to give you a shout out
+@MatthewCMeldin - cya bro.
+@RxNet - Message me on facebook Red.
+@ibuildpixels - I just liked your fb page... Add me.
+@Carter - Nice with with find the code
+@Nathan - Enjoy life bro... hmu on fb some time.
+@Rappinglive - You need to add me on fb tho. I'll message you my fb.
+@Stuffy - My nigga! coolest dude ever on here... and you prolly still dont know who I am haha...
+Cya errobody.
+Jeremy Ford
+12/20, 3:24pm
+Jeremy Ford
+I'm not dead lol
+My laptop broke and I'm waiting to get a new one from the warranty
+Jonathan Ringe
+12/20, 3:24pm
+Jonathan Ringe
+Everyone is moving to twii
+buddyweb is closing, even a petition was started
+Jeremy Ford
+12/20, 3:25pm
+Jeremy Ford
+interesting
+Jonathan Ringe
+12/20, 3:28pm
+Jonathan Ringe
+James: http://www.buddyweb.me/view/23726
+Red: http://www.buddyweb.me/view/23742
+Medlin: http://www.buddyweb.me/view/23734
+Me,
+Buxster/Zane: http://www.buddyweb.me/view/23695
+Cody: http://www.buddyweb.me/view/23690
+I'm officially leaving Bu... | Buddy Web
+www.buddyweb.me
+Buddy Web allows you to effortlessly connect and share with your buddies.
+Jonathan Ringe
+12/20, 3:28pm
+Jonathan Ringe
+And a bunch other people
+Jeremy Ford
+12/20, 3:30pm
+Jeremy Ford
+Interesting.
+Jonathan Ringe
+12/20, 3:30pm
+Jonathan Ringe
+Everybody moved, Anthony is probably partying.
+All your domains are down.
+Jeremy Ford
+12/20, 3:31pm
+Jeremy Ford
+I know
+I turned them all off until I get a new comp
+no point in paying for vps if I cant do anything
+Jonathan Ringe
+12/20, 3:32pm
+Jonathan Ringe
+I've been learning PHP steadily thanks to alphasquare, now I deal with major databases and make things work
+Currently converting all my code to mysqli
+learning PDO too, since mysql() is deprecated
+Jeremy Ford
+12/20, 3:34pm
+Jeremy Ford
+i still like mysql
+Jonathan Ringe
+12/20, 3:34pm
+Jonathan Ringe
+in php5.5 it won't work
+i just don't understand oop
+prefer maunal work
+*manual
+Jeremy Ford
+12/20, 3:34pm
+Jeremy Ford
+im going to wait for some bugs to  come up and for it to get hacked or something
+oop is easy
+manual is better though
+Jonathan Ringe
+12/20, 3:35pm
+Jonathan Ringe
+yep.
+mysql in php is easyyyy
+now i finally understand it
+even understand basic security like escaping, etc
+Jeremy Ford
+12/20, 3:42pm
+Jeremy Ford
+cool
+Jonathan Ringe
+12/20, 3:43pm
+
+Jeremy Ford
+12/20, 3:46pm
+Jeremy Ford
+cool
+Jonathan Ringe
+12/20, 3:46pm
+Jonathan Ringe
+make a trello.com for ----
+Jeremy Ford
+12/20, 3:47pm
+Jeremy Ford
+later
+December 27, 2013
+Jonathan Ringe
+12/27, 10:56am
+______________________________________________________________________________________________________________________________________
+Jonathan Ringe
+i was never going to steal your ideas. and, remember this? http://i.imm.io/1n9fs.png
+December 27, 2013
+
+Jeremy Ford
+12/27, 3:56pm
+Jeremy Ford
+That's for the prica site which was canceled a while ago(but their still under my control), not mine.
+So you have no involvement with ------.
+But I am reducing the second stipulation to 0% seeing I have that right.
+And since I'm not using the names "Prica" or "Jellii" don't expect a link back. 
+I'm not using prica anytime soon.
+December 29, 2013
+Jonathan Ringe
+12/29, 1:19am
+Jonathan Ringe
+Bad actions lead to bad consequences... Karma will get you sooner or later or I will beat karma to it. I won't rest till I beat you (if you ever are successful because arrogance leads nowhere). You say you're better than everyone but you still lack VERY BASIC reasoning skills. Even my grandfather can do better than that. You're on denial.
+Jonathan Ringe
+12/29, 1:20am
+Jonathan Ringe
+I will simply chase the life Steve Jobs taught me: innovate till you die, and don't follow currents.
+Jonathan Ringe
+12/29, 1:58am
+Jonathan Ringe
+And, good thing I never told you my big idea... Soon it'll be implemented on Alphasquare. Good luck and have a good  night 
+
+
+
+
+****************************************************************************************************************************************************************************************************
+NOTES:
+
+
+Narcissism:
+
+Jeremy Ford
+Twitter will be no more pretty soon. [NOTE: HAHAHAHAHAHAHAH YEAH OK]
+
+Jeremy Ford
+I need cody to join but he wont
+How to the avatars look?
+[hover over them]
+
+Jonathan Ringe
+great.
+__________________________________________________
+Jeremy Ford
+I'm just going to put ---- on a regular shared hosting
+
+Jonathan Ringe
+11/23, 8:51pm
+
+Jonathan Ringe
+it'll overgrow it quick. shared hosting can NOT handle more than 5000 members.
+
+Jeremy Ford
+11/23, 8:51pm
+
+Jeremy Ford
+Cause that will hold like 2000 members at first so it'll be good enough for the first week during just posting the links on social media sites our selves
+Or I may get a new vps
+______________________________________________________________________________
+You see some references to emailing about sites, etc. He wanted to acquire all those sites he was talking about, including Twii, for your proof: 
+
+Jeremy Ford
+post design sucks
+I actually just hate their layout in general
+not really the post design
+But his homepage is getting better
+
+Jeremy Ford
+Twii is the first website we take off the map [NOTE: He meant he wanted to acquire it.]
+
+
+
+
+
+HE also hated most people on BW. Examples:
+
+Jeremy Ford
+I quit buddyweb because being on there holds me down.
+Everyone on there sucks shit and wont go anywhere with coding except MAYBE frank if he actually plays his cards right...
+I talk to you because you're the only person there who has "it"
+There's a skill of web design and a talent of web design
+I still don't know which one I have, people say I'm the best and that my works the best but I think all my designs suck so I'ma stick with being a developer instead of a designer...
+
+10/22, 10:11pm
+Jeremy Ford
+Fucking... earth, rxbrand, yitzy, etc... just some bum ass designers
+So idk about trying to get anyone on the team anymore
+For now it's you and I...
+
+Jeremy Ford
+Cody is a skilled designer. 
+
+Jonathan Ringe
+yeah, he has "it"
+
+Jeremy Ford
+Not talent, skill..

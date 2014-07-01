@@ -1,0 +1,27 @@
+Submitted at: Tuesday 24th of June 2014 01:06:47 AM
+
+class Modules extends Zeam {
+
+
+	function __construct($moduleArray) {
+
+		if (is_array($moduleArray)) {
+			foreach ($moduleArray as &$md) {
+
+				if (file_exists($md)) {
+    			include('modules/'.$md);
+    			} elseif ($this->logging == true) {
+    				echo ''.$this->prefix.'<i> '.$md.': Module not found. Have you moved the module? Have you created a modules directory?</i><br>';
+
+    			} 
+			} 
+		}
+
+	}
+
+}
+
+$Modules = array(
+	'AwesomeModule' => "module.php"
+);
+$ModuleInstance = New Modules($Modules);

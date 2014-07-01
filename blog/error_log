@@ -1,0 +1,9 @@
+[10-Mar-2014 00:36:41 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/u7736617/public_html/blog/includes/functions.php on line 19
+[10-Mar-2014 00:36:41 UTC] PHP Warning:  mysql_result() expects parameter 1 to be resource, boolean given in /home/u7736617/public_html/blog/includes/miniblog.php on line 33
+[10-Mar-2014 00:36:41 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/u7736617/public_html/blog/includes/miniblog.php on line 35
+[10-Mar-2014 00:37:56 UTC] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/u7736617/public_html/blog/includes/functions.php on line 19
+[10-Mar-2014 00:37:56 UTC] PHP Warning:  mysql_result() expects parameter 1 to be resource, boolean given in /home/u7736617/public_html/blog/includes/miniblog.php on line 33
+[10-Mar-2014 00:37:56 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/u7736617/public_html/blog/includes/miniblog.php on line 35
+[11-Apr-2014 02:52:45 UTC] PHP Parse error:  syntax error, unexpected '$' in /home/u7736617/public_html/blog/index.php on line 19
+[11-Apr-2014 02:52:48 UTC] PHP Parse error:  syntax error, unexpected '$' in /home/u7736617/public_html/blog/index.php on line 19
+[11-Apr-2014 02:58:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/u7736617/public_html/blog/index.php on line 100

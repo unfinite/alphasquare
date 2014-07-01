@@ -1,0 +1,65 @@
+Submitted at: Sunday 22nd of June 2014 01:31:13 AM
+
+<?php 
+
+/*
+
+Alphasquare X
+Rebuilding /UniversalEngine/ on OOP
+
+*/
+
+$host = "localhost";
+$dbname = "data";
+$user = "root";
+$pass = "";
+
+try {
+
+  $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	echo 'connected.';
+}
+
+catch(PDOException $e) {
+    echo $e->getMessage();
+}
+
+/* test class
+class Data {
+
+	public $type;
+	private $db;
+
+	function __construct($datatype, $dba) {
+
+		$this->type = $datatype;
+		$this->db = $dba;
+
+	}
+
+	function get_data() {
+
+		$db = $this->db;
+    		$sql = $db->prepare("SELECT * FROM data WHERE datatype=:name");
+    $sql->bindParam(':name', $type);
+    $sql->execute();
+		while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
+			echo nl2br($result['data-content']);
+		}
+	}
+
+} */
+		$type = $_GET['foo'];
+try {
+    $sql = $db->prepare("SELECT * FROM data WHERE datatype=':name'");
+    $sql->bindParam(':name', $type);
+    $sql->execute();
+    while ($result = $sql->fetchAll(PDO::FETCH_ASSOC)) {
+			echo nl2br($result['data-content']);
+		}
+} catch(PDOException $e) {
+    echo $e->getMessage();
+};
+		
+?>

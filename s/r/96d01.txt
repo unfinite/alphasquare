@@ -1,0 +1,45 @@
+Submitted at: Tuesday 1st of July 2014 01:00:36 AM
+
+<?php
+
+define('ZEAM_MODULE_BASEDIR', 'modules');
+define('ZEAM_MODULE_SUFFIX', '.module.php');
+define('DESC_SUFFIX', '.desc.txt');
+
+
+class ZeamModules {
+
+	function load_module($module) {
+
+		$modulepath = ZEAM_MODULE_BASEDIR.'/'.$module.ZEAM_MODULE_SUFFIX;
+
+		$descpath = ZEAM_MODULE_BASEDIR.'/'.$module.DESC_SUFFIX;
+
+		if (file_exists($modulepath) and file_exists($descpath)) {
+
+			include (ZEAM_MODULE_BASEDIR.'/'.$module.ZEAM_MODULE_SUFFIX);
+
+		}
+
+	}
+
+
+}
+
+
+class ZeamModule {
+
+	function module_info($module) {
+
+		$descpath = ZEAM_MODULE_BASEDIR.'/'.$module.DESC_SUFFIX;
+		$desc = file($descpath);//file in to an array
+		
+		// get information
+
+		$module_name = $desc[1];
+		$module_version = $desc[2];
+		$module_author = $desc[3];
+		$module_description = $desc[4];
+	}
+
+}
