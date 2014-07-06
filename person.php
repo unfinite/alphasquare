@@ -14,6 +14,7 @@ include('universal.php');
     <link href="themes/bootstrap.css" rel="stylesheet" media="screen">
    </head>
     <body class="profile">
+    <div class="container">
     <div class="row">
 <div class="col-md-4 profile-zone">
       <?php 
@@ -83,7 +84,7 @@ echo htmlentities($dnn['status']);
    <?php
 if(isset($_SESSION['username']))
 {
-echo '<a href="/create.php?username='.htmlentities($dnn['username']).'" class="btn btn-primary  btn-lg btn-block"><span class="glyphicon glyphicon-plus-sign"></span> Follow</a>';
+echo '<a href="/create.php?username='.htmlentities($dnn['username']).'" class="btn btn-primary  btn-lg btn-block"> Follow</a>';
 } else {
 $username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
 echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>';
@@ -109,7 +110,7 @@ else
 ?>
      </div>
 </div>
-
+</div>
  <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	</body>
