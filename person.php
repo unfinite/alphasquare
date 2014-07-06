@@ -14,7 +14,7 @@ include('universal.php');
     <link href="themes/bootstrap.css" rel="stylesheet" media="screen">
    </head>
     <body class="profile">
-<div class="col-md-4 col-md-offset-4 profile-zone">
+<div class="col-md-4 profile-zone">
       <?php 
 if(isset($_SESSION['username']))
 {
@@ -54,6 +54,7 @@ $username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
   <p>
                     <h3 class="media-heading"><?php echo $username; ?></h3>
                     </p>
+                    &nbsp;<span class="label label-success">User</span>
                         <?php 
 
 $result = mysqli_query($link, 'select officia from users where id="'.$id.'"');
@@ -72,16 +73,18 @@ echo '&nbsp;<span class="label label-info">Ranger</span>';
                     <hr>
                     <center>
                     <p class="text-left"><strong>About <?php echo $username; ?>: </strong><br>
-                        <?php echo htmlentities($dnn['status']); ?> 
-</p>
+                        <?php if ($dnn['status'] = "") { echo 'I haven\'t set a description yet... :( '; } else {
+echo htmlentities($dnn['status']);
+                            }
+                            ?> 
+</p><p> </p>
 <p>
    <?php
 if(isset($_SESSION['username']))
 {
-echo '<a href="/create.php?username='.htmlentities($dnn['username']).'" class="btn btn-primary  btn-lg btn-block">Follow</a>';
+echo '<a href="/create.php?username='.htmlentities($dnn['username']).'" class="btn btn-primary  btn-lg btn-block"><span class="glyphicon glyphicon-plus-sign"></span> Follow</a>';
 } else {
 $username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
-echo 'To talk to '.$username.',<br><br>'; 
 echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>';
 }
 ?>
