@@ -63,7 +63,7 @@ else
 
 
     <center>
-                    <img src="<?php profilePicture($username); ?>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    <img src="<?php profilePicture($username); ?>" style="width:100px;height:100px;" class="img-circle"></a>
                     <h3 class="media-heading"><?php echo $username; ?></h3>
                     
                         <?php 
