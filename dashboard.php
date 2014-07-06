@@ -118,7 +118,7 @@ foreach ($posts as $key => $list){
   </div>
   <div class="panel-body">
   <center>
-  <b>Help us get a new, fast, and amazing server, courtesy of Neq3!</b> Your contribution will assure Alphasquare's future. Please click below and sign up,
+  <b>Help us get a new amazing and fast server, courtesy of Neq3!</b> Your contribution will assure Alphasquare's future. Please click below and sign up,
 it will really help us! <br><br>
 <a href="http://api.neq3.com/redir/6146700" target="_blank"><img src="http://neq3.com/banners/300x250.gif" alt="http://neq3.com" border="0" width="300" height="250" /></a>
 </center>
