@@ -100,7 +100,8 @@ echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>'
 
 </center>
       </div>
-      <div class="col-md-8 profile-zone">
+
+      <div class="col-md-7 col-md-offset-1 profile-zone">
       ddddddddddddddddddddddddddddddddddddd
       </div>
 
