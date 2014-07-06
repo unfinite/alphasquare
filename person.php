@@ -74,11 +74,12 @@ echo '&nbsp;<span class="label label-info">Ranger</span>';
                     </center>
                     <hr>
                     <center>
-                    <p class="text-left"><strong>About <?php echo $username; ?>: </strong><br>
+                    <p class="text-left"><strong>About <?php echo $username; ?>: </strong><br><p>
                         <?php if ($dnn['status'] == "") { echo 'I haven\'t set a description yet... :( '; } else {
 echo htmlentities($dnn['status']);
                             }
                             ?> 
+                            </p>
 </p><p> </p>
 <p>
    <?php
@@ -94,6 +95,10 @@ echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>'
 
 </center>
       
+      <div class="col-md-8 profile-zone">
+      ddddddddddddddddddddddddddddddddddddd
+      </div>
+
 <?php
 //We add a link to send a pm to the user
 
