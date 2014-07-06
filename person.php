@@ -43,23 +43,8 @@ if(isset($_GET['id']))
 <?php
 $username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
 ?>
-<center>
-<br>
 
-<?php
-//We add a link to send a pm to the user
 
-	}
-	else
-	{
-		echo '<br><div class="alert alert-info">This user does not exist.</div>';
-	}
-}
-else
-{
-	echo '<br><div class="alert alert-info">The user ID is not defined.</div>';
-}
-?>
 
 
     <center>
@@ -104,7 +89,20 @@ echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>'
 
 </center>
       
+<?php
+//We add a link to send a pm to the user
 
+    }
+    else
+    {
+        echo '<br><div class="alert alert-info">This user does not exist.</div>';
+    }
+}
+else
+{
+    echo '<br><div class="alert alert-info">The user ID is not defined.</div>';
+}
+?>
      
 </div>
 
