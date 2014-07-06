@@ -75,7 +75,7 @@ echo '&nbsp;<span class="label label-info">Ranger</span>';
                     <hr>
                     <center>
                     <p class="text-left"><strong>About <?php echo $username; ?>: </strong><br>
-                        <?php if ($dnn['status'] = "") { echo 'I haven\'t set a description yet... :( '; } else {
+                        <?php if ($dnn['status'] == "") { echo 'I haven\'t set a description yet... :( '; } else {
 echo htmlentities($dnn['status']);
                             }
                             ?> 
