@@ -4,6 +4,8 @@ First: grab GIT-FTP from GH and install it, it's required.
 
 Use the FTP creds I emailed you, Nathan.
 
+--------------------------------------------------------------------------------------------
+
 Assigned jobs:
 
 Me:
