@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include('universal.php');
 blockMember();
 ?>
 <!DOCTYPE html>
