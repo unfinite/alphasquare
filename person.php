@@ -63,9 +63,12 @@ else
 
 
     <center>
+    <p>
                     <img src="<?php profilePicture($username); ?>" style="width:100px;height:100px;" class="img-circle"></a>
+  </p>
+  <p>
                     <h3 class="media-heading"><?php echo $username; ?></h3>
-                    
+                    </p>
                         <?php 
 
 $result = mysqli_query($link, 'select officia from users where id="'.$id.'"');
@@ -86,7 +89,7 @@ echo '&nbsp;<span class="label label-info">Ranger</span>';
                     <p class="text-left"><strong>About <?php echo $username; ?>: </strong><br>
                         <?php echo htmlentities($dnn['status']); ?> 
 </p>
-<br>
+<p>
    <?php
 if(isset($_SESSION['username']))
 {
@@ -97,10 +100,9 @@ echo 'To talk to '.$username.',<br><br>';
 echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>';
 }
 ?>
+</p>
 
-
-                    <br>
-                    </center>
+</center>
       
 
      
