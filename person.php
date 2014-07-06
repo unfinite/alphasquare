@@ -14,6 +14,7 @@ include('universal.php');
     <link href="themes/bootstrap.css" rel="stylesheet" media="screen">
    </head>
     <body class="profile">
+    <div class="row">
 <div class="col-md-4 profile-zone">
       <?php 
 if(isset($_SESSION['username']))
@@ -106,7 +107,7 @@ else
     echo '<br><div class="alert alert-info">The user ID is not defined.</div>';
 }
 ?>
-     
+     </div>
 </div>
 
  <script src="http://code.jquery.com/jquery.min.js"></script>
