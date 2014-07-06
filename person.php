@@ -49,7 +49,7 @@ $username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
 
     <center>
     <p>
-                    <img src="<?php profilePicture($username); ?>" style="width:100px;height:100px;" class="img-circle"></a>
+                    <img src="<?php profilePicture($username); ?>" style="width:100px;height:100px;border: 5px grey;" class="img-circle"></a>
   </p>
   <p>
                     <h3 class="media-heading"><?php echo $username; ?></h3>
