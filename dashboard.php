@@ -112,7 +112,7 @@ foreach ($posts as $key => $list){
 }
 ?>
 </div></div>
-  <div class="col-xs-6 col-sm-4"><div class="alert alert-info"> <b>We have a new bug tracker!</b> We encourage you all to post any bugs or proposals in it. <a href="https://snowy-evening.com/alphasquare/alphasquare/">Click here to check it out!</a></div>
+  <div class="col-xs-6 col-sm-4"><div class="alert alert-info"> <span class="glyphicons glyphicon-flash"></span><b>Broadcast:</b> We encourage you all to post any bugs or proposals in it. <a href="https://snowy-evening.com/alphasquare/alphasquare/">Click here to check it out!</a></div>
 <br>
   <div class="panel panel-default" style="width:100%">
   <div class="panel-body">
