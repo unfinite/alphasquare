@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vanillicon PHP function - Alphasquare Open Code</title>
+    <title>Zeam - Alphasquare Open Code</title>
 
+<meta name="description" content="Zeam is a PHP engine made to be extensible, ultra-fast, and awesome.">
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -16,24 +14,10 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <div class="container">
+  <style>
+  .ds-btn li{ list-style:none; float:left; padding:10px; }
+.ds-btn li a span{padding-left:15px;padding-right:5px;width:100%;display:inline-block; text-align:left;}
+.ds-btn li a span small{width:100%; display:inline-block; text-align:left;}
 
 
-  <center>
-
-    <h1>vanillicon()<br> <small>A micro-function made for simply fetching the Vanillicon of an user</small></h1>
-    
-
-    </center>
-  <div class="container">
-
-    <pre>vanillicon($username) 
-{
-echo '<img class="img-circle" src="http://www.vanillicon.com/'.md5($username).'_200.png">';
-}
-</pre>
-</div>
-  </body>
-</html>
+  </style>
