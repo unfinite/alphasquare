@@ -252,7 +252,7 @@ var url = $(this).attr('data-ref');
       $("#invisible").html(data);
 });
 
-    setTimeout("quasar();",10000);
+    setTimeout("quasar();",15000);
 }
 
 window.onload = quasar();
