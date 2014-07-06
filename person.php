@@ -14,7 +14,7 @@ include('universal.php');
     <link href="themes/bootstrap.css" rel="stylesheet" media="screen">
     <style>
     .spacer {
-        margin-top: 10px;
+        margin-top: 30px;
     }
     </style>
    </head>
@@ -85,7 +85,7 @@ echo htmlentities($dnn['status']);
                             }
                             ?> 
                             </p>
-</p><span class="spacer"></span>
+</p><div class="spacer"></div>
 <p>
    <?php
 if(isset($_SESSION['username']))
