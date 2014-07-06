@@ -112,7 +112,19 @@ foreach ($posts as $key => $list){
 }
 ?>
 </div></div>
-  <div class="col-xs-6 col-sm-4"><div class="alert alert-info"> <span class="glyphicon glyphicon-flash"></span> We encourage you all to post any bugs or proposals in it. <a href="https://snowy-evening.com/alphasquare/alphasquare/">Click here to check it out!</a></div>
+  <div class="col-xs-6 col-sm-4"><div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title slab">Sponsored</h3>
+  </div>
+  <div class="panel-body">
+Help us get a new, fast, and amazing server, courtesy of Neq3! Your contribution will assure Alphasquare's future. Please click below and sign up,
+it will really help us! <br>
+<a href="http://api.neq3.com/redir/6146700" target="_blank"><img src="http://neq3.com/banners/300x250.gif" alt="http://neq3.com" border="0" width="300" height="250" /></a>
+
+  </div>
+  </div>
+
+  <div class="alert alert-info"> <span class="glyphicon glyphicon-flash"></span> We encourage you all to post any bugs or proposals in it. <a href="https://snowy-evening.com/alphasquare/alphasquare/">Click here to check it out!</a></div>
 <br>
   <div class="panel panel-default" style="width:100%">
   <div class="panel-body">
