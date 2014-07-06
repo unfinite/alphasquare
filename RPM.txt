@@ -13,12 +13,13 @@ Me:
 --Other crap
 --Other pages
 --BitBucket
+--Dezign (<-- lol)
 
 Nathan: 
 
 --Discussions (critical)
 --Code fixes
---Readability
+--AJAX (includes infinite scrolling, optimizing, etc.)
 --Other crap
 
 Nick:
