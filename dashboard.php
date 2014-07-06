@@ -229,17 +229,14 @@ $("#postbar").submit(function() {
 
 function quasar(){
 
-  console.log("Ran Quasar function;");
 
 $.post('resources/posts.php',function(data){
-    console.log("Quasar: Fetched posts. ");
 
   $("#posts").html(data);
   $("abbr.timeago").timeago();
 
   $('#posts').on('click', '.rate', function(e){
 var url = $(this).attr('data-ref');
-      console.log('Console: liked/disliked '+url);
       $.post(url);
       e.preventDefault();
       manual();
@@ -251,12 +248,10 @@ var url = $(this).attr('data-ref');
 
     $.post('resources/alerts.php',function(data){
     $("#alert-modal").html(data);
-     console.log("Quasar: Fetched alert modal data. ");
     });
 
  $.post('resources/notifications.php',function(data){
       $("#invisible").html(data);
-      console.log("Quasar: NotifierFunction ran. ");
 
 });
 
