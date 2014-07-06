@@ -43,4 +43,77 @@ if(isset($display)) {
 <?php
 }
 ?>
-<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Please sign in</h3></div><div class="panel-body"><form action="process-login.php" method="post"><fieldset><div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username" id="username" ></div><div class="form-group"><input class="form-control" type="password" name="password" id="password" placeholder="Password"></div><input class="btn btn-lg btn-success btn-block" type="submit" value="Login"></fieldset></form><br><a class="btn btn-info btn-lg btn-block" href="forgot.php"> Forgot something?</a></div></div></div><div class="col-md-4"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">No Squarepass?</h3></div><div class="panel-body"><a class="btn btn-success btn-lg btn-block" href="register.php"> Get a Squarepass.</a></div></div><div class="panel panel-default"><div class="panel-body"><div class="modal fade" id="squarepass-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel">One password. All our sites.</h4></div><div class="modal-body"><h5>Meet the Squarepass, the new way to access your digital life. One password, all of the 1Pixel network. It's easy, convenient, and free. Go ahead, close this and create a pass! We're sure you'll love it. </h5></div><div class="modal-footer"><button type="button" class="btn btn-success" data-dismiss="modal">Okay, got it!</button></div></div></div></div><button class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#squarepass-info"> Why get one?</button></div></div></div></div></div><script src="https://code.jquery.com/jquery.js"></script><script src="js/bootstrap.min.js"></script></body></html>
+
+
+<div class="panel panel-default">
+
+<div class="panel-heading"><h3 class="panel-title">Please sign in</h3>
+</div>
+
+<div class="panel-body">
+
+<form action="process-login.php" method="post">
+
+<fieldset>
+
+<div class="form-group">
+<input class="form-control" type="text" name="username" placeholder="Username" id="username" >
+</div>
+
+<div class="form-group">
+<input class="form-control" type="password" name="password" id="password" placeholder="Password">
+</div>
+<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+</fieldset>
+</form>
+<br><a class="btn btn-info btn-lg btn-block" href="forgot.php"> Forgot something?</a>
+</div>
+<div class="panel-footer">
+Test
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+
+<div class="panel panel-default">
+
+<div class="panel-heading"><h3 class="panel-title">No Squarepass?</h3>
+</div>
+
+<div class="panel-body"><a class="btn btn-success btn-lg btn-block" href="register.php"> Get a Squarepass.</a>
+</div>
+</div>
+
+<div class="panel panel-default">
+
+<div class="panel-body">
+
+<div class="modal fade" id="squarepass-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+<div class="modal-dialog">
+
+<div class="modal-content">
+
+<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel">One password. All our sites.</h4>
+</div>
+
+<div class="modal-body"><h5>Meet the Squarepass, the new way to access your digital life. One password, all of the 1Pixel network. It's easy, convenient, and free. Go ahead, close this and create a pass! We're sure you'll love it. </h5>
+</div>
+
+<div class="modal-footer"><button type="button" class="btn btn-success" data-dismiss="modal">Okay, got it!</button>
+</div>
+</div>
+</div>
+</div><button class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#squarepass-info"> Why get one?</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery.js">
+</script>
+<script src="js/bootstrap.min.js">
+</script>
+</body>
+</html>
