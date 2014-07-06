@@ -12,6 +12,11 @@ include('universal.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="themes/bootstrap.css" rel="stylesheet" media="screen">
+    <style>
+    .spacer {
+        margin-top: 10px;
+    }
+    </style>
    </head>
     <body class="profile">
     <div class="container">
@@ -80,7 +85,7 @@ echo htmlentities($dnn['status']);
                             }
                             ?> 
                             </p>
-</p><p> </p>
+</p><span class="spacer"></span>
 <p>
    <?php
 if(isset($_SESSION['username']))
@@ -94,7 +99,7 @@ echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>'
 </p>
 
 </center>
-      
+      </div>
       <div class="col-md-8 profile-zone">
       ddddddddddddddddddddddddddddddddddddd
       </div>
@@ -113,7 +118,6 @@ else
     echo '<br><div class="alert alert-info">The user ID is not defined.</div>';
 }
 ?>
-     </div>
 </div>
 </div>
  <script src="http://code.jquery.com/jquery.min.js"></script>
