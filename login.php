@@ -66,10 +66,9 @@ if(isset($display)) {
 <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
 </fieldset>
 </form>
-<br><a class="btn btn-info btn-lg btn-block" href="forgot.php"> Forgot something?</a>
 </div>
 <div class="panel-footer">
-Test
+Forgot your credentials? <a href="forgot.php" >Reset them here &raquo; </a>
 </div>
 </div>
 </div>
