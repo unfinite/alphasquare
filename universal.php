@@ -32,19 +32,7 @@ $sessionid = $_SESSION['userid'];
 	return $posts;
 
 }
-function add_debate($userid,$body){
-		global $link;
 
-	if ($body == '') {
-		$_SESSION['message'] = 'Empty content!';
-		die();
-	} else {
-	$sql = 'insert into debates (`userid`, `content`, `time`)
-			values ("'.$userid.'", "'. base64_encode(htmlentities($body)). '", "'.time().'")';
-
-	$result = mysqli_query($link, $sql);
-}
-}
 function show_users($user_id=0){
 global $link;
 	if ($user_id > 0){
@@ -286,4 +274,45 @@ function alert_count() {
 	echo $data['notifs'];
 
 }
+
+function atag_main($text)
+{
+  preg_match_all('/(^|[^a-z0-9_])&([a-z0-9_]+)/i', $text, $matchedatags);
+  $atag = '';
+  if(!empty($matchedatags[0])) {
+	  foreach($matchedatags[0] as $match) {
+		  $atag .= preg_replace("/[^a-z0-9]+/i", "", $match).',';
+	  }
+  }
+
+  return implode(',',array_unique(explode(',', $atag)));
+  
+}
+
+function atag_link($message)
+{
+	$atag_link = preg_replace(array('/(?i)\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))/', '/(^|[^a-z0-9_])@([a-z0-9_]+)/i', '/(^|[^a-z0-9_])&([a-z0-9_]+)/i'), array('<a href="$1" target="_blank">$1</a>', '$1<a href="">@$2</a>', '$1<a href="find.php?q=$2&type=tag">&$2</a>'), $message);
+	return $atag_link;
+}
+
+function add_debate($userid,$body){
+		global $link;
+
+	if ($body == '') {
+
+		$_SESSION['message'] = 'Empty content!';
+		die();
+
+	} else {
+
+		$tags = atag_main($body);
+
+	$sql = 'insert into debates (`userid`, `content`, `tags`, `time`)
+			values ("'.$userid.'", "'. base64_encode(htmlentities($body)). '", "'.$tags.'", "'.time().'")';
+
+	$result = mysqli_query($link, $sql);
+}
+}
+
+
 ?>
