@@ -1,5 +1,5 @@
 <?php
-include('universal.php')
+include('universal.php');
 if(isset($_SESSION['username'])){
     header("Location: dashboard");
 }
