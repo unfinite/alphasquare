@@ -83,11 +83,13 @@ if (count($posts)){
 ?>
 <?php
 foreach ($posts as $key => $list){
+    $foobar = str_replace('&amp;', '&', $list['content']);
+
 ?>
 <div class="fw"> 
 <img class="img-circle prp" src="<?php profilePictureID($list['userid']) ?>" >&nbsp;&nbsp;&nbsp;
 <article class="box postc">
-<?php echo showBBcodes(atag_link($list['content'])); ?>
+<?php echo showBBcodes(atag_link($foobar)); ?>
 <hr class="dvs">
 <small>
 <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote.php?id=<?php echo $list['id']; ?>&type=1">
