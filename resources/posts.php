@@ -14,7 +14,7 @@ if (count($posts)){
 <?php
 foreach ($posts as $key => $list){
 
-	$foobar = replace('&amp;', '&', $list['content']);
+	$foobar = str_replace('&amp;', '&', $list['content']);
 ?>
 <div class="fw"> 
 <img class="img-circle prp" src="<?php profilePictureID($list['userid']) ?>" >&nbsp;&nbsp;&nbsp;
