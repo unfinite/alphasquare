@@ -17,7 +17,7 @@ foreach ($posts as $key => $list){
 <div class="fw"> 
 <img class="img-circle prp" src="<?php profilePictureID($list['userid']) ?>" >&nbsp;&nbsp;&nbsp;
 <article class="box postc">
-<?php echo showBBcodes(atag_link($list['content'])); ?>
+<?php echo showBBcodes(atag_link(htmlspecialchars_decode($list['content']))); ?>
 <hr class="dvs">
 <small>
 <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote.php?id=<?php echo $list['id']; ?>&type=1">
