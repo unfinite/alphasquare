@@ -231,10 +231,11 @@ $("#postbar").submit(function() {
            },
            success: function(data)
            {
-          $('#pst').prop('disabled', false);
-          $('#pst').val('');
-          $.post('resources/posts');
-
+            $.get('resources/posts',function(data){
+             $("#posts").html(data);
+            });       
+            $('#pst').prop('disabled', false);
+            $('#pst').val('');
            }
          });
 
