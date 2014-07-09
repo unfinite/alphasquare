@@ -225,6 +225,9 @@ function showBBcodes($text) {
   // BBcode array
   $find = array(
   '~\[b\](.*?)\[/b\]~s',
+  '~\[snippet\](.*?)\[/snippet\]~s',
+  '~\[code\](.*?)\[/code\]~s',
+  '~\[key\](.*?)\[/key\]~s',
   '~\[trololo\](.*?)\[/trololo\]~s',
   '~\[nyan\](.*?)\[/nyan\]~s',
   '~\[alphasquare\](.*?)\[/alphasquare\]~s',
@@ -242,6 +245,9 @@ function showBBcodes($text) {
   // HTML tags to replace BBcode
   $replace = array(
   '<b>$1</b>',
+  '<code>$1</code>',
+  '<pre>$1</pre>',
+  '<kbd>$1</kbd>',
   '<img src="http://stream1.gifsoup.com/view/201665/trololo-o.gif" style="height:500px;width:500px;"></img>',
   '<img src="http://37.media.tumblr.com/tumblr_lj0wls8poh1qb9bjho1_400.gif" style="height:500px;width:500px;"></img>',
   '<span class="lobster">alphasquare</span>',
