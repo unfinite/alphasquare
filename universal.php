@@ -184,7 +184,7 @@ function profilePicture($username) {
   global $link;
   $sql = "SELECT avatar
           FROM users
-          WHERE username = $username";
+          WHERE username = '$username'";
   $result = mysqli_query($link, $sql);
   if(mysqli_num_rows($result) > 0) {
     $info = mysqli_fetch_array($result);
