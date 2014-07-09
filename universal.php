@@ -45,7 +45,7 @@ function show_users($user_id=0){
     $sql = "SELECT userid
             FROM following
             WHERE followid = $user_id";
-    $result = mysqli_query($link, $fsql);
+    $result = mysqli_query($link, $sql);
 
     while($row = mysqli_fetch_object($result)){
       // this is the same as array_push, but faster to type
