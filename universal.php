@@ -208,7 +208,7 @@ function profilePictureID($id) {
           WHERE id = $id";
   $result = mysqli_query($link, $sql);
   if(mysqli_num_rows($result) > 0) {
-    $info = mysqli_fetch_array($dn);
+    $info = mysqli_fetch_array($result);
   }
   if($info['avatar']!='') {
     echo htmlentities($info['avatar']);
