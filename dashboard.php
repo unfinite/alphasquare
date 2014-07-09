@@ -49,7 +49,7 @@ width:100%;display:flex;
 
     <body style="background-color:rgb(236, 240, 241);">
 
-    <?php 
+    <?php
 include('assets/navbar-logged.php');
 
 ?>
@@ -57,7 +57,7 @@ include('assets/navbar-logged.php');
 <br><br><br><br>
 <div class="row">
   <div class="col-xs-12 col-md-8">
-  
+
 <form method='post' class="form-inline" id="postbar">
 
 <input id="pst" name='body' class="post" placeholder="Whatcha debatin' on, <?php getUsername(); ?>?">
@@ -68,8 +68,8 @@ include('assets/navbar-logged.php');
 
 
 
-<div id="posts"> 
-<?php 
+<div id="posts">
+<?php
 $users = show_users($_SESSION['userid']);
 if (count($users)){
   $myusers = array();
@@ -86,23 +86,23 @@ foreach ($posts as $key => $list){
     $foobar = str_replace('&amp;', '&', $list['content']);
 
 ?>
-<div class="fw"> 
+<div class="fw">
 <img class="img-circle prp" src="<?php profilePictureID($list['userid']) ?>" >&nbsp;&nbsp;&nbsp;
 <article class="box postc">
 <?php echo showBBcodes(atag_link($foobar)); ?>
 <hr class="dvs">
 <small>
-<button class="btn btn-success btn-xs slab rate" data-ref="resources/vote.php?id=<?php echo $list['id']; ?>&type=1">
+<button class="btn btn-success btn-xs slab rate" data-ref="resources/vote?id=<?php echo $list['id']; ?>&type=1">
 <span class="glyphicon glyphicon-thumbs-up "></span>
  <?php votes($list['id'], 1); ?> </button>&nbsp;
-  <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote.php?id=<?php echo $list['id']; ?>&type=0">
+  <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote?id=<?php echo $list['id']; ?>&type=0">
   <span class="glyphicon glyphicon-thumbs-down"></span> <?php votes($list['id'], 0); ?></button>&nbsp;
   <a href="#" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-comment"></span> Discussion</a>
   </small><span class="pull-right tmecont" >
   <abbr title="<?php echo gmdate('Y-m-d\TH:i:s\Z', $list['time']); ?>" class="timeago"></abbr>
   </span></article></div>
 <br><br>
-<?php 
+<?php
 }
 ?>
 </table>
@@ -135,10 +135,10 @@ it will really help us! <br><br>
 
   <li class="active">
     <a href="#">
-      
+
       Dashboard
     </a>
-    
+
   </li>
   <li>
    <a onclick="markread()"   data-toggle="modal"
@@ -222,19 +222,18 @@ console.log('Just kidding, welcome to Alphasquare 1.1.1a. ');
 
 $("#postbar").submit(function() {
 
-    var url = "add.php"; // the script where you handle the form input.
     $.ajax({
            type: "POST",
-           url: url,
+           url: 'add',
            data: $("#postbar").serialize(), // serializes the form's elements.
-           beforeSend: function(){ 
+           beforeSend: function(){
            $('#pst').prop('disabled', true);
            },
            success: function(data)
            {
           $('#pst').prop('disabled', false);
           $('#pst').val('');
-          $.post('resources/posts.php');
+          $.post('resources/posts');
 
            }
          });
@@ -245,7 +244,7 @@ $("#postbar").submit(function() {
 function quasar(){
 
 
-$.post('resources/posts.php',function(data){
+$.post('resources/posts',function(data){
 
   $("#posts").html(data);
   $("abbr.timeago").timeago();
@@ -257,15 +256,15 @@ var url = $(this).attr('data-ref');
       manual();
   });
 });
-    $.post('resources/count.php',function(data){
+    $.post('resources/count',function(data){
     $("#alerts2").html(data);
     });
 
-    $.post('resources/alerts.php',function(data){
+    $.post('resources/alerts',function(data){
     $("#alert-modal").html(data);
     });
 
- $.post('resources/notifications.php',function(data){
+ $.post('resources/notifications',function(data){
       $("#invisible").html(data);
 
 });
@@ -277,48 +276,48 @@ window.onload = quasar();
 
 function notify() {
 
-  $.notifyBar({  html: "This is a test.", position: "top" }); 
+  $.notifyBar({  html: "This is a test.", position: "top" });
 
 }
 
 function notifFetch() {
 
-    $.post('resources/count.php',function(data){
+    $.post('resources/count',function(data){
     $("#alerts2").html(data);
     });
 
-    $.post('resources/alerts.php',function(data){
+    $.post('resources/alerts',function(data){
     $("#alert-modal").html(data);
     });
 
-    $.post('resources/notifications.php',function(data){
+    $.post('resources/notifications',function(data){
       $("#invisible").html(data);
     });
 
 }
 
 function manual(){
-    $.post('resources/posts.php',function(data){
+    $.post('resources/posts',function(data){
         $("#posts").html(data);
     });
 
-    $.post('resources/count.php',function(data){
+    $.post('resources/count',function(data){
     $("#alerts2").html(data);
     });
 
-    $.post('resources/alerts.php',function(data){
+    $.post('resources/alerts',function(data){
     $("#alert-modal").html(data);
     });
 
 }
 
 function markread() {
-    $.get("resources/mark.php");
+    $.get("resources/mark");
 }
 
  </script>
 
-    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
 
  <div class="modal fade" id="alerts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -329,7 +328,7 @@ function markread() {
         </div>
         <div class="modal-body" id="alert-modal" style="max-height: 420px;
     overflow-y: auto;">
-    
+
         </div>
         <div class="modal-footer">
           <button type="button" data-dismiss="modal" class="btn btn-primary">Okay, I'm done.</button>

@@ -5,7 +5,7 @@ blockMember();
 <!DOCTYPE html>
 <html>
     <head>
-      <?php 
+      <?php
 
 ?>
 
@@ -33,18 +33,18 @@ woopra.track();
     </head>
     <body>
 
-      <?php 
+      <?php
 include 'assets/navbar.php';
 ?>
 <br>
 <br>
 <div class="container">
- <div class="container"> 
+ <div class="container">
    <div class="page-header">
   <h1>Hello there!<small>&nbsp;let's create an account</small></h1>
 </div>
 
- 
+
 <?php
 
 require_once("resources/ayah.php");
@@ -52,14 +52,14 @@ $ayah = new AYAH();
 
 //We check if the form has been sent
 if(isset($_POST['username'], $_POST['password'], $_POST['passverif'], $_POST['email']) and $_POST['username']!=='')
-{ 
+{
 	$score = $ayah->scoreResult();
 
   if (!$score) {
     include_once('assets/navbar.php');
     echo '<br><div class="alert alert-info"> Oh noes! The captcha is incorrect. Try again.</div>';
     die();
-  } 
+  }
 	//We remove slashes depending on the configuration
 	if(get_magic_quotes_gpc())
 	{
@@ -155,8 +155,8 @@ if($form)
 			    	<h3 class="panel-title">Register at Alphasquare</h3>
 			 	</div>
 			  	<div class="panel-body">
- 
- <form action="register.php" method="post" >
+
+ <form action="register" method="post" >
 
 
 
@@ -165,15 +165,15 @@ if($form)
            <input class="form-control" placeholder="Password" type="password" name="password" /><br />
          <input class="form-control" placeholder="Password (again)" type="password" name="passverif" /><br />
           <input class="form-control" type="text" name="email" value="<?php if(isset($_POST['email'])){echo htmlentities($_POST['email'], ENT_QUOTES, 'UTF-8');} ?>" placeholder="Email" /><br />
-     
+
        <?php
-           
+
             echo $ayah->getPublisherHTML();
         ?>
-        <br> <label>By using this website, you agree to the <a href="tos.php">terms of use.</a>
+        <br> <label>By using this website, you agree to the <a href="tos">terms of use.</a>
     </label><br><br>
             <input  type="submit" class="btn btn-success btn-lg btn-block" value="Sign up"   />
-   
+
     </form>
 </div>
 </div>

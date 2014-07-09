@@ -9,7 +9,7 @@ include('universal.php');
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <title>Debates - Alphasquare</title>
-  
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="js/growl.js"></script>    <!-- Bootstrap -->
  <link href="themes/bootstrap.css" rel="stylesheet">
@@ -47,7 +47,7 @@ width:100%;display:flex;
 
     <body style="background-color:rgb(236, 240, 241);">
 
-    <?php 
+    <?php
     if(isset($_SESSION['userid'])) {
       include('assets/navbar-logged.php');
     } else {
@@ -58,7 +58,7 @@ width:100%;display:flex;
 <br><br><br><br>
 <div class="row">
   <div class="col-xs-12 col-md-8">
-<div id="post"> 
+<div id="post">
 
   <?php
 
@@ -69,17 +69,17 @@ width:100%;display:flex;
       $list = mysqli_fetch_array($query);
       $content = base64_decode($list['content']);
   ?>
-  <div class="fw"> 
+  <div class="fw">
 <img class="img-circle prp" src="<?php profilePictureID($list['userid']) ?>" >&nbsp;&nbsp;&nbsp;
 <article class="box postc">
 <?php echo showBBcodes($content); ?>
 <hr class="dvs">
-<small><?php 
+<small><?php
     if(isset($_SESSION['userid'])) {
-?> <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote.php?id=<?php echo $list['id']; ?>&type=1">
+?> <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote?id=<?php echo $list['id']; ?>&type=1">
 <span class="glyphicon glyphicon-thumbs-up "></span>
  <?php votes($list['id'], 1); ?> </button>&nbsp;
-  <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote.php?id=<?php echo $list['id']; ?>&type=0">
+  <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote?id=<?php echo $list['id']; ?>&type=0">
   <span class="glyphicon glyphicon-thumbs-down"></span> <?php votes($list['id'], 0); ?></button>&nbsp;
 <?php
     } else {
@@ -96,7 +96,7 @@ width:100%;display:flex;
 <?php
 } else {
   echo '<span class="slab">Oh noes! I couldn\'t find that debate you wanted! </span>';
-}  
+}
 
 } else {
   echo '<span class="slab">That debate ID isn\'t valid.</span>';
@@ -106,7 +106,7 @@ width:100%;display:flex;
 </div></div>
 
   <div class="col-xs-6 col-sm-4">
-    <?php 
+    <?php
     if(isset($_SESSION['userid'])) {
       include('assets/sidebar-logged.php');
     } else {
@@ -134,15 +134,15 @@ var url = $(this).attr('data-ref');
       quasar();
   });
 
-    $.post('resources/count.php',function(data){
+    $.post('resources/count',function(data){
     $("#alerts2").html(data);
     });
 
-    $.post('resources/alerts.php',function(data){
+    $.post('resources/alerts',function(data){
     $("#alert-modal").html(data);
     });
 
- $.post('resources/notifications.php',function(data){
+ $.post('resources/notifications',function(data){
       $("#invisible").html(data);
 });
 
@@ -157,27 +157,27 @@ function notify() {
 
 }
 function manual(){
-    $.post('resources/posts.php',function(data){
+    $.post('resources/posts',function(data){
         $("#posts").html(data);
     });
 
-    $.post('resources/count.php',function(data){
+    $.post('resources/count',function(data){
     $("#alerts2").html(data);
     });
 
-    $.post('resources/alerts.php',function(data){
+    $.post('resources/alerts',function(data){
     $("#alert-modal").html(data);
     });
 
 }
 
 function markread() {
-    $.get("resources/mark.php");
+    $.get("resources/mark");
 }
 
  </script>
 
-    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
 
  <div class="modal fade" id="alerts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -188,7 +188,7 @@ function markread() {
         </div>
         <div class="modal-body" id="alert-modal" style="max-height: 420px;
     overflow-y: auto;">
-    
+
         </div>
         <div class="modal-footer">
           <button type="button" data-dismiss="modal" class="btn btn-primary">Okay, I'm done.</button>

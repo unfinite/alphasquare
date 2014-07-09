@@ -22,7 +22,7 @@ include('universal.php');
     <div class="container">
     <div class="row">
 <div class="col-md-4 profile-zone">
-      <?php 
+      <?php
 if(isset($_SESSION['username']))
 {
 include 'assets/navbar-logged.php';
@@ -31,7 +31,7 @@ include 'assets/navbar.php';
 }
 ?>
 
-       
+
 <?php
 //We check if the users ID is defined
 if(isset($_GET['id']))
@@ -62,18 +62,18 @@ $username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
                     <h3 class="media-heading"><?php echo $username; ?></h3>
                     </p>
                     &nbsp;<span class="label label-success">User</span>
-                        <?php 
+                        <?php
 
 $result = mysqli_query($link, 'select officia from users where id="'.$id.'"');
 
 $badges = mysqli_fetch_assoc($result); if($badges['officia'] == 1){
 echo '&nbsp;<span class="label label-success">Verified</span>';
-} 
+}
 $result2 = mysqli_query($link, 'select ranger from users where id="'.$id.'"');
 
 $badges2 = mysqli_fetch_assoc($result2); if($badges2['ranger'] == 1){
 echo '&nbsp;<span class="label label-info">Ranger</span>';
-} 
+}
 ?>
 
                     </center>
@@ -83,14 +83,14 @@ echo '&nbsp;<span class="label label-info">Ranger</span>';
                         <?php if ($dnn['status'] == "") { echo 'I haven\'t set a description yet... :( '; } else {
 echo htmlentities($dnn['status']);
                             }
-                            ?> 
+                            ?>
                             </p>
 </p><div class="spacer"></div>
 <p>
    <?php
 if(isset($_SESSION['username']))
 {
-echo '<a href="/create.php?username='.htmlentities($dnn['username']).'" class="btn btn-primary  btn-lg btn-block"> Follow</a>';
+echo '<a href="/create?username='.htmlentities($dnn['username']).'" class="btn btn-primary  btn-lg btn-block"> Follow</a>';
 } else {
 $username = htmlentities($dnn['username'], ENT_QUOTES, 'UTF-8');
 echo '<a href="/" class="btn btn-primary  btn-block ">Sign in to follow me.</a>';

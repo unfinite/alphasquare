@@ -38,7 +38,7 @@ else
 			//We save the user name in the session username and the user Id in the session userid
 			$_SESSION['username'] = $_POST['username'];
 			$_SESSION['userid'] = $dn['id'];
-			echo ('<meta HTTP-EQUIV="REFRESH" content="0; url=dashboard.php">');
+			header("Location: dashboard");
 		}
 		else
 		{
@@ -53,7 +53,7 @@ else
 	}
 	if($form)
 	{
-		header('Location: login.php?message='.$message);
+		header('Location: login?message='.$message);
 	}
 }
 ?>

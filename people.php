@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("universal.php");
 
 ?>
@@ -23,7 +23,7 @@ include("universal.php");
     </head>
 
     <body>
-    <?php 
+    <?php
 include('assets/navbar-logged.php');
 ?>
 
@@ -45,11 +45,11 @@ foreach ($users as $key => $value){
 	echo "<td>".$value;
 	if (in_array($key,$following)){
 		echo " <small>
-		<a href='resources/do.php?id=$key&do=unfollow'>unfollow</a>
+		<a href='resources/do?id=$key&do=unfollow'>unfollow</a>
 		</small>";
 	}else{
 		echo " <small>
-		<a href='resources/do.php?id=$key&do=follow'>follow</a>
+		<a href='resources/do?id=$key&do=follow'>follow</a>
 		</small>";
 	}
 	echo "</td>\n";

@@ -32,9 +32,9 @@ if(isset($_SESSION['username'])){
         <br>
         <p style="color:white;font-size: 25px;">A new Alphasquare is coming. <br>Let's shape the web. One debate at a time.</p>
         <br><br>
-        <a href="register.php" class="btn-jumbo no-decor">Create an account</a>
+        <a href="register" class="btn-jumbo no-decor">Create an account</a>
         <br><br>
-        <a href="login.php" class="no-decor">
+        <a href="login" class="no-decor">
             <span style="font-size:20px;color:white;">or sign in &raquo;</span>
         </a>
     </div>
