@@ -2,6 +2,18 @@
 include '../universal.php';
 ?>
 <?php
+if (isset($_SESSION['message'])) {
+
+?>
+<script>
+  $.notifyBar({  html: <?php echo $_SESSION['message']; ?>, position: "top" }); 
+</script>
+<?php
+unset($_SESSION['message']);
+}
+
+?>
+<?php
 	$main = mysqli_query($link, 'select * from alerts where shown="0" and userid="'.$_SESSION['userid'].'"');
 	if (mysqli_num_rows($main) !== 0) {
 ?>
