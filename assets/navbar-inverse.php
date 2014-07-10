@@ -14,8 +14,8 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-          </ul><p class="navbar-text pull-right" ><i class="glyphicon glyphicon-log_in"></i> 
-  <a href="login.php" class="no-decor-link" style="text-decoration:none;color:#3498db;"> Have an account? Sign in &raquo;</a>
+          </ul><p class="navbar-text pull-right" ><i class="glyphicon glyphicon-log_in"></i>
+  <a href="login" class="no-decor-link" style="text-decoration:none;color:#3498db;"> Have an account? Sign in &raquo;</a>
   </p>
 
   </div><!-- /.navbar-collapse -->

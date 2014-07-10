@@ -14,9 +14,9 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
 
-      
-    </ul><p class="navbar-text pull-right" ><i class="glyphicon glyphicon-log_in"></i> 
-  <a href="login.php" class="no-decor-link open-sans " style="text-decoration:none;color:white;"> Have an account? Sign in &raquo;</a>
+
+    </ul><p class="navbar-text pull-right" ><i class="glyphicon glyphicon-log_in"></i>
+  <a href="login" class="no-decor-link open-sans " style="text-decoration:none;color:white;"> Have an account? Sign in &raquo;</a>
   </p>
   </div><!-- /.navbar-collapse -->
 </nav>
