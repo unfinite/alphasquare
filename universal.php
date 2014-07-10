@@ -7,6 +7,7 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
+
 function get_posts($userid, $limit=0){
   global $link;
   $posts = array();
@@ -29,7 +30,7 @@ function get_posts($userid, $limit=0){
                 'time' => $data['time'],
                 'id' => $data['id'],
                 'userid' => $data['userid'],
-                'content' => base64_decode(mysqli_real_escape_string($link, htmlentities(stripslashes($data['content']), ENT_QUOTES, 'UTF-8'))),
+                'content' => mysqli_real_escape_string($link, $data['content']),
                 'votes' => $data['votes'],
                 'comments' => $data['comments']
                );
@@ -311,7 +312,7 @@ function add_debate($userid,$body) {
   }
   else {
     $tags = atag_main($body);
-    $body_encoded = base64_encode(htmlentities($body));
+    $body_encoded = mysqli_real_escape_string($link, htmlentities($body));
     $time = time();
     $sql = "INSERT INTO debates (`userid`, `content`, `tags`, `time`)
             VALUES ($userid, '$body_encoded', '$tags', $time)";
