@@ -43,6 +43,10 @@ width:100%;display:flex;
 .tmecont {
   color:grey;font-size:15px;
 }
+
+input.statusi:focus {
+    outline-width: 0;
+}
 </style>
 
     </head>
@@ -54,13 +58,13 @@ include('assets/navbar-logged.php');
 
 ?>
 <div class="container-fluid">
-<br><br><br><br>
+
 <div class="row">
   <div class="col-xs-12 col-md-8">
 
 <form method='post' class="form-inline" id="postbar">
 
-<input id="pst" name='body' class="post" placeholder="Whatcha debatin' on, <?php getUsername(); ?>?">
+<input id="pst" name='body' class="post statusi" placeholder="Whatcha debatin' on, <?php getUsername(); ?>?">
 </input>
 </form>
 
@@ -116,19 +120,16 @@ foreach ($posts as $key => $list){
 </div></div>
   <div class="col-xs-6 col-sm-4"><div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title slab">Sponsored</h3>
+    <h3 class="panel-title slab"><span class="glyphicon glyphicon-flash"></span> Broadcast</h3>
   </div>
   <div class="panel-body">
   <center>
-  <b>Help us get a new amazing and fast server, courtesy of Neq3!</b> Your contribution will assure Alphasquare's future. Please click below and sign up,
-it will really help us! <br><br>
-<a href="http://api.neq3.com/redir/6146700" target="_blank"><img src="http://neq3.com/banners/300x250.gif" alt="http://neq3.com" border="0" width="300" height="250" /></a>
+  Nothing to see here; yet.
 </center>
   </div>
   </div>
 
-  <div class="alert alert-info"> <span class="glyphicon glyphicon-flash"></span> We encourage you all to post any bugs or proposals in it. <a href="https://snowy-evening.com/alphasquare/alphasquare/">Click here to check it out!</a></div>
-<br>
+
   <div class="panel panel-default" style="width:100%">
   <div class="panel-body">
     <ul class="nav nav-pills nav-stacked slab">
@@ -136,7 +137,7 @@ it will really help us! <br><br>
   <li class="active">
     <a href="#">
 
-      Dashboard
+      <span class="glyphicon glyphicon-globe"></span> &nbsp; Dashboard
     </a>
 
   </li>
@@ -144,17 +145,17 @@ it will really help us! <br><br>
    <a onclick="markread()"   data-toggle="modal"
    data-target="#alerts" href="#">
  <span class="badge badge-danger pull-right" id="alerts2"></span>
-      Alerts
+      <span class="glyphicon glyphicon-bell"></span>&nbsp;  Alerts
     </a>
     </li>
   <li>
   <a href="#">
-      People
+      <span class="glyphicon glyphicon-cloud"></span> &nbsp; People
     </a>
     </li>
     <li>
     <a href="#">
-      Me
+     <span class="glyphicon glyphicon-user"></span> &nbsp; Me
     </a>
     </li>
 </ul>

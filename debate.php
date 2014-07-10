@@ -55,7 +55,6 @@ width:100%;display:flex;
     }
 ?>
 <div class="container-fluid">
-<br><br><br><br>
 <div class="row">
   <div class="col-xs-12 col-md-8">
 <div id="post">
@@ -67,12 +66,13 @@ width:100%;display:flex;
     $query = mysqli_query($link, 'select * from debates where id="'.$post.'" limit 1');
     if (mysqli_num_rows($query) !== 0) {
       $list = mysqli_fetch_array($query);
-      $content = base64_decode($list['content']);
+  $foobar = str_replace('&amp;', '&', $list['content']);
+
   ?>
   <div class="fw">
 <img class="img-circle prp" src="<?php profilePictureID($list['userid']) ?>" >&nbsp;&nbsp;&nbsp;
 <article class="box postc">
-<?php echo showBBcodes($content); ?>
+<?php echo showBBcodes(atag_link(stripslashes($foobar))); ?>
 <hr class="dvs">
 <small><?php
     if(isset($_SESSION['userid'])) {
