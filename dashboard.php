@@ -123,9 +123,9 @@ foreach ($posts as $key => $list){
     <h3 class="panel-title slab"><span class="glyphicon glyphicon-flash"></span> Broadcast</h3>
   </div>
   <div class="panel-body">
-  <center>
-  Nothing to see here; yet.
-</center>
+
+  Well guys we're all in for the OOP conversion process... We're gonna use a forked version of Zeam that is more focused on templating, as base and that should speed up the development,by much. We really want to make the code faster, lightweight, and easily develop-able(?). The last update were preparations for this, so hang tight, Alphasquareians. Let us know what you think of this using the &Zeam tag. 
+
   </div>
   </div>
 
