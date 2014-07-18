@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $link = mysqli_connect('localhost', 'u7736617_new', '2{..~?5Q2D0+', 'u7736617_new');
 if (mysqli_connect_errno()) {
     print("We had a little hiccup and we couldn't connect to the main servers properly. Try later please!");
@@ -238,8 +239,8 @@ function showBBcodes($text) {
   '~\[quote\](.*?)\[/quote\]~s',
   '~\[size=(.*?)\](.*?)\[/size\]~s',
   '~\[color=(.*?)\](.*?)\[/color\]~s',
-  '~\[url\]((?:ftp|https?)://.*?)\[/url\]~s',
-  '~\[img\](https?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]~s',
+  '~\[url\]((?:ftp|http?)://.*?)\[/url\]~s',
+  '~\[img\](http?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]~s',
   '~\[awesomeness\](.*?)\[/awesomeness\]~s'
   );
 
