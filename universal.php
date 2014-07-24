@@ -321,5 +321,29 @@ function add_debate($userid,$body) {
   }
 }
 
+function add_comment($comment, $debid, $uid, $force_comid == '') {
+
+  global $link;
+
+  if ($body == '') {
+
+    $_SESSION['message'] == 'The comment can\'t be empty, silly.';
+
+  } else {
+
+    $time = time();
+
+    $tags = atag_main($comment);
+
+    $comment_sanitized = mysqli_real_escape_string($link, htmlentities($comment));
+
+      $sql = "INSERT INTO discussion (`userid`, `content`, `tags`, `time`)
+            VALUES ($uid, '$comment_sanitized', '$tags', $time)";
+
+      $result = mysqli_query($link, $sql);
+
+  }
+
+}
 
 /* End of universal.php */
