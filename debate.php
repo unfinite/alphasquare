@@ -102,15 +102,15 @@ TESTING CAUTION!!!
 <input placeholder="Comment" name="content">
 <button type="submit">Add</button>
 </form>
-$posts = get_posts($myusers,0);
+<?php 
+$posts = show_comments($list['id']);
 if (count($posts)){
-?>
-<?php
-foreach ($posts as $key => $list){
+
+foreach ($comments as $key => $t){
     $foobar = str_replace('&amp;', '&', $list['content']);
-    echo '<pre>'.$list['content'].'</pre><br>
+    echo '<pre>'.$t['content'].'</pre><br>
     ';
-}
+} }
 ?>
 
 <?php
