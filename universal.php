@@ -109,7 +109,7 @@ function follow($me, $them){
   global $link;
   $count = follow_count($me,$them);
 
-  if($count === 0){
+  if($count == 0){
     $sql = "INSERT INTO following (userid, followid)
             VALUES ($them, $me)";
     $result = mysqli_query($link, $sql);
@@ -126,8 +126,8 @@ function unfollow($me,$them){
 
   if ($count != 0){
     $sql = "DELETE FROM following
-            WHERE userid = $them
-              AND followid = $me
+            WHERE userid = ".$them."
+              AND followid = ".$me."
             LIMIT 1";
 
     $result = mysqli_query($link, $sql);
