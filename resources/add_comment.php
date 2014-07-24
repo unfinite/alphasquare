@@ -1,8 +1,8 @@
 <?php 
 include '../universal.php';
 
-
-if (is_numeric($_GET['id']) and isset($_GET['id']) and isset($_GET['content'])) {
+error_reporting(E_ALL);
+if (is_numeric($_GET['id']) and isset($_GET['id']) and isset($_GET['content']) and $_GET['content'] !== '') {
 $debid == $_GET['id'];
 $comment == $_GET['content'];
 
