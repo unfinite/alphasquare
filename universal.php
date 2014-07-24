@@ -338,8 +338,8 @@ function add_comment($comment, $debid) {
 
     $comment_sanitized = mysqli_real_escape_string($link, htmlentities($comment));
 
-      $sql = "INSERT INTO discussion (`postid`, `userid`, `content`, `time`)
-            VALUES ($debid, $uid, '$comment_sanitized', $time)";
+      $sql = "INSERT INTO discussion (`userid`, `postid`, `content`, `time`)
+            VALUES ($uid, $debid, '$comment_sanitized', $time)";
 
       $result = mysqli_query($link, $sql);
 
