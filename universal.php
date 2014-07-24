@@ -348,7 +348,7 @@ function add_comment($comment, $debid) {
 }
 
 function show_comments($debid) {
-
+global $link;
   $sql = "SELECT content, time, userid, postid
           FROM discussion
           WHERE `postid`='".$debid."'
