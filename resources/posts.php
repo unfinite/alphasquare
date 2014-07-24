@@ -27,7 +27,7 @@ foreach ($posts as $key => $list){
  <?php votes($list['id'], 1); ?> </button>&nbsp;
   <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote.php?id=<?php echo $list['id']; ?>&type=0">
   <span class="glyphicon glyphicon-thumbs-down"></span> <?php votes($list['id'], 0); ?></button>&nbsp;
-  <a href="debate?post=<?php echo $post['id']; ?>" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-comment"></span> Discussion</a>
+  <a href="debate?post=<?php echo $list['id']; ?>" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-comment"></span> Discussion</a>
   </small><span class="pull-right tmecont" >
   <abbr title="<?php echo gmdate('Y-m-d\TH:i:s\Z', $list['time']); ?>" class="timeago"></abbr>
   </span></article></div>
