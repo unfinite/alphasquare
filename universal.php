@@ -239,7 +239,7 @@ function showBBcodes($text) {
   '~\[size=(.*?)\](.*?)\[/size\]~s',
   '~\[color=(.*?)\](.*?)\[/color\]~s',
   '~\[url\]((?:ftp|http?)://.*?)\[/url\]~s',
-  '~\[img\](https?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]~s'
+  '~\[img\](https?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]~s',
   '~\[awesomeness\](.*?)\[/awesomeness\]~s'
   );
 
