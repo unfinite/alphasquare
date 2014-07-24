@@ -9,7 +9,7 @@ $Broadcast =  '
   <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
     <span class="sr-only">30% Complete</span>
   </div>
-</div><br>
+</div>
 <b>20</b> issues left until public beta.
 <br>
 Today\'s update:<br>
