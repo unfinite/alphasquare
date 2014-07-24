@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+$prankmode = true;
 
 if ($prankmode == true) {
 die("<img src=\"http://my.fakingnews.firstpost.com/files/2014/04/Hacked.jpg\"> I TELL YOU I WOULD GET REVENG3 <br> U GOT HXEDDD HAHAHAHAHAH <br> HAXED BY D4H4x0RR 0x937493xx ");
