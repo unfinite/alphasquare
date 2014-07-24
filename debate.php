@@ -106,7 +106,7 @@ TESTING CAUTION!!!
 $posts = show_comments($list['id']);
 if (count($posts)){
 
-foreach ($comments as $key => $t){
+foreach ($posts as $key => $t){
     $foobar = str_replace('&amp;', '&', $list['content']);
     echo '<pre>'.$t['content'].'</pre><br>
     ';
