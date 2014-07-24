@@ -60,7 +60,7 @@ include('assets/navbar-logged.php');
 <div class="container-fluid">
 
 <div class="row">
-  <div class="col-xs-12 col-md-8">
+  <div class="col-md-8">
 
 <form method='post' class="form-inline" id="postbar">
 
@@ -118,7 +118,7 @@ foreach ($posts as $key => $list){
 }
 ?>
 </div></div>
-  <div class="col-xs-6 col-sm-4"><div class="panel panel-default">
+  <div class="col-sm-4"><div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title slab"><span class="glyphicon glyphicon-flash"></span> Broadcast</h3>
   </div>
