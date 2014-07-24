@@ -324,7 +324,7 @@ function add_comment($comment, $debid) {
 
   global $link;
 
-  if ($body == '') {
+  if ($comment == '') {
 
     $_SESSION['message'] == 'The comment can\'t be empty, silly.';
 
