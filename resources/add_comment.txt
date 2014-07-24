@@ -1,0 +1,12 @@
+<?php 
+include '../universal.php';
+
+$debid = $_GET['id'];
+$comment = $_GET['content'];
+
+if (is_numeric($debid) and isset($_GET['id']) and isset($_GET['content'])) {
+
+	add_comment($comment, $debid);
+
+}
+?>
