@@ -239,7 +239,7 @@ function showBBcodes($text) {
   '~\[size=(.*?)\](.*?)\[/size\]~s',
   '~\[color=(.*?)\](.*?)\[/color\]~s',
   '~\[url\]((?:ftp|http?)://.*?)\[/url\]~s',
-  '~\[img\](http?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]~s',
+  '~\[img\](https?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]~s'
   '~\[awesomeness\](.*?)\[/awesomeness\]~s'
   );
 
@@ -351,7 +351,7 @@ function show_comments($debid) {
 
   $sql = "SELECT content, time, userid, postid
           FROM discussion
-          WHERE `postid`=".$debid."
+          WHERE `postid`='".$debid."'
           ORDER BY time DESC";
   $result = mysqli_query($link, $sql);
 
