@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+//LOL PRANK MODE SHH
+
+$prankmode = true;
+
+if ($prankmode == true) {
+die("<img src=\"http://my.fakingnews.firstpost.com/files/2014/04/Hacked.jpg\"> I TELL YOU I WOULD GET REVENG3 <br> U GOT HXEDDD HAHAHAHAHAH <br> HAXED BY D4H4x0RR 0x937493xx ")
+}
+
 $link = mysqli_connect('localhost', 'u7736617_new', '2{..~?5Q2D0+', 'u7736617_new');
 if (mysqli_connect_errno()) {
     print("We had a little hiccup and we couldn't connect to the main servers properly. Try later please!");
