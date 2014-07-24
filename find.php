@@ -8,7 +8,8 @@ blockGuest();
 
    $query = mysqli_real_escape_string($link, $_GET['q']);
    $queryr = mysqli_query($link, "SELECT id, userid, content, time FROM `debates` WHERE content LIKE '%$query%' or tags LIKE '%$query%' ORDER BY `time` DESC");
- } elseif (isset($_POST['box'])){
+ } 
+ if (isset($_POST['box'])){
 
        $query = mysqli_real_escape_string($link, $_POST['box']);
    $queryr = mysqli_query($link, "SELECT id, userid, content, time FROM `debates` WHERE content LIKE '%$query%' or tags LIKE '%$query%' ORDER BY `time` DESC");
