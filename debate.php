@@ -102,6 +102,16 @@ TESTING CAUTION!!!
 <input placeholder="Comment" name="content">
 <button type="submit">Add</button>
 </form>
+$posts = get_posts($myusers,0);
+if (count($posts)){
+?>
+<?php
+foreach ($posts as $key => $list){
+    $foobar = str_replace('&amp;', '&', $list['content']);
+    echo '<pre>'.$list['content'].'</pre>';
+}
+?>
+
 <?php
 } else {
   echo '<span class="slab">Oh noes! I couldn\'t find that debate you wanted! </span>';
