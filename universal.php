@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-//LOL PRANK MODE SHH
-
-$prankmode = true;
 
 if ($prankmode == true) {
 die("<img src=\"http://my.fakingnews.firstpost.com/files/2014/04/Hacked.jpg\"> I TELL YOU I WOULD GET REVENG3 <br> U GOT HXEDDD HAHAHAHAHAH <br> HAXED BY D4H4x0RR 0x937493xx ");
 }
+
 
 $link = mysqli_connect('localhost', 'u7736617_new', '2{..~?5Q2D0+', 'u7736617_new');
 if (mysqli_connect_errno()) {
@@ -246,7 +244,6 @@ function showBBcodes($text) {
   '~\[quote\](.*?)\[/quote\]~s',
   '~\[size=(.*?)\](.*?)\[/size\]~s',
   '~\[color=(.*?)\](.*?)\[/color\]~s',
-  '~\[url\]((?:ftp|http?)://.*?)\[/url\]~s',
   '~\[img\](https?://.*?\.(?:jpg|jpeg|gif|png|bmp))\[/img\]~s',
   '~\[awesomeness\](.*?)\[/awesomeness\]~s'
   );
@@ -265,8 +262,7 @@ function showBBcodes($text) {
   '<span style="text-decoration:underline;">$1</span>',
   '<pre>$1</'.'pre>',
   '<span style="font-size:$1px;">$2</span>',
-  '<span style="color:$1;">$2</span>',
-  '<a href="$1">$1</a>',
+  '<span style="color:$1;">$2</span>', 
   '<img src="$1" alt="" />',
   '<img src="http://blog.christoffer.me/post/2011-03-12-awesomeness-is-when-i-use-jquery-true-story/awesomeness.png" style="height:500px;width:600px;" alt="" />'
   );
