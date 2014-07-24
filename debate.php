@@ -101,7 +101,7 @@ TESTING CAUTION!!!
 <input name="id" hidden value="<?php echo $list['id']; ?>">
 <input placeholder="Comment" name="content">
 <button type="submit">Add</button>
-</form>
+</form><br>
 <?php 
 $posts = show_comments($list['id']);
 if (count($posts)){

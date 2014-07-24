@@ -7,7 +7,7 @@ if (is_numeric($_POST['id']) and isset($_POST['id']) and isset($_POST['content']
         "SELECT * FROM debates WHERE id='".$debid."' LIMIT 1");
     if(mysqli_fetch_array($result) !== false) {
 	add_comment($comment, $debid);
-	header("Location: ../dashboard");
+	header("Location: ../debate?post=".$_POST['id']);
 	} else { echo 'no'; }
 } else {echo 'No'; }
 
