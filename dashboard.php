@@ -5,11 +5,13 @@ blockGuest();
 
 // Broadcast Writer, 1.0 LOL. 
 $Broadcast =  '
-<center>
-<h1>20</h1>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+    <span class="sr-only">30% Complete</span>
+  </div>
+</div><br>
+<b>20</b> issues left until public beta.
 <br>
-remaining issues/features until launch<br>
-</center>
 Today\'s update:<br>
 -> Stand by.<br>
 ';
