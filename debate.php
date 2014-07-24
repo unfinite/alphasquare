@@ -108,7 +108,8 @@ if (count($posts)){
 <?php
 foreach ($posts as $key => $list){
     $foobar = str_replace('&amp;', '&', $list['content']);
-    echo '<pre>'.$list['content'].'</pre>';
+    echo '<pre>'.$list['content'].'</pre><br>
+    ';
 }
 ?>
 
