@@ -3,7 +3,7 @@
 include("universal.php");
 
 $userid = $_SESSION['userid'];
-$body = substr($_POST['body'],0,140);
+$body = $_POST['body'];
 
 add_debate($userid,$body);
 
