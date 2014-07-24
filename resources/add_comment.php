@@ -9,7 +9,7 @@ if (is_numeric($debid) and isset($_GET['id']) and isset($_GET['content'])) {
 	  $result = mysqli_query($link, 
         "SELECT * FROM debates WHERE id=$debid LIMIT 1");
 
-    if(mysql_fetch_array($result) !== false) {
+    if(mysqli_fetch_array($link, $result) !== false) {
 	add_comment($comment, $debid);
 	echo 'Added';
 	} else { echo 'no';}
