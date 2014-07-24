@@ -100,6 +100,7 @@ TESTING CAUTION!!!
 <form action="resources/add_comment" method="POST">
 <input name="id" hidden value="<?php echo $list['id']; ?>">
 <input placeholder="Comment" name="content">
+<button type="submit">Add</button>
 </form>
 <?php
 } else {

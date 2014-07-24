@@ -9,8 +9,8 @@ if (is_numeric($_GET['id']) and isset($_GET['id']) and isset($_GET['content']) a
     if(mysqli_fetch_array($result) !== false) {
 	add_comment($comment, $debid);
 	echo 'Added';
-	header("Location: ../dashboard")
-	} else { echo 'no';}
+	header("Location: ../dashboard");
+	} else { echo 'no'; }
 } else {echo 'No'; }
 
 ?>
