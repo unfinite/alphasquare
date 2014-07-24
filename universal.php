@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 $link = mysqli_connect('localhost', 'u7736617_new', '2{..~?5Q2D0+', 'u7736617_new');
 if (mysqli_connect_errno()) {
     print("We had a little hiccup and we couldn't connect to the main servers properly. Try later please!");
@@ -321,7 +320,7 @@ function add_debate($userid,$body) {
   }
 }
 
-function add_comment($comment, $debid, $uid, $force_comid == '') {
+function add_comment($comment, $debid) {
 
   global $link;
 
@@ -335,14 +334,36 @@ function add_comment($comment, $debid, $uid, $force_comid == '') {
 
     $tags = atag_main($comment);
 
+    $uid = $_SESSION['id'];
+
     $comment_sanitized = mysqli_real_escape_string($link, htmlentities($comment));
 
-      $sql = "INSERT INTO discussion (`userid`, `content`, `tags`, `time`)
-            VALUES ($uid, '$comment_sanitized', '$tags', $time)";
+      $sql = "INSERT INTO discussion (`postid`, `userid`, `content`, `time`)
+            VALUES ($debid, $uid, '$comment_sanitized', $time)";
 
       $result = mysqli_query($link, $sql);
 
   }
+
+}
+
+function show_comments($debid) {
+
+  $sql = "SELECT content, time, userid, postid
+          FROM discussion
+          WHERE `postid`=".$debid."
+          ORDER BY time DESC";
+  $result = mysqli_query($link, $sql);
+
+  while($data = mysqli_fetch_array($result)){
+    $comments[] = array(
+                'time' => $data['time'],
+                'postid' => $data['postid'],
+                'userid' => $data['userid'],
+                'content' => mysqli_real_escape_string($link, $data['content'])
+                );
+  }
+  return $comments;
 
 }
 

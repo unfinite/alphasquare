@@ -5,16 +5,13 @@ blockGuest();
 
 // Broadcast Writer, 1.0 LOL. 
 $Broadcast =  '
-Well guys, exciting news. I eventually decided to not do the conversion process now, but later after the site is finished. That way we can focus more on features and getting it done with :p
+<center>
+<h1>20</h1>
 <br>
+remaining issues/features until launch<br>
+</center>
 Today\'s update:<br>
--> Various backend bugfixes<br>
--> Performance improvements<br>
--> Fixed the dreaded status length issue<br>
--> Following issue is fixed<br>
--> Finder optimizations<br>
--> Mobile fixed<br>
--> Removed Herobrine (haha :p)<br>
+-> Stand by.<br>
 ';
 ?>
 

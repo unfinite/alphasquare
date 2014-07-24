@@ -27,10 +27,10 @@ if(isset($_SESSION['username'])){
 </head>
 <body>
     <?php include 'assets/navbar.php';?>
-    <div class="lato hero-unit" id="main-hero" style="padding-top:150px;">
-        <p class="main-page-header">We're opening up alphasquare.</p>
+    <div class="lato hero-unit" id="main-hero" style="padding-top:165px;">
+        <p class="main-page-header">Debate the web.</p>
         <br>
-        <p style="color:white;font-size: 25px;">A new Alphasquare is coming. <br>Let's shape the web. One debate at a time.</p>
+        <p style="color:white;font-size: 25px;">The web is changing. Let's take control of what it will change into. <br>Let's shape the web. One debate at a time.</p>
         <br><br>
         <a href="register" class="btn-jumbo no-decor">Create an account</a>
         <br><br>
