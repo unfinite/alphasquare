@@ -15,4 +15,9 @@ if (is_numeric($debid) and isset($_GET['id']) and isset($_GET['content'])) {
 	} else { echo 'no';}
 
 } else {echo 'No'; }
+
+$comment = 'Hai';
+$postid = 323;
+
+add_comment($comment, $postid);
 ?>
