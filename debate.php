@@ -93,6 +93,14 @@ width:100%;display:flex;
   <abbr title="<?php echo gmdate('Y-m-d\TH:i:s\Z', $list['time']); ?>" class="timeago"></abbr>
   </span></article></div>
 
+<br>
+
+TESTING CAUTION!!!
+<BR>
+<form action="resources/add_comment" method="POST">
+<input name="id" hidden value="<?php echo $list['id']; ?>">
+<input placeholder="Comment" name="content">
+</form>
 <?php
 } else {
   echo '<span class="slab">Oh noes! I couldn\'t find that debate you wanted! </span>';
