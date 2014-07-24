@@ -93,7 +93,7 @@ foreach ($posts as $key => $list){
 <div class="fw">
 <img class="img-circle prp" src="<?php profilePictureID($list['userid']) ?>" >&nbsp;&nbsp;&nbsp;
 <article class="box postc">
-<?php echo showBBcodes(atag_link($foobar)); ?>
+<?php echo showBBcodes(atag_link(stripslashes($foobar))); ?>
 <hr class="dvs">
 <small>
 <button class="btn btn-success btn-xs slab rate" data-ref="resources/vote?id=<?php echo $list['id']; ?>&type=1">
