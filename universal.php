@@ -334,7 +334,7 @@ function add_comment($comment, $debid) {
 
     $tags = atag_main($comment);
 
-    $uid = $_SESSION['id'];
+    $uid = $_SESSION['userid'];
 
     $comment_sanitized = mysqli_real_escape_string($link, htmlentities($comment));
 
