@@ -2,7 +2,7 @@
 include('universal.php');
 
 blockGuest();
-
+msg("If this shows correctly, the sitewide broadcast system works.");
 // Broadcast Writer, 1.0 LOL. 
 $Broadcast =  '
 <div class="progress">

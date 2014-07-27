@@ -372,4 +372,34 @@ global $link;
 
 }
 
+function msg($msg) {
+   $_SESSION['msg'] = $msg;
+}
+
+function show_msg() {
+
+
+   if(isset($_SESSION['msg'])) {
+$msg = $_SESSION['msg'];
+      echo '<script>';
+      echo 'function decodeEntities(s){
+    var str, temp= document.createElement(\'p\');
+    temp.innerHTML= s;
+    str= temp.textContent || temp.innerText;
+    temp=null;
+    return str;
+}
+function notify(post) {
+
+  $.notifyBar({  html: decodeEntities(post), position: "top" }); 
+
+} post(';
+      echo $msg;
+      echo ')';
+      echo '</script>';
+      unset($_SESSION['msg']);
+
+   }
+
+}
 /* End of universal.php */
