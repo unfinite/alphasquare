@@ -5,9 +5,7 @@ blockGuest();
 msg("If this shows correctly, the sitewide broadcast system works.");
 // Broadcast Writer, 1.0 LOL. 
 $Broadcast =  '
-<br>
-<b>20</b> issues left until public beta.
-<br>
+
 Today\'s update:<br>
 -> Performance improvements<br>
 -> Changed the AJAX jQuery requests from POST->GET, idk why they were in POST in the first place<br>
