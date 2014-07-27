@@ -260,7 +260,7 @@ $("#postbar").submit(function() {
 function quasar(){
 
 
-$.post('resources/posts',function(data){
+$.get('resources/posts',function(data){
 
   $("#posts").html(data);
   $("abbr.timeago").timeago();
@@ -272,16 +272,21 @@ var url = $(this).attr('data-ref');
       manual();
   });
 });
-    $.post('resources/count',function(data){
+    $.get('resources/count',function(data){
     $("#alerts2").html(data);
     });
 
-    $.post('resources/alerts',function(data){
+    $.get('resources/alerts',function(data){
     $("#alert-modal").html(data);
     });
 
- $.post('resources/notifications',function(data){
+ $.get('resources/notifications',function(data){
       $("#invisible").html(data);
+
+    $.get('resources/broadcaster',function(data){
+      $("#invisible").html(data);
+    });
+
 
 });
 
@@ -298,17 +303,22 @@ function notify() {
 
 function notifFetch() {
 
-    $.post('resources/count',function(data){
+    $.get('resources/count',function(data){
     $("#alerts2").html(data);
     });
 
-    $.post('resources/alerts',function(data){
+    $.get('resources/alerts',function(data){
     $("#alert-modal").html(data);
     });
 
-    $.post('resources/notifications',function(data){
+    $.get('resources/notifications',function(data){
       $("#invisible").html(data);
     });
+
+    $.get('resources/broadcaster',function(data){
+      $("#invisible").html(data);
+    });
+
 
 }
 

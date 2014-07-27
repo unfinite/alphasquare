@@ -393,7 +393,7 @@ function notify(post) {
 
   $.notifyBar({  html: decodeEntities(post), position: "top" }); 
 
-} post(';
+} notify(';
       echo $msg;
       echo ')';
       echo '</script>';
