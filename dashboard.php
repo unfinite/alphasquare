@@ -9,14 +9,14 @@ $Broadcast =  '
 <b>20</b> issues left until public beta.
 <br>
 Today\'s update:<br>
--> Performance improvements
--> Changed the AJAX jQuery requests from POST->GET, idk why they were in POST in the first place
--> Awesomeness
--> Bugfixes
--> Swagger 
-->Awesomeness... wait am I repeating things
--> Removed core.php... wait WHAT?!?!?!?? WHO DID THIS! haha jk 
--> This has been the most idiotic changelog in the history of changelogs
+-> Performance improvements<br>
+-> Changed the AJAX jQuery requests from POST->GET, idk why they were in POST in the first place<br>
+-> Awesomeness<br>
+-> Bugfixes<br>
+-> Swagger <br>
+->Awesomeness... wait am I repeating things<br>
+-> Removed core.php... wait WHAT?!?!?!?? WHO DID THIS! haha jk <br>
+-> This has been the most idiotic changelog in the history of changelogs<br>
 -> Just no<br>
 ';
 ?>
