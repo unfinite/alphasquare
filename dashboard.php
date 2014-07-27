@@ -283,14 +283,9 @@ var url = $(this).attr('data-ref');
  $.get('resources/notifications',function(data){
       $("#invisible").html(data);
 
-    $.get('resources/broadcaster',function(data){
-      $("#invisible").html(data);
-    });
-
-
 });
 
-    setTimeout("quasar();",15000);
+    setTimeout("quasar();",15555);
 }
 
 window.onload = quasar();
@@ -315,9 +310,6 @@ function notifFetch() {
       $("#invisible").html(data);
     });
 
-    $.get('resources/broadcaster',function(data){
-      $("#invisible").html(data);
-    });
 
 
 }
