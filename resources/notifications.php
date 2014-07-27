@@ -1,9 +1,9 @@
 <?php
 
-show_msg();
 
 include '../universal.php';
 
+show_msg();
 	$main = mysqli_query($link, 'select * from alerts where shown="0" and userid="'.$_SESSION['userid'].'"');
 	if (mysqli_num_rows($main) !== 0) {
 
