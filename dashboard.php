@@ -5,15 +5,19 @@ blockGuest();
 msg("If this shows correctly, the sitewide broadcast system works.");
 // Broadcast Writer, 1.0 LOL. 
 $Broadcast =  '
-<div class="progress">
-  <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-    <span class="sr-only">30% Complete</span>
-  </div>
-</div>
+<br>
 <b>20</b> issues left until public beta.
 <br>
 Today\'s update:<br>
--> Stand by.<br>
+-> Performance improvements
+-> Changed the AJAX jQuery requests from POST->GET, idk why they were in POST in the first place
+-> Awesomeness
+-> Bugfixes
+-> Swagger 
+->Awesomeness... wait am I repeating things
+-> Removed core.php... wait WHAT?!?!?!?? WHO DID THIS! haha jk 
+-> This has been the most idiotic changelog in the history of changelogs
+-> Just no<br>
 ';
 ?>
 

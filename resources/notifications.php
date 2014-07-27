@@ -3,7 +3,7 @@
 
 include '../universal.php';
 
-show_msg();
+
 	$main = mysqli_query($link, 'select * from alerts where shown="0" and userid="'.$_SESSION['userid'].'"');
 	if (mysqli_num_rows($main) !== 0) {
 
@@ -16,24 +16,7 @@ show_msg();
 
 ?>
 <script>
-function decodeEntities(s){
-    var str, temp= document.createElement('p');
-    temp.innerHTML= s;
-    str= temp.textContent || temp.innerText;
-    temp=null;
-    return str;
-}
-
-
-function notify(post) {
-
-  $.notifyBar({  html: decodeEntities(post), position: "top" }); 
-
-}
-
-var post = decodeEntities('<?php echo $content; ?>');
-
-notify(post);
+function decodeEntities(e){var t,n=document.createElement("p");n.innerHTML=e;t=n.textContent||n.innerText;n=null;return t}function notify(e){$.notifyBar({html:decodeEntities(e),position:"top"})}var post=decodeEntities("<?php echo $content; ?>");notify(post)
 </script>
 <?php
 }
