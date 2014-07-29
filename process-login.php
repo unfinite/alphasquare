@@ -1,5 +1,9 @@
 <?php
 include('universal.php');
+  $config   = dirname(__FILE__) . '/auth/config.php';
+  require_once( "auth/Hybrid/Auth.php" );
+  
+
 if(isset($_SESSION['username']))
 {
 	unset($_SESSION['username'], $_SESSION['userid']);
@@ -10,6 +14,27 @@ if(isset($_SESSION['username']))
 }
 else
 {
+
+	if (isset($_GET['external'])) {
+
+		switch ($_GET['type']) {
+
+		case 'twitter':
+
+			header("Location: auth-twitter");
+
+			break; 
+
+			case "facebook":
+			echo 'Not yet';
+			break;
+
+			} // end switch
+
+
+
+	}
+
 	$ousername = '';
 	if(isset($_POST['username'], $_POST['password']))
 	{

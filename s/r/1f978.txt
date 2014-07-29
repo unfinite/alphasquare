@@ -1,0 +1,140 @@
+Submitted at: Tuesday 1st of July 2014 07:08:01 PM
+
+
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Starlite Drive-In Theatre - 15605 N State Hwy 21 Cadet, MO 63630</title>
+<style>
+<!--
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+</head>
+<body bgcolor="#C30028" link="#FFFF00" vlink="#FFFF00" background="images/animspace.gif" topmargin="10">
+<div align="center">
+<center>
+<table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="950" bordercolor="#16AAEF">
+<tr>
+<td width="100%" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="54" height="56">
+          <img border="0" src="images/film_camera_bk3.jpg" width="54" height="56"></td>
+          <td width="842" background="images/film_bk3.jpg" align="center">
+          <b>
+          <span style="color: #16AAEF; font-size: 20px; font-family: arial; font-weight: bold; font-style:italic">
+          NOW ALL DIGITAL PROJECTION!</span></b></td>
+          <td width="54" height="56">
+          <img border="0" src="images/film_camera_bk3.jpg" width="54" height="56"></td>
+        </tr>
+      </table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+<tr>
+<td width="510" height="154">
+<img border="0" src="home/Image6a_1x1.jpg" width="510" height="154"></td>
+<td width="440" height="154">
+<img border="0" src="home/Image6a_1x2.jpg" width="440" height="154"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%">
+<tr>
+<td width="260" height="76">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="260" height="76">
+<tr>
+              <td width="64" height="76">
+              <a target="_blank" href="http://www.facebook.com/pages/Starlite-Drive-In/115721435112380">
+              <img border="0" src="images/fb1.jpg" width="64" height="76"></a></td>
+              <td width="196" height="76" background="images/fb2.jpg" align="center">
+          <font size="4" color="#FFFF00">
+          <span style="font-family: arial; font-weight: 700">Open 7 Days</span></font></td>
+            </tr>
+          </table>
+          </td>
+          <td width="250" height="76" align="center" background="home/Image6a_2x2.jpg">
+          &nbsp;</td>
+          <td width="440" height="76">
+          <b>
+          <span style="color: #ffffff; font-size: 18px; font-family: arial; font-weight: bold">
+          <img border="0" src="home/Image6a_2x3.jpg" width="440" height="76"></span></b></td>
+        </tr>
+      </table>
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="100%" bgcolor="#C30028">
+        <tr>
+          <td width="510" height="190" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="510" height="189">
+            <tr>
+              <td width="255" height="63">
+              <a href="showing.html">
+              <img border="0" src="home/features01.jpg" width="255" height="63"></a></td>
+              <td width="255" height="63">
+              <a href="events.html">
+              <img border="0" src="home/events01.jpg" width="255" height="63"></a></td>
+            </tr>
+            <tr>
+              <td width="255" height="63">
+              <a href="concession.html">
+              <img border="0" src="home/concession01.jpg" width="255" height="63"></a></td>
+              <td width="255" height="63">
+              <a href="previews.html">
+              <img border="0" src="home/coming01.jpg" width="255" height="63"></a></td>
+            </tr>
+            <tr>
+              <td width="510" height="63" colspan="2">
+              <a href="location.html"><img border="0" src="location01.jpg" width="255" height="63"></a></td>
+            </tr>
+          </table>
+          </td>
+          <td width="440" height="190">
+          <img border="0" src="home/Image6a_3x2.jpg" width="440" height="190"></td>
+        </tr>
+      </table>
+      <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse" width="950" height="13">
+        <tr>
+          <td width="510" align="center" bgcolor="#C30028"><b>
+          <span style="color: #ffffff; font-size: 17px; font-family: arial; font-weight: bold">
+          &quot;Since 1952&quot;</span></b></td>
+          <td width="440" align="center" bgcolor="#C30028">
+          <span style="font-family: arial; font-weight: 700; font-size: 17px; color: #FFFFFF">
+          <a href="policy.html#Admission">Admission (updated)</a></span></td>
+        </tr>
+      </table>
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="950" height="56">
+        <tr>
+          <td width="54" height="56">
+          <img border="0" src="images/film_camera_bk3.jpg" width="54" height="56"></td>
+          <td width="896" background="images/film_bk3.jpg" align="center">
+          <b>
+          <span style="color: #ffffff; font-size: 18px; font-family: arial; font-weight: bold">
+          Starlite Drive-In Theatre - 15605 N State Hwy 21 Cadet, MO 63630&nbsp; 
+          <a target="_blank" href="http://maps.google.com/maps?q=15605+N+State+Hwy+21+cadet+mo+63630&hl=en&ll=38.006088,-90.761683&spn=0.008318,0.019205&oe=UTF-8&hq=15605+N+State+Hwy+21+cadet+mo+63630&radius=15000&t=m&z=16">
+          <font color="#FFFF00">Map Here</font></a>&nbsp;&nbsp;&nbsp; (573) 438-4974&nbsp; </span></b></td>
+        </tr>
+      </table>
+      <table border="0" cellpadding="10" cellspacing="0" style="border-collapse: collapse" width="100%">
+        <tr>
+          <td width="100%" align="center" bgcolor="#C30028"><b>
+              <span style="color: #ffffff; font-size: 17px; font-family: arial; font-weight: bold;">
+          <a href="sitemap.html">Site Map</a>&nbsp;&nbsp; |&nbsp;&nbsp; 
+          <a href="contact_us.html">Contact Us</a>&nbsp;&nbsp; |&nbsp;
+          <a href="policy.html">Our Policy</a></span></b></td>
+        </tr>
+        <tr>
+          <td width="100%" align="center" bgcolor="#C30028"><font face="Arial" color="#FFFFFF">
+          <font size="2">© </font>
+          <a target="_blank" href="http://www.driveinwebs.com" style="text-decoration: none">
+          <font color="#FFFFFF" size="2">Drive-In Webs - Hosting / Design</font></a></font></td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>
