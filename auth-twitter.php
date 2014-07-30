@@ -56,6 +56,7 @@ global $link;
 
         $_SESSION['userid'] = $foo['id'];
         $_SESSION['username'] = $foo['username'];
+
         header("Location: dashboard");
 
       } else {
@@ -64,7 +65,6 @@ global $link;
 
       }
 
-    $twitter->logout(); 
   }
 
 
