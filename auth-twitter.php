@@ -42,7 +42,11 @@ global $link;
  
     // get the user profile 
     $twitter_user_profile = $twitter->getUserProfile();
-    
+
+        if (!$twitter_user_profile)
+        {
+          echo "unable to retrieve user profile"; die();
+        }
       $user = mysqli_real_escape_string($link, stripslashes($twitter_user_profile->displayName));
 
 
