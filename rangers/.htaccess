@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Rangers panel, 1.1"
-AuthUserFile "/home/u7736617/.htpasswds/public_html/rangers/passwd"
-require valid-user

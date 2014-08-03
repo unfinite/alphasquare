@@ -1,1 +1,0 @@
-<div class="alert alert-info"> <b>Hello there, welcome to Alphasquare.</b> Debate the web. Take control into what it will evolve into. <a href="/">Let's go. &raquo;</a></div>

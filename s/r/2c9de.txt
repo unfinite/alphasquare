@@ -1,8 +1,0 @@
-Submitted by: 24.139.162.65
-
-Hi guys. Just testing our storage abilities.
-
-<?php
-$hai = 'hai';
-echo $hai;
-?>
