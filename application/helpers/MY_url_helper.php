@@ -9,9 +9,10 @@
 if(!function_exists('profile_url')) {
 	function profile_url($username = null) {
 		if(is_null($username)) {
-			$username = $this->php_session->get('username');
+			$CI =& get_instance();
+			$username = $CI->php_session->get('username');
 		}
-		return base_url('people/'.$username);
+		return base_url('people/'.strtolower($username));
 	}
 }
 

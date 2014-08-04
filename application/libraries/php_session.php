@@ -24,6 +24,7 @@ class PHP_session {
 
     public function destroy()
     {
+        unset($_SESSION);
         session_destroy();
     }
 
