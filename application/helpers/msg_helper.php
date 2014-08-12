@@ -40,6 +40,26 @@ if (!function_exists('show_form_errors')) {
 	}
 }
 
+if (!function_exists('login_required')) {
+	function login_required() {
+		$CI =& get_instance();
+		if($CI->php_session->get('loggedin')) {
+			return false;
+		}
+		// If it's an ajax request, return json
+		if($CI->input->is_ajax_request()) {
+			header("Content-Type: application/json");
+			header("HTTP/1.0 401 Unauthorized");
+			json_error('Please sign in to do that.', 'login');
+		}
+		// Else redirect page
+		else {
+			msg('Please sign in to continue.', 'info');
+			redirect('login?next='.current_url());
+		}
+	}
+}
+
 
 /* End of file msg_helper.php */
 /* Location: ./application/helpers/msg_helper.php */

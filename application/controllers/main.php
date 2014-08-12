@@ -10,7 +10,7 @@ class Main extends CI_Controller {
 	public function index() {
 
 		// If user is logged in, redirect to dashboard
-		if($this->php_session->get('logged_in')) {
+		if($this->php_session->get('loggedin')) {
 			redirect('dashboard');
 		}
 		else {
@@ -20,6 +20,7 @@ class Main extends CI_Controller {
 			$data['title'] = 'Home';
 			$data['stylesheets'] = array(
 				'assets/css/home.css',
+				'http://fonts.googleapis.com/css?family=Roboto:100',
 				'http://fonts.googleapis.com/css?family=Lato:700'
 			);
 			$this->template->load('home', $data);

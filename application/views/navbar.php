@@ -1,15 +1,17 @@
-<? if($this->php_session->get('logged_in')): ?>
+<? if(session_get('loggedin')): ?>
 
+<!-- Navbar logged in -->
 <nav class="navbar navbar-fixed-top logged-in" role="navigation">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">alphasquare</a>
+    <a class="navbar-brand popover-trigger" href="<?=base_url('dashboard')?>">alphasquare</a>
   </div>
 </nav>
 
+<!-- Slingshot box -->
 <div id="slingshot-container">
   <a href="<?=profile_url()?>" class="user">
-    <img class="img-circle" src="https://www.twii.me/data/user/avatar/big/2/17-1358911661-4977.jpg" >
-    <h3>Nathan Johnson</h3>
+    <img class="img-circle profile" src="<?=gravatar_url(null,100)?>" />
+    <h3><?=session_get('username')?></h3>
   </a>
   <div class="slingshot-actions">
     <a href="<?=base_url('dashboard')?>" title="Dashboard">
@@ -32,21 +34,12 @@
 
 <? else: ?>
 
+<!-- Navbar logged out -->
 <nav class="navbar navbar-fixed-top logged-out" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="<?=base_url()?>" >alphasquare</a>
+  <a class="navbar-brand" href="<?=base_url()?>" >alphasquare</a>
+  <div class="navbar-text pull-right">
+    <a href="<?=base_url('login')?>">Have an account? <span>Sign in &raquo;</span></a>
   </div>
-  <div class="collapse navbar-collapse">
-    <p class="navbar-text pull-right">
-      <a href="login">Have an account? <span>Sign in &raquo;</span></a>
-    </p>
-  </div><!-- /.navbar-collapse -->
 </nav>
 
 <? endif; ?>

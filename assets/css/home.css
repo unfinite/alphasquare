@@ -67,8 +67,36 @@ body {
 }
 
 #footer {
+	border: 0;
 	opacity: 0.95;
 }
 #footer:hover {
 	opacity: 1;
+}
+
+@-webkit-keyframes blurFadeIn {
+	0%{
+		opacity: 0;
+		-webkit-transform: scale(2);
+	}
+	50%{
+		opacity: 0.5;
+		-webkit-transform: scale(1.5);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0.5;
+	}
+	100%{
+		opacity: 1;
+	}
 }

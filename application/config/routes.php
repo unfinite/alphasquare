@@ -41,7 +41,20 @@
 $route['default_controller'] = "main";
 $route['404_override'] = '';
 
+// Debates
+$route['debate/(:num)'] = 'debate/view/$1';
+
+// People pages
+$route['people/action/(:any)'] = 'people/$1';
+$route['people/(random|popular|new)'] = 'people/index/$1';
+$route['people/([a-zA-Z0-9]+)/?(\w+)?'] = 'people/profile/$1/$2';
+
+// Account pages
 $route['^(login|logout|register|forgot_password)'] = 'account/$1';
+
+// Pages
+$route['about/?(:any)?'] = 'page/about/$1';
+$route['p/(:any)'] = 'page/show/$1';
 
 
 /* End of file routes.php */

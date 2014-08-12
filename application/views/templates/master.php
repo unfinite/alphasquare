@@ -3,11 +3,11 @@
 <head>
 <title><?= $title; ?></title>
 
-<?php $this->load->view('templates/header'); ?>
+<?php $this->load->view('header'); ?>
 
 </head>
 <body>
-<?php $this->load->view('templates/navbar'); echo "\n"; ?>
+<?php $this->load->view('navbar'); echo "\n"; ?>
 
 <?php $this->load->view('templates/no_script'); echo "\n"; ?>
 
@@ -24,7 +24,7 @@
 
 </div>
 
-<?php $this->load->view('templates/footer'); echo "\n"; ?>
+<?php $this->load->view('footer'); echo "\n"; ?>
 
 </body>
 </html>

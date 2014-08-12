@@ -2,6 +2,40 @@
 
 /*
 |--------------------------------------------------------------------------
+| General site constants
+|--------------------------------------------------------------------------
+|
+| These are general site constants.
+|
+*/
+
+// Broadcast
+$broadcast = array(
+	"Dashboard and profiles are now equipped with infinite scrolling!",
+	"Implemented auto update of posts and comments!",
+	"Implemented follow button!",
+	"We have switched to CodeIgniter!"
+);
+
+// The number of comments to initially display
+define('COMMENT_DISPLAY_LIMIT', 3);
+
+// The number of posts to display on dashboard (before more are loaded)
+define('POST_DISPLAY_LIMIT', 10);
+
+// RegExp patterns
+
+// Username format (only letters, numbers, underscores)
+define('REGEX_USERNAME', '/^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)*$/');
+// Links
+//define('REGEX_LINK', '/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/');
+// @replies
+define('REGEX_AT_REPLY', '/@([a-zA-Z0-9_]+)/');
+// &tags
+define('REGEX_TAG', '/&(?!(?:apos|quot|[gl]t|amp);|#)(\w+)/');
+
+/*
+|--------------------------------------------------------------------------
 | File and Directory Modes
 |--------------------------------------------------------------------------
 |

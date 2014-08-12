@@ -1,0 +1,83 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+Comments Model
+Creating, editing, deleteing, and fetching comments
+*/
+
+class Comments_model extends CI_Model {
+
+  public function __construct() {
+    parent::__construct();
+  }
+
+  // Get all comments on a post (and the commenter's info)
+  public function get_all($id, $limit = COMMENT_DISPLAY_LIMIT, $offset = 0, $startid = 0) {
+    // Manual SQL for comment limit ordered by DESC but newest (can't do with ActiveRecord)
+    $bindings = array($id);
+    $where_and = '';
+    if($startid) {
+      $bindings[] = $startid;
+      $where_and = ' AND c.id > ?';
+    }
+    if($limit) {
+      $limit = "LIMIT $limit";
+      if($offset) {
+        $limit .= " OFFSET $offset";
+      }
+    }
+    $sql = "(SELECT c.*, u.username, u.email
+              FROM comments c
+                INNER JOIN users u
+                  ON u.id = c.userid
+              WHERE postid = ? {$where_and}
+              ORDER BY time DESC
+              {$limit} ) ORDER BY time ASC";
+    $query = $this->db->query($sql, $bindings);
+    return $query->result_array();
+  }
+
+  // Create a comment
+  public function create($postid, $content) {
+    $data = array(
+      'userid' => $this->php_session->get('userid'),
+      'postid' => $postid,
+      'content' => $content,
+      'time' => time()
+    );
+    $created = $this->db->insert('comments', $data);
+    // If it was created, return the array of info
+    if($created) {
+      $data['username'] = $this->php_session->get('username');
+      $data['email'] = $this->php_session->get('email');
+      $data['id'] = $this->db->insert_id();
+      return $data;
+    }
+  }
+
+  // Delete a comment
+  public function delete($id) {
+
+  }
+
+  // Get comment's html
+  public function comment_html($data, $list) {
+    $this->load->helper('format_post');
+    // If $list is true, then we have multiple comments
+    if($list) {
+      $data = array('comments' => $data);
+    }
+    // Else, we have only one post
+    else {
+      // Allow the foreach loop to still loop the item (will loop once)
+      $data = array('comments' => array($data));
+    }
+    // Load comments view
+    $html = $this->load->view('posts/comments', $data, true);
+    return $html;
+  }
+
+}
+
+/* End of file comments_model.php */
+/* Location: ./application/models/comments_model.php */

@@ -1,0 +1,96 @@
+.page-header {
+	background: white;
+	padding: 20px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	margin-top: 0;
+	padding-bottom: 0;
+}
+.page-header h2 {
+	margin-bottom: 5px;
+}
+.page-header img {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	width: 100px;
+	height: 100px;
+}
+.page-header ul {
+	margin-top: 30px;
+}
+.page-header #info {
+	float: left;
+	width: 65%;
+}
+.page-header #info .glyphicon {
+	color: #555;
+}
+.page-header #actions {
+	float: right;
+	text-align: right;
+}
+.page-header #info h2 .label {
+	display: inline-block;
+	font-size: 14px;
+	padding: 6px 10px;
+	position: relative;
+	bottom: 4px;
+}
+.page-header ul#stats {
+	padding: 0;
+	text-align: center;
+	margin: 5px 0 0 0;
+}
+.page-header ul#stats li {
+	list-style: none;
+	display: inline-block;
+}
+.page-header ul#stats li a,
+.page-header ul#stats li a.no-click:hover {
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #777;
+	font-size: 14px;
+	width: 90px;
+	display: inline-block;
+}
+.page-header ul#stats li a.no-click {
+	cursor: default;
+}
+.page-header ul#stats li a:hover {
+	color: #555;
+}
+.page-header ul#stats li.active a,
+.page-header ul#stats li.active a:hover {
+	color: #428bca;
+}
+.page-header ul#stats li a span {
+	font-size: 23px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.page-header ul#stats li a span.count {
+	line-height: 1;
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-size: 28px;
+}
+.page-header ul#stats li.divider {
+	padding-right: 25px;
+}
+
+@media(max-width:652px) {
+	.page-header ul#stats li.divider {
+		padding-right: 0;
+	}
+	.page-header ul#stats li a {
+		margin-right: 5px;
+	}
+}
+
+
+#tab-content .panel {
+	padding: 15px;
+}

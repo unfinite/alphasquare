@@ -7,8 +7,6 @@
 
 <link rel="shortcut icon" href="<?= base_url('favicon.ico'); ?>">
 
-<!-- Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
@@ -19,8 +17,7 @@
 
 <!-- JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
-<script src="<?= base_url('assets/js/plugins/jquery.timeago.js'); ?>"></script>
+<script src="<?= base_url('assets/js/plugins/all.js'); ?>"></script>
 <script src="<?= base_url('assets/js/global.js'); ?>"></script>
 <script>
 $(function() {
