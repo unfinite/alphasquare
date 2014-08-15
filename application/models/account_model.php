@@ -38,7 +38,7 @@ class Account_model extends CI_Model {
 			'username' => $username,
 			'password' => sha1($password),
 			'email' => $email,
-			'signup_date' => time()
+			'joined' => time()
 		);
 		$insert = $this->db->insert('users', $data);
 		if($insert) {
@@ -62,7 +62,8 @@ class Account_model extends CI_Model {
 		        ON DUPLICATE KEY UPDATE
 		        	token = VALUES(token),
 		          created = VALUES(created)';
-		$query = $this->db->query($sql, array($userid, $token, $time));
+		$bind = array($userid, $token, $time);
+		$query = $this->db->query($sql, $bind);
 		return $query ? $token : false;
 	}
 

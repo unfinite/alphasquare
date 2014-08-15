@@ -3,47 +3,63 @@
 
   	<div class="page-header">
 
-      <div id="info">
-        <img src="<?=$avatar?>" class="img-circle" />
-        <h2>
-          <?=$username?>
-          <? if($ranger): ?>
-          <span class="label label-primary">Ranger</span>
+      <div id="header-top">
+        <div id="info">
+          <img src="<?=$avatar?>" class="img-circle" />
+          <div class="clearfix visible-xs"></div>
+          <h2>
+
+            <?=$username?>
+
+            <? if( $birthday && date('m-d') == date('m-d', strtotime($birthday)) ): ?>
+            <span class="label label-info" title="Born on <?=$birthday_formatted?>" data-toggle="tooltip">Happy Birthday!</span>
+            <? endif; ?>
+
+            <? if($ranger): ?>
+            <span class="label label-primary">Ranger</span>
+            <? endif; ?>
+
+          </h2>
+          <p><?=$tagline?></p>
+
+          <span class="glyphicon glyphicon-map-marker"></span>
+          <?=htmlentities($location)?>
+          &nbsp;&nbsp;
+
+          <? if($website_url): ?>
+          <br class="visible-xs" />
+          <span class="glyphicon glyphicon-link"></span>
+          <a href="<?=$website_url?>" target="_blank"><?= $website_title ? $website_title : $website_url ?></a>
           <? endif; ?>
-        </h2>
-        <p><?=$tagline?></p>
 
-        <span class="glyphicon glyphicon-map-marker"></span>
-        <?=htmlentities($location)?>
+        </div>
+        <div id="actions">
 
-        <? if($website): ?>
-        <span class="glyphicon glyphicon-link" style="margin-left:10px;display:inline-block;"></span>
-        <a href="<?=$website?>"><?=$website?></a>
-        <? endif; ?>
+          <? if(session_get('userid') !== $id): ?>
+
+            <? if(!$is_following): ?>
+            <button class="btn btn-default follow" data-id="<?=$id?>" data-username="<?=$username?>">
+              Follow
+            </button>
+            <? else: ?>
+            <button class="btn btn-primary unfollow" data-id="<?=$id?>" data-username="<?=$username?>">
+              Following
+            </button>
+            <? endif; ?>
+
+          <? elseif(session_get('loggedin') && $tab !== 'about'): ?>
+          <a href="<?=profile_url($username)?>/about" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-pencil"></span>
+            Edit Profile
+          </a>
+          <? endif; ?>
+
+        </div>
+        <div class="clearfix"></div>
 
       </div>
-      <div id="actions">
 
-        <? if(session_get('loggedin') && session_get('userid') !== $id): ?>
-          <? if(!$is_following): ?>
-          <button class="btn btn-default follow" data-id="<?=$id?>" data-username="<?=$username?>">
-            Follow
-          </button>
-          <? else: ?>
-          <button class="btn btn-primary unfollow" data-id="<?=$id?>" data-username="<?=$username?>">
-            Following
-          </button>
-          <? endif; ?>
-        <? else: ?>
-        <a href="<?=base_url('settings/profile')?>" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-pencil"></span>
-          Edit Profile
-        </a>
-        <? endif; ?>
-
-      </div>
-      <div class="clearfix"></div>
-      <ul id="stats">
+      <ul id="profile-menu">
 
         <li<? if($tab==null) echo ' class="active"'?>>
           <a href="<?=profile_url($username)?>">
@@ -64,20 +80,20 @@
           </a>
         </li>
         <li<? if($tab=='points') echo ' class="active"'?>>
-          <a class="no-click" title="<?=$points?> points">
-            <span class="count"><?=format_number($points)?></span><br>
+          <a class="no-click" title="<?=$username?> has <?=number_format($points)?> points" data-toggle="tooltip">
+            <span class="count"><?=short_number($points)?></span><br>
             Points
           </a>
         </li>
         <li<? if($tab=='followers') echo ' class="active"'?>>
-          <a href="<?=profile_url($username)?>/followers">
-            <span class="count followers"><?=format_number($followers)?></span><br>
+          <a href="<?=profile_url($username)?>/followers" title="<?=$username?> has <?=number_format($followers)?> followers" data-toggle="tooltip">
+            <span class="count followers" data-id="<?=$id?>"><?=short_number($followers)?></span><br>
             Followers
           </a>
         </li>
         <li<? if($tab=='following') echo ' class="active"'?>>
-          <a href="<?=profile_url($username)?>/following">
-            <span class="count following"><?=format_number($following)?></span><br>
+          <a href="<?=profile_url($username)?>/following" title="<?=$username?> is following <?=number_format($following)?> <?=$following==1 ? 'person': 'people'?>" data-toggle="tooltip">
+            <span class="count following"><?=short_number($following)?></span><br>
             Following
           </a>
         </li>
@@ -100,6 +116,10 @@
 <script src="<?=base_url('assets/js/profile.js')?>"></script>
 <script>
 $(function() {
-	Profile.init('<?=$id?>');
+	Profile.init({
+    id: '<?=$id?>',
+    username: '<?=$username?>',
+    baseUrl: '<?=profile_url($username)?>'
+  });
 });
 </script>

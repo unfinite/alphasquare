@@ -12,12 +12,24 @@ class People_model extends CI_Model {
 
   // Get a user's information
   // Second param, $type, is what to fetch the info by (default 'id')
-  public function get_info($id, $type = 'id', $rows = '*') {
+  public function get_info($id = 0, $type = 'id', $rows = '*') {
+    if(!$id) {
+      $id = $this->php_session->get('userid');
+    }
     $this->db->select($rows)
              ->from('users')
              ->where($type, $id)
              ->limit(1);
     return $this->db->get()->row_array();
+  }
+
+  // Update a user's info
+  public function update_info($info, $id = 0) {
+    if(!$id) {
+      $id = $this->php_session->get('userid');
+    }
+    $this->db->where('id', $id);
+    return $this->db->update('users', $info);
   }
 
   // Get list of users
@@ -33,7 +45,7 @@ class People_model extends CI_Model {
         $order_by = 'u.followers';
       break;
       case 'new':
-        $order_by = 'u.signup_date';
+        $order_by = 'u.joined';
       break;
       case 'random':
         $order_by = 'RAND()';
@@ -50,6 +62,43 @@ class People_model extends CI_Model {
          ->limit($limit);
     $query = $this->db->get();
     return $query->result_array();
+  }
+
+  // Check if username is taken
+  public function username_taken($username) {
+    $this->db->select('username')
+             ->from('users')
+             ->where('username', $username);
+    if($this->db->get()->num_rows > 0) return true;
+    else return false;
+  }
+
+  // Check if email is taken
+  public function email_taken($email) {
+    $this->db->select('email')
+             ->from('users')
+             ->where('email', $email);
+    if($this->db->get()->num_rows > 0) return false;
+    else return true;
+  }
+
+  // Get a user's links
+  public function get_links($id) {
+    $this->db->select('id, text, url')
+             ->from('user_links')
+             ->where('userid', $id)
+             ->order_by('created', 'desc');
+    return $this->db->get()->result_array();
+  }
+
+  // Create a link
+  public function create_links($links) {
+    return $this->db->insert_batch('user_links', $links);
+  }
+
+  // Delete user's links
+  public function delete_links($id) {
+    return $this->db->delete('user_links', array('userid' => $id));
   }
 
 
@@ -117,7 +166,7 @@ class People_model extends CI_Model {
       $this->db->join('users u', 'u.id = f.userid');
     }
     // Check if logged in user is following
-    $this->db->join('following f2', 'f2.followid = u.id AND f2.userid = '.$this->php_session->get('userid'), 'left');
+    $this->db->join('following f2', 'f2.followid = u.id AND f2.userid = "'.$this->php_session->get('userid').'"', 'left');
     return $this->db->get()->result_array();
   }
 

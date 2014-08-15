@@ -26,7 +26,10 @@ class Dashboard extends CI_Controller {
 		// Get number of posts
 		$post_count = count($posts);
 		// Load dashboard css
-		$data['stylesheets'] = array('assets/css/dashboard.css');
+		$data['stylesheets'] = array(
+			'http://fonts.googleapis.com/css?family=Roboto+Slab:300',
+			'assets/css/dashboard.css'
+		);
 		// Load dashboard view
 		$this->template->load('dashboard', $data);
 	}

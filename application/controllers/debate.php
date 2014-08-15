@@ -16,10 +16,10 @@ class Debate extends CI_Controller {
 		parent::__construct();
 		$this->load->model('debate_model');
 		$this->load->model('people_model');
-		login_required();
 	}
 
 	public function create() {
+		login_required();
 		$content = $this->input->post('content');
 		$created = $this->debate_model->create($content);
 
@@ -28,25 +28,26 @@ class Debate extends CI_Controller {
 			redirect('dashboard');
 		}
 
-		// If the post was created, output JSON that the create method returned
+		// If the post was created, turn array that the create method returned into JSON
 		if($created) {
 			json_output($created, true);
 		}
 		else {
-			json_error('Sorry, we could not post that debate at this time.');
+			json_error('Sorry, we could not post your debate.');
 		}
 	}
 
 	public function edit($id) {
-
+		login_required();
 	}
 
 	// Individual post page
-	public function view($id = 0) {
+	// URL: /username/timestamp (config/routes.php)
+	public function view($username, $timestamp) {
 		// Load comments model
 		$this->load->model('comments_model');
 		// Get post info
-		$info = $this->debate_model->get_info($id);
+		$info = $this->debate_model->get_info($username, $timestamp);
 		// If post does not exist, show 404 page
 		if(!$info) {
 			show_404();
@@ -56,7 +57,7 @@ class Debate extends CI_Controller {
 		// Load post html
 		$data['post_html'] = $this->debate_model->post_html($info,false,true);
 		// Get comments
-		$comments = $this->comments_model->get_all($id);
+		$comments = $this->comments_model->get_all($info['id']);
 		$data['comments'] = $this->comments_model->comment_html($comments, true);
 		// Load post view page
 		$this->template->load('posts/view', $data);
@@ -64,6 +65,7 @@ class Debate extends CI_Controller {
 
 	// Voting on posts
 	public function vote($type = 'up') {
+		login_required();
 		$id = $this->input->post('id');
 		usleep(500*100);
 		if(!$this->debate_model->exists($id)) {
@@ -85,7 +87,7 @@ class Debate extends CI_Controller {
 
 	// Delete post
 	public function delete($id) {
-
+		login_required();
 	}
 
 	// Load more / Infinite scrolling

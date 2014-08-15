@@ -27,7 +27,7 @@
     </form>
     <br />
     <div class="well text-center">
-      Don't have an account? <a href="<?=base_url('register')?>">Create one &raquo;</a>
+      Don't have an account? <a href="<?=base_url('register')?>">Create one!</a>
     </div>
   </div>
 </div>

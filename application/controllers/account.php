@@ -43,9 +43,9 @@ class Account extends CI_Controller {
       // Call the login method of the account model, which returns true or false
       $correct = $this->account_model->login($username, $password);
 
-      // If the login method returned true, redirect to dashboard
+      // If the login method returned true, redirect to return url
       if($correct) {
-        redirect('dashboard');
+        redirect($next);
       }
       else {
         msg('Incorrect username or password.');
@@ -163,26 +163,20 @@ class Account extends CI_Controller {
     // Generate a forgot pass token
     $token = $this->account_model->create_password_token($id);
 
-    // If token was created, send the email etc.
+    // If token was created, send the email
     if($token) {
 
-      // We'll figure out the actual email sending system later
-      // This is how I did it on Gifavs...
-      // With the help of a helper function I made (which really should be a library)
-
-      /*
-      $this->load->helper('custom_email');
+      $this->load->library('custom_email');
       $email_data = array(
         'subject' => 'Reset your password on Alphasquare',
-        'email' => 'reset_password',
+        'type' => 'reset_password',
         'to' => $info['email'],
-        'username' => $info['username'],
         'token' => $token
       );
-      $email = email($email_data);
-      */
+      $this->custom_email->set_data($email_data);
+      $this->custom_email->send();
 
-      msg('Please check your email for further instructions.', 'info');
+      msg('Please click the link in the email we sent to <b>'.$info['email'].'</b> to reset your password. If you didn\'t get the email, check your spam folder.', 'info');
       redirect('login');
     }
     else {

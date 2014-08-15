@@ -7,7 +7,7 @@
 
 <link rel="shortcut icon" href="<?= base_url('favicon.ico'); ?>">
 
-<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:200,300,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
 <!-- Stylesheets -->
@@ -17,7 +17,7 @@
 
 <!-- JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="<?= base_url('assets/js/plugins/all.js'); ?>"></script>
+<script src="<?= base_url('assets/js/libs/packaged.js'); ?>"></script>
 <script src="<?= base_url('assets/js/global.js'); ?>"></script>
 <script>
 $(function() {
@@ -26,10 +26,6 @@ $(function() {
   });
 });
 </script>
-
-<!--[if lt IE 10]>
-<link href="<?=base_url('assets/css/ie-sucks.css');?>" rel="stylesheet" />
-<![endif]-->
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

@@ -17,6 +17,9 @@ $broadcast = array(
 	"We have switched to CodeIgniter!"
 );
 
+// Email address for sys emails
+define('SYS_EMAIL_FROM', 'noreply@alphasquare.us');
+
 // The number of comments to initially display
 define('COMMENT_DISPLAY_LIMIT', 3);
 

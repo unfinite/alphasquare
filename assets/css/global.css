@@ -10,39 +10,50 @@ html {
   min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height for sticky footer */
-  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 100px;
   margin-top: 80px;
   background-color: rgb(236, 240, 241);
 }
 
-.no-margin {
-  margin: 0;
+/* Overrides */
+.form-control {
+  padding: 6px 9px;
 }
-.text-small {
-  font-size: 12px;
+.modal-footer {
+  margin-top: 0;
 }
-.page-header {
-  margin-top: 20px;
+.btn {
+  outline: none !important;
 }
 .page-header h1,
 .page-header h2,
 .page-header h3 {
   margin-top: 0;
 }
+
+/* Helper Classes */
+.text-small {
+  font-size: 12px;
+}
+.no-margin {
+  margin: 0;
+}
+.page-header {
+  margin-top: 20px;
+}
 .col-centered {
   float: none;
   margin: 0 auto;
 }
-.btn {
-  outline: none !important;
+
+label small {
+  font-weight: normal;
+}
+textarea {
+  resize: vertical;
 }
 
-/* Nav tabs */
-ul.nav.nav-tabs li.active a {
-
-}
 
 /* Fixed Container */
 .container {
@@ -207,7 +218,7 @@ ul.nav.nav-tabs li.active a {
 .post section {
   word-wrap: break-word;
   font-size: 17px;
-  padding: 10px 10px 15px;
+  padding: 15px;
   margin-left: 73px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -312,7 +323,7 @@ ul.nav.nav-tabs li.active a {
 }
 
 /* People Lists */
-#people-list div {
+#people-list div.user {
   background: #fff;
   min-width: 31%;
   padding: 10px;
@@ -326,16 +337,16 @@ ul.nav.nav-tabs li.active a {
     width: 100%;
   }
 }
-#people-list div img {
+#people-list div.user img {
   float: left;
   margin-right: 15px;
   width: 80px;
   height: 80px;
 }
-#people-list div span {
+#people-list div.user span {
   font-size: 16px;
 }
-#people-list div .btn {
+#people-list div.user .btn {
   margin-top: 5px;
 }
 
@@ -392,13 +403,37 @@ ul.nav.nav-tabs li.active a {
   background-color: #428bca;
 }
 
+/* Tooltips */
+.tooltip.top .tooltip-arrow {
+  bottom: 1px;
+  border-top-color: #111;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 1px;
+  border-bottom-color: #111;
+}
+.tooltip.left .tooltip-arrow {
+  left: 1px;
+  border-left-color: #111;
+}
+.tooltip.right .tooltip-arrow {
+  left: 1px;
+  border-right-color: #111;
+}
+.tooltip-inner {
+  color: #fff;
+  background: #111;
+  border: solid 1px #fff;
+  border-radius: 4px;
+  padding: 5px 8px;
+}
+
 
 /* Footer */
 #footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
   background-color: #ffffff;
   color: #555;
   text-align: center;
@@ -409,6 +444,13 @@ ul.nav.nav-tabs li.active a {
 #footer a {
   margin-left: 8px;
   display: inline-block;
+}
+@media(max-width:567px) {
+  #footer span.links {
+    display: block;
+    font-size: 13px;
+    margin-top: 5px;
+  }
 }
 
 /* No JS alert bar */

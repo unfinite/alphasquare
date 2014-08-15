@@ -22,13 +22,13 @@ if(!function_exists('format_post')) {
 }
 
 /*
-Helper to format numbers >=1000
+Helper to format numbers > 1000
   * 6,000 -> 6k
   * 4,300 -> 4.3k
 From: http://stackoverflow.com/a/2703903/507629
 */
-if(!function_exists('format_number')) {
-  function format_number($number) {
+if(!function_exists('short_number')) {
+  function short_number($number) {
       $prefixes = 'kMGTPEZY';
       if ($number >= 1000) {
           for ($i=-1; $number>=1000; ++$i) {

@@ -1,3 +1,3 @@
 <div class="panel panel-default">
-	Comments!
+	<h4><?=$username?>'s comments shall be here...</h4>
 </div>

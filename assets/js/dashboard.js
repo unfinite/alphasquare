@@ -1,10 +1,6 @@
 /*
  * Dashboard JavaScript
- * Created 8/3/2014; Updated 8/4/2014
- *
- * Contributors:
- * - Nathan Johnson
- *
+ * (c) 2014 Alphasquare
  */
 
 var Dashboard = {
@@ -54,8 +50,12 @@ var Dashboard = {
         );
     },
     ajaxCallback: function(data) {
+      if(!data.success) {
+        Alp.bar(data.error);
+        return false;
+      }
       $('#post-bar textarea').prop('disabled', false).val('').css('height',50);
-      $(data.postHtml).css('display','none')
+      $(data.html).css('display','none')
                       .prependTo('#posts')
                       .delay(100)
                       .slideDown(250, Alp.timeago);
@@ -94,7 +94,8 @@ var Dashboard = {
           Alp.bar('Sorry, we were unable to load more posts.');
           return false;
         }
-        $(data.html).css('display','none').appendTo('#posts').fadeIn(200, Dashboard.post.bind);
+        $('#posts').append(data.html);
+        Dashboard.post.bind();
         if(data.count < 1) {
           $('#posts').addClass('all-loaded');
           $('#posts-loading').html('All of the debates in this feed have been loaded.');

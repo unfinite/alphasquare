@@ -15,7 +15,7 @@ class Debate_model extends CI_Model {
              // Get post owner's info
              ->join('users u', 'u.id = d.userid', 'inner')
              // Get the vote that the logged in user made on this post
-             ->join('votes v', 'v.postid = d.id AND v.userid = '.$userid, 'left');
+             ->join('votes v', "v.postid = d.id AND v.userid = '{$userid}'", 'left');
 
     // If latest_id param is present, add a statement to the WHERE clause
     if(isset($params['latest_id']) && $params['latest_id'] > 0) {
@@ -30,9 +30,9 @@ class Debate_model extends CI_Model {
                             (
                               SELECT followid
                               FROM following
-                              WHERE userid = {$userid}
+                              WHERE userid = '{$userid}'
                             )
-                          OR d.userid = {$userid} )", null, false);
+                          OR d.userid = '{$userid}' )", null, false);
       break;
       case 'profile':
         // We are on a profile
@@ -52,14 +52,18 @@ class Debate_model extends CI_Model {
     return $results;
   }
 
-  // Get a specific post's info with the owner's info
-  public function get_info($id) {
+  // Get a specific post's info by timestamp and username
+  public function get_info($username, $timestamp) {
     $userid = $this->php_session->get('userid');
+    $where = array(
+      'u.username' => $username,
+      'd.time' => $timestamp
+    );
     $this->db->select('d.*, u.id as userid, u.username, u.email, v.vote')
              ->from('debates d')
              ->join('users u', 'u.id = d.userid', 'left')
              ->join('votes v', 'v.postid = d.id AND v.userid = '.$userid, 'left')
-             ->where('d.id', $id)
+             ->where($where)
              ->limit(1);
     $info = $this->db->get()->row_array();
     return $info;
@@ -99,7 +103,7 @@ class Debate_model extends CI_Model {
       $data['id'] = $this->db->insert_id();
       $post_html = $this->post_html($data);
     }
-    $return = array('postHtml' => $post_html);
+    $return = array('html' => $post_html);
     return $insert ? $return : false;
   }
 
