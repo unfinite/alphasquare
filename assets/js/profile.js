@@ -40,7 +40,7 @@ var Profile = {
 
       var username = btn.data('username');
       //Alp.bar('You are now following '+username+'!', 'success');
-      $('.count.followers').text(parseInt($('.count.followers').text())+1);
+      $('.count.followers[data-id="'+id+'"]').text(parseInt($('.count.followers[data-id="'+id+'"]').text())+1);
 
       btn.removeClass('follow')
          .addClass('unfollow btn-primary')
@@ -61,12 +61,12 @@ var Profile = {
       btn.prop('disabled',true);
       $.post(Alp.config.base+'people/action/unfollow/'+id, function(data) {
         // Ajax callback function, pass data and button object
-        Profile.unfollow.ajaxCallback(data, btn);
+        Profile.unfollow.ajaxCallback(data, btn, id);
       }).always(function() {
         btn.prop('disabled',false);
       });
     },
-    ajaxCallback: function(data, btn) {
+    ajaxCallback: function(data, btn, id) {
       if(!data.success) {
         alert(data.error);
         return false;
@@ -74,7 +74,7 @@ var Profile = {
 
       var username = btn.data('username');
       //Alp.bar('You are no longer following '+username+'.', 'warning');
-      $('.count.followers').text(parseInt($('.count.followers').text())-1);
+      $('.count.followers[data-id="'+id+'"]').text(parseInt($('.count.followers[data-id="'+id+'"]').text())-1);
 
       btn.removeClass('unfollow btn-danger btn-primary')
          .addClass('follow btn-default')

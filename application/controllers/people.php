@@ -49,6 +49,12 @@ class People extends CI_Controller {
 		}
 		if($data['birthday']) {
 			$data['birthday_formatted'] = date('F jS, Y', strtotime($data['birthday']));
+
+			// Get age from DOB
+			$dob = new DateTime($data['birthday']);
+			$now = new DateTime();
+			$interval = $now->diff($dob);
+			$data['age'] = $interval->y;
 		}
 		$data['avatar'] = gravatar_url($data['email'], 100);
 		$data['is_owner'] = ($this->php_session->get('userid') === $id);
@@ -116,7 +122,7 @@ class People extends CI_Controller {
 				case 'basic':
 
 					$name = trim($this->input->post('name'));
-					$username = $this->input->post('username');
+					$username = trim($this->input->post('username'));
 
 					// If username is not equal to current username
 					if($username != $info['username']) {
@@ -214,11 +220,11 @@ class People extends CI_Controller {
 									'userid' => $info['id'],
 									'text' => $link['text'],
 									'url' => $link['url'],
-									'created' => time()
+									'created' => time()+mt_rand(1,30)
 								);
 							}
 						}
-						// Delete all current links (only feasible way to do this)
+						// Delete all the user's links (only feasible way to do this)
 						$this->people_model->delete_links($info['id']);
 						// Insert links
 						if($links_to_create) {
@@ -235,13 +241,15 @@ class People extends CI_Controller {
 					$movies = trim($this->input->post('movies'));
 					$tv = trim($this->input->post('tv'));
 					$music = trim($this->input->post('music'));
-					if(strlen($movies) > 500 || strlen($tv) > 500 || strlen($music) > 500) {
-						json_error('Movies, TV, and music fields must be less than 500 chars.');
+					$quotes = trim($this->input->post('quotes'));
+					if(strlen($movies) > 500 || strlen($tv) > 500 || strlen($music) > 500 || strlen($quotes) > 500) {
+						json_error('Movies, TV, music, and quotes must be less than 500 chars.');
 					}
 					$data = array(
 						'favorite_movies' => $movies,
 						'favorite_tv' => $tv,
-						'favorite_music' => $music
+						'favorite_music' => $music,
+						'favorite_quotes' => $quotes
 					);
 				break;
 			}
