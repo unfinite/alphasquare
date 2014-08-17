@@ -22,7 +22,9 @@
 <script>
 $(function() {
   Alp.init({
-    base: '<?=base_url()?>'
+    base: '<?=base_url()?>',
+    loggedin: <?= session_get("loggedin") ? "true" : "false"; ?>,
+    userid: <?= session_get("userid") ? session_get("userid") : 0; ?>
   });
 });
 </script>
