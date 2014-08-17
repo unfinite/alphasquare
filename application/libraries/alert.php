@@ -22,7 +22,6 @@ class Alert {
 						 		 ->from('alerts')
 						 		 ->where($where);
 		return $this->CI->db->count_all_results();
-		//die($this->CI->db->last_query());
 	}
 
 	// Get an alert's info
@@ -137,7 +136,7 @@ class Alert {
 		$this->CI->db->update('alerts', array('clicked'=>1));
 	}
 
-	public function mark_all_read() {
+	private function mark_all_read() {
 		$this->CI->db->where('to', $this->CI->php_session->get('userid'));
 		$this->CI->db->update('alerts', array('seen'=>1));
 	}
@@ -151,7 +150,7 @@ class Alert {
 		}
 	}
 
-	private function object_link_text($type) {
+	/*private function object_link_text($type) {
 		switch($type) {
 			case 'debate':
 			case 'comment':
@@ -162,7 +161,7 @@ class Alert {
 			break;
 		}
 		return $text;
-	}
+	}*/
 
 	private function text($data) {
 		// Determine action text
