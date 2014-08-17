@@ -119,11 +119,11 @@ class Alert {
 				$info = $this->CI->db->get()->row_array();
 				$url = 'debate/'.strtolower($info['username']).'/'.$info['time'].'#comment_'.$data['object_id'];
 			break;
-			case 'follow':
+			/*case 'follow':
 				$this->load->model('people_model');
 				$info = $this->people_model->get_info($data['object_id'], 'id', 'username');
 				$url = profile_url($info['username']);
-			break;
+			break;*/
 			default:
 				die("Invalid alert object type.");
 			break;
@@ -169,6 +169,9 @@ class Alert {
 		switch($data['action']) {
 			case 'like':
 				$text = 'likes your';
+			break;
+			case 'dislike':
+				$text = 'dislikes your';
 			break;
 			case 'follow':
 				$text = 'is now following you.';

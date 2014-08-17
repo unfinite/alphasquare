@@ -3,7 +3,6 @@
 	<p class="text-center text-muted <? if(count($alerts) > 0) echo 'hidden'; ?>">
 		<span class="glyphicon glyphicon-bell" style="font-size:60px;"></span>
 		<br /><br />
-		<strong>Good job!</strong>
 		You don't have any alerts right now.
 	</p>
 

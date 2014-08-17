@@ -183,7 +183,8 @@ class Debate_model extends CI_Model {
       $this->sync_vote_columns($id);
       // Notify the post owner
       $this->load->library('alert');
-      $this->alert->create($info['userid'], 'like', 'debate', $id);
+      $alert_type = $vote === 1 ? 'like' : 'dislike';
+      $this->alert->create($info['userid'], $alert_type, 'debate', $id);
       return true;
     }
     else {

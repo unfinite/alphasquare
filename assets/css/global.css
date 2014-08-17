@@ -368,7 +368,7 @@ textarea.autosize {
   margin-bottom: 10px;
 }
 .alerts .alert-container.not-clicked {
-  background: #f7f7f7;
+  background: #f5f5f5;
   box-shadow: 0 0 10px #f8f8f8;
 }
 .alerts .alert-container img {

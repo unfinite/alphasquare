@@ -20,8 +20,8 @@ var Alp = {
 
   init: function(config) {
     this.setupConfig(config);
+    this.origTitle = document.title;
     this.bind();
-    this.bindPlugins();
     this.setupAjax();
     this.alerts.poll.start();
   },
@@ -30,6 +30,7 @@ var Alp = {
     $(document).on('click', this.closePopovers);
     $('#alert-link').off('click').click(this.alerts.open);
     this.slingshot();
+    this.bindPlugins();
   },
 
   bindPlugins: function() {
@@ -45,10 +46,16 @@ var Alp = {
     this.timeago();
   },
 
+  updateTitle: function(title) {
+    document.title = title;
+  },
+
   alerts: {
     updateCount: function(unread) {
       unread = unread > 0 ? unread : '';
       $('.alert-unread-count').text(unread);
+      var newTitle = unread > 0 ? '(' + unread + ') ' + Alp.origTitle : Alp.origTitle;
+      Alp.updateTitle(newTitle);
     },
     open: function() {
       AjaxModal({
@@ -108,6 +115,7 @@ var Alp = {
       }
     },
     poll: {
+      interval: 15000,
       start: function() {
         if(Alp.config.loggedin) {
           this.ajax();
@@ -117,7 +125,7 @@ var Alp = {
         $.get(Alp.config.base+'alerts/poll')
           .success(Alp.alerts.poll.ajaxCallback)
           .always(function() {
-            setTimeout(Alp.alerts.poll.ajax, 15000);
+            setTimeout(Alp.alerts.poll.ajax, Alp.alerts.poll.interval);
           }, 'json');
       },
       ajaxCallback: function(data) {

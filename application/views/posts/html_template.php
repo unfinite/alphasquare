@@ -10,11 +10,11 @@
     </p>
     <footer>
 
-      <button class="btn btn-xs <?=$post['vote'] == 1 ? 'btn-primary' : 'btn-success'?> vote" data-type="up" title="Vote Up">
+      <button class="btn btn-xs <?=$post['vote'] == 1 ? 'btn-primary' : 'btn-success'?> vote" data-type="up" title="Like">
         <span class="glyphicon glyphicon-thumbs-up"></span>
         <span class="count"><?=$post['up_votes']?></span>
       </button>
-      <button class="btn btn-xs <?=$post['vote'] == -1 ? 'btn-danger' : 'btn-success'?> vote" data-type="down" title="Vote Down">
+      <button class="btn btn-xs <?=$post['vote'] == -1 ? 'btn-danger' : 'btn-success'?> vote" data-type="down" title="Dislike">
         <span class="glyphicon glyphicon-thumbs-down"></span>
         <span class="count"><?=$post['down_votes']?></span>
       </button>

@@ -106,12 +106,12 @@ var Dashboard = {
       }
     },
     poll: {
-      interval: 10000, // milliseconds
+      interval: 15000, // milliseconds
       setIntervalObject: null,
       begin: function() {
         // If #posts container doesn't exist, don't poll
         if($('#posts').length < 1) return false;
-        this.setIntervalObject = setInterval(this.ajax, this.interval);
+        this.setIntervalObject = setTimeout(this.ajax, this.interval);
       },
       ajax: function() {
         var latestId = $('#posts .post').first().data('id');
@@ -120,7 +120,13 @@ var Dashboard = {
         if(type === 'profile') {
           data.user_id = $('#profile-page').data('id');
         }
-        $.get(Alp.config.base+'debate/poll', data, Dashboard.post.poll.callback);
+        $.get(Alp.config.base+'debate/poll', data)
+          .success(Dashboard.post.poll.callback)
+          .always(function() {
+            // Set another timeout for the next poll once ajax request is complete
+            // Using setTimeout rather than setInterval so it waits until the last poll is complete
+            setTimeout(Dashboard.post.poll.ajax, Dashboard.post.poll.interval);
+          });
       },
       callback: function(data) {
         if(!data.success) {
@@ -296,14 +302,18 @@ var Dashboard = {
       }
     },
     poll: {
-      interval: 10000, // milliseconds
+      interval: 15000, // milliseconds
       begin: function() {
-        setInterval(this.ajax, this.interval);
+        setTimeout(this.ajax, this.interval);
       },
       ajax: function() {
         var startId = $('#comments-container .comment').last().data('id');
         var data = { startid: startId, postid: Dashboard.comment.postid };
-        $.get(Alp.config.base+'comments/poll', data, Dashboard.comment.poll.callback);
+        $.get(Alp.config.base+'comments/poll', data)
+          .success(Dashboard.comment.poll.callback)
+          .always(function() {
+            setTimeout(Dashboard.comment.poll.ajax, Dashboard.comment.poll.interval);
+          });
       },
       callback: function(data) {
         if(!data.success) {
