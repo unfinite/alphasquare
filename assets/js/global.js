@@ -21,11 +21,18 @@ var Alp = {
   init: function(config) {
     this.setupConfig(config);
     this.bind();
+    this.bindPlugins();
     this.setupAjax();
+    this.alerts.poll.start();
   },
 
   bind: function() {
     $(document).on('click', this.closePopovers);
+    $('#alert-link').off('click').click(this.alerts.open);
+    this.slingshot();
+  },
+
+  bindPlugins: function() {
     $("[data-toggle='tooltip']").tooltip();
     $('.autosize').autosize({ append: "" });
     $('a[href="'+this.config.base+'login"]').click(function() {
@@ -35,8 +42,92 @@ var Alp = {
       return false;
     });
     this.textSwap.bind();
-    this.slingshot();
     this.timeago();
+  },
+
+  alerts: {
+    updateCount: function(unread) {
+      unread = unread > 0 ? unread : '';
+      $('.alert-unread-count').text(unread);
+    },
+    open: function() {
+      AjaxModal({
+        title: 'Alerts',
+        url: 'alerts/modal',
+        limitToWindowSize: true,
+        backdrop: true,
+        callback: function() {
+          $('.alert-container .delete').click(Alp.alerts.remove.click);
+          $('.alert-container .mark-read').click(Alp.alerts.markRead.click);
+          Alp.alerts.updateCount(0);
+        }
+      });
+      return false;
+    },
+    remove: {
+      click: function() {
+        var id = $(this).closest('.alert-container').data('id');
+        Alp.alerts.remove.ajax(id);
+      },
+      ajax: function(id) {
+        var data = { id: id };
+        $.post(Alp.config.base+'alerts/delete', data, this.ajaxCallback, 'json');
+      },
+      ajaxCallback: function(data) {
+        if(!data.success) {
+          alert(data.error);
+          return false;
+        }
+        // Hide the alert
+        $('.alert-container[data-id="'+data.id+'"]').fadeOut(200, function() {
+          $(this).remove();
+          // If there aren't any alerts left, close the modal
+          if($('.alert-container').length < 1) {
+            bootbox.hideAll();
+          }
+        });
+      }
+    },
+    markRead: {
+      click: function() {
+        var id = $(this).closest('.alert-container').data('id');
+        Alp.alerts.markRead.ajax(id);
+      },
+      ajax: function(id) {
+        var data = { id: id };
+        $.post(Alp.config.base+'alerts/mark_read', data, this.ajaxCallback, 'json');
+      },
+      ajaxCallback: function(data) {
+        if(!data.success) {
+          alert(data.error);
+          return false;
+        }
+        var alert = $('.alert-container[data-id="'+data.id+'"]');
+        alert.toggleClass('clicked not-clicked');
+        $('.mark-read',alert).fadeOut();
+      }
+    },
+    poll: {
+      start: function() {
+        if(Alp.config.loggedin) {
+          this.ajax();
+        }
+      },
+      ajax: function() {
+        $.get(Alp.config.base+'alerts/poll')
+          .success(Alp.alerts.poll.ajaxCallback)
+          .always(function() {
+            setTimeout(Alp.alerts.poll.ajax, 15000);
+          }, 'json');
+      },
+      ajaxCallback: function(data) {
+        if(!data.success) {
+          Alp.bar(data.error);
+          return false;
+        }
+        Alp.alerts.updateCount(data.unread);
+      }
+    }
   },
 
   timeago: function() {
@@ -44,9 +135,8 @@ var Alp = {
   },
 
   bar: function(message, type) {
-    if(!type) {
-      type = 'error';
-    }
+    if(!type) type = 'error';
+    if(!message) message = 'An unknown error occurred.';
     $.notifyBar({
       html: message,
       cssClass: type
@@ -106,6 +196,7 @@ var Alp = {
 
 /* Custom AJAX Modal
  * Uses Bootbox plugin
+ * Created by Nathan Johnson
  *
  * Accepts an object with modal options
  *
@@ -115,8 +206,12 @@ var Alp = {
  *   title: 'Hey there',
  *   url: 'path/to/modal',
  *   buttons: {
- *     main: {
+ *     close: {
  *       label: 'Close',
+ *       className: 'btn-default'
+ *     },
+ *     main: {
+ *       label: 'Save',
  *       className: 'btn-primary'
  *     }
  *   }
@@ -142,9 +237,9 @@ var AjaxModal = function(options) {
   var defaults = {
     title: 'Modal',
     prependBaseUrl: true,
-    // No animation because with it, going from
-    // loading to ajax loaded modal is terrible
-    animate: false
+    animate: false,
+    size: 'normal',
+    limitToWindowSize: false
   };
 
   var options = $.extend(defaults, options);
@@ -153,18 +248,13 @@ var AjaxModal = function(options) {
   var loadingImg = Alp.config.base+'assets/img/spinner.gif';
   var loadingHtml = '<div class="text-center" id="modal-loading">' +
                       '<img src="'+loadingImg+'" style="width:20px;" />' +
-                      'Loading, please wait...' +
+                      '&nbsp; Loading, please wait...' +
                     '</div>';
 
   // Options for loading modal
   var loadingOptions = {
     title: options.title || 'Modal',
     message: loadingHtml,
-    buttons: {
-      main: {
-        label: 'Close'
-      }
-    },
     size: options.size || 'small',
     closeButton: true,
     backdrop: true,
@@ -193,8 +283,19 @@ var AjaxModal = function(options) {
     options.message = data;
     // Open the modal
     bootbox.dialog(options);
-    // Apply autosize plugin to textareas
-    $('.autosize').autosize({ append: "" }).css('max-height', 150);
+    // Limit size if option is set
+    if(options.limitToWindowSize) {
+      $('.modal-body').css({
+        'max-height': $(window).height()*0.8,
+        'overflow': 'auto'
+      });
+    }
+    // Re-bind plugins
+    Alp.bindPlugins();
+    // Callback
+    if(typeof options.callback === 'function') {
+      options.callback();
+    }
   };
 
   // Failure callback

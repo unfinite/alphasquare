@@ -53,7 +53,14 @@ label small {
 textarea {
   resize: vertical;
 }
+textarea.autosize {
+  max-height: 150px;
+}
 
+/* Modal loading */
+#modal-loading {
+  margin: 25px 0;
+}
 
 /* Fixed Container */
 .container {
@@ -343,11 +350,61 @@ textarea {
   width: 80px;
   height: 80px;
 }
-#people-list div.user span {
+#people-list div.user span.name {
   font-size: 16px;
 }
 #people-list div.user .btn {
   margin-top: 5px;
+}
+
+/* Alerts */
+.alerts .alert-container {
+  padding: 10px;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.alerts .alert-container:not(:last-child) {
+  margin-bottom: 10px;
+}
+.alerts .alert-container.not-clicked {
+  background: #f7f7f7;
+  box-shadow: 0 0 10px #f8f8f8;
+}
+.alerts .alert-container img {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+.alerts .alert-container div.alert-content {
+  margin-left: 60px;
+}
+.alerts .alert-container div.alert-content p {
+  margin-bottom: 0;
+}
+.alerts .alert-container div.alert-content footer {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #999;
+}
+.alerts .alert-container div.alert-options {
+  float: right;
+  font-size: 12px;
+  color: #bbb;
+}
+.alerts .alert-container div.alert-options span {
+  margin-left: 3px;
+  display: inline-block;
+}
+.alerts .alert-container div.alert-options span:hover {
+  color: #555;
+  cursor: pointer;
+}
+.alerts .alert-container span.read-status {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 11px;
 }
 
 /* Alert Bar */
@@ -413,7 +470,7 @@ textarea {
   border-bottom-color: #111;
 }
 .tooltip.left .tooltip-arrow {
-  left: 1px;
+  right: 1px;
   border-left-color: #111;
 }
 .tooltip.right .tooltip-arrow {
@@ -426,6 +483,8 @@ textarea {
   border: solid 1px #fff;
   border-radius: 4px;
   padding: 5px 8px;
+  max-width: 400px !important;
+  width: auto;
 }
 
 

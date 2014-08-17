@@ -24,9 +24,9 @@
         </a>
       </li>
       <li>
-        <a href="#" id="alerts-link">
-          <span class="badge badge-danger pull-right" id="alert-count"></span>
+        <a href="#" id="alert-link">
           <span class="glyphicon glyphicon-bell"></span> Alerts
+          &nbsp;<span class="label label-danger alert-unread-count"></span>
         </a>
       </li>
       <li class="<?=isset($people)?'active':''?>">

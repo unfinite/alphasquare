@@ -19,7 +19,8 @@ class Comments extends CI_Controller {
 		$content = trim($this->input->post('content'));
 
 		$this->load->model('debate_model');
-		if(!$this->debate_model->exists($postid)) {
+		$info = $this->debate_model->get_basic_info($postid);
+		if(!$info) {
 			json_error('That post does not exist.');
 		}
 
@@ -29,6 +30,10 @@ class Comments extends CI_Controller {
 
 		$created = $this->comments_model->create($postid, $content);
 		if($created) {
+			// Send the debate owner an alert
+			$this->load->library('alert');
+			$this->alert->create($info['userid'], 'comment', 'debate', $created['id']);
+			// Debate HTML
 			$html = $this->comments_model->comment_html($created, false);
 			// Output JSON with the comment's html
 			$data = array('html' => $html);

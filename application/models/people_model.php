@@ -136,7 +136,13 @@ class People_model extends CI_Model {
     );
     // If action is follow, then insert into db
     if($action === 'follow') {
-      return $this->db->insert('following', $data);
+      $insert_success = $this->db->insert('following', $data);
+      if($insert_success) {
+        // If follow was successful, send the user an alert
+        $this->load->library('alert');
+        $this->alert->create($id, 'follow', 'user', $id);
+      }
+      return $insert_success;
     }
     // Else, delete row from db
     else {

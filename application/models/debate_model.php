@@ -159,6 +159,11 @@ class Debate_model extends CI_Model {
   // Vote on a post
   public function vote($type, $id) {
 
+    $info = $this->get_basic_info($id);
+    if(!$info) {
+      json_error('Oops, that post does not exist.');
+    }
+
     // If type is up, vote is 1
     // Else type is down, vote is -1
     $vote = $type === 'up' ? 1 : -1;
@@ -176,6 +181,9 @@ class Debate_model extends CI_Model {
     if($query) {
       // Update vote columns
       $this->sync_vote_columns($id);
+      // Notify the post owner
+      $this->load->library('alert');
+      $this->alert->create($info['userid'], 'like', 'debate', $id);
       return true;
     }
     else {
