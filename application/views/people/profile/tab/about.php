@@ -54,7 +54,7 @@
 			<div class="block">
 				<strong>Bio</strong>
 				<? if($bio): ?>
-				<span><?=htmlspecialchars($bio)?></span>
+				<span><?=nl2br(htmlspecialchars($bio))?></span>
 				<? else: ?>
 				<span class="text-muted">No bio.</span>
 				<? endif; ?>
@@ -63,7 +63,7 @@
 			<? if($birthday): ?>
 			<div class="block">
 				<strong>Birthday</strong>
-				<span><?=$birthday_formatted?></span>
+				<span><?=$birthday_formatted?> - <?=$age?> years old</span>
 			</div>
 			<? endif; ?>
 
@@ -147,6 +147,15 @@
 				<strong>Music</strong>
 				<? if($favorite_music): ?>
 				<span><?=htmlspecialchars($favorite_music)?></span>
+				<? else: ?>
+				<span class="text-muted">N/A</span>
+				<? endif; ?>
+			</div>
+
+			<div class="block">
+				<strong>Quotes</strong>
+				<? if($favorite_quotes): ?>
+				<span><?=nl2br(htmlspecialchars($favorite_quotes))?></span>
 				<? else: ?>
 				<span class="text-muted">N/A</span>
 				<? endif; ?>

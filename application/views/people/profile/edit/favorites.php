@@ -12,4 +12,8 @@
 		<label for="music">Music</label>
 		<textarea name="music" id="music" class="form-control autosize" placeholder="What songs/artists do you like?" maxlength="500"><?=htmlspecialchars($favorite_music)?></textarea>
 	</div>
+	<div class="form-group">
+		<label for="quotes">Quotes</label>
+		<textarea name="quotes" id="quotes" class="form-control autosize" placeholder="What are your favorite quotes?" maxlength="500"><?=htmlspecialchars($favorite_quotes)?></textarea>
+	</div>
 </form>

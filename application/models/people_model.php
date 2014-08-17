@@ -87,7 +87,7 @@ class People_model extends CI_Model {
     $this->db->select('id, text, url')
              ->from('user_links')
              ->where('userid', $id)
-             ->order_by('created', 'desc');
+             ->order_by('created', 'asc');
     return $this->db->get()->result_array();
   }
 
