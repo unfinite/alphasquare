@@ -7,10 +7,13 @@
 			<img src="<?=gravatar_url($user['email'])?>" class="img-circle" />
 		</a>
 		<a href="<?=profile_url($user['username'])?>">
-			<span><?=$user['username']?></span>
+			<span class="name"><?=$user['username']?></span>
 		</a>
 		<br />
-		<small class="total-followers"><?=$user['followers']?> followers</small>
+		<small class="total-followers">
+			<span class="count followers" data-id="<?=$user['id']?>"><?=$user['followers']?></span>
+			followers
+			</small>
 		<br />
 
 		<? if(session_get('userid') != $user['id']): ?>
