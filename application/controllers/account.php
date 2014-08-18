@@ -1,12 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-Account Controller
-This controller is to do with the user's account.
-- Login/Logout
-- Register
-- Forgot password
-- etc.
+/**
+ * Account Controller
+ *
+ * This controller is to do with user accounts.
+ * - Login/Logout
+ * - Register
+ * - Forgot password
+ * - etc.
+ *
+ * @package Controllers
 */
 
 class Account extends CI_Controller {
@@ -16,6 +19,10 @@ class Account extends CI_Controller {
     $this->load->model('account_model');
   }
 
+  /**
+   * Login page
+   * URL: /login
+   */
   public function login() {
 
     // If user is already logged in, redirect to dashboard
@@ -62,6 +69,10 @@ class Account extends CI_Controller {
 
   }
 
+  /**
+   * Logout
+   * URL: /logout
+   */
   public function logout() {
     // If user is already logged out, redirect to login page
     if(!$this->php_session->get('loggedin')) {
@@ -77,6 +88,10 @@ class Account extends CI_Controller {
     redirect('login');
   }
 
+  /**
+   * Registration page
+   * URL: /register
+   */
   public function register() {
 
     // If user is already logged in, redirect to dashboard
@@ -127,6 +142,11 @@ class Account extends CI_Controller {
     }
   }
 
+  /**
+   * Forgot password page
+   * URL: /account/forgot_password
+   * @param string $token Reset password token. If a token is present (and valid), it will show the reset password form.
+   */
   public function forgot_password($token = null) {
 
     $data['fixed_container'] = true;
@@ -145,6 +165,10 @@ class Account extends CI_Controller {
     }
   }
 
+  /**
+   * Processes the forgot password form.
+   * URL: /account/forgot_password_submit
+   */
   public function forgot_password_submit() {
     $email = $this->input->post('email');
 

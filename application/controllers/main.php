@@ -1,12 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-Main Controller
-The Index method on this is the homepage
-*/
+/**
+ * Main Controller
+ * The index method on this is the homepage
+ *
+ * @package Controllers
+ */
 
 class Main extends CI_Controller {
 
+	/**
+	 * This is the home page
+	 */
 	public function index() {
 
 		// If user is logged in, redirect to dashboard
@@ -14,17 +19,12 @@ class Main extends CI_Controller {
 			redirect('dashboard');
 		}
 		else {
-
-			// This uses the custom library template
-			// See wiki for more info
-			$data['title'] = 'Home';
+			$data['title'] = 'Welcome';
 			$data['stylesheets'] = array(
 				'assets/css/home.css',
-				'http://fonts.googleapis.com/css?family=Roboto:100',
 				'http://fonts.googleapis.com/css?family=Lato:700'
 			);
 			$this->template->load('home', $data);
-
 		}
 
 	}

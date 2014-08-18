@@ -1,6 +1,13 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+/** 
+ * Extension of the CI Form Validation Class
+ *
+ * This extension to CI's form validation class:
+ * - Adds valid_url and valid_username methods
+ * - Changes error prefixes & suffixes to '<li></li>'
+ */
 class MY_Form_validation extends CI_Form_validation {
 
     public function __construct() {
@@ -10,6 +17,11 @@ class MY_Form_validation extends CI_Form_validation {
         $this->_error_suffix = '</li>';
     }
 
+    /**
+     * Validate the URL
+     * @param  string $str The URL to validate
+     * @return bool
+     */
     function valid_url($str) {
     	if (!preg_match(REGEX_URL, $str)) {
     		$CI =& get_instance();
@@ -19,6 +31,11 @@ class MY_Form_validation extends CI_Form_validation {
     	return TRUE;
     }
 
+    /**
+     * Validate a username
+     * @param  string $str The username to validate
+     * @return bool
+     */
     function valid_username($str) {
         if (!preg_match(REGEX_USERNAME, $str)) {
             $CI =& get_instance();

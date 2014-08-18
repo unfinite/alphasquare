@@ -1,6 +1,6 @@
 <section class="alerts">
 
-	<p class="text-center text-muted <? if(count($alerts) > 0) echo 'hidden'; ?>">
+	<p id="no-alerts" class="text-center text-muted <? if(count($alerts) > 0) echo 'hidden'; ?>">
 		<span class="glyphicon glyphicon-bell" style="font-size:60px;"></span>
 		<br /><br />
 		You don't have any alerts right now.

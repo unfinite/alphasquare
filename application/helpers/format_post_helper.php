@@ -1,6 +1,12 @@
 <?php
+/**
+ * Format comments and posts
+ * @package Helpers
+ * @author Nathan Johnson
+ */
 
-/* Helper to format comments and posts */
+/* No direct access allowed */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 if(!function_exists('format_post')) {
   function format_post($text) {
@@ -21,13 +27,20 @@ if(!function_exists('format_post')) {
   }
 }
 
-/*
-Helper to format numbers > 1000
-  * 6,000 -> 6k
-  * 4,300 -> 4.3k
-From: http://stackoverflow.com/a/2703903/507629
-*/
 if(!function_exists('short_number')) {
+  /**
+   * Format numbers greater than 1000
+   *
+   * Turn big numbers into decimals and add suffixes.
+   * Examples:
+   * - 6,000 => 6k
+   * - 4,300 => 4.3k
+   * - 2,200,000 => 2.2M
+   * 
+   * @param  int $number The number to format
+   * @return int The formatted number
+   * @link http://stackoverflow.com/a/2703903/507629
+   */
   function short_number($number) {
       $prefixes = 'kMGTPEZY';
       if ($number >= 1000) {

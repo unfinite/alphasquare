@@ -1,12 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-Account Model
-*/
+/**
+ * Account Model
+ * @package Models
+ */
 
 class Account_model extends CI_Model {
 
-	// Login to an account
+	/**
+	 * Verifies username and password is correct and logs the user in
+	 * @param  string $username 
+	 * @param  string $password 
+	 * @return bool Whether or not the details are correct.
+	 */
 	public function login($username, $password) {
 		// Hash password
 		$password = sha1($password);
@@ -32,7 +38,13 @@ class Account_model extends CI_Model {
 		}
 	}
 
-	// Create an account
+	/**
+	 * Creates an account
+	 * @param  string $username
+	 * @param  string $email
+	 * @param  string $password
+	 * @return bool Whether or not the creation succeeded.
+	 */
 	public function create($username, $email, $password) {
 		$data = array(
 			'username' => $username,
@@ -49,7 +61,11 @@ class Account_model extends CI_Model {
 		}
 	}
 
-	// Generate a token to use for password reset
+	/**
+	 * Generates a token for resetting password
+	 * @param  int $userid The user's ID
+	 * @return string|bool If token was created, it is returned; on error false is returned
+	 */
 	public function create_password_token($userid) {
 		$this->load->helper('string');
 		$token = random_string('unique');
@@ -67,13 +83,21 @@ class Account_model extends CI_Model {
 		return $query ? $token : false;
 	}
 
-	// Delete password reset token
+	/**
+	 * Delete a forgot password token
+	 * @param  string $token The token to delete
+	 * @return bool Whether or not the token was deleted.
+	 */
 	public function delete_password_token($token) {
 		$this->db->where('token', $token);
 		return $this->db->delete('forgot_password');
 	}
 
-	// Validate a password token
+	/**
+	 * Validates a password token
+	 * @param  string $token The token to validate
+	 * @return array|bool Returns token info on success; on error false is returned
+	 */
 	public function validate_password_token($token) {
 		// Get the information of the token
 		$this->db->select('token, userid, created')

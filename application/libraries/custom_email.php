@@ -1,7 +1,8 @@
 <?php
 if(!defined('BASEPATH')) die('No direct script access allowed');
 
-/* Custom email library
+/** 
+ * Custom email library
  * Uses CodeIgniter email class to send email
  *
  * Example usage:
@@ -15,6 +16,9 @@ if(!defined('BASEPATH')) die('No direct script access allowed');
  *  $this->custom_email->set_data($email_data);
  *  $this->custom_email->send();
  *
+ * @uses CodeIgniter email class
+ * @package Libraries
+ *
  */
 
 class Custom_email {
@@ -26,6 +30,12 @@ class Custom_email {
 		$this->CI->load->library('email');
 	}
 
+	/**
+	 * Set the data for the email
+	 * @access public
+	 * @param array $data An array of info for the email.
+	 * @return void
+	 */
 	public function set_data($data) {
 
 		if(!isset($data['username'])) {
@@ -46,6 +56,11 @@ class Custom_email {
 
 	}
 
+	/**
+	 * Load the view for the email text
+	 * @access private
+	 * @return void
+	 */
 	private function load_email_view() {
 		$name = $this->data['type'];
 
@@ -62,6 +77,11 @@ class Custom_email {
 		$this->data['full_message'] = $this->CI->load->view('emails/template', $this->data, true);
 	}
 
+	/**
+	 * Set the options on the CI email library
+	 * @access private
+	 * @return void
+	 */
 	private function set_options() {
 
 		$data = $this->data;
@@ -84,13 +104,23 @@ class Custom_email {
 
 	}
 
-	public function send($data) {
+	/**
+	 * Send the email
+	 * @return bool
+	 */
+	public function send() {
 		return $this->CI->email->send();
 	}
 
-	/*
+	/**
 	 * Protects an email with asterisks
+	 * 
+ 	 * This masks an email address with asterisks. 
  	 * Example: natha*****@gmail.com
+ 	 *
+ 	 * @param string $email Email address to mask
+ 	 * @param int    $min   Minimum number of characters
+ 	 * @return string       The masked email address.
  	 */
 	public function obfuscate_email($email, $min = 3) {
 	    $em   = explode("@",$email);

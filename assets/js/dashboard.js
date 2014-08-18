@@ -1,6 +1,7 @@
-/*
- * Dashboard JavaScript
- * (c) 2014 Alphasquare
+/**
+ * Dashboard
+ * @type {Object}
+ * @copyright (c) 2014 Alphasquare
  */
 
 var Dashboard = {
@@ -13,6 +14,9 @@ var Dashboard = {
     $('#post-bar').submit(this.post.start);
     $('#post-bar textarea').keypress(this.post.keyHandler);
     $('body').on('click', '.post .vote', this.vote.click);
+    $('.post section p').readmore({
+      maxHeight: 200
+    });
     this.comment.bind();
     this.post.poll.begin();
     this.post.loadMore.bind();
@@ -54,18 +58,23 @@ var Dashboard = {
         Alp.bar(data.error);
         return false;
       }
-      $('#post-bar textarea').prop('disabled', false).val('').css('height',50);
-      $(data.html).css('display','none')
-                      .prependTo('#posts')
-                      .delay(100)
-                      .slideDown(250, Alp.timeago);
+      $('#post-bar textarea')
+        .prop('disabled', false)
+        .val('')
+        .css('height',50);
+      $(data.html)
+        .css('display','none')
+        .prependTo('#posts')
+        .delay(100)
+        .slideDown(250, Alp.timeago);
     },
     loadMore: {
       bind: function() {
-        // If #posts doesn't exist
-        if($('#posts').length < 1) return false;
-        // If there aren't any posts
-        if($('#posts article').length < 1) return false;
+        // If #posts doesn't exist, or there aren't any posts
+        if($('#posts').length < 1 || $('#posts article').length < 1) {
+          return false;
+        }
+        // Bind Dashboard.loadMore.scroll to window scroll event
         $(window).scroll(this.scroll);
       },
       scroll: function() {

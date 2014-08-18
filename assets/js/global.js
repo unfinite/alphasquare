@@ -1,3 +1,10 @@
+/**
+ * The main Alphasquare JS object.
+ * Has common functions and configuration info.
+ * @type {Object}
+ * @copright 2014 Alphasquare
+ */
+
 var Alp = {
   config: {},
   setupConfig: function(config) {
@@ -18,6 +25,9 @@ var Alp = {
     });
   },
 
+  /**
+   * Main Init Function
+   */
   init: function(config) {
     this.setupConfig(config);
     this.origTitle = document.title;
@@ -26,6 +36,9 @@ var Alp = {
     this.alerts.poll.start();
   },
 
+  /** 
+   * Bind click events, Slingshot, etc.
+   */
   bind: function() {
     $(document).on('click', this.closePopovers);
     $('#alert-link').off('click').click(this.alerts.open);
@@ -33,9 +46,15 @@ var Alp = {
     this.bindPlugins();
   },
 
+  /**
+   * Bind plugins
+   * This is called whenever a modal box is opened
+   */
   bindPlugins: function() {
     $("[data-toggle='tooltip']").tooltip();
-    $('.autosize').autosize({ append: "" });
+    $('.autosize').autosize({ 
+      append: "" 
+    });
     $('a[href="'+this.config.base+'login"]').click(function() {
       var href = $(this).attr('href');
       href += '?next=' + encodeURIComponent(window.location.href);
@@ -46,17 +65,33 @@ var Alp = {
     this.timeago();
   },
 
+  /**
+   * Update the window title
+   *
+   * @param {string} title The text to change the window title to.
+   */ 
   updateTitle: function(title) {
     document.title = title;
   },
 
+  /**
+   * Alerts object (aka notifications)
+   */
   alerts: {
+    /**
+     * Updates the count on page and in window title
+     *
+     * @param {int} unread The number of unread notifications
+     */
     updateCount: function(unread) {
       unread = unread > 0 ? unread : '';
       $('.alert-unread-count').text(unread);
       var newTitle = unread > 0 ? '(' + unread + ') ' + Alp.origTitle : Alp.origTitle;
       Alp.updateTitle(newTitle);
     },
+    /**
+     * Open the alerts modal
+     */
     open: function() {
       AjaxModal({
         title: 'Alerts',
@@ -71,15 +106,33 @@ var Alp = {
       });
       return false;
     },
+    /**
+     * Remove an alert
+     */
     remove: {
+      /**
+       * The click event binded to the delete buttons
+       */
       click: function() {
         var id = $(this).closest('.alert-container').data('id');
         Alp.alerts.remove.ajax(id);
       },
+      /** 
+       * Send the AJAX request
+       *
+       * @param {integer} id The ID of the alert to remove.
+       * @return {void}
+       */
       ajax: function(id) {
         var data = { id: id };
         $.post(Alp.config.base+'alerts/delete', data, this.ajaxCallback, 'json');
       },
+      /**
+       * The callback after the ajax request succeeds.
+       *
+       * @param {array} data The object returned from the ajax request.
+       * @return {void}
+       */
       ajaxCallback: function(data) {
         if(!data.success) {
           alert(data.error);
@@ -88,22 +141,38 @@ var Alp = {
         // Hide the alert
         $('.alert-container[data-id="'+data.id+'"]').fadeOut(200, function() {
           $(this).remove();
-          // If there aren't any alerts left, close the modal
+          // If there aren't any alerts left, show the no alerts message
           if($('.alert-container').length < 1) {
-            bootbox.hideAll();
+            $('#no-alerts').removeClass('hidden');
           }
         });
       }
     },
+    /**
+     * Mark a notification as read
+     */
     markRead: {
+      /**
+       * Mark as read click event handler
+       * @return {void}
+       */
       click: function() {
         var id = $(this).closest('.alert-container').data('id');
         Alp.alerts.markRead.ajax(id);
       },
+      /**
+       * Sends the ajax request
+       *
+       * @param {integer} id The ID of the alert to mark as read.
+       */
       ajax: function(id) {
         var data = { id: id };
         $.post(Alp.config.base+'alerts/mark_read', data, this.ajaxCallback, 'json');
       },
+      /**
+       * The callback after the ajax request succeeds.
+       * @param {array} data The object returned from the ajax request.
+       */
       ajaxCallback: function(data) {
         if(!data.success) {
           alert(data.error);
@@ -114,13 +183,22 @@ var Alp = {
         $('.mark-read',alert).fadeOut();
       }
     },
+    /**
+     * Poll for new alerts
+     */
     poll: {
       interval: 15000,
+      /**
+       * Start polling for alert count
+       */
       start: function() {
         if(Alp.config.loggedin) {
           this.ajax();
         }
       },
+      /**
+       * Send the ajax request
+       */
       ajax: function() {
         $.get(Alp.config.base+'alerts/poll')
           .success(Alp.alerts.poll.ajaxCallback)
@@ -128,6 +206,10 @@ var Alp = {
             setTimeout(Alp.alerts.poll.ajax, Alp.alerts.poll.interval);
           }, 'json');
       },
+      /**
+       * The callback after the ajax request succeeds.
+       * @param {array} data The object returned from the ajax request.
+       */
       ajaxCallback: function(data) {
         if(!data.success) {
           Alp.bar(data.error);
@@ -138,16 +220,24 @@ var Alp = {
     }
   },
 
+  /**
+   * Apply timeago plugin to elements with timeago class
+   */
   timeago: function() {
     $('.timeago').timeago();
   },
 
-  bar: function(message, type) {
-    if(!type) type = 'error';
+  /**
+   * Notify/alert bar.
+   * @param {string} message The message to show in the bar.
+   * @param {string} className
+   */
+  bar: function(message, className) {
+    if(!className) className = 'error';
     if(!message) message = 'An unknown error occurred.';
     $.notifyBar({
       html: message,
-      cssClass: type
+      cssClass: className
     });
   },
 
@@ -157,6 +247,9 @@ var Alp = {
     }
   },
 
+  /**
+   * Text swapping on hover
+   */
   textSwap: {
     bind: function() {
       $('[data-text-swap]').hover(this.mousein, this.mouseout);
@@ -202,11 +295,8 @@ var Alp = {
 
 };
 
-/* Custom AJAX Modal
- * Uses Bootbox plugin
- * Created by Nathan Johnson
- *
- * Accepts an object with modal options
+/** 
+ * Custom AJAX Modal (Bootstrap modals)
  *
  * Example:
  *
@@ -224,8 +314,11 @@ var Alp = {
  *     }
  *   }
  *  });
+ *
+ * @uses bootbox
+ * @author Nathan Johnson
+ * @param {object} options An object of options for the modal box.
  */
-
 
 var AjaxModal = function(options) {
   // Hide any currently open bootbox modals

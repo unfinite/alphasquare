@@ -1,7 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-People Model
+/**
+ * People Model
+ * Create, get info, update, delete users
+ * @package Models
 */
 
 class People_model extends CI_Model {
@@ -10,8 +12,13 @@ class People_model extends CI_Model {
     parent::__construct();
   }
 
-  // Get a user's information
-  // Second param, $type, is what to fetch the info by (default 'id')
+  /**
+   * Get a user's information
+   *
+   * @param int|string $id The user ID or other peice of data
+   * @param string $type What to fetch the info by (id, email, or username)
+   * @param string $rows The rows to get from the users table.
+   */
   public function get_info($id = 0, $type = 'id', $rows = '*') {
     if(!$id) {
       $id = $this->php_session->get('userid');
@@ -23,7 +30,13 @@ class People_model extends CI_Model {
     return $this->db->get()->row_array();
   }
 
-  // Update a user's info
+  /**
+   * Update a user's info
+   *
+   * @param array $info Assoc. array of rows => values to update.
+   * @param int $id The user ID to update.
+   * @return bool
+   */
   public function update_info($info, $id = 0) {
     if(!$id) {
       $id = $this->php_session->get('userid');
@@ -32,15 +45,21 @@ class People_model extends CI_Model {
     return $this->db->update('users', $info);
   }
 
-  // Get list of users
-  public function get_list($type, $limit = 50) {
+  /**
+   * Get array of users
+   * 
+   * @param string $order_type
+   * @param int $limit The number of users to return.
+   * @return array
+   */
+  public function get_list($order_type, $limit = 50) {
     if($this->php_session->get('loggedin')) {
       $userid = $this->php_session->get('userid');
     }
     else {
       $userid = 0;
     }
-    switch($type) {
+    switch($order_type) {
       case 'popular':
         $order_by = 'u.followers';
       break;
@@ -64,7 +83,10 @@ class People_model extends CI_Model {
     return $query->result_array();
   }
 
-  // Check if username is taken
+  /**
+   * Check if username is taken
+   * @return bool
+   */
   public function username_taken($username) {
     $this->db->select('username')
              ->from('users')
@@ -73,7 +95,10 @@ class People_model extends CI_Model {
     else return false;
   }
 
-  // Check if email is taken
+  /**
+   * Check if email is taken
+   * @return bool
+   */
   public function email_taken($email) {
     $this->db->select('email')
              ->from('users')
@@ -82,7 +107,11 @@ class People_model extends CI_Model {
     else return true;
   }
 
-  // Get a user's links
+  /**
+   * Get an array of user's links
+   * @param int $id The ID of the user.
+   * @return array Links
+   */
   public function get_links($id) {
     $this->db->select('id, text, url')
              ->from('user_links')
@@ -91,28 +120,48 @@ class People_model extends CI_Model {
     return $this->db->get()->result_array();
   }
 
-  // Create a link
+  /**
+   * Create a link
+   * @return bool
+   */
   public function create_links($links) {
     return $this->db->insert_batch('user_links', $links);
   }
 
-  // Delete user's links
+  /**
+   * Delete all of a user's links
+   * @param int $id The ID of the user.
+   * @return bool
+   */
   public function delete_links($id) {
     return $this->db->delete('user_links', array('userid' => $id));
   }
 
 
-  // Check if a user exists (by id or username)
+  /**
+   * Check if a user exists
+   *
+   * This will return true if user exists and false if user doesn't exist.
+   *
+   * @param int $id The user ID.
+   * @return bool
+   */
   public function exists($id) {
     $this->db->select('id')
              ->from('users')
              ->where('id', $id)
              ->or_where('username', $id)
              ->limit(1);
-    return $this->db->count_all_results();
+    return $this->db->count_all_results() ? true : false;
   }
 
-  // Check if a user is following another user
+  /**
+   * Check if a user is following another user
+   *
+   * @param int $followid The ID of the user being followed
+   * @param int $userid The ID of the follower
+   * @return bool
+   */
   public function is_following($followid, $userid = 0) {
     // If userid wasn't passed, use the logged in user's id
     if(!$userid) {
@@ -121,10 +170,16 @@ class People_model extends CI_Model {
     $this->db->select('userid')
              ->from('following')
              ->where(array('userid' => $userid, 'followid' => $followid));
-    return $this->db->count_all_results();
+    return $this->db->count_all_results() ? true : false;
   }
 
-  // Follow or unfollow a user
+  /** 
+   * Follow or unfollow a user
+   *
+   * @param string $action The action - follow or unfollow
+   * @param int $id The ID of the user to follow
+   * @return bool
+   */
   public function follow($action, $id) {
     // If user doesn't exist, return false
     if(!$this->exists($id)) {
@@ -150,7 +205,13 @@ class People_model extends CI_Model {
     }
   }
 
-  // Get the people a user is following / who are following a user
+  /**
+   * Get the people a user is following or the people following a user
+   *
+   * @param string $type Following or followers
+   * @param int $id The user ID
+   * @return array Array of followers/following
+   */
   public function get_follows($type, $id = 0) {
     if(!$id) {
       $id = $this->php_session->get('userid');
@@ -176,7 +237,12 @@ class People_model extends CI_Model {
     return $this->db->get()->result_array();
   }
 
-  // Number of people a user is following
+  /**
+   * Number of people a user is following, or number of followers
+   * @param string $type Following or followers
+   * @param int $id The user ID.
+   * @return int
+   */
   public function get_follow_count($type, $id = 0) {
     if(!$id) {
       $id = $this->php_session->get('userid');

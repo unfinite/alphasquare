@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-Comments Model
-Creating, editing, deleteing, and fetching comments
-*/
+/**
+ * Comments Model 
+ * Creating, editing, deleteing, and fetching comments
+ *
+ * @package Models
+ */
 
 class Comments_model extends CI_Model {
 
@@ -11,7 +13,14 @@ class Comments_model extends CI_Model {
     parent::__construct();
   }
 
-  // Get all comments on a post (and the commenter's info)
+  /**
+   * Get all comments on a post (and the commenter's info)
+   * @param  int  $id       The ID of the debate
+   * @param  int  $limit    Number of comments to return
+   * @param  int  $offset   Number of comments to start from
+   * @param  int  $startid  The ID to start loading comments from
+   * @return array          An array of comments.
+   */
   public function get_all($id, $limit = COMMENT_DISPLAY_LIMIT, $offset = 0, $startid = 0) {
     // Manual SQL for comment limit ordered by DESC but newest (can't do with ActiveRecord)
     $bindings = array($id);
@@ -37,7 +46,12 @@ class Comments_model extends CI_Model {
     return $query->result_array();
   }
 
-  // Create a comment
+  /**
+   * Create a comment
+   * @param  int $postid  The ID of the debate
+   * @param  string $content The comment's content
+   * @return array  The created comment's info
+   */
   public function create($postid, $content) {
     $data = array(
       'userid' => $this->php_session->get('userid'),
@@ -55,12 +69,21 @@ class Comments_model extends CI_Model {
     }
   }
 
-  // Delete a comment
+  /**
+   * Delete a comment
+   * @param  int $id The comment ID
+   * @return bool Whether or not the comment deleted
+   */
   public function delete($id) {
 
   }
 
-  // Get comment's html
+  /**
+   * Get a comment's HTML from template view
+   * @param  array $data An array of comments (or one comment's info)
+   * @param  bool $list True if data has multiple comments, false if not
+   * @return string  The HTML from the template view.
+   */
   public function comment_html($data, $list) {
     $this->load->helper('format_post');
     // If $list is true, then we have multiple comments

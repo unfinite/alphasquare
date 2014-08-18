@@ -54,7 +54,7 @@
 			<div class="block">
 				<strong>Bio</strong>
 				<? if($bio): ?>
-				<span><?=nl2br(htmlspecialchars($bio))?></span>
+				<span class="readmore"><?=nl2br(htmlspecialchars($bio))?></span>
 				<? else: ?>
 				<span class="text-muted">No bio.</span>
 				<? endif; ?>
@@ -128,7 +128,7 @@
 			<div class="block">
 				<strong>Movies</strong>
 				<? if($favorite_movies): ?>
-				<span><?=htmlspecialchars($favorite_movies)?></span>
+				<span class="readmore"><?=htmlspecialchars($favorite_movies)?></span>
 				<? else: ?>
 				<span class="text-muted">N/A</span>
 				<? endif; ?>
@@ -137,7 +137,7 @@
 			<div class="block">
 				<strong>TV Shows</strong>
 				<? if($favorite_tv): ?>
-				<span><?=htmlspecialchars($favorite_tv)?></span>
+				<span class="readmore"><?=htmlspecialchars($favorite_tv)?></span>
 				<? else: ?>
 				<span class="text-muted">N/A</span>
 				<? endif; ?>
@@ -146,7 +146,7 @@
 			<div class="block">
 				<strong>Music</strong>
 				<? if($favorite_music): ?>
-				<span><?=htmlspecialchars($favorite_music)?></span>
+				<span class="readmore"><?=htmlspecialchars($favorite_music)?></span>
 				<? else: ?>
 				<span class="text-muted">N/A</span>
 				<? endif; ?>
@@ -155,7 +155,7 @@
 			<div class="block">
 				<strong>Quotes</strong>
 				<? if($favorite_quotes): ?>
-				<span><?=nl2br(htmlspecialchars($favorite_quotes))?></span>
+				<span class="readmore"><?=nl2br(htmlspecialchars($favorite_quotes))?></span>
 				<? else: ?>
 				<span class="text-muted">N/A</span>
 				<? endif; ?>

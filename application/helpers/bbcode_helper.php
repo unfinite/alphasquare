@@ -1,8 +1,9 @@
 <?php
-
-/*
-BBCode Parser
-*/
+/**
+ * BBCode Parser
+ * @package Helpers
+ * @author Nathan Johnson
+ */
 
 function bbcode($text) {
 

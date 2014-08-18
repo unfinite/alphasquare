@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
+/**
  * People Controller
  * Anything to do with displaying users and their profiles
  * Also for actions such as following, reporting, etc.
+ *
+ * @package Controllers
 */
 
 class People extends CI_Controller {
@@ -14,6 +16,12 @@ class People extends CI_Controller {
 		$this->load->model('account_model');
 	}
 
+	/**
+	 * People list page
+	 * URL: /people/[popular|new|recent]
+	 *
+	 * @param string $tab
+	 */
 	public function index($tab = null) {
 		if(!$tab) {
 			redirect('people/list/popular');
@@ -25,6 +33,13 @@ class People extends CI_Controller {
 		$this->template->load('people/main', $data);
 	}
 
+	/**
+	 * Profile page
+	 * URL: /people/username
+	 *
+	 * @param string $username
+	 * @param string $tab The profile tab to show
+	 */
 	public function profile($username, $tab = 'debates') {
 		$this->load->model('debate_model');
 		$this->load->helper('format_post');
@@ -98,6 +113,16 @@ class People extends CI_Controller {
 		$this->template->load('people/profile/page', $data);
 	}
 
+	/**
+	 * Edit profile function
+	 *
+	 * URL: /people/username/edit/type
+	 * GET: loads the modal
+	 * POST: saves the info
+	 *
+	 * @param string $username
+	 * @param string $type The type of profile info being edited
+	 */
 	public function edit_profile($username, $type) {
 		login_required(true);
 		// If edit view doesn't exist
@@ -274,6 +299,10 @@ class People extends CI_Controller {
 		}
 	}
 
+	/**
+	 * Follow a user
+	 * @param int $id User ID to follow
+	 */
 	public function follow($id) {
 		login_required();
 		if($id == $this->php_session->get('userid')) {
@@ -288,6 +317,10 @@ class People extends CI_Controller {
 		}
 	}
 
+	/**
+	 * Unfollow a user
+	 * @param int $id User ID to unfollow
+	 */
 	public function unfollow($id) {
 		login_required();
 		if($id == $this->php_session->get('userid')) {

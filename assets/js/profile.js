@@ -1,14 +1,16 @@
-/*
-Profile JavasScript
-*/
+/**
+ * Profile JS
+ * @type {Object}
+ * @copyright 2014 Alphasquare
+ */
 
 var Profile = {
   init: function(data) {
 
     if(data) {
-      if(data.id) this.id = data.id;
-      if(data.username) this.username = data.username;
-      if(data.baseUrl) this.baseUrl = data.baseUrl;
+      for(var prop in data) {
+        Profile[prop] = data[prop];
+      }
     }
 
     this.bind();
@@ -19,6 +21,9 @@ var Profile = {
                  .on('click', '#about .edit', this.editSection.open)
                  .on('mouseover', '.unfollow', this.unfollow.mousein)
                  .on('mouseout', '.unfollow', this.unfollow.mouseout);
+    $('#about .readmore').readmore({
+      maxHeight: 70
+    });
   },
   follow: {
     start: function() {

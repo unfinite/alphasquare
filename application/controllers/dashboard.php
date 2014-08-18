@@ -1,8 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-Dashboard Controller
-*/
+/**
+ * Dashboard Controller
+ * @package Controllers
+ */
 
 class Dashboard extends CI_Controller {
 
@@ -12,6 +13,10 @@ class Dashboard extends CI_Controller {
 		$this->load->model('people_model');
 	}
 
+	/**
+	 * Show the dashboard and load the posts
+	 * URL: /dashboard
+	 */
 	public function index() {
 		login_required();
 		$data['title'] = 'Dashboard';

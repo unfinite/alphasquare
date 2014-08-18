@@ -1,13 +1,23 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-Debate Model
-This is where we access data from the DB (or APIs)
+/**
+ * Debate Model
+ *
+ * @package Models
 */
 
 class Debate_model extends CI_Model {
 
-  // Get an array of posts
+  /**
+   * Get an array of posts depending on the params passed
+   *
+   * @param string $type The type of debates (dashboard, profile, etc.)
+   * @param string $order The order of the posts (asc or desc)
+   * @param int $offset The number of posts to start at
+   * @param int $limit The number of posts to select (0 = all)
+   * @param array $params An optional array of info (e.g. user id)
+   * @return array An array of debates and their info
+   */
   public function get_posts($type, $order = 'desc', $offset = 0, $limit = POST_DISPLAY_LIMIT, $params = array()) {
     $userid = $this->php_session->get('userid');
     $this->db->select('d.*, u.id as userid, u.username, u.email, v.vote')
@@ -24,7 +34,7 @@ class Debate_model extends CI_Model {
 
     switch($type) {
       case 'dashboard':
-        // We are in the dashboard
+        // User is on the dashboard
         // Select posts by users that the logged in user is following or their own posts
         $this->db->where("(d.userid IN
                             (
@@ -35,8 +45,8 @@ class Debate_model extends CI_Model {
                           OR d.userid = '{$userid}' )", null, false);
       break;
       case 'profile':
-        // We are on a profile
-        // Select posts that the profile user owns
+        // User is on a profile
+        // Select posts by the profile user
         $this->db->where('d.userid', $params['user_id']);
       break;
     }
@@ -48,11 +58,15 @@ class Debate_model extends CI_Model {
     }
 
     $results = $this->db->get()->result_array();
-    //die($this->db->last_query());
     return $results;
   }
 
-  // Get a specific post's info by timestamp and username
+  /**
+   * Get the information of a debate
+   * @param string $username The debate owner's username
+   * @param int $timestamp The debate creation timestamp
+   * @return array An array of the debate's info
+   */
   public function get_info($username, $timestamp) {
     $userid = $this->php_session->get('userid');
     $where = array(
@@ -69,22 +83,37 @@ class Debate_model extends CI_Model {
     return $info;
   }
 
-  // Get a specific post's info (without owner's info)
+  /**
+   * Get a specific debate's info by ID
+   *
+   * This is for getting a debate's info by ID
+   * It does not include the debate owner's info (no join on user table)
+   * 
+   * @param int $id The debate's ID
+   * @return array An array of the debate's info
+   */
   public function get_basic_info($id) {
     return $this->db->get_where('debates', array('id'=>$id))
                     ->row_array();
   }
 
-  // Check if a post exists
+  /**
+   * Check if debate exists
+   *
+   * @param int $id Debate ID
+   */
   public function exists($id) {
     $this->db->select('id')
              ->from('debates')
-             ->where('id', $id)
-             ->limit(1);
-    return $this->db->count_all_results();
+             ->where('id', $id);
+    return $this->db->count_all_results() ? true : false;
   }
 
-  // Create a post
+  /**
+   * Create a debate
+   * @param string $content The text of the post
+   * @return array|bool If creation was successful an array will be returned; on failure false will be returned
+   */
   public function create($content) {
     $data = array(
       'userid' => $this->php_session->get('userid'),
@@ -107,7 +136,14 @@ class Debate_model extends CI_Model {
     return $insert ? $return : false;
   }
 
-  // Get a post's HTML
+  /**
+   * Get the HTML for a debate from view template
+   *
+   * @param array $data The debate's info
+   * @param bool $list Whether or not there are multiple posts in $data
+   * @param bool $debate_page Whether or not user is on a debate page
+   * @return string The HTML for the post
+   */
   public function post_html($data, $list = false, $debate_page = false) {
     $this->load->helper('format_post');
     // If $list is true, then we have multiple posts
@@ -127,8 +163,13 @@ class Debate_model extends CI_Model {
     return $html;
   }
 
-  // Returns an array with up and down vote count of a post
-  public function get_vote_counts($id, $type = 'all') {
+  /**
+   * Gets the up and down vote counts of a debate
+   *
+   * @param int $id The debate's ID
+   * @return array The up and down vote counts
+   */
+  public function get_vote_counts($id) {
     $this->db->select('userid')
              ->from('votes')
              ->where(array('postid' => $id, 'vote' => 1));
@@ -146,9 +187,15 @@ class Debate_model extends CI_Model {
     return $counts;
   }
 
-  // Sync vote columns with votes table counts
-  // The vote columns on debates table act as a cache
-  // so the DB doesn't have to be queried 2 times for every post
+  /** 
+   * Sync vote columns with votes table counts.
+   *
+   * This method "syncs" the vote columns on the debates table
+   * with the actual vote counts in the votes table.
+   *
+   * @param int $id The ID of the debate
+   * @return void
+   */
   public function sync_vote_columns($id) {
     // get_vote_counts() returns an array: up_votes, down_votes
     $counts = $this->get_vote_counts($id);
@@ -156,7 +203,13 @@ class Debate_model extends CI_Model {
     $this->db->update('debates', $counts);
   }
 
-  // Vote on a post
+  /**
+   * Insert a vote into the DB
+   *
+   * @param string $type The type of vote (up or down)
+   * @param int $id The ID of the debate
+   * @return bool
+   */
   public function vote($type, $id) {
 
     $info = $this->get_basic_info($id);
@@ -193,7 +246,11 @@ class Debate_model extends CI_Model {
 
   }
 
-  // Undo/remove vote
+  /**
+   * Remove (undo) a vote
+   * @param int $id The ID of the debate
+   * @return bool
+   */
   public function remove_vote($id) {
     $where = array(
               'postid'=>$id,
