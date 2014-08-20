@@ -2,7 +2,7 @@
  * The main Alphasquare JS object.
  * Has common functions and configuration info.
  * @type {Object}
- * @copright 2014 Alphasquare
+ * @copright Copyright (c) 2014 Alphasquare
  */
 
 var Alp = {
@@ -40,8 +40,11 @@ var Alp = {
    * Bind click events, Slingshot, etc.
    */
   bind: function() {
-    $(document).on('click', this.closePopovers);
     $('#alert-link').off('click').click(this.alerts.open);
+    $(document).on('click', this.closePopovers);
+    $(document).on('click', 'ul.dropdown-menu li a', function() {
+      $('[data-toggle="dropdown"]').parent().removeClass('open');
+    });
     this.slingshot();
     this.bindPlugins();
   },

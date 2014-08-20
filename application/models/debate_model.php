@@ -18,7 +18,7 @@ class Debate_model extends CI_Model {
    * @param array $params An optional array of info (e.g. user id)
    * @return array An array of debates and their info
    */
-  public function get_posts($type, $order = 'desc', $offset = 0, $limit = POST_DISPLAY_LIMIT, $params = array()) {
+  public function get_posts($type, $offset = 0, $limit = POST_DISPLAY_LIMIT, $params = array()) {
     $userid = $this->php_session->get('userid');
     $this->db->select('d.*, u.id as userid, u.username, u.email, v.vote')
              ->from('debates d')
@@ -49,9 +49,13 @@ class Debate_model extends CI_Model {
         // Select posts by the profile user
         $this->db->where('d.userid', $params['user_id']);
       break;
+      case 'search':
+        // Searching debates
+        $this->db->like('d.content', $params['query'], 'both');
+      break;
     }
 
-    $this->db->order_by('d.time', $order);
+    $this->db->order_by('d.time', 'desc');
 
     if($limit) {
       $this->db->limit($limit, $offset);
@@ -134,6 +138,15 @@ class Debate_model extends CI_Model {
     }
     $return = array('html' => $post_html);
     return $insert ? $return : false;
+  }
+
+  /**
+   * Delete a debate
+   * @param  int $id The debate ID to delete
+   * @return bool
+   */
+  public function delete($id) {
+    return $this->db->delete('debates', array('id'=>$id));
   }
 
   /**

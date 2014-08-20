@@ -7,7 +7,7 @@
 	</p>
 
 	<? foreach($alerts as $alert): ?>
-	<article class="alert-container <?= $alert['clicked'] ? 'clicked' : 'not-clicked'?>" data-id="<?=$alert['id']?>">
+	<article data-id="<?=$alert['id']?>" class="alert-container <?= $alert['clicked'] ? 'clicked' : 'not-clicked'?>">
 		<div class="alert-options">
 			<? if(!$alert['clicked']): ?>
 			<span class="glyphicon glyphicon-ok mark-read" title="Mark as read" data-toggle="tooltip" data-placement="left" data-animation="false"></span>
@@ -20,11 +20,16 @@
 		<div class="alert-content">
 			<p>
 
+				<? if($alert['show_user_link']): ?>
 				<a href="<?=profile_url($alert['username'])?>"><?=$alert['username']?></a>
+				<? endif; ?>
+
 				<span class="text"><?=$alert['text']?></span>
+
 				<? if($alert['url']): ?>
 				<a href="<?=$alert['url']?>"><?=$alert['object']?></a>.
 				<? endif; ?>
+				
 			</p>
 			<footer>
 				<span class="timeago" title="<?=$alert['time_iso']?>"><?=$alert['time_formatted']?></span>

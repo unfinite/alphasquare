@@ -5,6 +5,35 @@
     <img class="img-circle profile-picture" data-toggle="tooltip" data-placement="right" src="<?=gravatar_url($post['email'], 55)?>" title="<?=$post['username']?>">
   </a>
   <section>
+    <div class="actions">
+      <a href="#" data-toggle="dropdown" class="post-actions">
+        <span class="glyphicon glyphicon-cog"></span>
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="postActions">
+        
+        <? if($post['userid'] == session_get('userid')): ?>
+        <li>
+          <a href="#" class="delete-post">
+            <span class="glyphicon glyphicon-trash"></span>
+            Delete
+          </a>
+        </li>
+        <? else: ?>
+
+        <li>
+          <a href="#" class="report-post">
+            <span class="glyphicon glyphicon-flag"></span>
+            Report
+          </a>
+        </li>
+
+        <? endif; ?>
+
+      </ul>
+    </div>
+
+
     <p class="post-text">
       <?=format_post($post['content'])?>
     </p>

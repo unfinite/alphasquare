@@ -6,6 +6,7 @@
  *
  * @package Libraries
  * @author Nathan Johnson
+ * @copyright (c) 2014 Alphasquare
  */
 
 class Alert {
@@ -103,22 +104,25 @@ class Alert {
     }
     $raw_alerts = $this->CI->db->get()->result_array();
     $alerts = array();
-    // Loop through the alerts, adding to $alerts
+    // Loop through the alerts
     foreach($raw_alerts as $info) {
-      $text = $this->text($info['action']);
-      $url = $this->get_alert_url($info);
+      // Get the action info
+      $action = $this->action_info($info);
+      // Add this alert to $alerts
       $alerts[] = array(
         'id' => $info['id'],
         'username' => $info['username'],
         'email' => $info['email'],
-        'text' => $text,
+        'text' => $action['text'],
+        'show_user_link' => $action['show_user_link'],
         'object' => $info['object_type'],
-        'url' => $url,
+        'url' => $action['url'],
         'clicked' => $info['clicked'],
         'time_iso' => date('c', $info['time']),
         'time_formatted' => date('F j, Y g:i A', $info['time'])
       );
     }
+    // Mark all alerts as ready
     $this->mark_all_read();
     return $alerts;
   }
@@ -226,15 +230,22 @@ class Alert {
   }*/
 
   /**
-   * Generate the text for the alert.
-   * This determines the text to use for the alert depending on the action.
+   * Get information of an alert action
+   * 
+   * This determines the text to use for the alert depending on the action
+   * and whether or not to show the username link.
+   * 
    * @param string $action The alert's action.
-   * @return string
+   * @return array An array of the alert's action info.
    * @access private
    */
-  private function text($action) {
+  private function action_info($data) {
+    // The alert's URL
+    $url = base_url('alerts/view/'.$data['id']);
+    // Whether or not to show the sender's username
+    $show_user_link = true;
     // Determine action text
-    switch($action) {
+    switch($data['action']) {
       case 'like':
         $text = 'likes your';
       break;
@@ -242,35 +253,28 @@ class Alert {
         $text = 'dislikes your';
       break;
       case 'follow':
+        $url = false;
         $text = 'is now following you.';
       break;
       case 'comment':
         $text = 'commented on your';
       break;
+      case 'welcome':
+        $show_user_link = false;
+        $url = false;
+        $text = '<b>Welcome to Alphasquare!</b> Check out some <a href="'.base_url('people').'">people to follow</a>.';
+      break;
       default:
         die("Invalid alert action type.");
       break;
     }
-    return $text;
+    return array(
+      'text' => $text, 
+      'url' => $url, 
+      'show_user_link' => $show_user_link
+    );
   }
 
-  /**
-   * Make the URL for the alert (which then redirects to the object)
-   * @param  array $data The information about the alert (should contain action and ID)
-   * @return string The URL of the alert
-   * @access private
-   */
-  private function get_alert_url($data) {
-    // No link to object is needed for these actions
-    $no_link_actions = array('follow');
-    if(in_array($data['action'], $no_link_actions)) {
-      $url = false;
-    }
-    else {
-      $url = base_url('alerts/view/'.$data['id']);
-    }
-    return $url;
-  }
 }
 
 /* End of file alerts.php */

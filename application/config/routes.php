@@ -45,6 +45,7 @@ $route['404_override'] = '';
 $route['^(login|logout|register|forgot_password)'] = 'account/$1';
 
 // Debates
+$route['debate/report/(:num)'] = 'debate/report/$1';
 $route['debate/([a-zA-Z0-9]+)/(:num)'] = 'debate/view/$1/$2';
 
 // People pages

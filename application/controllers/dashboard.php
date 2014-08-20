@@ -22,7 +22,7 @@ class Dashboard extends CI_Controller {
 		$data['title'] = 'Dashboard';
 
 		// Get array of debates
-		$posts = $this->debate_model->get_posts('dashboard', 'desc');
+		$posts = $this->debate_model->get_posts('dashboard');
 		// Turn $posts array into HTML
 		$data['posts_html'] = $this->debate_model->post_html($posts, true);
 		// Get the number of people user is following

@@ -15,6 +15,17 @@
   </div>
 </div> <!-- /.panel -->
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title slab"><span class="glyphicon glyphicon-search"></span> Search</h3>
+  </div>
+  <div class="panel-body">
+    <form action="<?=base_url('search')?>" method="get">
+      <input type="text" name="q" class="form-control input-md" placeholder="Search Alphasquare..." />
+    </form>
+  </div>
+</div> <!-- /.panel -->
+
 <div class="panel panel-default" id="sidebar-menu">
   <div class="panel-body">
     <ul class="nav nav-pills nav-stacked slab">

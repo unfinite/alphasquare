@@ -20,6 +20,7 @@ var Dashboard = {
     this.comment.bind();
     this.post.poll.begin();
     this.post.loadMore.bind();
+    this.post.actions.bind();
   },
 
   post: {
@@ -150,6 +151,84 @@ var Dashboard = {
                     .prependTo('#posts')
                     .slideDown(250, Dashboard.post.bind);
       }
+    },
+    actions: {
+      bind: function() {
+        $(document).on('click', '.delete-post', this.remove.modal);
+        $(document).on('click', '.report-post', this.report.modal);
+      },
+
+      remove: {
+        modal: function() {
+          var id = $(this).closest('article.post').data('id');
+          bootbox.dialog({
+            title: 'Delete Post',
+            message: 'Do you really want to delete that post?',
+            buttons: {
+              cancel: {
+                label: 'Cancel'
+              },
+              main: {
+                label: 'Yes, delete',
+                className: 'btn-danger',
+                callback: function() {
+                  Dashboard.post.actions.remove.ajax(id);
+                  return false;
+                }
+              }
+            },
+            size: 'small',
+            animate: false
+          });
+          return false;
+        },
+        ajax: function(id) {
+          var data = { id: id };
+          $.post(Alp.config.base+'debate/delete', data, Dashboard.post.actions.remove.ajaxCallback, 'json');
+        },
+        ajaxCallback: function(data) {
+          if(!data.success) {
+            Alp.bar(data.error);
+            return false;
+          }
+          Alp.bar('The post has been deleted.', 'success');
+          $('.post[data-id='+data.id+'], #comments').slideUp(function() {
+            $(this).remove();
+            // If on post page
+            if($('#post-page').length>0) {
+              window.location.href = Alp.config.base+'dashboard';
+            }
+          });
+          bootbox.hideAll();
+        }
+      },
+
+      report: {
+        modal: function() {
+          var id = $(this).closest('article.post').data('id');
+          AjaxModal({
+            title: 'Report Post',
+            url: 'debate/report/'+id,
+            size: 'small',
+            buttons: {
+              cancel: {
+                label: 'Cancel'
+              },
+              submit: {
+                label: 'Report',
+                className: 'btn-warning',
+                callback: Dashboard.post.actions.report.submit
+              }
+            }
+          });
+          return false;
+        },
+        submit: function() {
+          alert('report');
+          return false;
+        }
+      }
+
     }
   },
 

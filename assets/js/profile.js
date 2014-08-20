@@ -1,7 +1,7 @@
 /**
  * Profile JS
  * @type {Object}
- * @copyright 2014 Alphasquare
+ * @copyright Copyright (c) 2014 Alphasquare
  */
 
 var Profile = {

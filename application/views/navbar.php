@@ -17,11 +17,8 @@
     <a href="<?=base_url('dashboard')?>" title="Dashboard">
       <span class="glyphicon glyphicon-globe"></span>
     </a>
-    <!--<a href="<?=profile_url()?>">
+    <a href="<?=profile_url()?>">
       <span class="glyphicon glyphicon-user" title="My Profile"></span>
-    </a>-->
-    <a href="<?=base_url('find')?>">
-      <span class="glyphicon glyphicon-search" title="Find"></span>
     </a>
     <a href="<?=base_url('settings')?>">
       <span class="glyphicon glyphicon-cog" title="Settings"></span>

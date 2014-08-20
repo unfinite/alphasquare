@@ -31,10 +31,20 @@ body {
 .page-header h3 {
   margin-top: 0;
 }
+ul.dropdown-menu li a:hover {
+  background: #428bca;
+  color: white !important;
+}
+h5 {
+  font-weight: bold;
+}
 
 /* Helper Classes */
 .text-small {
   font-size: 12px;
+}
+.text-bold {
+  font-weight: bold;
 }
 .no-margin {
   margin: 0;
@@ -222,6 +232,29 @@ textarea.autosize {
   margin-right: 10px;
   display: block;
 }
+.post section .actions {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+}
+.post section .actions > a {
+  font-size: 12px;
+  color: #bbb;
+  display: block;
+  text-decoration: none;
+}
+.post section .actions a:hover {
+  color: #222;
+  cursor: pointer;
+}
+.post section .actions a .caret {
+  position: relative;
+  bottom: 1px;
+}
+.post section .actions ul.dropdown-menu {
+  margin-left: -130px;
+  font-size: 13px;
+}
 .post section {
   word-wrap: break-word;
   font-size: 17px;
@@ -232,6 +265,7 @@ textarea.autosize {
   background-color: white;
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  position: relative;
 }
 .post section div.img img {
   max-width: 300px;

@@ -18,7 +18,7 @@
 			<div class="form-group">
 				<input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" class="form-control" />
 			</div>
-			<p class="text-bold">By using Alphasquare, you agree with the
+			<p>By using Alphasquare, you agree with the
 				<a href="about/terms" target="_blank">terms of service</a>
 				and <a href="about/privacy" target="_blank">privacy policy</a>.</p>
 			<button name="submit" class="btn btn-primary" value="true">Register</button>

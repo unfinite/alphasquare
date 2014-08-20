@@ -79,7 +79,7 @@ class People extends CI_Controller {
 			case null:
 			case 'debates':
 				// Get user's posts
-				$posts = $this->debate_model->get_posts('profile', 'desc', null, null, array('user_id' => $id));
+				$posts = $this->debate_model->get_posts('profile', null, null, array('user_id' => $id));
 				$tab_data['posts'] = $this->debate_model->post_html($posts, true);
 				$tab_data['posts_count'] = count($posts);
 				$data['tab_content'] = $this->load->view('people/profile/tab/debates', $tab_data, true);

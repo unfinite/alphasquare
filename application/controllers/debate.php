@@ -4,6 +4,7 @@
  * Debate Controller
  * 
  * @package Controllers
+ * @copyright (c) 2014 Alphasquare
 */
 
 class Debate extends CI_Controller {
@@ -97,14 +98,35 @@ class Debate extends CI_Controller {
 
   /**
    * Delete a debate
+   * 
+   * URL: /debate/delete
    */
-  public function delete($id) {
+  public function delete() {
     login_required();
+    $id = $this->input->post('id');
+    $info = $this->debate_model->get_basic_info($id);
+    
+    if(!$info) {
+      json_error('Post does not exist!');
+    } 
+    else if($info['userid'] !== $this->php_session->get('userid')) {
+      json_error('You cannot delete that post.');
+    }
+
+    if($this->debate_model->delete($id)) {
+      json_output(array('id'=>$id), true);
+    }
+    else {
+      json_error('Unable to delete post.');
+    }
+
   }
 
   /**
    * Load more debates 
    * aka infinite scrolling
+   * 
+   * URL: /debate/load_more
    */
   public function load_more() {
     $limit = 10;
@@ -115,7 +137,7 @@ class Debate extends CI_Controller {
       $params['user_id'] = $this->input->get('user_id');
     }
     // Get posts
-    $posts = $this->debate_model->get_posts($type, 'desc', $offset, $limit, $params);
+    $posts = $this->debate_model->get_posts($type, $offset, $limit, $params);
     // Get HTML for the posts
     $html = $this->debate_model->post_html($posts, true);
     // Output JSON
@@ -131,6 +153,8 @@ class Debate extends CI_Controller {
    * 
    * This will load any posts newer than GET[latest_id]
    * On dashboard, profiles, etc.
+   *
+   * URL: /debate/poll
    */
   public function poll() {
     $latest_id = $this->input->get('latest_id');
@@ -141,7 +165,7 @@ class Debate extends CI_Controller {
       $params['user_id'] = $this->input->get('user_id');
     }
     // Get new posts
-    $posts = $this->debate_model->get_posts($type, 'desc', null, null, $params);
+    $posts = $this->debate_model->get_posts($type, null, null, $params);
     // Get HTML for the posts
     $html = $this->debate_model->post_html($posts, true);
     // Output JSON
@@ -150,6 +174,19 @@ class Debate extends CI_Controller {
       'count' => count($posts)
     );
     json_output($json, true);
+  }
+
+  public function report($id) {
+    login_required();
+    $data['reasons'] = array(
+      'Harassment or bullying', 
+      'I don\'t like this post',
+      'Inappropriate',
+      'Spam'
+    );
+    $info = $this->debate_model->get_basic_info($id);
+    $data['is_owner'] = ($info['userid'] == $this->php_session->get('userid'));
+    $this->load->view('posts/report', $data);
   }
 
 }
