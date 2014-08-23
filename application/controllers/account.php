@@ -48,9 +48,9 @@ class Account extends CI_Controller {
       }
 
       // Call the login method of the account model, which returns true or false
-      $correct = $this->account_model->login($username, $password);
+      $correct = $this->account_model->auth($username, $password);
 
-      // If the login method returned true, redirect to return url
+      // If the auth method returned true, redirect to return url
       if($correct) {
         redirect($next);
       }
@@ -64,7 +64,10 @@ class Account extends CI_Controller {
       // Load the login page view
       $data['title'] = 'Sign in';
       $data['fixed_container'] = true;
-      $data['stylesheets'] = array('assets/css/bootstrap-social.css');
+      $data['stylesheets'] = array(
+        'assets/css/bootstrap-social.css',
+        'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
+      );
       $this->template->load('account/login', $data);
     }
 
@@ -81,10 +84,9 @@ class Account extends CI_Controller {
     }
     // Destroy session
     $this->php_session->destroy();
-    // Start new session (for logged out message)
-    $this->php_session->start();
     // Show message
-    msg('You have been signed out. Have a great day!', 'info');
+    // doesn't work because of the session being destroyed
+    //msg('You have been signed out. Have a great day!', 'info');
     // Redirect to login page
     redirect('login');
   }
@@ -126,7 +128,7 @@ class Account extends CI_Controller {
         // Show an alert box
         msg("<strong>Welcome to Alphasquare!</strong> We should probably create a page that users go to when first signing up (like Twitter's system).", 'info', 'text-align:center;font-size:15px;');
         // Go to dashboard
-        redirect('dashboard/welcome');
+        redirect('dashboard');
       }
       else {
         msg('Sorry, an error has occurred. Please try again.');
@@ -139,6 +141,10 @@ class Account extends CI_Controller {
       $data['title'] = 'Register';
       $data['fixed_container'] = true;
       $data['errors'] = validation_errors();
+      $data['stylesheets'] = array(
+        'assets/css/bootstrap-social.css',
+        'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
+      );
       $this->template->load('account/register', $data);
     }
   }

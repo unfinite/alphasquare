@@ -103,8 +103,8 @@ class People_model extends CI_Model {
     $this->db->select('email')
              ->from('users')
              ->where('email', $email);
-    if($this->db->get()->num_rows > 0) return false;
-    else return true;
+    if($this->db->get()->num_rows > 0) return true;
+    else return false;
   }
 
   /**

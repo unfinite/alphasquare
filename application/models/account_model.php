@@ -8,14 +8,14 @@
 class Account_model extends CI_Model {
 
 	/**
-	 * Verifies username and password is correct and logs the user in
+	 * Verifies username and password is correct
 	 * @param  string $username 
 	 * @param  string $password 
 	 * @return bool Whether or not the details are correct.
 	 */
-	public function login($username, $password) {
+	public function auth($username, $password) {
 		// Hash password
-		$password = sha1($password);
+		$password = hash('sha256', $password);
 		// Get user's information
 		$this->db->select('id, password, username, email')
 						 ->from('users')
@@ -27,16 +27,67 @@ class Account_model extends CI_Model {
 			return false;
 		}
 		else {
-			// Add some extra variables to $info
-			$info['loggedin'] = true;
-			$info['userid'] = $info['id'];
-			// Remove password from $info
-			unset($info['password']);
-			// Put the items in $info into the session
-			$this->php_session->set($info);
+			$this->login($info);
 			return true;
 		}
 	}
+
+  /**
+   * Log the user in
+   * @param  array $info The user's information
+   * @return true
+   */
+  public function login($info) {
+    // Add some extra variables to $info for session
+    $info['loggedin'] = true;
+    $info['userid'] = $info['id'];
+    // Remove password from $info
+    unset($info['password']);
+    // Put the items in $info into the session
+    $this->php_session->set($info);
+    // Update last login
+    $this->db->where('id', $info['id']);
+    $this->db->update('users', array('last_login'=>time()));
+    return true;
+  }
+
+  /**
+   * Get a user's info by their OAuth UID
+   * @param  string $provider The OAuth provider
+   * @param  string $uid The OAuth user id
+   * @return bool
+   */
+  public function oauth_info($provider, $uid) {
+    $where = array(
+      'o.oauth_provider' => $provider,
+      'o.oauth_uid' => $uid
+    );
+    $this->db->select('o.oauth_provider, o.oauth_uid,
+                       u.id, u.username, u.email')
+             ->from('user_oauth o')
+             ->join('users u', 'u.id = o.userid', 'left')
+             ->where($where)
+             ->limit(1);
+    $query = $this->db->get();
+    return $query->num_rows ? $query->row_array() : false;
+  }
+
+  /**
+   * Checks if user account is connected with an OAuth provider already
+   * @param string $provider The OAuth provider
+   * @param string $oauth_uid The OAuth UID
+   * @param int $userid The user's local ID
+   * @return bool
+   */
+  public function oauth_provider_used($provider, $userid = null) {
+    if(!$userid) {
+      $userid = $this->php_session->get('userid');
+    }
+    $this->db->select('id')
+             ->from('user_oauth')
+             ->where(array('oauth_provider'=>$provider,'userid'=>$userid));
+    return $this->db->count_all_results() > 0 ? true : false;
+  }
 
 	/**
 	 * Creates an account
@@ -48,7 +99,7 @@ class Account_model extends CI_Model {
 	public function create($username, $email, $password) {
 		$data = array(
 			'username' => $username,
-			'password' => sha1($password),
+			'password' => hash('sha256', $password),
 			'email' => $email,
 			'joined' => time()
 		);
@@ -60,6 +111,47 @@ class Account_model extends CI_Model {
 			return false;
 		}
 	}
+
+  /**
+   * Creates an account from OAuth provider
+   * @param  string $oauth_provider The OAuth provider/service.
+   * @param  string $oauth_uid The user id on the OAuth provider.
+   * @param  string $email
+   * @param  string $username
+   * @return bool Whether or not the creation succeeded.
+   */
+  public function oauth_create($oauth_provider, $oauth_uid, $name, $username, $email, $location) {
+    $data = array(
+      'name' => $name,
+      'username' => $username,
+      'email' => $email,
+      'location' => $location,
+      'joined' => time()
+    );
+    $insert = $this->db->insert('users', $data);
+    if($insert) {
+      $userid = $this->db->insert_id();
+      $this->oauth_connect_account($oauth_provider, $oauth_uid, $userid);
+      $data['id'] = $userid;
+      return $data;
+    }
+    else {
+      return false;
+    }
+  }
+
+  public function oauth_connect_account($oauth_provider, $oauth_uid, $userid = null) {
+    if(!$userid) {
+      $userid = $this->php_session->get('userid');
+    }
+    $data = array(
+      'userid' => $userid,
+      'oauth_provider' => $oauth_provider,
+      'oauth_uid' => $oauth_uid
+    );
+    $insert = $this->db->insert('user_oauth', $data);
+    return $insert;
+  }
 
 	/**
 	 * Generates a token for resetting password

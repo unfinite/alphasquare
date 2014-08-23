@@ -4,16 +4,8 @@
       <h1>Sign in</h1>
     </div>
     
-    <div class="text-center">
-      <h5>Sign in with a social account</h5>
-      <a href="login/facebook" class="btn btn-social btn-facebook">Facebook</a>
-      <a href="login/twitter" class="btn btn-social btn-twitter">Twitter</a>
-      <a href="login/google" class="btn btn-social btn-google-plus">Google+</a>
-    </div>
-    
-    <hr />
+    <? $this->load->view('account/oauth_buttons'); ?>
 
-    <h5 class="text-center">Sign in with an Alphasquare account</h5>
     <form action="" method="post">
       <input type="hidden" name="next" value="<?=$this->input->get('next')?>" />
       <div class="form-group">
@@ -38,7 +30,8 @@
     </form>
     <br />
     <div class="well text-center">
-      Don't have an account? <a href="<?=base_url('register')?>">Create one!</a>
+      Don't have an account? 
+      <a href="<?=base_url('register')?>">Create one!</a>
     </div>
   </div>
 </div>

@@ -3,8 +3,11 @@
 <div class="row">
 	<div class="col-lg-6 col-md-8 col-sm-10 col-centered">
 		<div class="page-header">
-			<h1>Create Account</h1>
+			<h1>Register</h1>
 		</div>
+
+		<? $this->load->view('account/oauth_buttons'); ?>
+		
 		<form action="" method="post">
 			<div class="form-group">
 				<input type="text" name="username" id="username" placeholder="Username" class="form-control" value="<?=set_value('username')?>" />
