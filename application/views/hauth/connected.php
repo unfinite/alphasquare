@@ -7,8 +7,8 @@
 <p>From now on, you will be able to login to your Alphasquare account with <?=$provider?>.</p>
 
 <br />
-<a href="<?=base_url('dashboard')?>" class="btn btn-primary">Go to Dashboard</a>
-<a href="<?=base_url('settings/oauth')?>" class="btn btn-default">View all connected accounts</a>
+<a href="<?=base_url('dashboard')?>" class="btn btn-primary">Go to Dashboard</a>&nbsp;
+<a href="<?=base_url('settings/oauth')?>" class="btn btn-secondary">Manage accounts</a>
 
 <br /><br />
 <p>If you have any problems, please see the 

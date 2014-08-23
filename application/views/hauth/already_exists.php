@@ -2,9 +2,7 @@
   <h1><?=$provider?> Account</h1>
 </div>
 
-<p>There is already an Alphasquare account using the following email address.</p>
-
-<p><b><?=$email?></b> (from your <?=$provider?> account)</p>
+<p>There is already an Alphasquare account using the email address <b><?=$email?></b> (from your <?=$provider?> account).</p>
 
 <p>What would you like to do?</p>
 
