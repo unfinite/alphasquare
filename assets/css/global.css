@@ -79,8 +79,8 @@ textarea.autosize {
 .btn-secondary.active, 
 .open .dropdown-toggle.btn-secondary { 
   color: #ffffff; 
-  background-color: #555; 
-  border-color: #444; 
+  background-color: #333; 
+  border-color: #222; 
 }
 
 /* Modal loading */
