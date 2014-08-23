@@ -15,8 +15,8 @@
             <span class="label label-info" title="Born on <?=$birthday_formatted?>" data-toggle="tooltip">Happy Birthday!</span>
             <? endif; ?>
 
-            <? if($ranger): ?>
-            <span class="label label-primary">Ranger</span>
+            <? if($employee): ?>
+            <span class="label label-primary">Staff</span>
             <? endif; ?>
 
           </h2>
