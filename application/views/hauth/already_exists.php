@@ -10,7 +10,7 @@
 
 <br />
 <a href="connect_account" class="btn btn-success">
-Connect my <?=$provider?> account with it
+Connect <?=$provider?> with the account
 </a>
 <p style="max-width:500px;margin-top:10px">
 This option will allow you to sign in to your existing Alphasquare account 
