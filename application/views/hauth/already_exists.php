@@ -18,6 +18,6 @@ with your Alphasquare credentials and your <?=$provider?> account.
 </p>
 
 <br />
-<a href="new_account?clear=1" class="btn btn-secondary">Create a new account</a>
+<a href="new_account?clear=1" class="btn btn-default">Create a new account</a>
 &nbsp;
 <a href="cancel" class="btn btn-default">Go back to sign in page</a>
