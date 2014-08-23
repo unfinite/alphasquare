@@ -40,6 +40,9 @@ class Oauth extends CI_Controller {
    * URL: /oauth/connect_account
    */
   public function connect_account() {
+    if(!$this->php_session->get('oauth_provider')) {
+      redirect('dashboard');
+    }
     $provider = $this->php_session->get('oauth_provider');
     $user_profile = $this->php_session->get('oauth_user_profile');
     $oauth_uid = $user_profile['identifier'];
@@ -47,9 +50,6 @@ class Oauth extends CI_Controller {
       show_error('Unable to connect account.');
     }
     login_required(false, 'To connect '.$provider.' with your existing Alphasquare account, please sign in to it first.');
-    if(!$this->php_session->get('oauth_provider')) {
-      redirect('dashboard');
-    }
     if($this->account_model->oauth_provider_used($provider)) {
       show_error('Sorry, you have already connected a '.$provider.' account.');
     }
@@ -69,10 +69,21 @@ class Oauth extends CI_Controller {
     if(!$this->php_session->get('oauth_connected')) {
       redirect();
     }
+
     $data['title'] = 'Connected';
-    $data['provider'] = $this->php_session->get('oauth_provider');
     $data['fixed_container'] = true;
+    $data['provider'] = $this->php_session->get('oauth_provider');
+    if($data['provider']) {
+      $this->php_session->set('_oauth_provider', $data['provider']);
+    }
+    else {
+      $data['provider'] = $this->php_session->get('_oauth_provider');
+    }
+
     $this->template->load('hauth/connected', $data);
+
+    // Clear the OAuth session vars
+    $this->clear_oauth_session();
   }
 
   /**
