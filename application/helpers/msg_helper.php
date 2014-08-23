@@ -63,9 +63,10 @@ if (!function_exists('login_required')) {
 	 * or redirect to the login page if it's a normal request.
 	 * 
 	 * @param  boolean $die Output plain text instead of JSON. Only applies to ajax requests.
+	 * @param  string|null $message Custom sign in message for the alert
 	 * @return void
 	 */
-	function login_required($die = false) {
+	function login_required($die = false, $message = null) {
 		$CI =& get_instance();
 		if($CI->php_session->get('loggedin')) {
 			return false;
@@ -83,7 +84,8 @@ if (!function_exists('login_required')) {
 		}
 		// Else redirect page
 		else {
-			msg('Please sign in to continue.', 'info');
+			$message = $message ? $message : 'Please sign in to continue.';
+			msg($message, 'info');
 			redirect('login?next='.current_url());
 		}
 	}
