@@ -198,12 +198,20 @@ class People_model extends CI_Model {
         $this->load->library('alert');
         $this->alert->create($id, 'follow', 'user', $id);
       }
-      return $insert_success;
+      // Update following/followers rows
+      $this->update_follow_counts($id, 'follow');
+      return true;
     }
     // Else, delete row from db
     else {
-      return $this->db->delete('following', $data);
+      $delete_success = $this->db->delete('following', $data);
+      if($delete_success) {
+        // Update following/followers rows
+        $this->update_follow_counts($id, 'unfollow');
+        return true;
+      }
     }
+    return false;
   }
 
   /**
@@ -255,6 +263,31 @@ class People_model extends CI_Model {
              ->from('following')
              ->where($col, $id);
     return $this->db->count_all_results();
+  }
+
+  /**
+   * Update `following` and `followers` rows on users table
+   *
+   * Users table has columns to cache the number of followers/following they have
+   * This is so the DB doesn't need to be queried to get the number of follows for a user
+   * 
+   * @param  int $followid The ID of the user being followed
+   * @param  string $action The action - 'follow' or 'unfollow'
+   * @return null
+   */
+  public function update_follow_counts($followid, $action) {
+    if($action === 'follow') $number = 1;
+    else $number = -1;
+
+    // Update the following count for current user
+    $this->db->set('following', 'following+'.$number, false);
+    $this->db->where('id', $this->php_session->get('userid'));
+    $this->db->update('users');
+
+    // Update the followers count for the user being followed
+    $this->db->set('followers', 'followers+'.$number, false);
+    $this->db->where('id', $followid);
+    $this->db->update('users');
   }
 
 }

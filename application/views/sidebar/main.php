@@ -1,4 +1,5 @@
 
+<? if(session_get('loggedin')): ?>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title slab"><span class="glyphicon glyphicon-flash"></span> Broadcast</h3>
@@ -14,6 +15,7 @@
     </ul>
   </div>
 </div> <!-- /.panel -->
+<? endif; ?>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -26,6 +28,8 @@
   </div>
 </div> <!-- /.panel -->
 
+
+<? if(session_get('loggedin')): ?>
 <div class="panel panel-default" id="sidebar-menu">
   <div class="panel-body">
     <ul class="nav nav-pills nav-stacked slab">
@@ -45,13 +49,12 @@
           <span class="glyphicon glyphicon-cloud"></span> People
         </a>
       </li>
-      <? if(session_get('loggedin')): ?>
       <li>
         <a href="<?=profile_url()?>">
           <span class="glyphicon glyphicon-user"></span> Me
         </a>
       </li>
-      <? endif; ?>
     </ul>
   </div>
 </div> <!-- /.panel -->
+<? endif; ?>
