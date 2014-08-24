@@ -78,6 +78,8 @@ class HAuth extends CI_Controller {
 					else {
 						// If user exists, log them in
 						$this->account_model->login($info);
+						// Log the event
+						$this->events->log('oauth', 'login', $provider, $info['id']);
 						// Redirect to dashboard
 						redirect('dashboard');
 					}

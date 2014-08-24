@@ -32,7 +32,21 @@ class Oauth extends CI_Controller {
     $data['email'] = $user_profile['already_exists_email'];
     $data['provider'] = $this->php_session->get('oauth_provider');
     $data['fixed_container'] = true;
-    $this->template->load('hauth/already_exists', $data);
+    $this->template->load('oauth/already_exists', $data);
+  }
+
+  /**
+   * Have the user confirm they want to connect the account
+   * URL: /oauth/connect_account_confirm
+   */
+  public function connect_account_confirm() {
+    if(!$this->php_session->get('oauth_connect_account')) {
+      redirect('dashboard');
+    }
+    $data['title'] = 'Confirm connect account';
+    $data['provider'] = $this->php_session->get('oauth_provider');
+    $data['fixed_container'] = true;
+    $this->template->load('oauth/connect_confirm', $data);
   }
 
   /**
@@ -49,13 +63,20 @@ class Oauth extends CI_Controller {
     if(!$provider) {
       show_error('Unable to connect account.');
     }
+    
     login_required(false, 'To connect '.$provider.' with your existing Alphasquare account, please sign in to it first.');
+    
+    // If user already connected this provider, tell them
     if($this->account_model->oauth_provider_used($provider)) {
       show_error('Sorry, you have already connected a '.$provider.' account.');
     }
+
     // Connect the OAuth account to the logged in user's account
     $connect_account = $this->account_model->oauth_connect_account($provider, $oauth_uid);
     if($connect_account) {
+      // Log the event
+      $this->events->log('oauth', 'connect', $provider);
+      // Set oauth_connected to allow the 'connected' page to be showed
       $this->php_session->set('oauth_connected', true);
       redirect('oauth/connected');
     }
@@ -80,7 +101,7 @@ class Oauth extends CI_Controller {
       $data['provider'] = $this->php_session->get('_oauth_provider');
     }
 
-    $this->template->load('hauth/connected', $data);
+    $this->template->load('oauth/connected', $data);
 
     // Clear the OAuth session vars
     $this->clear_oauth_session();
@@ -133,7 +154,7 @@ class Oauth extends CI_Controller {
     // Make the container fixed and centered
     $data['fixed_container'] = true;
     
-    $this->template->load('hauth/new_account', $data);
+    $this->template->load('oauth/new_account', $data);
   }
 
   /**
@@ -202,6 +223,9 @@ class Oauth extends CI_Controller {
     }
 
     msg('Welcome to Alphasquare!', 'info');
+
+    // Log the account creation in events
+    $this->events->log('oauth', 'create', $provider, $info['id']);
 
     // Destroy the oauth session vars
     $this->clear_oauth_session();

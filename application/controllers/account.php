@@ -50,8 +50,10 @@ class Account extends CI_Controller {
       // Call the login method of the account model, which returns true or false
       $correct = $this->account_model->auth($username, $password);
 
-      // If the auth method returned true, redirect to return url
+      // If the auth method returned true, the username was correct
+      // The user is now logged in
       if($correct) {
+        // Redirect to return url
         redirect($next);
       }
       else {

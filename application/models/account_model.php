@@ -24,10 +24,16 @@ class Account_model extends CI_Model {
 		$info = $this->db->get()->row_array();
 		// If username doesn't exist or password doesn't match
 		if(!$info || $info['password'] !== $password) {
+      if($info) {
+        // Log failed login event
+        $this->events->log('account', 'login_fail', null, $info['id']);
+      }
 			return false;
 		}
 		else {
 			$this->login($info);
+      // Log succeeded login in events
+      $this->events->log('account', 'login');
 			return true;
 		}
 	}

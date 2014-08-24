@@ -24,6 +24,7 @@ class Settings extends CI_Controller {
   public function security() {
     $data['title'] = 'Account Security';
     $data['tab'] = 'security';
+    $data['events'] = $this->events->get();
     $data['fixed_container'] = true;
     $this->template->load('settings/template', $data);
   }
@@ -36,9 +37,15 @@ class Settings extends CI_Controller {
   }
 
   public function oauth() {
+    $this->load->library('HybridAuthLib');
     $data['title'] = 'Connected OAuth Accounts';
     $data['tab'] = 'oauth';
+    $data['providers'] = 'hyrbidauthlib';
     $data['fixed_container'] = true;
+    $data['stylesheets'] = array(
+      'assets/css/bootstrap-social.css',
+      'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
+    );
     $this->template->load('settings/template', $data);
   }
 
