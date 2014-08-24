@@ -45,9 +45,6 @@ $route['404_override'] = '';
 $route['^(login|logout|register|forgot_password)'] = 'account/$1';
 $route['login/oauth/(Facebook|Google)'] = 'hauth/login/$1';
 
-// Settings
-$route['settings/(:any)'] = 'settings/index/$1';
-
 // Debates
 $route['debate/report/(:num)'] = 'debate/report/$1';
 $route['debate/([a-zA-Z0-9]+)/(:num)'] = 'debate/view/$1/$2';
