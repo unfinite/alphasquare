@@ -128,7 +128,7 @@ class Account extends CI_Controller {
         // Show an alert box
         msg("<strong>Welcome to Alphasquare!</strong> We should probably create a page that users go to when first signing up (like Twitter's system).", 'info', 'text-align:center;font-size:15px;');
         // Go to dashboard
-        redirect('dashboard');
+        redirect(REGISTER_PAGE);
       }
       else {
         msg('Sorry, an error has occurred. Please try again.');

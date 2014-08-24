@@ -17,7 +17,7 @@ class Account_model extends CI_Model {
 		// Hash password
 		$password = hash('sha256', $password);
 		// Get user's information
-		$this->db->select('id, password, username, email')
+		$this->db->select('id, password, username, email, avatar')
 						 ->from('users')
 						 ->where('username', $username)
 						 ->limit(1);
@@ -34,7 +34,7 @@ class Account_model extends CI_Model {
 
   /**
    * Log the user in
-   * @param  array $info The user's information
+   * @param  array $info The info of the user logging in
    * @return true
    */
   public function login($info) {
@@ -52,6 +52,29 @@ class Account_model extends CI_Model {
   }
 
   /**
+   * Creates an account
+   * @param  string $username
+   * @param  string $email
+   * @param  string $password
+   * @return bool Whether or not the creation succeeded.
+   */
+  public function create($username, $email, $password) {
+    $data = array(
+      'username' => $username,
+      'password' => hash('sha256', $password),
+      'email' => $email,
+      'joined' => time()
+    );
+    $insert = $this->db->insert('users', $data);
+    if($insert) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  /**
    * Get a user's info by their OAuth UID
    * @param  string $provider The OAuth provider
    * @param  string $uid The OAuth user id
@@ -63,7 +86,7 @@ class Account_model extends CI_Model {
       'o.oauth_uid' => $uid
     );
     $this->db->select('o.oauth_provider, o.oauth_uid,
-                       u.id, u.username, u.email')
+                       u.id, u.username, u.email, u.avatar')
              ->from('user_oauth o')
              ->join('users u', 'u.id = o.userid', 'left')
              ->where($where)
@@ -89,29 +112,6 @@ class Account_model extends CI_Model {
     return $this->db->count_all_results() > 0 ? true : false;
   }
 
-	/**
-	 * Creates an account
-	 * @param  string $username
-	 * @param  string $email
-	 * @param  string $password
-	 * @return bool Whether or not the creation succeeded.
-	 */
-	public function create($username, $email, $password) {
-		$data = array(
-			'username' => $username,
-			'password' => hash('sha256', $password),
-			'email' => $email,
-			'joined' => time()
-		);
-		$insert = $this->db->insert('users', $data);
-		if($insert) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
   /**
    * Creates an account from OAuth provider
    * @param  string $oauth_provider The OAuth provider/service.
@@ -120,13 +120,16 @@ class Account_model extends CI_Model {
    * @param  string $username
    * @return bool Whether or not the creation succeeded.
    */
-  public function oauth_create($oauth_provider, $oauth_uid, $name, $username, $email, $location) {
+  public function oauth_create($oauth_provider, $oauth_uid, $name, $username, $email, $location, $photo) {
+    $this->load->helper('avatar_helper');
+    $photo_url = avatar_from_url($photo);
     $data = array(
       'name' => $name,
       'username' => $username,
       'email' => $email,
       'location' => $location,
-      'joined' => time()
+      'joined' => time(),
+      'avatar' => $photo_url
     );
     $insert = $this->db->insert('users', $data);
     if($insert) {

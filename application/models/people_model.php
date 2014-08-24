@@ -73,6 +73,7 @@ class People_model extends CI_Model {
     $this->db->select('u.id,
                        u.username,
                        u.email,
+                       u.avatar,
                        u.followers,
                        f.followid as is_following')
          ->from('users u')
@@ -219,6 +220,7 @@ class People_model extends CI_Model {
     $this->db->select('u.id,
                        u.username,
                        u.email,
+                       u.avatar,
                        u.followers,
                        f2.followid as is_following')
              ->from('following f');

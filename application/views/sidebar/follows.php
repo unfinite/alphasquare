@@ -9,7 +9,7 @@
 
     <? foreach($following as $user): ?>
       <a href="<?=profile_url($user['username'])?>">
-        <img src="<?=gravatar_url($user['email'], 50)?>" class="img-circle" title="<?=$user['username']?>" data-toggle="tooltip" />
+        <img src="<?=avatar_url($user['avatar'], $user['email'], 50)?>" class="img-circle" title="<?=$user['username']?>" data-toggle="tooltip" />
       </a>
     <? endforeach;?>
 

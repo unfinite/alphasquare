@@ -35,7 +35,7 @@
         </div>
         <div id="actions">
 
-          <? if(session_get('userid') !== $id): ?>
+          <? if(!$is_owner): ?>
 
             <? if(!$is_following): ?>
             <button class="btn btn-default follow" data-id="<?=$id?>" data-username="<?=$username?>">
@@ -47,7 +47,7 @@
             </button>
             <? endif; ?>
 
-          <? elseif(session_get('loggedin') && $tab !== 'about'): ?>
+          <? elseif($is_owner && $tab !== 'about'): ?>
           <a href="<?=profile_url($username)?>/about" class="btn btn-default btn-sm">
             <span class="glyphicon glyphicon-pencil"></span>
             Edit Profile

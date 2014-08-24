@@ -20,7 +20,7 @@ class Debate_model extends CI_Model {
    */
   public function get_posts($type, $offset = 0, $limit = POST_DISPLAY_LIMIT, $params = array()) {
     $userid = $this->php_session->get('userid');
-    $this->db->select('d.*, u.id as userid, u.username, u.email, v.vote')
+    $this->db->select('d.*, u.id as userid, u.username, u.email, u.avatar, v.vote')
              ->from('debates d')
              // Get post owner's info
              ->join('users u', 'u.id = d.userid', 'inner')
@@ -77,10 +77,10 @@ class Debate_model extends CI_Model {
       'u.username' => $username,
       'd.time' => $timestamp
     );
-    $this->db->select('d.*, u.id as userid, u.username, u.email, v.vote')
+    $this->db->select('d.*, u.id as userid, u.username, u.email, u.avatar, v.vote')
              ->from('debates d')
              ->join('users u', 'u.id = d.userid', 'left')
-             ->join('votes v', 'v.postid = d.id AND v.userid = '.$userid, 'left')
+             ->join('votes v', 'v.postid = d.id AND v.userid = "'.$userid.'"', 'left')
              ->where($where)
              ->limit(1);
     $info = $this->db->get()->row_array();
@@ -132,6 +132,7 @@ class Debate_model extends CI_Model {
       $data['comments_count'] = 0;
       $data['vote'] = null;
       $data['email'] = $this->php_session->get('email');
+      $data['avatar'] = $this->php_session->get('avatar');
       $data['username'] = $this->php_session->get('username');
       $data['id'] = $this->db->insert_id();
       $post_html = $this->post_html($data);

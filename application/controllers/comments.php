@@ -10,11 +10,12 @@ class Comments extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('comments_model');
-		login_required();
 	}
 
 	public function create() {
 
+		login_required();
+		
 		$postid = $this->input->post('postid');
 		$content = trim($this->input->post('content'));
 

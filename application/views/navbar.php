@@ -10,7 +10,7 @@
 <!-- Slingshot box -->
 <div id="slingshot-container">
   <a href="<?=profile_url()?>" class="user">
-    <img class="img-circle profile" src="<?=gravatar_url(null,100)?>" />
+    <img class="img-circle profile" src="<?=avatar_url(null,null,100)?>" />
     <h3><?=session_get('username')?></h3>
   </a>
   <div class="slingshot-actions">

@@ -4,7 +4,7 @@
 	<? foreach($users as $user): ?>
 	<div class="user">
 		<a href="<?=profile_url($user['username'])?>">
-			<img src="<?=gravatar_url($user['email'])?>" class="img-circle" />
+			<img src="<?=avatar_url($user['avatar'], $user['email'])?>" class="img-circle" />
 		</a>
 		<a href="<?=profile_url($user['username'])?>">
 			<span class="name"><?=$user['username']?></span>

@@ -193,7 +193,8 @@ class Oauth extends CI_Controller {
       $name, 
       $username, 
       $email,
-      $user_profile['country']
+      $user_profile['country'],
+      $user_profile['photoURL']
     );
 
     if(!$info) {
@@ -202,9 +203,8 @@ class Oauth extends CI_Controller {
 
     msg('Welcome to Alphasquare!', 'info');
 
-    // Destroy the session vars
-    $this->php_session->destroy();
-    $this->php_session->start();
+    // Destroy the oauth session vars
+    $this->clear_oauth_session();
 
     // Log the user in to new account
     $this->account_model->login($info); 

@@ -2,7 +2,7 @@
 <? foreach($posts as $post): ?>
 <article class="post" data-id="<?=$post['id']?>">
   <a href="<?=profile_url($post['username'])?>">
-    <img class="img-circle profile-picture" data-toggle="tooltip" data-placement="right" src="<?=gravatar_url($post['email'], 55)?>" title="<?=$post['username']?>">
+    <img src="<?=avatar_url($post['avatar'], $post['email'], 55)?>" title="<?=$post['username']?>" class="img-circle profile-picture" data-toggle="tooltip" data-placement="right" />
   </a>
   <section>
     <div class="actions">

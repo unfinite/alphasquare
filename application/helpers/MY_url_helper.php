@@ -28,4 +28,31 @@ if(!function_exists('gravatar_url')) {
 	}
 }
 
+if(!function_exists('avatar_url')) {
+	/**
+	 * Get the URL to a user's avatar
+	 * 
+	 * If $avatar is null, it will use gravatar from email
+	 * 
+	 * @param  string  $email   [description]
+	 * @param  string  $avatar  [description]
+	 * @param  integer $size    [description]
+	 * @return [type]           [description]
+	 */
+	function avatar_url($avatar = null, $email = null, $size = 80) {
+	    if(!$avatar && !$email) {
+	    	$CI =& get_instance();
+	    	$avatar = $CI->php_session->get('avatar');
+	    	$email = $CI->php_session->get('email');
+	    }
+	    if($avatar) {
+	    	$url = base_url("avatars/".$avatar);
+	    } 
+	    else {
+	    	$url = gravatar_url($email, $size);
+	    }
+	    return $url;
+	}
+}
+
 /* End of file MY_url_helper.php */

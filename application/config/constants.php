@@ -17,6 +17,9 @@ $broadcast = array(
 	"We have switched to CodeIgniter!"
 );
 
+// Page to go to when user first registers
+define('REGISTER_REDIRECT', 'dashboard');
+
 // Email address for sys emails
 define('SYS_EMAIL_FROM', 'noreply@alphasquare.us');
 

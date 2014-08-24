@@ -71,8 +71,8 @@ class People extends CI_Controller {
 			$interval = $now->diff($dob);
 			$data['age'] = $interval->y;
 		}
-		$data['avatar'] = gravatar_url($data['email'], 100);
-		$data['is_owner'] = ($this->php_session->get('userid') === $id);
+		$data['avatar'] = avatar_url($data['avatar'], $data['email'], 100);
+		$data['is_owner'] = ($this->php_session->get('userid') == $id);
 
 		$tab_data = $data;
 		switch($tab) {

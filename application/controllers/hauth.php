@@ -47,7 +47,8 @@ class HAuth extends CI_Controller {
 							'emailVerified' => $user_profile->emailVerified,
 							'email' => $user_profile->email,
 							'country' => $user_profile->country,
-							'identifier' => $user_profile->identifier
+							'identifier' => $user_profile->identifier,
+							'photoURL' => $user_profile->photoURL
 						);
 						$sess['oauth_user_profile'] = $user_profile_arr;
 						$sess['oauth_provider'] = $provider;
