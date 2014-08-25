@@ -13,7 +13,7 @@
 $broadcast = array(
 	"Dashboard and profiles are now equipped with infinite scrolling!",
 	"Implemented auto update of posts and comments!",
-	"Implemented follow button!",
+	"Test auto deploy!",
 	"We have switched to CodeIgniter!"
 );
 
