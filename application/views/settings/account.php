@@ -3,7 +3,7 @@
     <h3 class="panel-title text-bold">Name</h3>
   </div>
   <div class="panel-body">
-    <span><?= $name ? $name : 'No name provided.'; ?></span>
+    <span style="font-size:15px;"><?= $name ? $name : 'No name provided.'; ?></span>
     <br />
     <em>You can edit this on your <a href="<?=profile_url()?>/about">about page</a>.</em>
   </div>
