@@ -419,8 +419,15 @@ var Dashboard = {
       }
     },
     reply: function(e) {
+      var textarea = $('#post-comment textarea');
+      var current_text = textarea.val();
       var username = $(this).data('username');
-      $('#post-comment textarea').focus().val('@'+username+': ');
+      var append = '';
+      if(current_text.match(/@(\w+)\:/)) {
+        append = "\n";
+      }
+      append += "@"+username+": ";
+      textarea.focus().append(append).trigger('autosize.resize');
       e.preventDefault();
     }
   }
