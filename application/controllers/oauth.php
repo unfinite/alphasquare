@@ -246,7 +246,7 @@ class Oauth extends CI_Controller {
     msg('Welcome to Alphasquare!', 'info');
 
     // Log the account creation in events
-    $this->events->log('oauth', 'create', $provider, $info['id']);
+    $this->events->log('oauth', 'create_account', $provider, $info['id']);
 
     // Destroy the oauth session vars
     $this->oauth_model->clear_oauth_session();

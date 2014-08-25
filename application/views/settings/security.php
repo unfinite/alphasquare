@@ -1,9 +1,9 @@
-<p>Here are the 50 latest events on your account.</p>
+<p>Here are the 50 latest events that have to do with your account.</p>
 
 <table class="table table-bordered">
   <tr>
     <th>Event</th>
-    <th>Time</th>
+    <th>When</th>
     <th>IP address</th>
   </tr>
 
@@ -15,7 +15,7 @@
       <br /><small>(<?=$event['value']?>)</small>
       <? endif; ?>
     </td>
-    <td><?=date('Y-m-d g:i A', $event['time'])?> (Eastern)</td>
+    <td><span class="timeago" title="<?=date('c', $event['time'])?>"><?=date('c', $event['time'])?></span></td>
     <td>
       <?=inet_ntop($event['ip'])?>
       <? if(inet_ntop($event['ip'])==$_SERVER['REMOTE_ADDR']):?>

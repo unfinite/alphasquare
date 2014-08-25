@@ -73,6 +73,8 @@ class Account_model extends CI_Model {
     );
     $insert = $this->db->insert('users', $data);
     if($insert) {
+      // Log creation
+      $this->events->log('account', 'create', null, $this->db->insert_id());
       return true;
     }
     else {
