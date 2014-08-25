@@ -127,9 +127,9 @@ class Account extends CI_Controller {
         // If they were registered, log them in
         $this->account_model->authenticate($username, $password);
         // Show an alert box
-        msg("<strong>Welcome to Alphasquare!</strong> We should probably create a page that users go to when first signing up (like Twitter's system).", 'info', 'text-align:center;font-size:15px;');
+        msg("<strong>Welcome to Alphasquare!</strong>", 'info', 'text-align:center;font-size:15px;');
         // Go to dashboard
-        redirect(REGISTER_PAGE);
+        redirect(REGISTER_REDIRECT);
       }
       else {
         msg('Sorry, an error has occurred. Please try again.');
