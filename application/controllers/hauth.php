@@ -30,11 +30,10 @@ class HAuth extends CI_Controller {
 					log_message('info', 'controllers.HAuth.login: user profile:'.PHP_EOL.print_r($user_profile, TRUE));
 
 					// Load the people and account model
-					$this->load->model('people_model');
-					$this->load->model('account_model');
+					$this->load->model('oauth_model');
 
 					// Get user info
-					$info = $this->account_model->oauth_info($provider, $user_profile->identifier);
+					$info = $this->oauth_model->info($provider, $user_profile->identifier);
 					
 					// Check if user doesn't exist by checking if info is false
 					// Or if they're already logged in (connecting an account)
@@ -59,6 +58,8 @@ class HAuth extends CI_Controller {
 							redirect('oauth/connect_account_confirm');
 						}
 						else {
+							$this->load->model('people_model');
+
 							// If email exists, go to /oauth/already_exists
 							if($this->people_model->email_taken($user_profile->emailVerified)) {
 								$sess['oauth_choose'] =  true;
@@ -77,6 +78,7 @@ class HAuth extends CI_Controller {
 					}
 					else {
 						// If user exists, log them in
+						$this->load->model('account_model');
 						$this->account_model->login($info);
 						// Log the event
 						$this->events->log('oauth', 'login', $provider, $info['id']);

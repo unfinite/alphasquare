@@ -4,6 +4,7 @@ class Oauth extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
+    $this->load->model('oauth_model');
     $this->load->model('account_model');
   }
 
@@ -67,12 +68,17 @@ class Oauth extends CI_Controller {
     login_required(false, 'To connect '.$provider.' with your existing Alphasquare account, please sign in to it first.');
     
     // If user already connected this provider, tell them
-    if($this->account_model->oauth_provider_used($provider)) {
+    if($this->oauth_model->provider_used($provider)) {
       show_error('Sorry, you have already connected a '.$provider.' account.');
     }
 
+    // If this account is already connected to another Alphasquare account
+    if($this->oauth_model->already_connected($provider, $oauth_uid)) {
+      show_error('That '.$provider.' account is already connected to another Alphasquare account.');
+    }
+
     // Connect the OAuth account to the logged in user's account
-    $connect_account = $this->account_model->oauth_connect_account($provider, $oauth_uid);
+    $connect_account = $this->oauth_model->connect_account($provider, $oauth_uid);
     if($connect_account) {
       // Log the event
       $this->events->log('oauth', 'connect', $provider);
@@ -84,7 +90,7 @@ class Oauth extends CI_Controller {
 
   /**
    * Lets the user know their account has been connected
-   * @return [type] [description]
+   * URL: /oauth/connected
    */
   public function connected() {
     if(!$this->php_session->get('oauth_connected')) {
@@ -104,7 +110,22 @@ class Oauth extends CI_Controller {
     $this->template->load('oauth/connected', $data);
 
     // Clear the OAuth session vars
-    $this->clear_oauth_session();
+    $this->oauth_model->clear_oauth_session();
+  }
+
+  /**
+   * Disconnect an account
+   * URL: /oauth/disconnect/PROVIDER
+   */
+  public function disconnect($provider) {
+    login_required();
+    try {
+      $this->oauth_model->disconnect($provider);
+      redirect('settings/oauth');
+    }
+    catch(Exception $e) {
+      show_error($e->getMessage());
+    }
   }
 
   /**
@@ -208,7 +229,7 @@ class Oauth extends CI_Controller {
     }
 
     // Create the account
-    $info = $this->account_model->oauth_create(
+    $info = $this->oauth_model->create(
       $provider, 
       $user_profile['identifier'], 
       $name, 
@@ -228,7 +249,7 @@ class Oauth extends CI_Controller {
     $this->events->log('oauth', 'create', $provider, $info['id']);
 
     // Destroy the oauth session vars
-    $this->clear_oauth_session();
+    $this->oauth_model->clear_oauth_session();
 
     // Log the user in to new account
     $this->account_model->login($info); 
@@ -240,14 +261,6 @@ class Oauth extends CI_Controller {
     // Destroy the session vars
     $this->php_session->destroy();
     redirect('login');
-  }
-
-  private function clear_oauth_session() {
-    $this->php_session->delete('oauth_new_account');
-    $this->php_session->delete('oauth_connect_account');
-    $this->php_session->delete('oauth_choose');
-    $this->php_session->delete('oauth_provider');
-    $this->php_session->delete('oauth_user_profile');
   }
 
 }

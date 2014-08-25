@@ -5,6 +5,7 @@ class Settings extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('account_model');
     login_required();
   }
 
@@ -37,15 +38,12 @@ class Settings extends CI_Controller {
   }
 
   public function oauth() {
-    $this->load->library('HybridAuthLib');
+    $this->load->model('oauth_model');
+    $data['connected'] = $this->oauth_model->get_connected();
     $data['title'] = 'Connected OAuth Accounts';
     $data['tab'] = 'oauth';
-    $data['providers'] = 'hyrbidauthlib';
     $data['fixed_container'] = true;
-    $data['stylesheets'] = array(
-      'assets/css/bootstrap-social.css',
-      'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
-    );
+    $data['stylesheets'] = array('assets/css/bootstrap-social.css', 'assets/css/oauth-settings.css');
     $this->template->load('settings/template', $data);
   }
 
