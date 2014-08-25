@@ -3,8 +3,8 @@
 <head>
 <title>Error :(</title>
 <link href='http://fonts.googleapis.com/css?family=Roboto:200,300,700' rel='stylesheet' type='text/css'>
-<link href="/alphasquare/assets/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/alphasquare/assets/css/error-page.css" rel="stylesheet" />
+<link href="/dev/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/dev/assets/css/error-page.css" rel="stylesheet" />
 </head>
 <body>
   <div id="container">
