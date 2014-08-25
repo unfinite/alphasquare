@@ -48,7 +48,7 @@ class Account extends CI_Controller {
       }
 
       // Call the login method of the account model, which returns true or false
-      $correct = $this->account_model->auth($username, $password);
+      $correct = $this->account_model->authenticate($username, $password);
 
       // If the auth method returned true, the username was correct
       // The user is now logged in
@@ -66,10 +66,7 @@ class Account extends CI_Controller {
       // Load the login page view
       $data['title'] = 'Sign in';
       $data['fixed_container'] = true;
-      $data['stylesheets'] = array(
-        'assets/css/bootstrap-social.css',
-        'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
-      );
+      $data['stylesheets'] = array('assets/css/bootstrap-social.css');
       $this->template->load('account/login', $data);
     }
 
@@ -126,7 +123,7 @@ class Account extends CI_Controller {
 
       if($created) {
         // If they were registered, log them in
-        $this->account_model->login($username, $password);
+        $this->account_model->authenticate($username, $password);
         // Show an alert box
         msg("<strong>Welcome to Alphasquare!</strong> We should probably create a page that users go to when first signing up (like Twitter's system).", 'info', 'text-align:center;font-size:15px;');
         // Go to dashboard
@@ -143,10 +140,7 @@ class Account extends CI_Controller {
       $data['title'] = 'Register';
       $data['fixed_container'] = true;
       $data['errors'] = validation_errors();
-      $data['stylesheets'] = array(
-        'assets/css/bootstrap-social.css',
-        'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
-      );
+      $data['stylesheets'] = array('assets/css/bootstrap-social.css');
       $this->template->load('account/register', $data);
     }
   }
