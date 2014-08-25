@@ -7,7 +7,7 @@
     <div id="no-following-message" class="panel panel-default">
       <h3>You aren't following anyone, <?=session_get('username')?></h3>
       <p>Follow people to see their debates on your dashboard.</p>
-      <a href="<?=base_url('people/popular')?>" class="btn btn-primary">View Popular People</a>
+      <a href="<?=base_url('people/list/popular')?>" class="btn btn-primary">View Popular People</a>
     </div>
     <? endif; ?>
 
