@@ -427,7 +427,7 @@ var Dashboard = {
         append = "\n";
       }
       append += "@"+username+": ";
-      textarea.focus().append(append).trigger('autosize.resize');
+      textarea.focus().val(current_text+append).trigger('autosize.resize');
       e.preventDefault();
     }
   }
