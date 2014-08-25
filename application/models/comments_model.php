@@ -60,8 +60,11 @@ class Comments_model extends CI_Model {
       'time' => time()
     );
     $created = $this->db->insert('comments', $data);
-    // If it was created, return the array of info
+    // If it was created
     if($created) {
+      // Update comments count row
+      $this->sync_comments_count($postid);
+      // Return the array of info
       $data['username'] = $this->php_session->get('username');
       $data['email'] = $this->php_session->get('email');
       $data['id'] = $this->db->insert_id();
@@ -76,6 +79,20 @@ class Comments_model extends CI_Model {
    */
   public function delete($id) {
 
+  }
+
+  /**
+   * Sync the comments count with the comments count row
+   * @param  int $postid The post ID
+   * @return bool
+   */
+  private function sync_comments_count($postid) {
+    $new_count = $this->db->select('id')
+                          ->from('comments')
+                          ->where('postid', $postid)
+                          ->count_all_results();
+    $this->db->where('id', $postid);
+    return $this->db->update('debates', array('comments_count'=>$new_count));
   }
 
   /**
