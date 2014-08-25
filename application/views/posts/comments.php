@@ -6,7 +6,8 @@
   </a>
   <p><?=format_post($comment['content'])?></p>
   <footer>
-    <abbr title="<?=date('c', $comment['time'])?>" class="timeago"><?=date('F j, Y g:i A', $comment['time'])?></abbr>
+    <a href="#" class="reply" data-username="<?=$comment['username']?>">Reply</a>
+    <abbr class="pull-right timeago" title="<?=date('c', $comment['time'])?>"><?=date('F j, Y g:i A', $comment['time'])?></abbr>
   </footer>
 </article>
 

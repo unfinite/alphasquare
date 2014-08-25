@@ -314,6 +314,7 @@ var Dashboard = {
     viewingAll: false,
     bind: function() {
       Dashboard.comment.postid = $('#post-page').data('id');
+      $('#comments').on('click', '.reply', this.reply);
       $('#post-comment').submit(this.submit);
       $('#post-comment textarea').keypress(function(e) {
         // If key is "enter" (13) submit the form
@@ -416,6 +417,11 @@ var Dashboard = {
                     .appendTo('#comments-container')
                     .slideDown(250, Alp.timeago);
       }
+    },
+    reply: function(e) {
+      var username = $(this).data('username');
+      $('#post-comment textarea').focus().val('@'+username+': ');
+      e.preventDefault();
     }
   }
 

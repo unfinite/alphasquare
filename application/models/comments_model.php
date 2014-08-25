@@ -62,12 +62,12 @@ class Comments_model extends CI_Model {
     $created = $this->db->insert('comments', $data);
     // If it was created
     if($created) {
-      // Update comments count row
-      $this->sync_comments_count($postid);
       // Return the array of info
       $data['username'] = $this->php_session->get('username');
       $data['email'] = $this->php_session->get('email');
       $data['id'] = $this->db->insert_id();
+      // Update comments count row
+      $this->sync_comments_count($postid);
       return $data;
     }
   }
