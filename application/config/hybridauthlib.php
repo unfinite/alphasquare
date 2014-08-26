@@ -12,7 +12,7 @@
 $config['hybridauth'] =
 	array(
 		// set on "base_url" the relative url that point to HybridAuth Endpoint
-		'base_url' => 'dev/hauth/endpoint',
+		'base_url' => 'hauth/endpoint',
 
 		"providers" => array (
 
