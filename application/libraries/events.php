@@ -38,13 +38,15 @@ class Events {
    */
   public function log($object, $event, $value = null, $userid = null) {
     $userid = $userid ? $userid : $this->CI->php_session->get('userid');
+    $ip = (string) $_SERVER['REMOTE_ADDR'];
+    $ip_bin = inet_pton($ip);
     $data = array(
       'userid' => $userid,
       'object' => $object,
       'event' => $event,
       'value' => $value,
       'time' => time(),
-      'ip' => inet_pton($_SERVER['REMOTE_ADDR'])
+      'ip' => $ip_bin
     );
     $this->CI->db->insert('account_events', $data);
   }
