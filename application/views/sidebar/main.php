@@ -1,4 +1,3 @@
-
 <? if(session_get('loggedin')): ?>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -41,12 +40,12 @@
       <li>
         <a href="#" id="alert-link">
           <span class="glyphicon glyphicon-bell"></span> Alerts
-          &nbsp;<span class="label label-danger alert-unread-count"></span>
+           <span class="label label-danger alert-unread-count"></span>
         </a>
       </li>
       <li class="<?=isset($people)?'active':''?>">
         <a href="<?=base_url('people')?>">
-          <span class="glyphicon glyphicon-cloud"></span> People
+          <span class="glyphicon glyphicon-cloud"></span> Discover
         </a>
       </li>
       <li>
