@@ -45,7 +45,7 @@ class Events {
       'event' => $event,
       'value' => $value,
       'time' => time(),
-      'ip' => $ip_bin
+      'ip' => $ip
     );
     $this->CI->db->insert('account_events', $data);
   }
