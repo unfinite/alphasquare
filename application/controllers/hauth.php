@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+error_reporting(E_ALL);
+
 class HAuth extends CI_Controller {
 
 	public function __construct() {
@@ -9,8 +11,6 @@ class HAuth extends CI_Controller {
 	}
 
 	public function login($provider) {
-
-		//$this->hybridauthlib->logoutAllProviders();
 
 		log_message('debug', "controllers.HAuth.login($provider) called");
 
