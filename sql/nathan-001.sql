@@ -18,6 +18,6 @@ CREATE TABLE `schema_version` (
 
 INSERT INTO `schema_version` (`migration_code`, `extra_notes`) 
 VALUES (
-    '001', 
+    'nathan-001', 
     'Updated `users.avatar` default value (NULL). Created tables for account event reports. Created the `schema_versions` table.'
 );
