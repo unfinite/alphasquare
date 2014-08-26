@@ -20,11 +20,11 @@
             <? endif; ?>
 
           </h2>
-          <p><?=$tagline?></p>
+          <p><?=htmlentities($tagline)?></p>
 
           <span class="glyphicon glyphicon-map-marker"></span>
           <?=htmlentities($location)?>
-          &nbsp;&nbsp;
+            
 
           <? if($website_url): ?>
           <br class="visible-xs" />
