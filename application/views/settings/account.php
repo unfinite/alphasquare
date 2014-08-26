@@ -5,7 +5,7 @@
   <div class="panel-body">
     <span style="font-size:15px;"><?= $username; ?></span>
     <br />
-    <em>You can edit this and more on your <a href="<?=profile_url()?>/about">about page</a>.</em>
+    <em>Looking for bio, name, and birthday? You can find those settings in the <a href="<?=profile_url()?>/about">about page</a>.</em>
   </div>
 </div>
 
