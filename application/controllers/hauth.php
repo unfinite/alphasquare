@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 error_reporting(E_ALL);
+echo 'hi';
 
 class HAuth extends CI_Controller {
 
