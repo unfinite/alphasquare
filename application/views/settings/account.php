@@ -3,9 +3,9 @@
     <h3 class="panel-title text-bold">Username</h3>
   </div>
   <div class="panel-body">
-    <span style="font-size:15px;"><?= $username; ?></span>
+    <span style="font-size:15px;"><?=$username?></span>
     <br />
-    <em>Looking for bio, name, and birthday? You can find those settings in the <a href="<?=profile_url()?>/about">about page</a>.</em>
+    <em>Looking for bio, name, and birthday? You can find those settings on your <a href="<?=profile_url()?>/about">about page</a>.</em>
   </div>
 </div>
 

@@ -31,8 +31,8 @@
     </td>
     <td><span class="timeago" title="<?=date('c', $event['time'])?>"><?=date('c', $event['time'])?></span></td>
     <td>
-      <?=inet_ntop($event['ip'])?>
-      <? if(inet_ntop($event['ip'])==$_SERVER['REMOTE_ADDR']):?>
+      <?=$event['ip']?>
+      <? if($event['ip'] == $_SERVER['REMOTE_ADDR']):?>
       <small>(you)</small>
       <? endif; ?>
     </td>
