@@ -40,7 +40,7 @@ $config['hybridauth'] =
 		),
 
 		// if you want to enable logging, set 'debug_mode' to true  then provide a writable file by the web server on "debug_file"
-		"debug_mode" => (ENVIRONMENT == 'development'),
+		"debug_mode" => false, //(ENVIRONMENT == 'development'),
 
 		"debug_file" => APPPATH.'logs/hybridauth.log',
 	);
