@@ -38,7 +38,7 @@ class Events {
    */
   public function log($object, $event, $value = null, $userid = null) {
     $userid = $userid ? $userid : $this->CI->php_session->get('userid');
-    $ip = $this->input->ip_address();
+    $ip = $this->CI->input->ip_address();
     $data = array(
       'userid' => $userid,
       'object' => $object,
