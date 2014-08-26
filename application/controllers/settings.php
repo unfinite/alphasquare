@@ -30,6 +30,23 @@ class Settings extends CI_Controller {
     $this->template->load('settings/template', $data);
   }
 
+  public function report_events() {
+    $ids = $this->input->post('ids');
+    $ids = explode(',', $ids);
+    foreach($ids as $id) {
+      $id = (int) $id;
+      if(!$id) {
+        json_error('Invalid event ID.');
+      }
+    }
+    if($this->events->report($ids)) {
+      json_success();
+    }
+    else {
+      json_error('Error.');
+    }
+  }
+
   public function password() {
     $data['title'] = 'Change Password';
     $data['tab'] = 'password';

@@ -13,13 +13,20 @@ class Events {
    */
   public function get($id = null) {
     $id = $id ? $id : $this->CI->php_session->get('userid');
-    $this->delete_old();
     $this->CI->db->select('id, object, event, value, time, ip, userid')
                  ->from('account_events')
                  ->where('userid', $id)
                  ->order_by('time', 'desc')
                  ->limit(50);
-    return $this->CI->db->get()->result_array();
+    $events = $this->CI->db->get()->result_array();
+    // Create comma separated list of IDs of the events
+    $ids = array();
+    foreach($events as $event) {
+      $ids[] = $event['id'];
+    }
+    // Delete all the user's events except for these ones (50 latest)
+    $this->delete($ids);
+    return $events;
   }
 
   /**
@@ -31,7 +38,6 @@ class Events {
    */
   public function log($object, $event, $value = null, $userid = null) {
     $userid = $userid ? $userid : $this->CI->php_session->get('userid');
-    
     $data = array(
       'userid' => $userid,
       'object' => $object,
@@ -44,20 +50,32 @@ class Events {
   }
 
   /**
-   * Delete all of a user's events except the latest 50
+   * Delete all of a user's events except the IDs in the array
+   *
+   * @param array $ids The IDs of the events to NOT delete
    * @return null
    */
-  public function delete_old() {
+  public function delete($ids) {
     $userid = $this->CI->php_session->get('userid');
-    $sql = "
-    DELETE FROM `account_events`
-    WHERE userid = '$userid' AND id NOT IN (
-      SELECT id
-      FROM `account_events`        
-      ORDER BY time DESC
-      LIMIT 50
-    )";
-    //$this->CI->db->query($sql);
+    return $this->CI->db->where('userid', $userid)
+                        ->where_not_in('id', $ids)
+                        ->delete('account_events');
+  }
+
+  /**
+   * Report events
+   * @param  array $ids Event IDs
+   * @return bool
+   */
+  public function report($ids) {
+    $ids = implode(',', $ids);
+    $userid = $this->CI->php_session->get('userid');
+    $data = array(
+      'userid' => $userid,
+      'ids' => $ids,
+      'time' => time()
+    );
+    return $this->CI->db->insert('account_event_reports', $data);
   }
 
 }

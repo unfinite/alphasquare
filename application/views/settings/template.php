@@ -12,3 +12,5 @@
 <br />
 
 <? $this->load->view('settings/'.$tab); ?>
+
+<script src="<?=base_url('assets/js/settings.js');?>"></script>

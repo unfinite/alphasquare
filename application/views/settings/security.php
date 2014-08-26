@@ -1,7 +1,18 @@
 <p>Here are the 50 latest events that have to do with your account.</p>
+<p>See any suspicious activity? <a href="#" id="report-events-link">Report it to Alphasquare...</a></p>
 
-<table class="table table-bordered">
+<div id="report-events" class="panel panel-default" style="display:none;">
+  <div class="panel-body">
+    <h3 style="margin-top:0;">Report suspicious activity</h3>
+    <p>Please tick the checkboxes next to the suspicious events and then click <b>Report</b>.</p>
+    <button class="btn btn-warning" id="report">Report</button>
+    <button class="btn btn-default cancel">Cancel</button>
+  </div>
+</div>
+
+<table class="table table-bordered table-striped">
   <tr>
+    <th class="check hidden"></th>
     <th>Event</th>
     <th>When</th>
     <th>IP address</th>
@@ -9,6 +20,9 @@
 
   <? foreach($events as $event): ?>
   <tr>
+    <td class="check hidden text-center">
+      <input type="checkbox" value="<?=$event['id']?>" />
+    </td>
     <td>
       <?=$event['object'].'.'.$event['event']?>
       <? if($event['value']): ?>
