@@ -1,5 +1,5 @@
 <footer id="footer">
-	© <?=date("Y");?> Alphasquare, a division of Crunch D&D
+	© <?=date("Y");?> Alphasquare.us.
 	<span class="links">
 		<a href="<?=base_url('about/privacy')?>">Privacy</a>
 		<a href="<?=base_url('about/terms')?>">Terms</a>
