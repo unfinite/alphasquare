@@ -19,7 +19,7 @@ if(!function_exists('format_post')) {
     // Parse BBCode
     $text = bbcode($text);
     // Make links clickable
-    $text = auto_link($text);
+    $text = auto_link($text, 'url', true);
     // Parse &tags
     $text = str_replace('&amp;', '&', $text);
     $text = preg_replace(REGEX_TAG, '<a href="'.base_url().'search?q=%26$1">&amp;$1</a>', $text);
