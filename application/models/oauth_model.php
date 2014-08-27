@@ -99,7 +99,7 @@ class Oauth_model extends CI_Model {
     $insert = $this->db->insert('users', $data);
     if($insert) {
       $userid = $this->db->insert_id();
-      $this->oauth_connect_account($oauth_provider, $oauth_uid, $userid);
+      $this->connect_account($oauth_provider, $oauth_uid, $userid);
       $data['id'] = $userid;
       return $data;
     }
