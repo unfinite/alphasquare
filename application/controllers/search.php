@@ -16,14 +16,30 @@ class Search extends CI_Controller {
     $this->load->model('search_model');
   }
 
+
+  /**
+   * Search Alphasquare
+   * 
+   * @return [type] [description]
+   */
   public function index() {
     $query = $this->input->get('q');
     if($query) {
-      $data['title'] = 'Results for '.$query;
-      $data['query'] = $query;
+
+      // Get search results
       $results = $this->search_model->get_results($query);
+
+      // Get count
       $data['results_count'] = count($results);
+
+      // Get HTML of the posts for the search results
       $data['results_html'] = $this->debate_model->post_html($results, true);
+      
+      // Encode special characters with their HTML entities
+      $query = htmlspecialchars($query);
+      $data['title'] = 'Search results for '.$query;
+      $data['query'] = $query;
+
       $this->template->load('search/results', $data);
     }
     else {
