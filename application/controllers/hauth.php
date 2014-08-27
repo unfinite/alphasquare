@@ -146,6 +146,9 @@ class HAuth extends CI_Controller {
 			$_GET = $_REQUEST;
 		}
 
+		var_dump($_GET);
+		exit;
+
 		log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
 		require_once APPPATH.'/third_party/hybridauth/index.php';
 
