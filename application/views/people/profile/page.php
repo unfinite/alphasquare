@@ -20,16 +20,16 @@
             <? endif; ?>
 
           </h2>
-          <p><?=htmlentities($tagline)?></p>
+          <p><?=htmlspecialchars($tagline)?></p>
 
           <span class="glyphicon glyphicon-map-marker"></span>
-          <?=htmlentities($location)?>
+          <?=htmlspecialchars($location)?>
             
 
           <? if($website_url): ?>
           <br class="visible-xs" />
           <span class="glyphicon glyphicon-link"></span>
-          <a href="<?=$website_url?>" target="_blank"><?= $website_title ? $website_title : $website_url ?></a>
+          <a href="<?=$website_url?>" target="_blank"><?= $website_title ? htmlspecialchars($website_title) : $website_url ?></a>
           <? endif; ?>
 
         </div>
