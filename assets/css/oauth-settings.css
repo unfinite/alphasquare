@@ -1,26 +1,28 @@
 /* OAuth Settings Page CSS */
 
-#oauth-accounts div {
-  padding: 10px 20px 5px;
-  margin-bottom: 5px;
+#oauth-accounts div.provider {
+  padding: 20px;
   border-bottom: 1px solid #e1e1e1;
 }
-#oauth-accounts div:last-child {
+#oauth-accounts div.provider:last-child {
   border-bottom: 0;
 }
-#oauth-accounts div span.fa {
+#oauth-accounts div.provider span.fa {
   font-size: 25px;
   width: 35px;
 }
-#oauth-accounts div span.fa.fa-check {
+#oauth-accounts div.provider span.fa.fa-check {
   font-size: 20px;
 }
-#oauth-accounts div span.provider {
+#oauth-accounts div.provider span.provider-name {
   font-size: 18px;
 }
-#oauth-accounts div span.actions {
+#oauth-accounts div.provider div.actions {
   float: right;
 }
-#oauth-accounts div .btn-social {
+#oauth-accounts div.provider .provider-info {
+  float: left;
+}
+#oauth-accounts div.provider .btn-social {
   padding-left: 12px;
 }

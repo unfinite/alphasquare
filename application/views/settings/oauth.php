@@ -1,39 +1,27 @@
-<p>You can sign in to your Alphasquare account with any social account that you are connected to. </p>
-<br />
+<h4>Sign in apps</h4>
+<p>You can sign in to your Alphasquare account with any <abbr title="Also known as OAuth accounts">sign in app</abbr> you connect to. </p>
 <div id="oauth-accounts">
-  <div id="facebook">
-    <span class="fa fa-facebook"></span>
-    <span class="provider">Facebook</span>
-    <span class="actions">
+
+  <? foreach($providers as $provider): ?>
+  <div id="<?=$provider['name']?>" class="provider">
+    <div class="provider-info">
+      <span class="fa fa-<?=$provider['class']?>"></span>
+      <span class="provider-name"><?=$provider['name']?></span>
+    </div>
+    <div class="actions">
       
-      <? if(in_array('Facebook', $connected)): ?>
-      <span class="fa fa-check text-success"></span>
-      <a href="<?=base_url('oauth/disconnect/Facebook')?>" class="btn btn-default">Disconnect</a>
+      <? if(in_array($provider['name'], $connected)): ?>
+      <span class="fa fa-check text-success" title="Connected!"></span>
+      <a href="<?=base_url('oauth/disconnect/'.$provider['name'])?>" class="btn btn-default">Disconnect</a>
       <? else: ?>
-      <a href="<?=base_url('login/oauth/Facebook')?>" class="btn btn-social btn-facebook">
+      <a href="<?=base_url('login/oauth/'.$provider['name'])?>" class="btn btn-social btn-<?=$provider['class']?>">
         Connect
       </a>
       <? endif; ?>
 
-    </span>
+    </div>
     <div class="clearfix"></div>
   </div>
+  <? endforeach; ?>
 
-  <div id="google">
-    <span class="fa fa-google-plus"></span>
-    <span class="provider">Google+</span>
-    <span class="actions">
-      
-      <? if(in_array('Google', $connected)): ?>
-      <span class="fa fa-check text-success"></span>
-      <a href="<?=base_url('oauth/disconnect/Google')?>" class="btn btn-default">Disconnect</a>
-      <? else: ?>
-      <a href="<?=base_url('login/oauth/Google')?>" class="btn btn-social btn-google-plus">
-        Connect
-      </a>
-      <? endif; ?>
-
-    </span>
-    <div class="clearfix"></div>
-  </div>
 </div>

@@ -56,6 +56,16 @@ class Settings extends CI_Controller {
 
   public function oauth() {
     $this->load->model('oauth_model');
+    $data['providers'] = array(
+      array(
+        'name' => 'Facebook', 
+        'class' => 'facebook'
+      ),
+      array(
+        'name' => 'Google', 
+        'class' => 'google-plus'
+      )
+    );
     $data['connected'] = $this->oauth_model->get_connected();
     $data['title'] = 'Connected OAuth Accounts';
     $data['tab'] = 'oauth';
