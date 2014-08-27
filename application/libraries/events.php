@@ -1,5 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * Account Events Library
+ *
+ * Whenever a user logs in, logs out, connects OAuth, 
+ * logs in with OAuth, etc. the event is logged with
+ * this library.
+ *
+ * @package libraries
+ */
+
 class Events {
 
   public function __construct() {
