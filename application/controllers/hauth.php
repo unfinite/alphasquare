@@ -140,11 +140,11 @@ class HAuth extends CI_Controller {
 		log_message('debug', 'controllers.HAuth.endpoint called.');
 		log_message('info', 'controllers.HAuth.endpoint: $_REQUEST: '.print_r($_REQUEST, TRUE));
 
-		/*if ($_SERVER['REQUEST_METHOD'] === 'GET')
+		if ($_SERVER['REQUEST_METHOD'] === 'GET')
 		{
 			log_message('debug', 'controllers.HAuth.endpoint: the request method is GET, copying REQUEST array into GET array.');
-			$_GET = $_REQUEST;
-		}*/
+			$_REQUEST = $_GET;
+		}
 
 		log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
 		require_once APPPATH.'/third_party/hybridauth/index.php';

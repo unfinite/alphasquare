@@ -1,5 +1,5 @@
-<h4>Sign in apps</h4>
-<p>You can sign in to your Alphasquare account with any <abbr title="Also known as OAuth accounts">sign in app</abbr> you connect to. </p>
+<h4>Connected accounts</h4>
+<p>Simplify the sign in process by connecting social accounts to your Alphasquare account.</p>
 <div id="oauth-accounts">
 
   <? foreach($providers as $provider): ?>
