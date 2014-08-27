@@ -22,8 +22,7 @@ if(!function_exists('format_post')) {
     $text = auto_link($text);
     // Parse &tags
     $text = str_replace('&amp;', '&', $text);
-    $text = preg_replace(REGEX_TAG, '<a href="'.base_url().'search?q=%26$1">&$1</a>', $text);
-    $text = str_replace('&', '&amp;', $text);
+    $text = preg_replace(REGEX_TAG, '<a href="'.base_url().'search?q=%26$1">&amp;$1</a>', $text);
     return $text;
   }
 }

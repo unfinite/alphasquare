@@ -43,6 +43,8 @@ define('REGEX_AT_REPLY', '/@([a-zA-Z0-9_]+)/');
 // &tags
 define('REGEX_TAG', '/\B&(?!(?:apos|quot|[gl]t|amp);|#)(\w+)/');
 
+
+
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes
