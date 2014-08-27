@@ -29,6 +29,9 @@ define('COMMENT_DISPLAY_LIMIT', 3);
 // The number of posts to display on dashboard (before more are loaded)
 define('POST_DISPLAY_LIMIT', 10);
 
+// Min Pass Length
+define('MIN_PASS_LENGTH', 6);
+
 // RegExp patterns
 
 // Username format (only letters, numbers, underscores)
@@ -38,7 +41,7 @@ define('REGEX_USERNAME', '/^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)*$/');
 // @replies
 define('REGEX_AT_REPLY', '/@([a-zA-Z0-9_]+)/');
 // &tags
-define('REGEX_TAG', '/&(?!(?:apos|quot|[gl]t|amp);|#)(\w+)/');
+define('REGEX_TAG', '/\B&(?!(?:apos|quot|[gl]t|amp);|#)(\w+)/');
 
 /*
 |--------------------------------------------------------------------------

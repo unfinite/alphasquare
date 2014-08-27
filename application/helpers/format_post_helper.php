@@ -13,7 +13,7 @@ if(!function_exists('format_post')) {
     $CI =& get_instance();
     $CI->load->helper('bbcode');
     // Html entities
-    $text = htmlentities($text);
+    $text = htmlspecialchars($text);
     // Convert line breaks to <br>
     $text = nl2br($text);
     // Parse BBCode
@@ -23,6 +23,7 @@ if(!function_exists('format_post')) {
     // Parse &tags
     $text = str_replace('&amp;', '&', $text);
     $text = preg_replace(REGEX_TAG, '<a href="'.base_url().'search?q=%26$1">&$1</a>', $text);
+    $text = str_replace('&', '&amp;', $text);
     return $text;
   }
 }
