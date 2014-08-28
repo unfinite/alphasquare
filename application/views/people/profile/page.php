@@ -22,7 +22,7 @@
           </h2>
 
           <? if($name): ?>
-          <span class="text-muted" style="font-size:17px;"><?=$name?></span>
+          <span class="text-muted" style="font-size:17px;"><?=htmlspecialchars($name)?></span>
           <? endif; ?>
 
           <p><?=htmlspecialchars($tagline)?></p>
