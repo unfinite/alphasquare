@@ -82,6 +82,31 @@ class Account_model extends CI_Model {
     }
   }
 
+  /** 
+   * Checks if the logged in user's password is correct
+   *
+   * Uses current user ID and checks if their password is correct.
+   *
+   * @param string $password The password the user entered
+   * @return bool
+   */
+  public function password_correct($password) {
+    $password = strlen($password) > 0 ? hash('sha256', $password) : '';
+    $this->db->select('id')
+             ->from('users')
+             ->where('password', $password)
+             ->where('id', $this->php_session->get('userid'));
+    $count = $this->db->count_all_results();
+    return $count ? true : false;
+  }
+
+  public function change_password($password) {
+    $hashed = hash('sha256', $password);
+    $this->db->where('id', $this->php_session->get('userid'));
+    return $this->db->update('users', array('password'=>$hashed));
+  }
+
+
 	/**
 	 * Generates a token for resetting password
 	 * @param  int $userid The user's ID

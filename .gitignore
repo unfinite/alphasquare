@@ -4,11 +4,11 @@
 */config/development 
 */logs/log-*.php 
 */logs/!index.html 
-# */logs/hybridauth.log
+*/logs/hybridauth.log
 */cache/* 
 */cache/!index.html
 */cache/!.htaccess
-*/avatars/*
+avatars/*
 
 ### Sublime Text ###
 *.sublime-workspace
