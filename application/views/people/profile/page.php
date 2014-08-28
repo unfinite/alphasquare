@@ -20,6 +20,11 @@
             <? endif; ?>
 
           </h2>
+
+          <? if($name): ?>
+          <span class="text-muted" style="font-size:17px;"><?=$name?></span>
+          <? endif; ?>
+
           <p><?=htmlspecialchars($tagline)?></p>
 
           <span class="glyphicon glyphicon-map-marker"></span>
