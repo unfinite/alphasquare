@@ -1,4 +1,0 @@
-Just a simple test module
-1.0.0
-Sergio Diaz, Alphasquare.us, Nick Jones, Nathan Johnson, and Johnny Leach
-Showcases

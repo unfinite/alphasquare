@@ -1,0 +1,102 @@
+/* Homepage CSS */
+
+body {
+	background-color: #3498db;
+	margin-top: 165px;
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+.navbar {
+	margin: 0;
+}
+
+.alert {
+	margin: 0 auto 60px;
+	text-align: center;
+	width: 50%;
+}
+
+/* Hero Unit */
+#main-hero {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  width: 100%;
+  border-radius: 0;
+  margin: 0 auto;
+  text-align: center;
+  height: 70vh;
+  min-height: 400px;
+  color: #ffffff;
+}
+#main-hero h1 {
+	font-size: 60px;
+	font-weight: 100;
+	margin: 0 auto;
+	font-family: 'Lobster', cursive;
+}
+#main-hero p {
+	font-size: 25px;
+	font-weight: 200;
+	margin: 25px 0 30px;
+}
+#main-hero a {
+	color: #fff;
+	font-size: 20px;
+	text-decoration: none;
+}
+#main-hero a.create-account {
+	width: 230px;
+	border: 1px solid #fff;
+	margin: 0 auto 10px;
+	padding: 15px 30px;
+	border-radius: 4px;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s;
+	display: block;
+}
+#main-hero a.create-account:hover {
+	background-color: #fff;
+	color: #3498db;
+}
+#main-hero a.sign-in {
+	font-weight: 200;
+}
+
+#footer {
+	border: 0;
+	opacity: 0.95;
+}
+#footer:hover {
+	opacity: 1;
+}
+
+@-webkit-keyframes blurFadeIn {
+	0%{
+		opacity: 0;
+		-webkit-transform: scale(2);
+	}
+	50%{
+		opacity: 0.5;
+		-webkit-transform: scale(1.5);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: scale(1);
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0.5;
+	}
+	100%{
+		opacity: 1;
+	}
+}
