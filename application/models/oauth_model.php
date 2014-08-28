@@ -140,6 +140,7 @@ class Oauth_model extends CI_Model {
       throw new Exception("Your account wasn't connected to $provider.");
     }
     else {
+      $this->events->log('oauth', 'disconnect', $provider);
       $this->clear_oauth_session();
       return true;
     }
