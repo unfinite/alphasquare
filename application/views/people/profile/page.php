@@ -24,7 +24,7 @@
             </h2>
 
             <? if($name): ?>
-            <span class="text-muted" style="font-size:17px;">@<?=username?></span>
+            <span class="text-muted" style="font-size:17px;">@<?=$username?></span>
             <? endif; ?>
 
             <p><?=htmlspecialchars($tagline)?></p>
