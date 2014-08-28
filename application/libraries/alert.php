@@ -94,7 +94,7 @@ class Alert {
     // Select from the DB
     $this->CI->db->select('a.id, a.from, a.object_id, a.object_type,
                            a.action, a.clicked, a.time,
-                           u.username, u.email')
+                           u.username, u.email, u.avatar')
                  ->from('alerts a')
                  ->join('users u', 'a.from = u.id', 'inner')
                  ->where('to', $this->CI->php_session->get('userid'))
@@ -113,6 +113,7 @@ class Alert {
         'id' => $info['id'],
         'username' => $info['username'],
         'email' => $info['email'],
+        'avatar' => $info['avatar'],
         'text' => $action['text'],
         'show_user_link' => $action['show_user_link'],
         'object' => $info['object_type'],

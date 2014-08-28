@@ -15,7 +15,7 @@
       <span class="glyphicon glyphicon-trash delete" title="Delete" data-toggle="tooltip" data-placement="left" data-animation="false"></span>
     </div>
     <a href="<?=profile_url($alert['username'])?>">
-      <img src="<?=gravatar_url($alert['email'], 50)?>" class="img-circle" />
+      <img src="<?=avatar_url($alert['avatar'], $alert['email'], 50)?>" class="img-circle" />
     </a>
     <div class="alert-content">
       <p>
