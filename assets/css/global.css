@@ -137,12 +137,20 @@ textarea.autosize {
   border-radius: 0;
 }
 .navbar.logged-in {
-  border-top: 2px solid #3498db;
+  border-top: 3px solid #3498db;
   background-color: #fff;
   box-shadow: 0 0 20px rgb(236, 240, 241);
 }
 .navbar.logged-in .navbar-header {
-  float: none;
+}
+.navbar.logged-in .nav li a .glyphicon {
+  font-size: 18px;
+}
+.navbar.logged-in .nav li a:hover {
+  background: none;
+}
+.navbar.logged-in .nav li a img {
+  width: 23px;
 }
 .navbar .navbar-brand {
   color: #3498db;
@@ -151,16 +159,7 @@ textarea.autosize {
 .navbar .navbar-brand, .alphasquare {
   font-family: 'Lobster', Helvetica, Arial, sans-serif;
 }
-.navbar.logged-in .navbar-brand {
-  float: none;
-  margin: 11px auto;
-  padding: 0;
-  line-height: 1;
-  text-align: center;
-  width: 150px;
-  height: auto;
-  display: block;
-}
+
 .navbar.logged-in .navbar-brand:hover,
 .navbar.logged-in .navbar-brand:focus {
   color: #217dbb;

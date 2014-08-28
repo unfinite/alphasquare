@@ -5,6 +5,31 @@
   <div class="navbar-header">
     <a class="navbar-brand popover-trigger" href="<?=base_url('dashboard')?>">alphasquare</a>
   </div>
+  <div>
+    <!-- Icon nav -->
+    <ul class="nav navbar-nav">
+      <li><a href="<?=base_url('dashboard')?>" title="Dashboard"><span class="glyphicon glyphicon-globe"></span></a></li>
+      <li><a href="<?=base_url('alerts')?>"><span class="glyphicon glyphicon-bell" title="Alerts"></span></a></li>
+      <li><a href="<?=base_url('messages')?>"><span class="glyphicon glyphicon-inbox" title="Messages"></span></a></li>
+    </ul>
+  </div>
+  <!-- User nav -->
+  <ul class="nav navbar-nav pull-right">
+    <li>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="<?=session_get('username')?>">
+        <img src="<?=avatar_url()?>" class="img-circle" />
+        <span class="hidden-xs"><?=session_get('username')?></span>
+        <span class="caret"></span>
+      </a>
+      <!-- Begin dropdown -->
+      <ul class="dropdown-menu">
+        <li><a href="<?=profile_url()?>"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+        <li><a href="<?=base_url('settings')?>"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+        <li><a href="<?=base_url('logout')?>"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+      </ul>
+      <!-- End dropdown -->
+    </li>
+  </ul>
 </nav>
 
 <!-- Slingshot box -->
