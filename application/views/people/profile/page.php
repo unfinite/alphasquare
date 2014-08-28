@@ -7,35 +7,38 @@
         <div id="info">
           <img src="<?=$avatar?>" class="img-circle" />
           <div class="clearfix visible-xs"></div>
-          <h2>
+          
+          <div>
+            <h2>
 
-            <?=$username?>
+              <?=$username?>
 
-            <? if( $birthday && date('m-d') == date('m-d', strtotime($birthday)) ): ?>
-            <span class="label label-info" title="Born on <?=$birthday_formatted?>" data-toggle="tooltip">Happy Birthday!</span>
+              <? if( $birthday && date('m-d') == date('m-d', strtotime($birthday)) ): ?>
+              <span class="label label-info" title="Born on <?=$birthday_formatted?>" data-toggle="tooltip">Happy Birthday!</span>
+              <? endif; ?>
+
+              <? if($employee): ?>
+              <span class="label label-primary">Staff</span>
+              <? endif; ?>
+
+            </h2>
+
+            <? if($name): ?>
+            <span class="text-muted" style="font-size:17px;"><?=htmlspecialchars($name)?></span>
             <? endif; ?>
 
-            <? if($employee): ?>
-            <span class="label label-primary">Staff</span>
+            <p><?=htmlspecialchars($tagline)?></p>
+
+            <span class="glyphicon glyphicon-map-marker"></span>
+            <?=htmlspecialchars($location)?>
+              
+
+            <? if($website_url): ?>
+            <br class="visible-xs" />
+            <span class="glyphicon glyphicon-link"></span>
+            <a href="<?=$website_url?>" target="_blank"><?= $website_title ? htmlspecialchars($website_title) : $website_url ?></a>
             <? endif; ?>
-
-          </h2>
-
-          <? if($name): ?>
-          <span class="text-muted" style="font-size:17px;"><?=htmlspecialchars($name)?></span>
-          <? endif; ?>
-
-          <p><?=htmlspecialchars($tagline)?></p>
-
-          <span class="glyphicon glyphicon-map-marker"></span>
-          <?=htmlspecialchars($location)?>
-            
-
-          <? if($website_url): ?>
-          <br class="visible-xs" />
-          <span class="glyphicon glyphicon-link"></span>
-          <a href="<?=$website_url?>" target="_blank"><?= $website_title ? htmlspecialchars($website_title) : $website_url ?></a>
-          <? endif; ?>
+          </div>
 
         </div>
         <div id="actions">
