@@ -19,7 +19,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><span class="glyphicon glyphicon-time"></span>&nbsp; Popular Topics</h3>
+    <h3 class="panel-title"><span class="glyphicon glyphicon-upload"></span>&nbsp; Popular Topics</h3>
   </div>
   <div class="panel-body">
     <p><em>This is coming soon!</em></p>
