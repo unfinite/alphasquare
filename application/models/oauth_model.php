@@ -21,7 +21,7 @@ class Oauth_model extends CI_Model {
       'o.oauth_uid' => $uid
     );
     $this->db->select('o.oauth_provider, o.oauth_uid,
-                       u.id, u.username, u.email, u.avatar')
+                       u.id, u.username, u.email, u.avatar, u.employee')
              ->from('user_oauth o')
              ->join('users u', 'u.id = o.userid', 'left')
              ->where($where)
@@ -140,6 +140,7 @@ class Oauth_model extends CI_Model {
       throw new Exception("Your account wasn't connected to $provider.");
     }
     else {
+      $this->events->log('oauth', 'disconnect', $provider);
       $this->clear_oauth_session();
       return true;
     }
