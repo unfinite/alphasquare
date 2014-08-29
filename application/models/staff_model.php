@@ -9,11 +9,41 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Staff_model extends CI_Model {
 
+  /** 
+   * Allow loggedin user access if session var
+   *
+   * @return bool
+   * 
+   */
+  
+
+  public function allowAccess() {
+
+    // check sess vars
+    // Placeholder
+    // 
+    // 
+    // 
+    // 
+    // Placeholder end
+        
+    if ($employee == 0) {
+
+      return false;
+
+    } else {
+
+      return true;
+
+    }
+
+  }
+
 
   /** 
    * Check if user is staff
    *
-   * @param string, user's username
+   * @param string $username The user's username
    * @return bool
    * 
    */
