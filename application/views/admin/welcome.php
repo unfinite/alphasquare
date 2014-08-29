@@ -1,5 +1,6 @@
+
 <center>
-<div class="panel panel-default">
+<div class="container panel panel-default">
 <ul class="nav nav-pills">
   <li class="active"><a href="<?=base_url('employee')?>">Welcome</a></li>
   <li><a href="<?=base_url('employee/ban')?>">Ban user</a></li>
@@ -8,8 +9,9 @@
   <li><a href="<?=base_url('employee/addstaff')?>">Add staff</a></li>
 </ul>
 </center>
-</div>
+
 <br>
 <h2>Welcome to the employee panel</h2>
 <hr>
 <div class="alert alert-info">Test</div>
+</div>
