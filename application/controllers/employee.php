@@ -15,7 +15,8 @@ class Employee extends CI_Controller {
   }
 
   public function index() {
-    $this->template->load('admin/welcome');
+    $data['title'] = 'Panel';
+    $this->template->load('admin/welcome', $data);
   }
 
 }
