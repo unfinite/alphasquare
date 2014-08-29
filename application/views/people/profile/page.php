@@ -11,7 +11,7 @@
           <div>
             <h2>
 
-              <?=htmlspecialchars($name)?>
+              <?=$username?>
 
               <? if( $birthday && date('m-d') == date('m-d', strtotime($birthday)) ): ?>
               <span class="label label-info" title="Born on <?=$birthday_formatted?>" data-toggle="tooltip">Happy Birthday!</span>
@@ -23,9 +23,6 @@
 
             </h2>
 
-            <? if($name): ?>
-            <span class="text-muted" style="font-size:17px;">@<?=$username?></span>
-            <? endif; ?>
 
             <p><?=htmlspecialchars($tagline)?></p>
 
