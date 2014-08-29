@@ -19,4 +19,9 @@ class Employee extends CI_Controller {
     $this->template->load('admin/welcome', $data);
   }
 
+  public function ban() {
+    $data['title'] = 'Panel';
+    $this->template->load('admin/ban', $data);
+  }
+
 }
