@@ -21,7 +21,7 @@ class Oauth_model extends CI_Model {
       'o.oauth_uid' => $uid
     );
     $this->db->select('o.oauth_provider, o.oauth_uid,
-                       u.id, u.username, u.email, u.avatar')
+                       u.id, u.username, u.email, u.avatar, u.employee')
              ->from('user_oauth o')
              ->join('users u', 'u.id = o.userid', 'left')
              ->where($where)
