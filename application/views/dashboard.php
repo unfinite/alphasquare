@@ -9,9 +9,9 @@
       <p>Follow people to see their debates on your dashboard.</p>
       <a href="<?=base_url('people/list/popular')?>" class="btn btn-success">View Popular People</a>
       <br>
-      <a href="<?=base_url('people/alphasquare')?>" class="btn btn-default">Follow the official Alphasquare user</a>
       <br>
-      <i>Follow the Alphasquare user for really awesome insights on the site and previews!</i>
+      <a href="<?=base_url('people/alphasquare')?>" class="btn btn-default">Follow Alphasquare</a>
+
     </div>
     <? endif; ?>
 
