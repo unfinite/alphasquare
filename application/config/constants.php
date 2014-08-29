@@ -11,6 +11,7 @@
 
 // Broadcast
 $broadcast = array(
+  "New navbar design, and mobile bottom nav!",
 	"Dashboard and profiles are now equipped with infinite scrolling!",
 	"Implemented auto update of posts and comments!",
 	"Test auto deploy!",
