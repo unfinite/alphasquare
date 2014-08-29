@@ -8,32 +8,26 @@
   <div class="hidden-xs">
     <!-- Icon nav -->
     <ul class="nav navbar-nav top-menu">
-      
-      <li><a href="<?=base_url('dashboard')?>" title="Dashboard"><span class="glyphicon glyphicon-dashboard"></span></a></li>
-     
+      <li><a href="<?=base_url('dashboard')?>" title="Dashboard"><span class="glyphicon glyphicon-globe"></span></a></li>
       <li>
         <a href="<?=base_url('alerts')?>" class="alert-link" title="Alerts">
           <span class="glyphicon glyphicon-bell"></span>
           <span class="label label-danger menu-count alerts alert-unread-count"></span>
         </a>
       </li>
-
       <li>
         <a href="<?=base_url('messages')?>" title="Messages">
           <span class="glyphicon glyphicon-inbox"></span>
           <span class="label label-danger menu-count messages"></span>
         </a>
       </li>
-
       <li><a href="<?=base_url('people')?>" title="Discover"><span class="glyphicon glyphicon-user"></span></a></li>
-
       <!-- Search -->
       <li>
         <form class="navbar-form" action="<?=base_url('search')?>" method="GET">
           <input type="text" name="q" class="form-control" autocomplete="off" placeholder="Search" <? if(isset($query)) echo 'value="'.$query.'"'; ?>/>
         </form>
       </li>
-
     </ul>
   </div>
   <!-- User nav -->
@@ -61,7 +55,7 @@
   <ul class="nav navbar-nav">
     <li class="<? if($this->uri->uri_string() == 'dashboard') echo 'active'; ?>">
       <a href="<?=base_url('dashboard')?>">
-        <span class="glyphicon glyphicon-dashboard"></span>
+        <span class="glyphicon glyphicon-globe"></span>
         <span class="text">Dashboard</span>
       </a>
     </li>
