@@ -33,18 +33,43 @@ var Alp = {
     this.origTitle = document.title;
     this.bind();
     this.setupAjax();
-    this.alerts.poll.start();
+    this.counts.poll.start();
   },
 
   /** 
    * Bind click events, Slingshot, etc.
    */
   bind: function() {
-    $('#alert-link').off('click').click(this.alerts.open);
+    
+    // Open alerts
+    $('.alert-link').click(this.alerts.open);
+
     $(document).on('click', this.closePopovers);
+
     $(document).on('click', 'ul.dropdown-menu li a', function() {
       $('[data-toggle="dropdown"]').parent().removeClass('open');
     });
+
+    // Tooltips for navbar icons
+    $('.navbar .top-menu a').tooltip({ 
+      placement: 'bottom'
+    });
+
+    // Mobile search
+    $('.search-trigger a').click(function() {
+      Alp.mobileSearch(true);
+      return false;
+    });
+    $('#mobile-search-overlay').click(function() {
+      Alp.mobileSearch(false);
+    });
+    $('.bottom-menu li.active').click(function(e) {
+      $('.bottom-menu li').removeClass('active');
+      $(this).addClass('active');
+      Alp.mobileSearch(false);
+      e.preventDefault();
+    });
+
     this.slingshot();
     this.bindPlugins();
   },
@@ -78,20 +103,91 @@ var Alp = {
   },
 
   /**
+   * Update alerts and messages counts
+   * @type {Object}
+   */
+  counts: {
+    count: {
+      total: 0,
+      alerts: 0,
+      messages: 0
+    },
+    update: function(count, type) {
+      if(count.alerts === null) count.alerts = this.count.alerts;
+      if(count.messages === null) count.messages = this.count.messages;
+      var total = count.alerts+count.messages;
+      var alerts = count.alerts > 0 ? count.alerts : '';
+      var messages = count.messages > 0 ? count.messages : '';
+      count.total = total;
+      this.count = count;
+      console.log(count);
+      if(type == 'all' || type == 'alerts') {
+        $('.menu-count.alerts').text(alerts);
+      }
+      if(type == 'all' || type == 'messages') {
+        $('.menu-count.messages').text(messages);
+      }
+      var newTitle = total > 0 ? '(' + total + ') ' + Alp.origTitle : Alp.origTitle;
+      Alp.updateTitle(newTitle);
+    },
+    /**
+     * Update alerts count manually
+     * @param  {int} count Number of unread alerts
+     * @return {null}
+     */
+    updateAlerts: function(count) {
+      this.update({ alerts: count, messages: null }, 'alerts');
+    },
+    /**
+     * Update messages count manually
+     * @param  {int} count Number of unread messages
+     * @return {null}
+     */
+    updateMessages: function(count) {
+      this.update({ alerts: null, messages: count}, 'messages');
+    },
+    /**
+     * Poll for new alerts/messages
+     */
+    poll: {
+      interval: 15000,
+      /**
+       * Start polling for counts
+       */
+      start: function() {
+        // If user is logged in
+        if(Alp.config.loggedin) {
+          this.ajax();
+        }
+      },
+      /**
+       * Send the ajax request
+       */
+      ajax: function() {
+        $.get(Alp.config.base+'dashboard/update_counts')
+          .success(Alp.counts.poll.ajaxCallback)
+          .always(function() {
+            setTimeout(Alp.counts.poll.ajax, Alp.counts.poll.interval);
+          }, 'json');
+      },
+      /**
+       * The callback after the ajax request succeeds.
+       * @param {array} data The object returned from the ajax request.
+       */
+      ajaxCallback: function(data) {
+        if(!data.success) {
+          Alp.bar(data.error);
+          return false;
+        }
+        Alp.counts.update(data.counts, 'all');
+      }
+    }
+  },
+
+  /**
    * Alerts object (aka notifications)
    */
   alerts: {
-    /**
-     * Updates the count on page and in window title
-     *
-     * @param {int} unread The number of unread notifications
-     */
-    updateCount: function(unread) {
-      unread = unread > 0 ? unread : '';
-      $('.alert-unread-count').text(unread);
-      var newTitle = unread > 0 ? '(' + unread + ') ' + Alp.origTitle : Alp.origTitle;
-      Alp.updateTitle(newTitle);
-    },
     /**
      * Open the alerts modal
      */
@@ -104,7 +200,8 @@ var Alp = {
         callback: function() {
           $('.alert-container .delete').click(Alp.alerts.remove.click);
           $('.alert-container .mark-read').click(Alp.alerts.markRead.click);
-          Alp.alerts.updateCount(0);
+          Alp.counts.updateAlerts(0);
+          Alp.mobileSearch(false);
         }
       });
       return false;
@@ -185,41 +282,6 @@ var Alp = {
         alert.toggleClass('clicked not-clicked');
         $('.mark-read',alert).fadeOut();
       }
-    },
-    /**
-     * Poll for new alerts
-     */
-    poll: {
-      interval: 15000,
-      /**
-       * Start polling for alert count
-       */
-      start: function() {
-        if(Alp.config.loggedin) {
-          this.ajax();
-        }
-      },
-      /**
-       * Send the ajax request
-       */
-      ajax: function() {
-        $.get(Alp.config.base+'alerts/poll')
-          .success(Alp.alerts.poll.ajaxCallback)
-          .always(function() {
-            setTimeout(Alp.alerts.poll.ajax, Alp.alerts.poll.interval);
-          }, 'json');
-      },
-      /**
-       * The callback after the ajax request succeeds.
-       * @param {array} data The object returned from the ajax request.
-       */
-      ajaxCallback: function(data) {
-        if(!data.success) {
-          Alp.bar(data.error);
-          return false;
-        }
-        Alp.alerts.updateCount(data.unread);
-      }
     }
   },
 
@@ -294,6 +356,27 @@ var Alp = {
     $('<div/>').addClass('alert alert-box-js alert-'+type)
                .html(text)
                .prependTo(ele);
+  },
+
+  mobileSearch: function(show) {
+    var content = $('#content');
+    var search = $('#mobile-search, #mobile-search-overlay');
+    var input = $('input',search);
+    $('.bottom-menu li.active')
+      .removeClass('active')
+      .not('.search-trigger')
+      .addClass('was-active');
+    if(show) {
+      search.addClass('in').removeClass('hide');
+      input.focus();
+      $('.search-trigger').addClass('active');
+      $('body').bind('touchmove', function(e){e.preventDefault()});
+    }
+    else {
+      search.removeClass('in').addClass('hide');
+      $('.bottom-menu li.was-active').addClass('active');
+      $('body').unbind('touchmove');
+    }
   }
 
 };
