@@ -30,6 +30,15 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
+    <h3 class="panel-title slab"><span class="glyphicon glyphicon-music"></span> Radio</h3>
+  </div>
+  <div class="panel-body">
+   Wanna hear some really awesome beats? Tune in to the Alphasquare PlayParty! <a class="btn btn-xs btn-success" href="http://socialmelder.com/playparty/channel/alphasquare">Go &raquo;</a>
+  </div>
+</div> <!-- /.panel -->
+
+<div class="panel panel-default">
+  <div class="panel-heading">
     <h3 class="panel-title slab"><span class="glyphicon glyphicon-search"></span> Search</h3>
   </div>
   <div class="panel-body">
