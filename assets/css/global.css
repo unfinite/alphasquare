@@ -556,16 +556,15 @@ textarea.autosize {
 /* People Lists */
 #people-list div.user {
   background: #fff;
-  min-width: 31%;
-  max-width: 31%;
+  width: 31%;
   padding: 10px;
   float: left;
   margin: 0 5px 10px 5px;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
-@media(max-width:767px) {
-  #people-list div {
+@media screen and (max-width:767px) {
+  #people-list div.user {
     width: 100%;
   }
 }
