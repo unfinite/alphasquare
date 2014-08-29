@@ -9,7 +9,7 @@ class Employee extends CI_Controller {
     $this->load->model('staff_model');
     login_required();
     $employee = $this->staff_model->allowAccess();
-    if ($employee = false) {
+    if ($employee == false) {
       redirect('dashboard');
     }
   }
