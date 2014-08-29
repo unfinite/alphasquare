@@ -54,21 +54,6 @@ class Alerts extends CI_Controller {
   }
 
   /**
-   * Unread alerts count
-   * Client polls this every 15 seconds
-   */
-  public function poll() {
-    $count = $this->alert->get_unread_count();
-    if($count !== false) {
-      $json = array('unread'=>$count);
-      json_output($json, true);
-    }
-    else {
-      json_error('Sorry, an error occurred.');
-    }
-  }
-
-  /**
    * Mark an alert as read
    */
   public function mark_read() {

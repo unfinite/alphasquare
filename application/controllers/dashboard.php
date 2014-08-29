@@ -39,6 +39,30 @@ class Dashboard extends CI_Controller {
 		$this->template->load('dashboard', $data);
 	}
 
+	/**
+	 * The mobile "more" page
+	 * URL: /dashboard/more
+	 */
+	public function mobile_more() {
+		$data['title'] = 'More';
+		$this->template->load('mobile/more', $data);
+	}
+
+	/**
+	 * Update alert and message counts
+	 * URL: /dashboard/update_counts
+	 * Accessed via AJAX
+	 */
+	public function update_counts() {
+		$this->load->library('alert');
+		$counts = array(
+			'alerts' => $this->alert->get_unread_count(),
+			'messages' => 0 // for now
+		);
+		$json = array('counts' => $counts);
+		json_output($json, true);
+	}
+
 }
 
 /* End of file dashboard.php */
