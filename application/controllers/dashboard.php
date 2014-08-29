@@ -57,7 +57,7 @@ class Dashboard extends CI_Controller {
 		$this->load->library('alert');
 		$counts = array(
 			'alerts' => $this->alert->get_unread_count(),
-			'messages' => 0
+			'messages' => 2 // for now
 		);
 		$json = array('counts' => $counts);
 		json_output($json, true);

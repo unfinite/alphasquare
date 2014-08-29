@@ -88,7 +88,7 @@
       </a>
     </li>
     <li class="<? if($this->uri->uri_string() == 'dashboard/mobile_more') echo 'active'; ?>">
-      <a href="<?=base_url('dashboard/more')?>">
+      <a href="<?=base_url('dashboard/mobile_more')?>">
         <span class="glyphicon glyphicon-align-justify"></span>
         <span class="text">More</span>
       </a>

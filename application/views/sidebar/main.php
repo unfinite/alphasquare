@@ -1,7 +1,7 @@
 <? if(session_get('loggedin')): ?>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title slab"><span class="glyphicon glyphicon-flash"></span> Broadcast</h3>
+    <h3 class="panel-title"><span class="glyphicon glyphicon-flash"></span> Broadcast</h3>
   </div>
   <div class="panel-body">
     <p>Updates:</p>
@@ -19,7 +19,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title slab"><span class="glyphicon glyphicon-stats"></span>&nbsp; Popular Topics</h3>
+    <h3 class="panel-title"><span class="glyphicon glyphicon-time"></span>&nbsp; Popular Topics</h3>
   </div>
   <div class="panel-body">
     <p><em>This is coming soon!</em></p>
