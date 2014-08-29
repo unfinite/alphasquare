@@ -20,14 +20,9 @@ class Staff_model extends CI_Model {
   public function allowAccess() {
 
     // check sess vars
-    // Placeholder
-    // 
-    // 
-    // 
-    // 
-    // Placeholder end
+    $staff = $this->php_session->get('employee');
         
-    if ($employee == 0) {
+    if ($staff == 0) {
 
       return false;
 

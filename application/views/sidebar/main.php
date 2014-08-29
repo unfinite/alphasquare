@@ -18,11 +18,13 @@
           <span class="glyphicon glyphicon-cloud"></span> Discover
         </a>
       </li>
+      <? if(session_get('employee') == 1): ?>
       <li>
         <a href="<?=profile_url()?>">
-          <span class="glyphicon glyphicon-user"></span> Me
+          <span class="glyphicon glyphicon-flash"></span> Employee Central
         </a>
       </li>
+    <? endif; ?>
     </ul>
   </div>
 </div> <!-- /.panel -->
