@@ -7,7 +7,7 @@
   <li class="<? if($tab=='security') echo 'active' ?>"><a href="security">Security</a></li>
   <li class="<? if($tab=='password') echo 'active' ?>"><a href="password">Password</a></li>
   <li class="<? if($tab=='oauth') echo 'active' ?>"><a href="oauth">Apps</a></li>
-  <li class="<? if($tab=='experimental') echo 'active' ?>"><a href="experimental">Labs</a></li>
+  <li class="<? if($tab=='labs') echo 'active' ?>"><a href="experimental">Labs</a></li>
 </ul>
 
 <br />
