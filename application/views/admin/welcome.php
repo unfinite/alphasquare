@@ -1,6 +1,7 @@
 
 <center>
-<div class="container panel panel-default">
+<div class="container ">
+<div class="panel panel-default">
 <ul class="nav nav-pills">
   <li class="active"><a href="<?=base_url('employee')?>">Welcome</a></li>
   <li><a href="<?=base_url('employee/ban')?>">Ban user</a></li>
@@ -14,4 +15,5 @@
 <h2>Welcome to the employee panel</h2>
 <hr>
 <div class="alert alert-info">Test</div>
+</div>
 </div>
