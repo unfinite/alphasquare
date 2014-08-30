@@ -1,6 +1,7 @@
+
+<div class="container ">
 <h2>Welcome to the employee panel</h2>
 <hr>
-<div class="container ">
 <ul class="nav nav-pills">
   <li class="active"><a href="<?=base_url('employee')?>">Welcome</a></li>
   <li><a href="<?=base_url('employee/ban')?>">Ban user</a></li>
