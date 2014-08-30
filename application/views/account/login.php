@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-6 col-md-8 col-sm-12 col-centered">
     <div class="page-header">
-      <h1>Hi! Please sign in</h1>
+      <h1>Sign in</h1>
     </div>
     
     <? $this->load->view('account/oauth_buttons'); ?>
