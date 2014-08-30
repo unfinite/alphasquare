@@ -171,7 +171,7 @@ textarea.autosize {
   background: none!important;
 }
 .navbar.logged-in .nav.pull-right .dropdown-menu {
-  left: -50px;
+  left: -60px;
   position: absolute;
   background: #fff;
   border: 1px solid #ccc;
@@ -226,9 +226,16 @@ textarea.autosize {
   background: rgba(255,255,255,0.8);
 }
 
+/* On mobile...
+ * Adds extra margin to user dropdown
+ * And hides sidebar
+ */
 @media screen and (max-width:767px) {
   .nav-user {
-    margin: 4px 5px !important;
+    margin: 5px !important;
+  }
+  #sidebar {
+    display: none;
   }
 }
 
@@ -708,7 +715,7 @@ textarea.autosize {
 .tooltip-inner {
   color: #fff;
   background: #111;
-  border: solid 1px #fff;
+  border: 0;
   border-radius: 4px;
   padding: 5px 8px;
   max-width: 400px !important;
@@ -733,6 +740,9 @@ textarea.autosize {
   display: inline-block;
 }
 @media(max-width:567px) {
+  #footer {
+    display: none;
+  }
   #footer span.links {
     display: block;
     font-size: 13px;

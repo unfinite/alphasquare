@@ -22,7 +22,7 @@
 
   </div>
 
-  <div class="col-lg-4 col-md-4">
+  <div class="col-lg-4 col-md-4" id="sidebar">
     <? $this->load->view('sidebar/main', array('dashboard'=>'true')) ?>
     <? $this->load->view('sidebar/follows') ?>
   </div>
