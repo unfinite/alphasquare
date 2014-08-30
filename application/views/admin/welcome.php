@@ -11,5 +11,7 @@
 <br>
 <h2>Welcome to the employee panel</h2>
 <hr>
-<div class="alert alert-info">Test</div>
+<div class="alert alert-info"><b>Notice:</b> Do not ban unless the person clearly broke an instant ban rule. Any ban must be taken in consideration from Sergio. This also applies to official status, and staff.</div>
+<br>
+Hi! Thanks for being staff of Alphasquare, and welcome to the panel!
 </div>
