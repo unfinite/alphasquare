@@ -11,10 +11,9 @@
 
 // Broadcast
 $broadcast = array(
+  "New navbar design, and mobile bottom nav!",
 	"Dashboard and profiles are now equipped with infinite scrolling!",
-	"Implemented auto update of posts and comments!",
-	"Test auto deploy!",
-	"We have switched to CodeIgniter!"
+	"Implemented auto update of posts and comments!"
 );
 
 // Page to go to when user first registers
