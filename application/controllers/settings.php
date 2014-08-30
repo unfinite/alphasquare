@@ -25,7 +25,7 @@ class Settings extends CI_Controller {
   public function experimental() {
 
     $data['title'] = 'Labs';
-    $data['tab'] = 'experimental';
+    $data['tab'] = 'labs';
     $data['fixed_container'] = true;
     $this->template->load('settings/template', $data);
 
