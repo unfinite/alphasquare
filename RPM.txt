@@ -1,28 +1,20 @@
 Okay guys this is the workplan...
 
-First: grab GIT-FTP from GH and install it, it's required.
-
-Use the FTP creds I emailed you, Nathan.
-
---------------------------------------------------------------------------------------------
 
 Assigned jobs:
 
 Me:
 
 --Request verification && anti-forced request systems
---Profiles
---Other crap
 --Other pages
 --BitBucket
 --Dezign (<-- lol)
+-- staff panel
 
 Nathan: 
 
---Discussions (critical)
---Code fixes
---AJAX (includes infinite scrolling, optimizing, etc.)
---Other crap
+--messages
+--code fixes
 
 Nick:
 
@@ -31,10 +23,10 @@ Nick:
 
 
 
+
 Memo:
 
-Kyle is GETTING THE LEAD... We cannot let Hylus beat us to it... 
+Kyle is GETTING THE LEAD... We cannot let Hylus beat us to it... <- nevermind he got sidetracked XD
 
 Go team.
 
-BTW Nathan inform me when you finish with Gifavs.
