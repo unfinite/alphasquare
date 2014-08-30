@@ -25,9 +25,7 @@
 
     }
 
-  }
-
-}
+  );}}
 
   </script>
   <button class="btn btn-success btn-block btn-lg" onclick="permissionAsk();">Turn on Notifications</button>
