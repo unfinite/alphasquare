@@ -3,11 +3,7 @@
     <h3 class="panel-title text-bold">Web Notifications</h3>
   </div>
   <div class="panel-body">
-  <button class="btn btn-success btn-block btn-lg" onclick="permissionAsk();">Turn on Notifications</button>
-  <br>
-  <em>Please keep in mind that these features are in beta and aren't fully implemented. </em>
-  </div>
-  <script>
+    <script>
 
   // Thanks to developer.mozilla for the example of this API! Regards, Serg :D
 
@@ -29,9 +25,12 @@
 
     }
 
-  }
-
   </script>
+  <button class="btn btn-success btn-block btn-lg" onclick="permissionAsk();">Turn on Notifications</button>
+  <br>
+  <em>Please keep in mind that these features are in beta and aren't fully implemented. </em>
+  </div>
+
 </div>
 
 <div class="panel panel-default">
