@@ -126,7 +126,7 @@ class Debate_model extends CI_Model {
     );
 
     $this->load->library('points');
-    $this->points->addPoints(10);
+    $this->points->addPoints(5);
 
     $insert = $this->db->insert('debates', $data);
     if($insert) {
@@ -152,6 +152,9 @@ class Debate_model extends CI_Model {
    */
   public function delete($id) {
     return $this->db->delete('debates', array('id'=>$id));
+    $this->load->library('points');
+    $this->points->removePoints(5);
+
   }
 
   /**

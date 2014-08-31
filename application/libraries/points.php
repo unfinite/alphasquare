@@ -54,4 +54,26 @@ class Points {
 
 	}
 	
+	/**
+	 * 
+	 * Removes points to the current user
+	 * @param $amount Integer, amount of points to remove from the user
+	 *  
+	 */
+	
+	public function removePoints($amount = 0) {
+
+		$points = $this->CI->php_session->get('points');
+
+		$userid = $this->CI->php_session->get('userid');
+
+		$result = $points - $amount;
+
+		$this->CI->php_session->set('points', $result);
+
+		$this->CI->db->update('users', array('points'=>$result), array('id' => $userid));
+
+	}
+
+
 }
