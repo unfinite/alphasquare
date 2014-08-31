@@ -48,7 +48,7 @@ class Points {
 
 		$result = $points + $amount;
 
-		$this->CI->db->update('users', array('points'=>$result), array('id' => $userid))
+		$this->CI->db->update('users', array('points'=>$result), array('id' => $userid));
 
 	}
 	
