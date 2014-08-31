@@ -11,6 +11,15 @@
         <span class="caret"></span>
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="postActions">
+
+       <? if($post['userid'] == session_get('userid')): ?>
+        <li>
+          <a href="#" class="promote-post">
+            <span class="glyphicon glyphicon-share-alt"></span>
+            Promote
+          </a>
+        </li>
+        <? else: ?>
         
         <? if($post['userid'] == session_get('userid')): ?>
         <li>
