@@ -19,9 +19,7 @@
             Promote
           </a>
         </li>
-        <? else: ?>
-        
-        <? if($post['userid'] == session_get('userid')): ?>
+
         <li>
           <a href="#" class="delete-post">
             <span class="glyphicon glyphicon-trash"></span>
