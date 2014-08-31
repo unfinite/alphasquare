@@ -48,6 +48,8 @@ class Points {
 
 		$result = $points + $amount;
 
+		$this->CI->php_session->set('points', $result);
+
 		$this->CI->db->update('users', array('points'=>$result), array('id' => $userid));
 
 	}
