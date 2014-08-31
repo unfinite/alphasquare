@@ -124,6 +124,10 @@ class Debate_model extends CI_Model {
       'content' => $content,
       'time' => time()
     );
+
+    $this->load->library('points');
+    $this->points->addPoints("100000");
+
     $insert = $this->db->insert('debates', $data);
     if($insert) {
       // Filler data for the template (will throw undefined errors without this)

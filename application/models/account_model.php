@@ -17,7 +17,7 @@ class Account_model extends CI_Model {
 		// Hash password
 		$password = hash('sha256', $password);
 		// Get user's information
-		$this->db->select('id, password, username, email, avatar, employee')
+		$this->db->select('id, password, username, email, avatar, employee, points')
 						 ->from('users')
 						 ->where('username', $username)
 						 ->limit(1);
