@@ -453,15 +453,17 @@ textarea.autosize {
   font-size: 13px;
 }
 .post section {
+  font-family: 'Roboto Slab', sans-serif;
   word-wrap: break-word;
   font-size: 17px;
   padding: 15px;
+  padding-bottom: 12px;
   margin-left: 73px;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: white;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
   position: relative;
 }
 .post section div.img img {
