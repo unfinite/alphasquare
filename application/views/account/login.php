@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-6 col-md-8 col-sm-12 col-centered <?php if ($this->php_session->get('msg') !== '') { echo 'animated shake'; $this->php_session->unset('msg');} ?>">
+  <div class="col-lg-6 col-md-8 col-sm-12 col-centered">
     <div class="page-header">
       <h1>Sign in</h1>
     </div>
