@@ -1,5 +1,12 @@
 <?php if(!defined('BASEPATH')) exit( 'No direct script access allowed' );
 
+// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+// I likey what you did here, Nathan! 
+// Great work on this package. 
+// Would love if there was a regenerate sessid option. 
+// Maybe I'll work on that tomorrow and on expanding this.
+// -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
 /**
  * PHP Session Library
  * 
