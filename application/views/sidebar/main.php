@@ -2,6 +2,29 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
+    <h3 class="panel-title"><span class="glyphicon glyphicon-flash"></span> API Information</h3>
+  </div>
+  <div class="panel-body">
+    <p>API stats:</p>
+    <pre>
+    "stats":[
+      {
+        "API":"AlphasquareAPI",
+        "version":"APIv1"
+      }, 
+
+      {
+        "Key":"39f-4f3-g2d-4ff",
+        "Limit":"500"
+      }
+    ]
+    </pre>
+  </div>
+</div> <!-- /.panel -->
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
     <h3 class="panel-title"><span class="glyphicon glyphicon-flash"></span> Broadcast</h3>
   </div>
   <div class="panel-body">
