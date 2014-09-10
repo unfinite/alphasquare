@@ -68,5 +68,25 @@ class Staff_model extends CI_Model {
 
   }
 
+  /** 
+   * Provide a nice array of usernames in the users table. 
+   * Note: soon to be updated, just a dummy function for what I'm making
+   *
+   * @return array, username list
+   * 
+   */
+  
+
+  public function listUsernames() {
+
+    // query db to list usernames
+    
+    $this->db->select('username')
+             ->from('users');
+
+    return $result = $this->db->get()->row_array();
+
+  }
+
 }
 ?>
