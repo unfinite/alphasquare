@@ -26,7 +26,7 @@
 								<td><?=$user['id']?></td>
 								<td><?=$user['username']?></td>
 								<td><?=$user['email']?></td>
-								<td><? if($user['employee'] !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
+								<td><?php if($user['employee'] !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
 								<td><a href="#" class="btn btn-default">Actions &raquo;</a></td>
 
 								<? endif; ?>

@@ -14,5 +14,6 @@
 
 <div class="alert alert-info"><b>Notice:</b> Do not ban unless the person clearly broke an instant ban rule. Any ban must be taken in consideration from Sergio. This also applies to official status, and staff.</div>
 <br>
+      <?=$table?>
 
 </div>
