@@ -15,13 +15,12 @@ class Employee extends CI_Controller {
   }
 
   public function index() {
+  	
     $data['title'] = 'Panel';
+    $users = $this->staff_model->listUsernames();
     $this->template->load('admin/welcome', $data);
-  }
+    $this->load->view('admin/list_users', array('users'=>$users), true);
 
-  public function users() {
-    $data['title'] = 'Panel';
-    $this->template->load('admin/userlist', $data);
   }
 
   public function ban() {

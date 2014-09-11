@@ -1,32 +1,39 @@
 
-<div id="people-list">
 
-	<? foreach($users as $user): ?>
-	<div class="user">
-		<a href="<?=profile_url($user['username'])?>">
-			<img src="<?=avatar_url($user['avatar'], $user['email'])?>" class="img-circle" />
-		</a>
-		<a href="<?=profile_url($user['username'])?>">
-			<span class="name"><?=$user['username']?></span>
-		</a>
-		<br />
-		<small class="total-followers">
-			<span class="count followers" data-id="<?=$user['id']?>"><?=$user['followers']?></span>
-			followers
-			</small>
-		<br />
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Users</h3>
 
-		<? if(session_get('userid') != $user['id']): ?>
-			<? if($user['is_following']): ?>
-				<button class="btn btn-primary btn-sm unfollow" data-id="<?=$user['id']?>" data-username="<?=$user['username']?>">Following</button>
-			<? else: ?>
-				<button class="btn btn-default btn-sm follow" data-id="<?=$user['id']?>" data-username="<?=$user['username']?>">Follow</button>
-			<? endif; ?>
-		<? endif; ?>
+					</div>
+					<div class="panel-body">
+					</div>
+					<table class="table table-hover" id="dev-table">
+						<thead>
+							<tr>
+								<th>Avatar</th>
+								<th>ID</th>
+								<th>Username</th>
+								<th>Email</th>
+								<th>Role</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
 
-	</div>
-	<? endforeach; ?>
+								<? foreach($users as $user): ?>
+								<td><img src="<?=$user['avatar']?>" class="img-circle" style="width: 30px; height: 30px;"></td>
+								<td><?=$user['id']?></td>
+								<td><?=$user['username']?></td>
+								<td><?=$user['email']?></td>
+								<td><? if($user['employee'] !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
+								<td><a href="#" class="btn btn-default">Actions &raquo;</a></td>
 
-	<div class="clearfix"></div>
+								<? endif; ?>
 
-</div>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
