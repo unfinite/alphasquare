@@ -69,24 +69,46 @@ class Staff_model extends CI_Model {
   }
 
   /** 
-   * Provide a nice array of usernames in the users table. 
-   * Note: soon to be updated, just a dummy function for what I'm making
+   * Provide a nice array of user data. 
    *
-   * @return array, username list
+   * @return array, user's data
    * 
    */
   
 
   public function listUsernames() {
 
-    // query db to list usernames
+    // query db to list usernames and stuff
     
-    $this->db->select('username')
+    $this->db->select('username, employee, avatar, points, email, id')
              ->from('users');
 
     return $result = $this->db->get()->row_array();
 
   }
+
+  /** 
+   * Provide a nice array of user data for a specific uid. 
+   *
+   * @return array, user's data
+   * 
+   */
+  
+
+  public function retrieveUID($uid) {
+
+    // query db to list usernames and stuff
+    
+    $this->db->select('username, employee, avatar, points, email, id')
+             ->where('id', $uid)
+             ->from('users');
+
+    return $result = $this->db->get()->row_array();
+
+  }
+
+
+
 
 }
 ?>
