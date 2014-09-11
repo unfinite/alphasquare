@@ -15,11 +15,11 @@ class Employee extends CI_Controller {
   }
 
   public function index() {
-  	
+
     $data['title'] = 'Panel';
     $users = $this->staff_model->listUsernames();
+    $data['table'] = $this->load->view('admin/list_users', array('users'=>$users), true);
     $this->template->load('admin/welcome', $data);
-    $this->template->load('admin/list_users', array('users'=>$users), true);
 
   }
 
