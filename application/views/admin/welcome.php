@@ -35,12 +35,12 @@
 						<tbody>
 							<tr>
 
-								<? foreach($users as $user): ?>
+								<? foreach($data as $array): ?>
 								<td><img src="<?=$avatar?>" class="img-circle" style="width: 30px; height: 30px;"></td>
-								<td><?=$id?></td>
-								<td><?=$username?></td>
-								<td><?=$email?></td>
-								<td><?php if($employee !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
+								<td><?=$array['id']?></td>
+								<td><?=$array['username']?></td>
+								<td><?=$array['email']?></td>
+								<td><?php if($array['employee'] !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
 								<td><a href="#" class="btn btn-default">Actions &raquo;</a></td>
 
 								<? endforeach; ?>
