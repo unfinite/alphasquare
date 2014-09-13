@@ -21,11 +21,11 @@
 
 								<? foreach($users as $user): ?>
 								<tr>
-								<td><img src="<?php echo $user->avatar; ?>" class="img-circle" style="width: 30px; height: 30px;"></td>
-								<td><?php echo $user->id; ?></td>
-								<td><?php echo $user->username; ?></td>
-								<td><?php echo $user->email; ?></td>
-								<td><?php if($user->employee !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
+								<td><img src="<?php echo $user['avatar']; ?>" class="img-circle" style="width: 30px; height: 30px;"></td>
+								<td><?php echo $user['id']; ?></td>
+								<td><?php echo $user['username']; ?></td>
+								<td><?php echo $user['email']; ?></td>
+								<td><?php if($user['employee'] !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
 								<td><a href="#" class="btn btn-default">Actions &raquo;</a></td>
 								</tr>
 								<? endforeach; ?>
