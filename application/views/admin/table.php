@@ -1,7 +1,7 @@
       				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">Users</h3>
-<?php error_reporting(E_ALL); var_dump($users); ?>
+<?php var_dump($users); ?>
 					</div>
 					<div class="panel-body">
 					</div>
