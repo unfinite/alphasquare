@@ -103,7 +103,7 @@ class Staff_model extends CI_Model {
              ->where('id', $uid)
              ->from('users');
 
-    return $result = $this->db->get()->row_array();
+    return $this->db->get()->row_array();
 
   }
 
