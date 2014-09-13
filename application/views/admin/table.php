@@ -26,7 +26,7 @@
 								<td><?php echo $user['id']; ?></td>
 								<td><?php echo $user['username']; ?></td>
 								<td><?php echo $user['email']; ?></td>
-								<td><?php if($user['employee'] !== 0) { echo '<span class="label label-primary">Staff</span>'; } else { echo '<span class="label label-success">User</span>'; } ?></td>
+								<td><?php if($user['employee'] == 1) { echo '<span class="label label-primary">Staff</span>'; } else { echo '<span class="label label-success">User</span>'; } ?></td>
 								<td><a href="#" class="btn btn-default">Actions &raquo;</a></td>
 								</tr>
 								<? endforeach; ?>
