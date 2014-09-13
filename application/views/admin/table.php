@@ -4,7 +4,8 @@
 					</div>
 					<div class="panel-body">
 					</div>
-					<table class="table table-hover" id="dev-table">
+					<div class="table-responsive">
+					<table class="table table-hover " >
 						<thead>
 
 							<tr>
@@ -36,3 +37,4 @@
 					</table>
 				</div>
 			</div>
+</div>
