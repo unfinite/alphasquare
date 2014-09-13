@@ -1,12 +1,13 @@
       				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">Users</h3>
-
+<?php var_dump($users); ?>
 					</div>
 					<div class="panel-body">
 					</div>
 					<table class="table table-hover" id="dev-table">
 						<thead>
+
 							<tr>
 								<th>Avatar</th>
 								<th>ID</th>
