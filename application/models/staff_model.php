@@ -83,7 +83,7 @@ class Staff_model extends CI_Model {
     $this->db->select('username, employee, avatar, points, email, id')
              ->from('users');
 
-    return $result = $this->db->get()->row_array();
+    return $this->db->get()->row_array();
 
   }
 
