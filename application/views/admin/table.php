@@ -1,7 +1,6 @@
       				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">Users</h3>
-<?php var_dump($users); ?>
 					</div>
 					<div class="panel-body">
 					</div>
@@ -22,11 +21,11 @@
 
 								<? foreach($users as $user): ?>
 								<tr>
-								<td><img src="<?php echo $user['avatar']; ?>" class="img-circle" style="width: 30px; height: 30px;"></td>
+								<td><img src="<?php echo avatar_url($user['avatar'], $user['email']); ?>" class="img-circle" style="width: 30px; height: 30px;"></td>
 								<td><?php echo $user['id']; ?></td>
 								<td><?php echo $user['username']; ?></td>
 								<td><?php echo $user['email']; ?></td>
-								<td><?php if($user['employee'] !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
+								<td><?php if($user['employee'] !== 0) { echo '<span class="label label-primary">Staff</span>'; } else { echo '<span class="label label-success">User</span>'; } ?></td>
 								<td><a href="#" class="btn btn-default">Actions &raquo;</a></td>
 								</tr>
 								<? endforeach; ?>
