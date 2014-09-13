@@ -43,7 +43,7 @@
 								<td><?php if($employee !== 0) { echo '<span class="badge badge-success">Employee</span>'; } else { echo '<span class="badge badge-default">User</span>'; } ?></td>
 								<td><a href="#" class="btn btn-default">Actions &raquo;</a></td>
 
-								<? endif; ?>
+								<? endforeach; ?>
 
 
 							</tr>
