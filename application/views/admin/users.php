@@ -26,9 +26,9 @@
           <td><?= $user['email']; ?></td>
           <td><?= ($user['employee'] == 1 ? '<span class="label label-primary">Staff</span>' : '<span class="label label-success">User</span>'); ?></td>
           <td>
-            <button class="btn btn-success edit-user">Edit</button>
-            <button class="btn btn-warning ban-user">Ban</button>
-            <button class="btn btn-danger delete-user">Delete</button>
+            <button class="btn btn-success btn-sm edit-user">Edit</button>
+            <button class="btn btn-warning btn-sm ban-user">Ban</button>
+            <button class="btn btn-danger btn-sm delete-user">Delete</button>
           </td>
         </tr>
         <? endforeach; ?>
