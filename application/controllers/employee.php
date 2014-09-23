@@ -24,7 +24,7 @@ class Employee extends CI_Controller {
   public function index() {
     $data['title'] = 'Welcome to the employee panel';
     $users = $this->staff_model->listUsernames();
-	  $data['users'] = $this->load->view('admin/table', array('users'=>$users), true);
+	  $data['users'] = $users;
     $data['tab'] = 'users';
     $this->template->load('admin/template', $data);
   }
