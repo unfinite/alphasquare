@@ -1,31 +1,40 @@
 <?php 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * Employee center controller
+ */
 class Employee extends CI_Controller {
 
+  /**
+   * Constructor for employee controller
+   * URL: /employee
+   */
   public function __construct()
   {
     parent::__construct();
     $this->load->model('staff_model');
     login_required();
     $employee = $this->staff_model->allowAccess();
-    if ($employee == false) {
+    if($employee == false) {
       redirect('dashboard');
     }
   }
 
   public function index() {
-
-    $data['title'] = 'Panel';
+    $data['title'] = 'Welcome to the employee panel';
     $users = $this->staff_model->listUsernames();
-	$data['users'] = $this->load->view('admin/table', array('users'=>$users), true);
-    $this->template->load('admin/welcome', $data);
-
+	  $data['users'] = $this->load->view('admin/table', array('users'=>$users), true);
+    $data['tab'] = 'users';
+    $this->template->load('admin/template', $data);
   }
 
-  public function ban() {
-    $data['title'] = 'Panel';
-    $this->template->load('admin/ban', $data);
+  public function notes() {
+    $data['title'] = 'Make notes';
+    $data['tab'] = 'notes';
+    $this->template->load('admin/template', $data);
   }
 
 }
+
+/* End of file: employee.php */
