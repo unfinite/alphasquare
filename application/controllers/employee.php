@@ -3,12 +3,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Employee center controller
+ * 
+ * @package controllers
+ * 
  */
 class Employee extends CI_Controller {
 
   /**
    * Constructor for employee controller
-   * URL: /employee
    */
   public function __construct()
   {
@@ -21,6 +23,10 @@ class Employee extends CI_Controller {
     }
   }
 
+  /**
+   * Employee index page
+   * URL: /employee
+   */
   public function index() {
     $data['title'] = 'Welcome to the employee panel';
     $users = $this->staff_model->listUsernames();
@@ -29,6 +35,10 @@ class Employee extends CI_Controller {
     $this->template->load('admin/template', $data);
   }
 
+  /**
+   * Allows mods to add notes
+   * URL: /employee/notes
+   */
   public function notes() {
     $data['title'] = 'Make notes';
     $data['tab'] = 'notes';
