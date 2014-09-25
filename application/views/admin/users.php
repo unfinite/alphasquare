@@ -10,21 +10,20 @@
     <div class="table-responsive">
       <table class="table table-hover">
         <tr>
-          <th>Avatar</th>
-          <th>ID</th>
-          <th>Username</th>
+          <th>Information</th>
           <th>Email</th>
-          <th>Role</th>
           <th>Actions</th>
         </tr>
 
         <? foreach($users as $user): ?>
         <tr data-id="<?=$user['id']?>">
-          <td><img src="<?= avatar_url($user['avatar'], $user['email']); ?>" class="img-circle" style="width: 30px; height: 30px;"></td>
-          <td><?= $user['id']; ?></td>
-          <td><?= $user['username']; ?></td>
+          <td>
+            <img src="<?= avatar_url($user['avatar'], $user['email'], 50); ?>" class="img-circle pull-left" style="width: 50px; height: 50px;" />
+            <strong><?=$user['username']?></strong> 
+            (# <?=$user['id'];?>)
+            <?= ($user['employee'] == 1 ? '<span class="label label-primary">Staff</span>' : '<span class="label label-success">User</span>'); ?>
+          </td>
           <td><?= $user['email']; ?></td>
-          <td><?= ($user['employee'] == 1 ? '<span class="label label-primary">Staff</span>' : '<span class="label label-success">User</span>'); ?></td>
           <td>
             <button class="btn btn-success btn-sm edit-user">Edit</button>
             <button class="btn btn-warning btn-sm ban-user">Ban</button>
