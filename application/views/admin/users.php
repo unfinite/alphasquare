@@ -25,7 +25,7 @@
           </td>
           <td><?= $user['email']; ?></td>
           <td>
-            <button class="btn btn-success btn-sm edit-user">Edit</button>
+            <button class="btn btn-default btn-sm edit-user">Edit</button>
             <button class="btn btn-warning btn-sm ban-user">Ban</button>
             <button class="btn btn-danger btn-sm delete-user">Delete</button>
           </td>
