@@ -15,9 +15,9 @@ class Employee extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('staff_model');
+    $this->load->model('employee_model');
     login_required();
-    $employee = $this->staff_model->allowAccess();
+    $employee = $this->employee_model->allow_access();
     if($employee == false) {
       redirect('dashboard');
     }
@@ -28,11 +28,11 @@ class Employee extends CI_Controller {
    * URL: /employee
    */
   public function index() {
-    $data['title'] = 'Welcome to the employee panel';
-    $users = $this->staff_model->listUsernames();
+    $data['title'] = 'Users - Employee Panel';
+    $users = $this->employee_model->get_users();
 	  $data['users'] = $users;
     $data['tab'] = 'users';
-    $this->template->load('admin/template', $data);
+    $this->template->load('employee/template', $data);
   }
 
   /**
@@ -40,9 +40,9 @@ class Employee extends CI_Controller {
    * URL: /employee/notes
    */
   public function notes() {
-    $data['title'] = 'Make notes';
+    $data['title'] = 'Notes - Employee Panel';
     $data['tab'] = 'notes';
-    $this->template->load('admin/template', $data);
+    $this->template->load('employee/template', $data);
   }
 
 }

@@ -10,6 +10,6 @@
 
 	<br />
 
-	<? $this->load->view('admin/'.$tab); ?>
+	<? $this->load->view('employee/'.$tab); ?>
 
 </div>
