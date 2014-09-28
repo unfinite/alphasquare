@@ -1,6 +1,6 @@
 <? if(session_get('loggedin')): ?>
 
-<div class="panel panel-default">
+<!--<div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><span class="glyphicon glyphicon-flash"></span> API Information</h3>
   </div>
@@ -20,7 +20,7 @@
     ]
     </pre>
   </div>
-</div> <!-- /.panel -->
+</div>--> <!-- /.panel -->
 
 
 <div class="panel panel-default">
@@ -54,7 +54,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><span class="glyphicon glyphicon-upload"></span>&nbsp; Popular Topics</h3>
+    <h3 class="panel-title"><span class="glyphicon glyphicon-upload"></span> Popular Topics</h3>
   </div>
   <div class="panel-body">
     <p><em>This is coming soon!</em></p>
