@@ -20,7 +20,7 @@
         <?= ($user['employee'] == 1 ? '<span class="label label-primary">Staff</span>' : ''); ?>
         <br /><em><?=$user['name']?></em>
       </td>
-      <td><?= $user['email']; ?></td>
+      <td><a href="mailto:<?= $user['email']; ?>" target="_blank"><?= $user['email']; ?></a></td>
       <td>
         <button class="btn btn-success btn-sm edit-user"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
 
