@@ -52,8 +52,8 @@ $route['debate/([a-zA-Z0-9]+)/(:num)'] = 'debate/view/$1/$2';
 // People pages
 $route['people/action/(:any)'] = 'people/$1';
 $route['people/list/(random|popular|new)'] = 'people/index/$1';
-$route['people/([a-zA-Z0-9]+)/?(\w+)?'] = 'people/profile/$1/$2';
-$route['people/([a-zA-Z0-9]+)/edit/(\w+)'] = 'people/edit_profile/$1/$2';
+$route['people/([a-zA-Z0-9_]+)/?(\w+)?'] = 'people/profile/$1/$2';
+$route['people/([a-zA-Z0-9_]+)/edit/(\w+)'] = 'people/edit_profile/$1/$2';
 
 // Pages
 $route['about/?(:any)?'] = 'page/about/$1';
