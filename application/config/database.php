@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'db';
-$db['default']['password'] = 'puclisksixk12';
+$db['default']['password'] = '';
 $db['default']['database'] = 'alphasquare';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
