@@ -333,15 +333,15 @@ textarea.autosize {
 }
 
 .navbar.logged-out {
-  background-color: #3498db;
+  background-color: white;
   border: 0;
 }
 .navbar.logged-out .navbar-brand {
-  color: white;
+  color: #3498db;
 }
 .navbar.logged-out a {
   text-decoration:none;
-  color:white;
+  color:#3498db;
 }
 .navbar.logged-out a:hover span {
   text-decoration: underline;
