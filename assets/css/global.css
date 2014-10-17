@@ -16,6 +16,10 @@ body {
   background-color: rgb(236, 240, 241);
 }
 
+.contain {
+  background-color: #3498db;
+  color: white
+}
 /* Overrides */
 .form-control {
   padding: 6px 9px;
