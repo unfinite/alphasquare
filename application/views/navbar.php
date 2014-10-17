@@ -16,7 +16,7 @@
         </a>
       </li>
       <li>
-        <a href="<?=base_url('messages')?>" title="Messages">
+        <a href="<?=base_url('about/soon')?>" title="Messages">
           <span class="glyphicon glyphicon-inbox"></span>
           <span class="label label-danger menu-count messages"></span>
         </a>
