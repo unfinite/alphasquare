@@ -146,7 +146,8 @@ class Account extends CI_Controller {
 
     	if ($this->recaptcha->getIsValid() == false) {
     		$data['recaptchaerror'] = true;
-    	}
+    	} 
+    	$data['recaptchaerror'] = false;
       $data['recaptcha_html'] = $this->recaptcha->recaptcha_get_html();
       $data['title'] = 'Register';
       $data['fixed_container'] = true;
