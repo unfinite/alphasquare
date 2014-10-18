@@ -105,6 +105,8 @@ class Account extends CI_Controller {
 
     // Load form validation library
     $this->load->library('form_validation');
+    // load recaptcha
+    $this->load->library('recaptcha');
 
     // Set all the rules
     $this->form_validation->set_rules('username', 'Username', 'required|trim|xss_clean|valid_username|is_unique[users.username]');
@@ -115,8 +117,10 @@ class Account extends CI_Controller {
     // Set message for is_unique rule
     $this->form_validation->set_message('is_unique', 'The %s you entered is already taken.');
 
+    $this->recaptcha->recaptcha_check_answer();
+
     // If the form was submitted and validated
-    if($this->form_validation->run()) {
+    if($this->form_validation->run() and $this->recaptcha->getIsValid() == true) {
       // Create the account...
       $username = $this->input->post('username');
       $email = $this->input->post('email');
@@ -139,6 +143,7 @@ class Account extends CI_Controller {
     else {
       // Either the form did not validate, or there was no form submitted
       // So load the register view
+      $data['recaptcha_html'] = $this->recaptcha->recaptcha_get_html();
       $data['title'] = 'Register';
       $data['fixed_container'] = true;
       $data['errors'] = validation_errors();

@@ -24,6 +24,9 @@
 			<p>By using Alphasquare, you agree with the
 				<a href="about/terms" target="_blank">terms of service</a>
 				and <a href="about/privacy" target="_blank">privacy policy</a>.</p>
+				<br>
+				 <?php echo $recaptcha_html; ?>
+				 <br>
 			<button name="submit" class="btn btn-primary" value="true">Register</button>
 		</form>
 		<br />
