@@ -7,7 +7,13 @@
 		</div>
 
 		<? $this->load->view('account/oauth_buttons'); ?>
-		
+		<?php
+			if ($recaptchaerror == true) {
+
+				echo '<br><div class="alert alert-info">The recaptcha was incorrect. Please try again.</div></br>';
+
+			}
+		?>
 		<form action="" method="post">
 			<div class="form-group">
 				<input type="text" name="username" id="username" placeholder="Username" class="form-control" value="<?=set_value('username')?>" />

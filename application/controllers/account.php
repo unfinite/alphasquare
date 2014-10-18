@@ -143,6 +143,10 @@ class Account extends CI_Controller {
     else {
       // Either the form did not validate, or there was no form submitted
       // So load the register view
+
+    	if ($this->recaptcha->getIsValid() == false) {
+    		$data['recaptchaerror'] = true;
+    	}
       $data['recaptcha_html'] = $this->recaptcha->recaptcha_get_html();
       $data['title'] = 'Register';
       $data['fixed_container'] = true;
