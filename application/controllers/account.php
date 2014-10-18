@@ -120,7 +120,8 @@ class Account extends CI_Controller {
     $this->recaptcha->recaptcha_check_answer();
 
     // If the form was submitted and validated
-    if($this->form_validation->run() and $this->recaptcha->getIsValid() == true) {
+    if ($this->recaptcha->getIsValid() == true) {
+    if($this->form_validation->run()) {
       // Create the account...
       $username = $this->input->post('username');
       $email = $this->input->post('email');
@@ -140,6 +141,11 @@ class Account extends CI_Controller {
       }
 
     }
+	} else {
+
+		msg('The captcha was answered incorrectly. Please try again.');
+
+	}
     else {
       // Either the form did not validate, or there was no form submitted
       // So load the register view
