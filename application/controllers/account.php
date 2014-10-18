@@ -117,36 +117,44 @@ class Account extends CI_Controller {
     // Set message for is_unique rule
     $this->form_validation->set_message('is_unique', 'The %s you entered is already taken.');
 
-    $this->recaptcha->recaptcha_check_answer();
 
     // If the form was submitted and validated
-    if($this->form_validation->run() and $this->recaptcha->getIsValid() == true) {
+    if($this->form_validation->run()) {
       // Create the account...
-      $username = $this->input->post('username');
-      $email = $this->input->post('email');
-      $password = $this->input->post('password');
-      $created = $this->account_model->create($username, $email, $password);
+    	$this->recaptcha->recaptcha_check_answer();
+    	if ($this->recaptcha->getIsValid()) {
+    	      $username = $this->input->post('username');
+    	      $email = $this->input->post('email');
+    	      $password = $this->input->post('password');
+    	      $created = $this->account_model->create($username, $email, $password);
+    	
+    	      if($created) {
+    	        // If they were registered, log them in
+    	        $this->account_model->authenticate($username, $password);
+    	        // Show an alert box
+    	        msg("<strong>Welcome to Alphasquare!</strong>", 'info', 'text-align:center;font-size:15px;');
+    	        // Go to dashboard
+    	        redirect(REGISTER_REDIRECT);
+    	      }
+    	      else {
+    	        msg('Sorry, an error has occurred. Please try again.');
+    	      }
+    	} else {
 
-      if($created) {
-        // If they were registered, log them in
-        $this->account_model->authenticate($username, $password);
-        // Show an alert box
-        msg("<strong>Welcome to Alphasquare!</strong>", 'info', 'text-align:center;font-size:15px;');
-        // Go to dashboard
-        redirect(REGISTER_REDIRECT);
-      }
-      else {
-        msg('Sorry, an error has occurred. Please try again.');
-      }
+	      $data['recaptchaerror'] = true;
+	      $data['recaptcha_html'] = $this->recaptcha->recaptcha_get_html();
+	      $data['title'] = 'Register';
+	      $data['fixed_container'] = true;
+	      $data['errors'] = validation_errors();
+	      $data['stylesheets'] = array('assets/css/bootstrap-social.css');
+	      $this->template->load('account/register', $data);
 
+    	}
     }
     else {
+
       // Either the form did not validate, or there was no form submitted
       // So load the register view
-
-    	if ($this->recaptcha->getIsValid() == false) {
-    		$data['recaptchaerror'] = true;
-    	} 
     	$data['recaptchaerror'] = false;
       $data['recaptcha_html'] = $this->recaptcha->recaptcha_get_html();
       $data['title'] = 'Register';
