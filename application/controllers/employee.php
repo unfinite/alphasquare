@@ -50,19 +50,27 @@ class Employee extends CI_Controller {
    * URL: /employee/delete/:id
    */
 
-  public function delete($id) {
+  public function delete($id = '') {
 
-    $status = $this->employee_model->delete($id);
+    if (!empty($id) and is_numeric($id)) {
 
-    if ($status == true) {
+      $status = $this->employee_model->delete($id);
 
-      msg("User deleted successfully.");
-      redirect('dashboard');
+      if ($status == true) {
+
+        msg("User deleted successfully.");
+        redirect('dashboard');
+
+      } else {
+
+        msg("User couldn't be deleted. (Is he/her staff?)");
+        redirect('dashboard');
+
+      }
 
     } else {
 
-      msg("User couldn't be deleted. (Is he/her staff?)");
-      redirect('dashboard');
+      msg("Empty ID.");
 
     }
 
@@ -75,24 +83,30 @@ class Employee extends CI_Controller {
    * URL: /employee/delete_f/:id
    */
 
-  public function delete_f($id) {
+  public function delete_f($id = '') {
 
-    $status = $this->employee_model->delete($id, true);
+    if (!empty($id) and is_numeric($id)) {
 
-    if ($status == true) {
+      $status = $this->employee_model->delete($id, true);
 
-      msg("User deleted successfully.");
+      if ($status == true) {
 
-      redirect('dashboard');
+        msg("User deleted successfully.");
+
+        redirect('dashboard');
+
+      } else {
+
+        msg("User couldn't be deleted. Did something fail in the DB?");
+        redirect('dashboard');
+
+      }
 
     } else {
 
-      msg("User couldn't be deleted. Did something fail in the DB?");
-      redirect('dashboard');
+      msg("Empty ID.");
 
     }
-
-
   }
 
 }

@@ -94,7 +94,7 @@ class Employee_model extends CI_Model {
     
       $this->db->select('employee')
                ->from('users')
-               ->where('id', $username);
+               ->where('id', $id);
       $arr = $this->db->get()->result_array();
       $status = $arr['employee'];
 

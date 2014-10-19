@@ -32,7 +32,7 @@
 
           <ul class="dropdown-menu">
             <li><a href="#" class="ban-user">Suspend / Ban</a></li>
-            <li><a href="delete/<?=$user['id']?>" class="delete-user">Delete</a></li>
+            <li><a href="employee/delete/<?=$user['id']?>" class="delete-user">Delete</a></li>
           </ul>
         </div>
 
