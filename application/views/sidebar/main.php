@@ -20,12 +20,12 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title slab"><span class="glyphicon glyphicon-music"></span> Radio</h3>
+    <h3 class="panel-title slab"><span class="glyphicon glyphicon-globe"></span> Advertisement</h3>
   </div>
   <div class="panel-body">
-   Wanna hear some really awesome beats?
-   Tune in to our PlayParty channel! 
-   <a href="http://socialmelder.com/playparty/channel/alphasquare" class="text-bold" target="_blank">Alphasquare on PlayParty &raquo;</a> 
+   <!--begin The Banner Exchange code --><iframe src="http://www.thebannerexchange.com/display/21538/3//" frameborder="0" vspace="0" hspace="0" width="300" height="250" marginwidth="0" marginheight="0" scrolling="no"></iframe><!-- end The Banner Exchange code -->
+   <br>
+   <i><a href="dashboard">debate this ad</a></i>
   </div>
 </div> <!-- /.panel -->
 
