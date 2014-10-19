@@ -193,26 +193,6 @@ class Account extends CI_Controller {
    * URL: /account/reset_password
    */
   public function reset_password() {
-    
-      $data['fixed_container'] = true;
-      $token = $data['token'];
-
-      $this->db->select('*')
-             ->from('forgot_password')
-             ->where(array('token' => $token))
-             ->limit(1);
-
-      $query = $this->db->get();
-      $array = $query->result_array();
-      $exists = $this->db->get()->num_rows;
-
-
-      if ($exists > 0) {
-
-        // proceed
-
-
-      }
 
     }
 
