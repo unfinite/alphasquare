@@ -87,7 +87,7 @@ class Employee extends CI_Controller {
 
     if (!empty($id) and is_numeric($id)) {
 
-      $status = $this->employee_model->delete($id, true);
+      $status = $this->employee_model->delete_f($id);
 
       if ($status == true) {
 

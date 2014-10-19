@@ -86,7 +86,7 @@ class Employee_model extends CI_Model {
    */
   
 
-  public function delete($id, $force = false) {
+  public function delete($id) {
 
     // query db
 
@@ -95,12 +95,10 @@ class Employee_model extends CI_Model {
       $this->db->select('employee')
                ->from('users')
                ->where('id', $id);
-      $arr = $this->db->get()->result_array();
+      $arr = $this->db->get()->row_array();
       $status = $arr['employee'];
 
-      if ($force == false){
-
-        if($status == 1) {
+      if($status == 1) {
 
           return false;
 
@@ -109,20 +107,15 @@ class Employee_model extends CI_Model {
           $this->db->delete('users', array('id'=>$id));
           return true;
 
-        }
-
-      } else {
-
-        $this->db->delete('users', array('id'=>$id));
-        return true;
-
-      }
-
-    } else {
-
-      return false;
+        } 
 
     }
+
+  }
+
+  public function delete_f($id) {
+
+    //placeholder
 
   }
 
