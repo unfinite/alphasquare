@@ -38,8 +38,11 @@ class Custom_email {
 	 */
 	public function set_data($data) {
 
-		if(!isset($data['username'])) {
-			$data['username'] = $this->CI->php_session->get('username');
+		if(isset($data['username'])) {
+			$data['name'] = $data['username'];
+		}
+		else {
+			$data['name'] = $this->CI->php_session->get('username');
 		}
 
 		if(is_array($data['to'])) {
@@ -64,7 +67,7 @@ class Custom_email {
 	private function load_email_view() {
 		$name = $this->data['type'];
 
-		if(!file_exists(APPPATH.'views/emails/'.$name)) {
+		if(!file_exists(APPPATH.'/views/emails/'.$name.'.php')) {
 			die('<b>Error:</b> The email view <em>'.$name.'</em> does not exist.');
 		}
 

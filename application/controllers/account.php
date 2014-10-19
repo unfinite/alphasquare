@@ -203,10 +203,11 @@ class Account extends CI_Controller {
         'token' => $token
       );
       $this->custom_email->set_data($email_data);
-      $this->custom_email->send();
+      if($this->custom_email->send()) {
+        msg('We have sent an email to <b>'.$info['email'].'</b> with further instructions. If you didn\'t get the email, please check your spam folder.', 'info');
+        redirect('login');
+      }
 
-      msg('Please click the link in the email we sent to <b>'.$info['email'].'</b> to reset your password. If you didn\'t get the email, check your spam folder.', 'info');
-      redirect('login');
     }
     else {
       msg('An error occurred. Please try again.');
