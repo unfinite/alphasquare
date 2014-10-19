@@ -23,9 +23,17 @@
     <h3 class="panel-title slab"><span class="glyphicon glyphicon-globe"></span> Advertisement</h3>
   </div>
   <div class="panel-body">
-   <!--begin The Banner Exchange code --><iframe src="http://www.thebannerexchange.com/display/21538/3//" frameborder="0" vspace="0" hspace="0" width="300" height="250" marginwidth="0" marginheight="0" scrolling="no"></iframe><!-- end The Banner Exchange code -->
+  <center>
+   		<script type="text/javascript">
+		/* Alphasquare | Large Rectangle | Alphasquare */
+		var bamAdspace = '5443fccc5356a';
+		var bamWidth = 336;
+		var bamHeight = 280;
+		</script>
+		<script type="text/javascript" src="http://www.bamifyads.com/ads.js"></script>		
    <br>
-   <i><a href="dashboard">debate this ad</a></i>
+   <i><a href="dashboard">debate this ad &raquo;</a></i>
+   </center>
   </div>
 </div> <!-- /.panel -->
 
