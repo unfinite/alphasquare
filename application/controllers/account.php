@@ -220,21 +220,19 @@ class Account extends CI_Controller {
 
     // If token was created, send the email
     if($token) {
+      $this->load->library('custom_email');
+      $email_data = array(
+        'subject' => 'Reset your password on Alphasquare',
+        'type' => 'reset_password',
+        'to' => $info['email'],
+        'token' => $token
+      );
+      $this->custom_email->set_data($email_data);
+      if($this->custom_email->send()) {
+        msg('We have sent an email to <b>'.$info['email'].'</b> with further instructions. If you didn\'t get the email, please check your spam folder.', 'info');
+        redirect('login');
+      }
 
-		$subject = 'Reset your password on Alphasquare';
-		$message = 'Hey! Seems like you forgot your password. To reset it, visit http://alphasquare.us/account/forgot_password/'.$token.' <br><br> This email was sent to you because you requested to reset your password. If this is incorrect, please ignore this email message.';
-		$header = "From: hello@alphasquare.us\r\n"; 
-		$header.= "MIME-Version: 1.0\r\n"; 
-		$header.= "Content-Type: text/html; charset=ISO-8859-1\r\n"; 
-		$header.= "X-Priority: 1\r\n"; 
-
-		mail($info['email'], $subject, $message, $header);
-
-      //$this->custom_email->set_data($email_data);
-      // $this->custom_email->send();
-
-      msg('Please click the link in the email we sent to <b>'.$info['email'].'</b> to reset your password. If you didn\'t get the email, check your spam folder.', 'info');
-      redirect('login');
     }
     else {
       msg('An error occurred. Please try again.');

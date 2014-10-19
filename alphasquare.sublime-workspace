@@ -1,0 +1,2013 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"aler",
+				"alert-container"
+			],
+			[
+				"ale",
+				"alert-container"
+			],
+			[
+				"obj",
+				"object_type"
+			],
+			[
+				"objec",
+				"object_type"
+			],
+			[
+				"edit",
+				"edit-links"
+			],
+			[
+				"birthday",
+				"birthday_time"
+			],
+			[
+				"opti",
+				"optionsNotObject"
+			],
+			[
+				"prepend",
+				"prependBaseUrl"
+			],
+			[
+				"loading",
+				"loadingImg"
+			],
+			[
+				"pag",
+				"page-header"
+			],
+			[
+				"peop",
+				"people_model"
+			],
+			[
+				"comments",
+				"comments-container"
+			],
+			[
+				"debate",
+				"debate_model"
+			],
+			[
+				"ajax",
+				"ajaxCallback"
+			],
+			[
+				"acc",
+				"account_model"
+			],
+			[
+				"forgot",
+				"forgot_password"
+			],
+			[
+				"post",
+				"posts_html"
+			],
+			[
+				"ret",
+				"returnUrl"
+			],
+			[
+				"coll",
+				"collections_model"
+			],
+			[
+				"collec",
+				"collection"
+			],
+			[
+				"col",
+				"collections"
+			],
+			[
+				"gif_thum",
+				"gif_thumb_url"
+			],
+			[
+				"function",
+				"function_exists"
+			],
+			[
+				"colle",
+				"collections_model"
+			],
+			[
+				"collection-se",
+				"collection-settings-form"
+			],
+			[
+				"collection",
+				"collections_model"
+			],
+			[
+				"collects",
+				"collections_model"
+			],
+			[
+				"media",
+				"media-body"
+			],
+			[
+				"notifi",
+				"notified_users"
+			],
+			[
+				"null",
+				"ifx_nullformat"
+			],
+			[
+				"animate",
+				"animateBackground"
+			],
+			[
+				"anima",
+				"animatePosition"
+			],
+			[
+				"loaded",
+				"loadedGifs"
+			],
+			[
+				"scroll",
+				"scroll_page"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"source",
+				"sourceHtml"
+			],
+			[
+				"glyp",
+				"glyphicon-star-empty"
+			],
+			[
+				"add-tag",
+				"add-tag-input"
+			],
+			[
+				"modal",
+				"modalRequest"
+			],
+			[
+				"avat",
+				"avatar_size"
+			],
+			[
+				"comm",
+				"comment_mention"
+			],
+			[
+				"notifica",
+				"notifications_model"
+			],
+			[
+				"api",
+				"api_url"
+			],
+			[
+				"curl_setopt",
+				"curl_setopt_array"
+			],
+			[
+				"comment",
+				"commentBox"
+			],
+			[
+				"jso",
+				"json_output"
+			],
+			[
+				"alert",
+				"alertBox"
+			],
+			[
+				"cont",
+				"contact_count"
+			],
+			[
+				"admin",
+				"admin_model"
+			],
+			[
+				"last_login",
+				"last_login_date"
+			],
+			[
+				"glyph",
+				"glyphicon-remove"
+			],
+			[
+				"viewed",
+				"viewedGifs"
+			],
+			[
+				"collect",
+				"collection_id"
+			],
+			[
+				"notific",
+				"notifications_model"
+			],
+			[
+				"order",
+				"orderReload"
+			],
+			[
+				"more",
+				"moreComments"
+			],
+			[
+				"no",
+				"notification"
+			],
+			[
+				"Universal",
+				"UniversalEngine"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"button",
+				"buttonsHtml"
+			],
+			[
+				"timezone",
+				"timezone_model"
+			],
+			[
+				"backgr",
+				"background-repeat"
+			],
+			[
+				"gif_owne",
+				"gif_owner_username"
+			],
+			[
+				"show",
+				"show_load_more"
+			],
+			[
+				"total",
+				"total_count"
+			],
+			[
+				"noti",
+				"notifications_model"
+			],
+			[
+				"notif",
+				"notifications"
+			],
+			[
+				"custo",
+				"custom-img"
+			],
+			[
+				"a",
+				"applet	Tag"
+			],
+			[
+				"email",
+				"email_taken"
+			],
+			[
+				"comment-c",
+				"comments-control-bar"
+			],
+			[
+				"rate_lim",
+				"rate_limit_requests"
+			],
+			[
+				"sec",
+				"seconds_limit"
+			],
+			[
+				"request",
+				"requests_limit"
+			],
+			[
+				"collectio",
+				"collection_gifs"
+			],
+			[
+				"functi",
+				"function_exists"
+			],
+			[
+				"dr",
+				"dropdown-toggle"
+			],
+			[
+				"head",
+				"header_userid"
+			],
+			[
+				"pre",
+				"preventDefault"
+			],
+			[
+				"featured",
+				"featuredIDs_string"
+			],
+			[
+				"featur",
+				"featuredGifIds"
+			],
+			[
+				"featu",
+				"featuredIDs"
+			],
+			[
+				"PJ",
+				"PJAX_TIMEOUT"
+			],
+			[
+				"num",
+				"num_rows"
+			],
+			[
+				"header",
+				"header_loggedin"
+			],
+			[
+				"notifict",
+				"notificationCount"
+			],
+			[
+				"recaca",
+				"recaptcha"
+			],
+			[
+				"funci",
+				"function_exists"
+			],
+			[
+				"funct",
+				"function_exists"
+			],
+			[
+				"selecte",
+				"selectedNoneOwnedCollec"
+			],
+			[
+				"collectionOwn",
+				"collectionOwner"
+			],
+			[
+				"report",
+				"reportGifResult"
+			],
+			[
+				"admi",
+				"adminCount"
+			],
+			[
+				"reportComm",
+				"reportCommentCount"
+			],
+			[
+				"conta",
+				"contactCount"
+			],
+			[
+				"reportC",
+				"reportCommentCount"
+			],
+			[
+				"COMMENT",
+				"COMMENT_LIKE"
+			],
+			[
+				"send",
+				"sender_id"
+			],
+			[
+				"check",
+				"checkStmt"
+			],
+			[
+				"query",
+				"querySuccess"
+			],
+			[
+				"month",
+				"month_or_week"
+			],
+			[
+				"save",
+				"save-tags"
+			],
+			[
+				"time",
+				"timezone"
+			],
+			[
+				"navb",
+				"navbarCount"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"generat",
+				"generate_timezone_list"
+			],
+			[
+				"timezone_l",
+				"timezone_locations"
+			],
+			[
+				"curr",
+				"current_time"
+			],
+			[
+				"DateTime",
+				"DateTimeZone"
+			],
+			[
+				"strrpt",
+				"str_repeat"
+			],
+			[
+				"Hyena",
+				"HyenaOptions"
+			],
+			[
+				"favic",
+				"faviconHtml"
+			],
+			[
+				"favicon",
+				"faviconUrl"
+			],
+			[
+				"url",
+				"urlPath"
+			],
+			[
+				"suspen",
+				"suspensionAllowedPages"
+			],
+			[
+				"susp",
+				"suspensionAllowedPages"
+			],
+			[
+				"reportG",
+				"reportGifResult"
+			],
+			[
+				"uin",
+				"uinfoResult"
+			],
+			[
+				"sus",
+				"suspendUntil"
+			],
+			[
+				"success",
+				"successMsg"
+			],
+			[
+				"edit-sourc",
+				"edit-source-con"
+			],
+			[
+				"edit-",
+				"edit-source-con"
+			],
+			[
+				"sender",
+				"senderUsername"
+			],
+			[
+				"tagS",
+				"tagString2"
+			],
+			[
+				"tagSt",
+				"tagString"
+			],
+			[
+				"add-ta",
+				"add-tag-input"
+			],
+			[
+				"load-mo",
+				"load-more-comments"
+			],
+			[
+				"dele",
+				"deleteStmt"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/controllers/dashboard.php",
+			"settings":
+			{
+				"buffer_size": 1088,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/alerts.php",
+			"settings":
+			{
+				"buffer_size": 2055,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/libraries/alert.php",
+			"settings":
+			{
+				"buffer_size": 5172,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/debate.php",
+			"settings":
+			{
+				"buffer_size": 3491,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/models/debate_model.php",
+			"settings":
+			{
+				"buffer_size": 6726,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/global.css",
+			"settings":
+			{
+				"buffer_size": 9127,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/global.js",
+			"settings":
+			{
+				"buffer_size": 8418,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/nathan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/dashboard.js",
+			"settings":
+			{
+				"buffer_size": 10598,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/profile.js",
+			"settings":
+			{
+				"buffer_size": 4468,
+				"line_ending": "Unix",
+				"name": "/*"
+			}
+		},
+		{
+			"file": "assets/css/profile.css",
+			"settings":
+			{
+				"buffer_size": 3492,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/alerts/alerts.php",
+			"settings":
+			{
+				"buffer_size": 1380,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"ssp",
+				"Set Syntax: PHP"
+			]
+		],
+		"width": 588.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/json_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/controllers/people.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/models/people_model.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/header.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/controllers/comments.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/models/comments_model.php",
+		"/Users/nathan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/posts/html_template.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/account/forgot_password.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/account/register.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/account/login.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/tab/about.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/sidebar/main.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/models/alerts_model.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/page.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/models/account_model.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/controllers/account.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/edit/links.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/list_users.php",
+		"/Applications/MAMP/htdocs/alphasquare/assets/css/home.css",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/edit/favorites.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/edit/about.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/config/routes.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/msg_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/validate_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/edit/basic.php",
+		"/Applications/MAMP/htdocs/alphasquare/assets/js/plugins/all.js",
+		"/Applications/MAMP/htdocs/index.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/format_post_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/libraries/custom_email.php",
+		"/Users/nathan/Library/Caches/TemporaryItems/AstvExy.gif",
+		"/Applications/MAMP/htdocs/alphasquare/application/config/constants.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/main.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/footer.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/tab/follows.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/tab/comments.php",
+		"/Applications/MAMP/htdocs/alphasquare/sql/structure.sql",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/posts/view.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/posts/comments.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/posts/post_box.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/dashboard.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile/tab/debates.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/sidebar/follows.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/bbcode_helper.php",
+		"/Applications/MAMP/htdocs/ci/assets/plugins/bundle.js",
+		"/Applications/MAMP/htdocs/ci/assets/plugins/jquery.timeago.js",
+		"/Applications/MAMP/htdocs/alphasquare/assets/css/profile.css",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/page.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/about/contact.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/about/privacy.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/about/terms.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/posts/loading.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/linkify_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/auto_link_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/people/profile.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/php_session_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/navbar.php",
+		"/Applications/MAMP/htdocs/alphasquare/assets/css/dashboard.css",
+		"/Applications/MAMP/htdocs/alphasquare/assets/css/global.css",
+		"/Applications/MAMP/htdocs/alphasquare/application/controllers/main.php",
+		"/Applications/MAMP/htdocs/alphasquare/assets/js/global.js",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/main_sidebar.php",
+		"/Applications/MAMP/htdocs/alphasquare/assets/js/plugins/notify-bar.js",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/about/about.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/controllers/page.php",
+		"/Applications/MAMP/htdocs/alphasquare/assets/js/dashboard.js",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/templates/header.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/libraries/MY_form_validation.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/templates/master.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/libraries/template.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/templates/navbar.php",
+		"/Applications/MAMP/htdocs/ci/application/libraries/logger.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/templates/footer.php",
+		"/private/var/folders/3n/b2v7j1zx0lnd1hjcp7fmw2j00000gn/T/fz3temp-1/reactions.php",
+		"/private/var/folders/3n/b2v7j1zx0lnd1hjcp7fmw2j00000gn/T/fz3temp-1/config.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/MY_url_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/user_guide/installation/upgrade_162.html",
+		"/Applications/MAMP/htdocs/alphasquare/application/config/autoload.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/helpers/user_helper.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/templates/validation_errors.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/libraries/php_session.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/home.php",
+		"/Applications/MAMP/htdocs/alphasquare/user_guide/libraries/unit_testing.html",
+		"/Applications/MAMP/htdocs/alphasquare/application/config/database.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/templates/sidebar.php",
+		"/Applications/MAMP/htdocs/alphasquare/.htaccess",
+		"/Applications/MAMP/htdocs/alphasquare/application/config/config.php",
+		"/Applications/MAMP/htdocs/alphasquare/application/views/templates/msg_box.php",
+		"/Applications/MAMP/htdocs/alphasquare/README.md",
+		"/Applications/MAMP/htdocs/ci/application/config/constants.php",
+		"/Applications/MAMP/htdocs/ci/application/libraries/template.php",
+		"/Applications/MAMP/htdocs/ci/application/libraries/gallery.php",
+		"/Applications/MAMP/htdocs/ci/application/helpers/password_helper.php",
+		"/Applications/MAMP/htdocs/ci/application/config/autoload.php",
+		"/Applications/MAMP/htdocs/ci/assets/plugins/bootbox_customized.js",
+		"/Applications/MAMP/htdocs/ci/application/views/templates/header.php",
+		"/Applications/MAMP/htdocs/ci/.htaccess",
+		"/Applications/MAMP/htdocs/ci/application/config/config.php",
+		"/Applications/MAMP/htdocs/ci/application/views/user/leaderboard.php",
+		"/Applications/MAMP/htdocs/ci/application/config/routes.php",
+		"/Applications/MAMP/htdocs/ci/application/helpers/MY_html_helper.php",
+		"/Applications/MAMP/htdocs/ci/application/helpers/main_helper.php",
+		"/Applications/MAMP/htdocs/ci/assets/plugins/bootbox_customized.min.js",
+		"/Applications/MAMP/htdocs/ci/application/controllers/make_thumbnails.php",
+		"/Applications/MAMP/htdocs/ci/application/config/reactions.php",
+		"/Applications/MAMP/htdocs/ci/application/controllers/tags.php",
+		"/Applications/MAMP/htdocs/ci/application/models/tags_model.php",
+		"/Applications/MAMP/htdocs/ci/application/views/templates/navbar.php",
+		"/Applications/MAMP/htdocs/ci/application/views/home.php",
+		"/Applications/MAMP/htdocs/ci/application/views/user/login.php",
+		"/Applications/MAMP/htdocs/ci/application/views/gif/show.php",
+		"/Applications/MAMP/htdocs/ci/assets/js/gif-page.js",
+		"/Applications/MAMP/htdocs/ci/application/views/modals/collection_manager.php",
+		"/Applications/MAMP/htdocs/ci/application/views/user/login_form.php",
+		"/Applications/MAMP/htdocs/ci/application/controllers/main.php",
+		"/Applications/MAMP/htdocs/ci/application/controllers/collections.php",
+		"/Applications/MAMP/htdocs/ci/application/models/collections_model.php",
+		"/Applications/MAMP/htdocs/ci/application/controllers/modal.php",
+		"/Applications/MAMP/htdocs/ci/application/helpers/custom_email_helper.php",
+		"/Applications/MAMP/htdocs/ci/application/helpers/gif_thumbnail_helper.php",
+		"/Applications/MAMP/htdocs/ci/application/controllers/search.php",
+		"/Applications/MAMP/htdocs/ci/application/views/emails/new_email.php",
+		"/Applications/MAMP/htdocs/ci/application/views/emails/register.php",
+		"/Applications/MAMP/htdocs/ci/application/views/gif/add.php",
+		"/Applications/MAMP/htdocs/ci/application/views/collections/create_form.php",
+		"/Applications/MAMP/htdocs/ci/thumbs.html",
+		"/Applications/MAMP/htdocs/ci/application/controllers/admin.php",
+		"/Applications/MAMP/htdocs/ci/application/views/emails/contact_submission.php"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Applications/MAMP/htdocs/alphasquare/application",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"interval",
+			"mark_read",
+			"alert",
+			"follow",
+			"vote",
+			"poll",
+			"not-cl",
+			"shown",
+			"alert",
+			"if(strlen($tagline) > 100) {\n						json_error('Tagline cannot be longer than 100 chars.');\n					}\n					else if(strlen($bio) > 1500) {\n						json_error('Bio cannot be longer than 1500 chars.');\n					}\n					else if(strlen($location) > 50) {\n						json_error('Location cannot be longer than 50 chars.');\n					}\n					if(strlen($birthday) > 0) {\n						$birthday_time = strtotime($birthday);\n						// Check if birthday is correctly formatted date\n						if(!$birthday_time) {\n							json_error('Birthday is in an invalid format. Please use <b>YYYY-MM-DD</b>.');\n						}\n						// Transform date into YYYY-MM-DD format\n						$birthday = date('Y-m-d', $birthday_time);\n					}\n					else {\n						$birthday = null;\n					}",
+			"form",
+			"$data['id']",
+			"#stats",
+			"debate_model->get_info",
+			"$CI",
+			"signup_date",
+			"loadMore",
+			"please enter",
+			"key",
+			"bind:",
+			"{ id: postid }",
+			"Alp.bar",
+			"start",
+			"begin",
+			".comment",
+			".comments",
+			"timeago",
+			"post.bind",
+			"timeago",
+			"$",
+			"delete",
+			"roboto",
+			"alert",
+			"container",
+			"loggedin",
+			"logged_in",
+			"user_id",
+			"get_info",
+			"max-widt",
+			"547",
+			"their",
+			"animateback",
+			"home-h",
+			"load-more",
+			"isset",
+			"new_email",
+			"add",
+			"add(",
+			"loginModal",
+			"login",
+			"$('#login",
+			"tagged",
+			"loginModal",
+			"login",
+			"line-height",
+			"report",
+			"animate",
+			"check",
+			"doesExist",
+			"load-more",
+			"collection",
+			"hyena",
+			"page-header",
+			"url",
+			"return",
+			"gif_id",
+			"favorite()",
+			"activate",
+			"function()",
+			".page-he",
+			"pulse",
+			"parse_url",
+			"disableButton",
+			"activated",
+			"limit",
+			"offset",
+			"initpage",
+			"ismobile",
+			"home-hero",
+			"animateBackgrou",
+			"animateBackground('#home-hero');",
+			"animateBackground",
+			"animateback",
+			"animateBackground",
+			"home-hero",
+			"left:",
+			"move",
+			"login",
+			"container",
+			"nav-sear",
+			"form-control",
+			"search",
+			"initPag",
+			"setgif",
+			"cookie",
+			"preserve",
+			".scroll",
+			"loadMoregif",
+			"createCook",
+			"set",
+			"cookie",
+			"alert",
+			"addPar",
+			"addpar",
+			"addPar",
+			"addParam",
+			"hash",
+			"height()",
+			"+ 200",
+			"+ ",
+			"- ",
+			"- 1",
+			"scroll",
+			"loadmore",
+			"limit",
+			"alert(",
+			"alert(limit);",
+			"loadmore",
+			"loadMore",
+			"help",
+			"loadmoregifs",
+			"countele",
+			"ag-l",
+			"vote",
+			"comment_likes",
+			"exist",
+			"live",
+			"default"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#profile-menu",
+			"joined",
+			"#comments",
+			"userid",
+			"object_id",
+			"background-position:",
+			"animateBackground",
+			"production",
+			"develop",
+			"Error.get",
+			"self",
+			"userId",
+			"$tag_id",
+			"$gif_id",
+			"$(document)",
+			"_document",
+			"\\$this\\->input\\->post\\($1\\);",
+			"\\$this->input->post($1);",
+			"$this->input->post($1);",
+			"json_output($1));",
+			"json_output($1);",
+			"btn",
+			"$data",
+			"",
+			"'",
+			"$row",
+			"dropdownUL",
+			"user_info",
+			"$row",
+			"tagsArray",
+			"gifId",
+			"notifCount",
+			"urlPath",
+			"origTitle",
+			"users_model->updateInfo",
+			"updateInfo",
+			"orig_title",
+			"$notif",
+			"comment-count",
+			"$this->php_session->get",
+			"loadScripts",
+			"$this->php_session->get",
+			"$this->php_session",
+			"$this->session->get",
+			"$session->get",
+			"->php_session->set",
+			"->php_session->get",
+			"return",
+			"$this->CI->db",
+			"$",
+			"$CI",
+			"<?=base_url($1);?>",
+			"ROOT",
+			"$gif->info['owner_id']",
+			"$this->id",
+			"$this->owner",
+			"user",
+			"gifOwner",
+			"$user['id']",
+			"require_once(",
+			"require_once",
+			"redirect(\"",
+			"checkEmail",
+			".gif-gallery",
+			"",
+			" updated",
+			"BACK_BUTTON",
+			"styled-sidenav",
+			"tipsytooltip",
+			"$row['thumb']",
+			"user-profile-head .user-profile-details .bio",
+			"0.7",
+			"|",
+			"-",
+			"&middot;"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/controllers/dashboard.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								282,
+								282
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/controllers/alerts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								765,
+								765
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 211.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/libraries/alert.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/controllers/debate.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2261,
+								2261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1543.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/models/debate_model.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6726,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6184,
+								6184
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2056.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "assets/css/global.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9127,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6363,
+								6363
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4499.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "assets/js/global.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2707,
+								2707
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1287.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/nathan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								174,
+								174
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "assets/js/dashboard.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10598,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								391,
+								391
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "assets/js/profile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4468,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2525,
+								2525
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/*",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 730.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "assets/css/profile.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3211,
+								3211
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2610.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "application/views/alerts/alerts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.52578382859,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 184.0
+	},
+	"project": "alphasquare.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"162",
+				"user_guide/installation/upgrade_162.html"
+			],
+			[
+				"init",
+				"user_guide/libraries/unit_testing.html"
+			],
+			[
+				"",
+				"question.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
