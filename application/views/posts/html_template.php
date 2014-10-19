@@ -37,6 +37,16 @@
 
         <? endif; ?>
 
+        <? if(session_get('employee') == 1): ?>
+
+          <a href="/employee/delete_post/<?=$post['id']?>" class="delete-post">
+            <span class="glyphicon glyphicon-trash"></span>
+            Delete (staff action)
+          </a>
+        </li>
+
+        <? endif; ?>
+
       </ul>
     </div>
 

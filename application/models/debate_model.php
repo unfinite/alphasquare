@@ -150,9 +150,13 @@ class Debate_model extends CI_Model {
    * @param  int $id The debate ID to delete
    * @return bool
    */
-  public function delete($id) {
-    $this->load->library('points');
-    $this->points->removePoints(5);
+  public function delete($id, $rem = true) {
+
+    if ($rem == true) {
+      $this->load->library('points');
+      $this->points->removePoints(5);
+    }
+
     return $this->db->delete('debates', array('id'=>$id));
 
 

@@ -115,8 +115,22 @@ class Employee_model extends CI_Model {
 
   public function delete_f($id) {
 
-    //placeholder
+    if (is_numeric($id)) {
 
+      return $this->db->delete('users', array('id'=>$id));
+
+    } else {
+
+      return false;
+
+    }
+
+  }
+
+  public function delete_post($id) {
+
+    return $this->db->delete('debates', array('id'=>$id));
+    
   }
 
 

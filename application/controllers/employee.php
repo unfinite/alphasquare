@@ -109,6 +109,18 @@ class Employee extends CI_Controller {
     }
   }
 
+  public function delete_post($id) {
+
+    if (!empty($id) and is_numeric($id)) {
+
+      $this->employee_model->delete_post($id);
+      msg("Post deleted successfully.");
+
+      redirect('dashboard');
+    }
+
+  }
+
 }
 
 /* End of file: employee.php */
