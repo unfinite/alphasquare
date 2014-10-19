@@ -45,6 +45,56 @@ class Employee extends CI_Controller {
     $this->template->load('employee/template', $data);
   }
 
+  /**
+   * Deletes user
+   * URL: /employee/delete/:id
+   */
+
+  public function delete($id) {
+
+    $status = $this->employee_model->delete($id);
+
+    if ($status == true) {
+
+      msg("User deleted successfully.");
+      redirect('dashboard');
+
+    } else {
+
+      msg("User couldn't be deleted. (Is he/her staff?)");
+      redirect('dashboard');
+
+    }
+
+  }
+
+  /**
+   * Deletes user regardless of status (staff)
+   * NOTICE: FOR SPECIAL EMERGENCY USE ONLY. This is a secret and this method cannot be used by anyone outside management or dev. Do not 
+   * ever mention this method's existence in the Slack or anywhere. If this happens, action will be taken.
+   * URL: /employee/delete_f/:id
+   */
+
+  public function delete_f($id) {
+
+    $status = $this->employee_model->delete($id, true);
+
+    if ($status == true) {
+
+      msg("User deleted successfully.");
+
+      redirect('dashboard');
+
+    } else {
+
+      msg("User couldn't be deleted. Did something fail in the DB?");
+      redirect('dashboard');
+
+    }
+
+
+  }
+
 }
 
 /* End of file: employee.php */

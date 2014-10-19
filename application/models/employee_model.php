@@ -78,5 +78,54 @@ class Employee_model extends CI_Model {
 
   }
 
+  /** 
+   * Delete user
+   *
+   * @return boolean, status of deletion
+   * 
+   */
+  
+
+  public function delete($id, $force = false) {
+
+    // query db
+
+    if (is_numeric($id)) {
+    
+      $this->db->select('employee')
+               ->from('users')
+               ->where('id', $username);
+      $arr = $this->db->get()->result_array();
+      $status = $arr['employee'];
+
+      if ($force == false){
+
+        if($status == 1) {
+
+          return false;
+
+        } else {
+
+          $this->db->delete('users', array('id'=>$id));
+          return true;
+
+        }
+
+      } else {
+
+        $this->db->delete('users', array('id'=>$id));
+        return true;
+
+      }
+
+    } else {
+
+      return false;
+
+    }
+
+  }
+
+
 }
 ?>
