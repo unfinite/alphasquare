@@ -41,7 +41,7 @@
 
         <li>
 
-          <a href="/employee/delete_post/<?=$post['id']?>" class="delete-post">
+          <a href="/employee/delete_post/<?=$post['id']?>">
             <span class="glyphicon glyphicon-trash"></span>
             Delete (staff action)
           </a>
