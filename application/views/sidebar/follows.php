@@ -14,7 +14,8 @@
     <? endforeach;?>
 
     <? if(count($following) > 0): ?>
-    <a href="<?=profile_url()?>/following">View all &raquo;</a>
+    <br>
+    <a href="<?=profile_url()?>/following" class="btn btn-xs btn-success">View all &raquo;</a>
     <? else: ?>
     <p class="no-margin">You aren't following anyone yet.</p>
     <? endif; ?>
@@ -36,7 +37,8 @@
     <? endforeach;?>
 
     <? if(count($followers) > 0): ?>
-    <a href="<?=profile_url()?>/followers">View all &raquo;</a>
+    <br>
+    <a href="<?=profile_url()?>/followers" class="btn btn-xs btn-success">View all &raquo;</a>
     <? else: ?>
     <p class="no-margin">No one is following you yet.</p>
     <? endif; ?>
