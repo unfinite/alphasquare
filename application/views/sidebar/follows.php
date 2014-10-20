@@ -9,7 +9,7 @@
 
     <? foreach($following as $user): ?>
       <a href="<?=profile_url($user['username'])?>">
-        <img src="<?=avatar_url($user['avatar'], $user['email'], 50)?>" class="img-circle" title="<?=$user['username']?>" data-toggle="tooltip" />
+        <img src="<?=avatar_url($user['avatar'], $user['email'], 50)?>" class="img-circle" style="width:50px;height:50px;" title="<?=$user['username']?>" data-toggle="tooltip" />
       </a>
     <? endforeach;?>
 
@@ -31,7 +31,7 @@
 
     <? foreach($followers as $user): ?>
       <a href="<?=profile_url($user['username'])?>">
-        <img src="<?=gravatar_url($user['email'], 50)?>" class="img-circle" title="<?=$user['username']?>" data-toggle="tooltip" />
+        <img src="<?=gravatar_url($user['email'], 50)?>" class="img-circle" title="<?=$user['username']?>" style="width:50px;height:50px;" data-toggle="tooltip" />
       </a>
     <? endforeach;?>
 
