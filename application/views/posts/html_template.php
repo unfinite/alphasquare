@@ -70,11 +70,8 @@
       <? if(!isset($post['debate_page'])): ?>
       &nbsp;
       <a href="<?=base_url('debate/'.strtolower($post['username']).'/'.$post['time'])?>" class="btn btn-xs btn-info">
-        <span class="glyphicon glyphicon-comment"></span>
-        <span class="hidden-xs">Discussion</span>
-        <? if($post['comments_count'] > 0): ?>
+        <span class="glyphicon glyphicon-comment"></span>&nbsp;
         <strong><?=$post['comments_count']?></strong>
-        <? endif; ?>
       </a>
       <? endif; ?>
 
