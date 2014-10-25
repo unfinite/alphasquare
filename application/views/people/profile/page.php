@@ -21,6 +21,10 @@
               <span class="label label-primary">Staff</span>
               <? endif; ?>
 
+              <? if($official): ?>
+              <span class="label label-success"><span class="glyphicon glyphicon-ok"></span></span>
+              <? endif; ?>
+
             </h2>
 
 

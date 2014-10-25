@@ -23,7 +23,7 @@
                id="password"
                placeholder="Password"
                class="form-control" />
-      </div><br>
+      </div><br><br>
       <input type="checkbox" name="remember"> Remember me<br>
       <button name="submit" class="btn btn-primary" value="true">Sign in</button>
        
