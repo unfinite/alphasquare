@@ -148,7 +148,7 @@ class Employee_model extends CI_Model {
     if (is_numeric($id)) {
       $this->db->where('id', $id);
       $st = 1;
-      $this->db->update('users', array('staff'=>$st));
+      $this->db->update('users', array('employee'=>$st));
     }
 
   }
