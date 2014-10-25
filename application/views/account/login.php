@@ -23,8 +23,7 @@
                id="password"
                placeholder="Password"
                class="form-control" />
-      </div><br><br>
-      <input type="checkbox" name="remember"> Remember me<br>
+      </div>
       <button name="submit" class="btn btn-primary" value="true">Sign in</button>
        
       <a href="<?=base_url('account/forgot_password')?>" class="text-small">Forgot your password?</a>
