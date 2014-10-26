@@ -11,7 +11,7 @@
 	<h2>So this is basically StackOverflow?</h2>
 	<p>Nerp. SO is another ballgame; Q&A. This site is directed at discussing vital aspects of the web and its technologies.</p>
 	<br>
-	<h2>Okay I want to join!</h2>
-	<p>Awesome! Just hit this big button here to get started:<br><center>
-		<a href="http://alphasquare.us/register" class="btn btn-success btn-block btn-lg">Create an account &raquo;</a>
+	<h2>Go back home</h2>
+		<br>
+		<a href="http://alphasquare.us" class="btn btn-success btn-block btn-lg">Go home &raquo;</a>
 	</center></p>
