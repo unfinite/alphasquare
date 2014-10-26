@@ -10,8 +10,6 @@
 	<p>You might ask why we developed this site. Because we saw that big companies and governments are monopolizing some aspects of the web. We love the web, we're passionate developers who simply want to make a change.</p><br>
 	<h2>So this is basically StackOverflow?</h2>
 	<p>Nerp. SO is another ballgame; Q&A. This site is directed at discussing vital aspects of the web and its technologies.</p>
-	<br>
-	<h2>Go back home</h2>
 		<br>
-		<a href="http://alphasquare.us" class="btn btn-success btn-block btn-lg">Go home &raquo;</a>
+		<a href="http://alphasquare.us" class="btn btn-success btn-block btn-lg">Go back home &raquo;</a>
 	</center></p>
