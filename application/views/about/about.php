@@ -1,6 +1,7 @@
 <div class="page-header">
-	<h1>What's Alphasquare</h1>
+	<h1>About</h1>
 </div>
+<h2>What's Alphasquare?</h2>
 <p>Alphasquare is a social debating application focused on discussing the evolution of programming and the web. Follow @Alphasquare for more!</p>
 <br>
 	<h2>Why join?</h2>
