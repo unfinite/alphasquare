@@ -194,7 +194,7 @@ class Account extends CI_Controller {
    */
   public function reset_password($token) {
 
-      if (is_numeric($token)) {
+      if (is_numeric($token) & isset($token)) {
 
         $tkdata = $this->account_model->retrieve_info_token($token);
 
@@ -221,6 +221,10 @@ class Account extends CI_Controller {
         }
         
       }
+
+    } else {
+
+      die();
 
     }
 
