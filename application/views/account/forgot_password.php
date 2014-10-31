@@ -4,7 +4,7 @@
 			<h1>Forgot Password</h1>
 		</div>
 		<p>Just enter your email address below and we'll send you a link to reset your password.</p>
-		<form action="forgot_password_submit" method="post">
+		<form action="/account/forgot_password_submit" method="post">
 			<div class="form-group">
 				<input type="email" name="email" id="email" placeholder="Email" class="form-control" autofocus />
 			</div>
