@@ -203,8 +203,8 @@ class Account extends CI_Controller {
           die();
 
         } else {
-
-          if (isset($this->input->post('newpw'))) {
+          $pw = $this->input->post('newpw');
+          if ($pw !== "" and $pw !== null) {
 
             $uid = $tkdata['userid'];
             $newpw = $this->input->post('newpw');
@@ -219,13 +219,14 @@ class Account extends CI_Controller {
           $this->template->load('account/reset_password', $data);
 
         }
-
-
-        }
         
       }
 
     }
+
+  }
+
+  
 
 
   /**
