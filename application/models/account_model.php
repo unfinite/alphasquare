@@ -106,6 +106,12 @@ class Account_model extends CI_Model {
     return $this->db->update('users', array('password'=>$hashed));
   }
 
+  public function change_password_uid($uid, $password) {
+    $hashed = hash('sha256', $password);
+    $this->db->where('id', $uid);
+    return $this->db->update('users', array('password'=>$hashed));
+  }
+
 
 	/**
 	 * Generates a token for resetting password
@@ -128,6 +134,33 @@ class Account_model extends CI_Model {
 		$query = $this->db->query($sql, $bind);
 		return $query ? $token : false;
 	}
+
+	/**
+	 * Retrieves data for token
+	 * @param  int $token the user's token
+	 * @return array array of data
+	 */
+	public function retrieve_data_token($token) {
+
+		$this->db->select('token, userid')
+						 ->from('forgot_password')
+						 ->where('token', $token)
+						 ->limit(1);
+		$query = $this->db->get();
+		$rowcount = $query->num_rows();
+
+		if ($rowcount == 0) {
+
+			return false;
+
+		} else {
+
+			return $this->db->get()->row_array();
+
+		}
+
+	}
+
 
 	/**
 	 * Delete a forgot password token

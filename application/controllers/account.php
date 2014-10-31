@@ -192,7 +192,46 @@ class Account extends CI_Controller {
    * Resets forgot password form.
    * URL: /account/reset_password
    */
-  public function reset_password() {
+  public function reset_password($token) {
+
+      if (is_numeric($token)) {
+
+        $tkdata = $this->account_model->retrieve_info_token($token);
+
+        if ($tkdata == false) {
+
+          die();
+
+        } else {
+
+          if (isset($this->input->post('newpw'))) {
+
+            $uid = $tkdata['userid'];
+            $newpw = $this->input->post('newpw');
+            $tkdata = $this->account_model->change_password_uid($uid, $newpw);
+            $this->account_model->delete_password_token($tkdata['token']);
+            redirect("login");
+
+          }
+
+          $uid = $tkdata['userid'];
+          $data['title'] = 'Change Password';
+          $this->template->load('account/reset_password', $data);
+
+
+        }
+        
+      }
+
+    }
+
+  /**
+   * Processes reset password form.
+   * URL: /account/reset_password
+   */
+  public function reset_password_submit($token) {
+
+
 
     }
 

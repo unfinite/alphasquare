@@ -112,6 +112,7 @@ class Custom_email {
 	 * @return bool
 	 */
 	public function send() {
+		$this->CI->email->set_mailtype('html');
 		return $this->CI->email->send();
 	}
 
