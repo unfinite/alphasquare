@@ -11,6 +11,7 @@
  *
  * @package Controllers
 */
+error_reporting(E_ALL);
 
 class Account extends CI_Controller {
 
@@ -212,11 +213,13 @@ class Account extends CI_Controller {
             $this->account_model->delete_password_token($tkdata['token']);
             redirect("login");
 
-          }
+          } else {
 
           $uid = $tkdata['userid'];
           $data['title'] = 'Change Password';
           $this->template->load('account/reset_password', $data);
+
+        }
 
 
         }
@@ -224,6 +227,7 @@ class Account extends CI_Controller {
       }
 
     }
+
 
   /**
    * Processes reset password form.

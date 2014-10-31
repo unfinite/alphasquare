@@ -5,6 +5,8 @@
  * @package Models
  */
 
+error_reporting(E_ALL);
+
 class Account_model extends CI_Model {
 
 	/**
