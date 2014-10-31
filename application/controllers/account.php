@@ -11,7 +11,6 @@
  *
  * @package Controllers
 */
-error_reporting(E_ALL);
 
 class Account extends CI_Controller {
 
@@ -133,7 +132,7 @@ class Account extends CI_Controller {
     	        // If they were registered, log them in
     	        $this->account_model->authenticate($username, $password);
     	        // Show an alert box
-    	        msg("<strong>Welcome to Alphasquare!</strong>", 'info', 'text-align:center;font-size:15px;');
+    	        msg("<strong>Welcome to Alphasquare!</strong> Get started by posting a debate. Go ahead; don't be shy!", 'info', 'text-align:center;font-size:15px;');
     	        // Go to dashboard
     	        redirect(REGISTER_REDIRECT);
     	      }
@@ -228,16 +227,6 @@ class Account extends CI_Controller {
 
     }
 
-
-  /**
-   * Processes reset password form.
-   * URL: /account/reset_password
-   */
-  public function reset_password_submit($token) {
-
-
-
-    }
 
   /**
    * Processes the forgot password form.
