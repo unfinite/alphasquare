@@ -1,5 +1,13 @@
 <!-- Post View Page -->
+<?php
 
+if (!session_get('loggedin')) {
+
+  echo $modal;
+
+} 
+
+?>
 <div class="row" id="post-page" data-id="<?=$info['id']?>">
   <div class="col-lg-8 col-md-8">
     <?=$post_html?>
