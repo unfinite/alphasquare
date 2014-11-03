@@ -3,7 +3,7 @@
 
 if (!session_get('loggedin')) {
 
-  echo $modal;
+  echo $modal_html;
 
 } 
 

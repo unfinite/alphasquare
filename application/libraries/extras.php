@@ -33,7 +33,7 @@ class Extras {
             ".$data['body']."
           </div>
           <div class=\"modal-footer\">
-            ".if (isset($data['footer'])) { echo $data['footer']; }."
+            ".$data['footer']."
             <button type=\"button\"class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>
           </div>
         </div>
