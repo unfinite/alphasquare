@@ -57,14 +57,6 @@ class Debate extends CI_Controller {
     
     if (!$this->php_session->get('loggedin')) {
 
-      $this->load->library('extras');
-      $modal = array(
-        'title' => 'test', 
-        'body' => 'hello world', 
-        'footer' => ''
-        );
-      $data['modal_html'] = $this->extras->modal($modal);
-
     }
 
     $this->load->model('comments_model');

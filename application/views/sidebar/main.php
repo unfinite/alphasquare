@@ -6,11 +6,11 @@
   </div>
   <div class="panel-body">
     <p>Oh noes! Seems like you aren't <b>signed in</b>. To post debates, discuss, and lead the <b>evolution</b> of the web, <b>sign in</b> or <b>register</b>. </p>
-    <a href="http://alphasquare.us/register" class="btn btn-lg btn-block btn-success">Register &raquo;</a>
+    <br> <a href="http://alphasquare.us/register" class="btn btn-lg btn-block btn-success">Register &raquo;</a>
     <center><div class="hr" style="width:15%;">
   		<span>or</span>
 	</div> 
-    <a href="http://alphasquare.us/register" class="btn btn-lg btn-block btn-default">Sign in &raquo;</a>
+    <a href="http://alphasquare.us/login" class="btn btn-lg btn-block btn-default">Sign in &raquo;</a>
 </div> <!-- /.panel -->
 
 <? endif; ?>
