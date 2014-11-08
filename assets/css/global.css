@@ -150,7 +150,6 @@ textarea.autosize {
   border-radius: 0;
 }
 .navbar.logged-in {
-  border-top: 2px solid #3498db;
   background-color: #fff;
   box-shadow: 0 0 20px rgb(236, 240, 241);
 }
