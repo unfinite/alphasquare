@@ -71,7 +71,7 @@ class Employee_model extends CI_Model {
 
     // query db to list usernames and stuff
     
-    $this->db->select('name, username, employee, avatar, points, email, id')
+    $this->db->select('name, username, official, employee, avatar, points, email, id')
              ->from('users');
 
     return $this->db->get()->result_array();
@@ -115,10 +115,43 @@ class Employee_model extends CI_Model {
 
   public function delete_f($id) {
 
-    //placeholder
+    if (is_numeric($id)) {
+
+      return $this->db->delete('users', array('id'=>$id));
+
+    } else {
+
+      return false;
+
+    }
 
   }
 
+  public function delete_post($id) {
+
+    return $this->db->delete('debates', array('id'=>$id));
+    
+  }
+
+  public function official($id) {
+
+    if (is_numeric($id)) {
+      $this->db->where('id', $id);
+      $st = 1;
+      $this->db->update('users', array('official'=>$st));
+    }
+
+  }
+
+  public function staff($id) {
+
+    if (is_numeric($id)) {
+      $this->db->where('id', $id);
+      $st = 1;
+      $this->db->update('users', array('employee'=>$st));
+    }
+
+  }
 
 }
 ?>

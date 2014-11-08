@@ -7,7 +7,7 @@
     <? $this->load->view('account/oauth_buttons'); ?>
 
     <form action="" method="post">
-      <input type="hidden" name="next" value="<?=$this->input->get('next')?>" />
+      <input type="hidden" name="next" value="<?=htmlentities($this->input->get('next'))?>" />
       <div class="form-group">
         <input type="text"
                name="username"

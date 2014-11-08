@@ -132,7 +132,7 @@ class Account extends CI_Controller {
     	        // If they were registered, log them in
     	        $this->account_model->authenticate($username, $password);
     	        // Show an alert box
-    	        msg("<strong>Welcome to Alphasquare!</strong>", 'info', 'text-align:center;font-size:15px;');
+    	        msg("<strong>Welcome to Alphasquare!</strong> Get started by posting a debate. Go ahead; don't be shy!", 'info', 'text-align:center;font-size:15px;');
     	        // Go to dashboard
     	        redirect(REGISTER_REDIRECT);
     	      }
@@ -192,9 +192,46 @@ class Account extends CI_Controller {
    * Resets forgot password form.
    * URL: /account/reset_password
    */
-  public function reset_password() {
+  public function reset_password($token) {
+
+      if (is_numeric($token) & isset($token)) {
+
+        $tkdata = $this->account_model->retrieve_info_token($token);
+
+        if ($tkdata == false) {
+
+          die();
+
+        } else {
+          $pw = $this->input->post('newpw');
+          if ($pw !== "" and $pw !== null) {
+
+            $uid = $tkdata['userid'];
+            $newpw = $this->input->post('newpw');
+            $tkdata = $this->account_model->change_password_uid($uid, $newpw);
+            $this->account_model->delete_password_token($tkdata['token']);
+            redirect("login");
+
+          } else {
+
+          $uid = $tkdata['userid'];
+          $data['title'] = 'Change Password';
+          $this->template->load('account/reset_password', $data);
+
+        }
+        
+      }
+
+    } else {
+
+      die();
 
     }
+
+  }
+
+  
+
 
   /**
    * Processes the forgot password form.

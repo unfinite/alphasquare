@@ -37,6 +37,18 @@
 
         <? endif; ?>
 
+        <? if(session_get('employee') == 1): ?>
+
+        <li>
+
+          <a href="/employee/delete_post/<?=$post['id']?>">
+            <span class="glyphicon glyphicon-trash"></span>
+            Delete (staff action)
+          </a>
+        </li>
+
+        <? endif; ?>
+
       </ul>
     </div>
 
@@ -59,10 +71,7 @@
       &nbsp;
       <a href="<?=base_url('debate/'.strtolower($post['username']).'/'.$post['time'])?>" class="btn btn-xs btn-info">
         <span class="glyphicon glyphicon-comment"></span>
-        <span class="hidden-xs">Discussion</span>
-        <? if($post['comments_count'] > 0): ?>
         <strong><?=$post['comments_count']?></strong>
-        <? endif; ?>
       </a>
       <? endif; ?>
 

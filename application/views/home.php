@@ -1,6 +1,10 @@
 <section class="hero-unit" id="main-hero">
-	<h1 class="animated bounceIn">alphasquare is the internet's voice</h1>
-	<p>The web is changing. Let's take control of what it will change into. <br> It's our time to shine.</p>
-	<a href="register" class="create-account" data-text-swap="Let's create one! »">Create an account</a>
-	<a href="login" class="sign-in">or sign in »</a>
+	<h1 class="animated fadeInDown">alphasquare is the internet's voice</h1>
+  <p>Alphasquare is a <b>social debating platform</b> surrounding <b>programming</b> and the <b>evolving</b> web.<br>Let's <b>take control</b> of what the web will <b>evolve</b> into. It's <b>our time</b> to <b>shine</b>.</p>
+	<a href="register" class="create-account" data-text-swap="Let's create one! »">Create a profile »</a>
+  <center><div class="hr" style="width:15%;">
+  <span>or</span>
+</div> 
+	<a href="about" class="create-account" data-text-swap="Let's go! »">Learn more »</a>
+  </center>
 </section>

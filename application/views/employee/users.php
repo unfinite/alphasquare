@@ -18,6 +18,7 @@
         </a>
         <strong><?=$user['username']?></strong> 
         <?= ($user['employee'] == 1 ? '<span class="label label-primary">Staff</span>' : ''); ?>
+        <?= ($user['official'] == 1 ? '<span class="label label-success"><span class="glyphicon glyphicon-ok"></span></span>' : ''); ?>
         <br /><em><?=$user['name']?></em>
       </td>
       <td><a href="mailto:<?= $user['email']; ?>" target="_blank"><?= $user['email']; ?></a></td>
@@ -31,7 +32,8 @@
           </button>
 
           <ul class="dropdown-menu">
-            <li><a href="#" class="ban-user">Suspend / Ban</a></li>
+            <li><a href="employee/official/<?=$user['id']?>" class="staff">Make official</a></li>
+            <li><a href="#" class="ban-user">Ban</a></li>
             <li><a href="employee/delete/<?=$user['id']?>" class="delete-user">Delete</a></li>
           </ul>
         </div>

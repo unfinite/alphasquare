@@ -109,6 +109,44 @@ class Employee extends CI_Controller {
     }
   }
 
+  public function delete_post($id) {
+
+    if (!empty($id) and is_numeric($id)) {
+
+      $this->employee_model->delete_post($id);
+      msg("Post deleted successfully.");
+
+      redirect('dashboard');
+    }
+
+  }
+
+  public function official($id) {
+
+    if (!empty($id) and is_numeric($id)) {
+
+      $this->employee_model->official($id);
+      msg("Made official.");
+
+      redirect('dashboard');
+
+    }
+
+  }
+
+  public function staff($id) {
+
+    if (!empty($id) and is_numeric($id)) {
+
+      $this->employee_model->staff($id);
+      msg("Made staff.");
+
+      redirect('dashboard');
+
+    }
+
+  }
+
 }
 
 /* End of file: employee.php */

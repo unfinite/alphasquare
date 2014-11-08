@@ -52,7 +52,13 @@ class Debate extends CI_Controller {
    * URL: /debate/username/timestamp
    */
   public function view($username, $timestamp) {
+
     // Load comments model
+    
+    if (!$this->php_session->get('loggedin')) {
+
+    }
+
     $this->load->model('comments_model');
     // Get post info
     $info = $this->debate_model->get_info($username, $timestamp);
@@ -62,6 +68,7 @@ class Debate extends CI_Controller {
     }
     $data['title'] = 'Debate';
     $data['info'] = $info;
+
     // Load post html
     $data['post_html'] = $this->debate_model->post_html($info,false,true);
     // Get comments

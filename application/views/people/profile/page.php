@@ -21,6 +21,10 @@
               <span class="label label-primary">Staff</span>
               <? endif; ?>
 
+              <? if($official == 1): ?>
+              <span class="label label-success">Verified</span>
+              <? endif; ?>
+
             </h2>
 
 
