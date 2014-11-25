@@ -200,6 +200,8 @@ var Alp = {
         callback: function() {
           $('.alert-container .delete').click(Alp.alerts.remove.click);
           $('.alert-container .mark-read').click(Alp.alerts.markRead.click);
+          $('#alerts-controls .delete-all').click(Alp.alerts.removeall.click);
+          $('#alerts-controls .mark-all-read').click(Alp.alerts.markallread.click);
           Alp.counts.updateAlerts(0);
           Alp.mobileSearch(false);
         }
@@ -249,6 +251,43 @@ var Alp = {
       }
     },
     /**
+     * Delete all the alerts
+     */
+    removeall: {
+        /**
+         * The click event binded to the delete all button
+         */
+        click: function() {
+            Alp.alerts.removeall.ajax();
+        },
+        /**
+         * Send the AJAX request
+         */
+        ajax: function() {
+            $.post(Alp.config.base+'alerts/delete_all', null, this.ajaxCallback, 'json');
+        },
+        /**
+         * The callback after the ajax request succeeds.
+         * 
+         * @param {array} data The object returned from the ajax request.
+         * @return {void}
+         */
+        ajaxCallback: function(data) {
+            if (!data.success) {
+                alert(data.error);
+                return false;
+            }
+            
+            data.ids.forEach(function(id) {
+                $('.alert-container[data-id="'+id+'"]').fadeOut(200, function() {
+                    $(this).remove();
+                });
+            });
+            
+            $('#no-alerts').removeClass('hidden');
+        }
+    },
+    /**
      * Mark a notification as read
      */
     markRead: {
@@ -282,6 +321,41 @@ var Alp = {
         alert.toggleClass('clicked not-clicked');
         $('.mark-read',alert).fadeOut();
       }
+    },
+    /**
+     * Mark all notifications as read
+     */
+    markallread: {
+        /**
+         * The click event binded to the mark all read button
+         */
+        click: function() {
+            Alp.alerts.markallread.ajax();
+        },
+        /**
+         * Send the AJAX request
+         */
+        ajax: function() {
+            $.post(Alp.config.base+'alerts/mark_all_read', null, this.ajaxCallback, 'json');
+        },
+        /**
+         * The callback after the ajax request succeeds.
+         * 
+         * @param {array} data The object returned from the ajax request.
+         * @return {void}
+         */
+        ajaxCallback: function(data) {
+            if (!data.success) {
+                alert(data.error);
+                return false;
+            }
+            
+            data.ids.forEach(function(id) {
+                var alert = $('.alert-container[data-id="'+id+'"]');
+                alert.toggleClass('clicked not-clicked');
+                $('.mark-read',alert).fadeOut();
+            });
+        }
     }
   },
 
