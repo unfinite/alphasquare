@@ -651,7 +651,6 @@ textarea.autosize {
 }
 
 .alerts #alerts-controls span:hover {
-    color: #666;
     cursor: pointer;
 }
 
