@@ -191,7 +191,6 @@ var Dashboard = {
             Alp.bar(data.error);
             return false;
           }
-          Alp.bar('The post has been deleted.', 'success');
           $('.post[data-id='+data.id+'], #comments').slideUp(function() {
             $(this).remove();
             // If on post page
@@ -361,7 +360,6 @@ var Dashboard = {
       // Clear and blur textarea
       $('#post-comment textarea').val('').blur();
       // Show message bar
-      Alp.bar('Your comment has been posted!', 'primary');
       // Append comment
       $(data.html).css('display','none')
                   .appendTo('#comments-container')
