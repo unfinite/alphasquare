@@ -23,18 +23,33 @@ class Account_model extends CI_Model {
 						 ->where('username', $username)
 						 ->limit(1);
 		$info = $this->db->get()->row_array();
-		// If username doesn't exist or password doesn't match
-		if(!$info || $info['password'] !== $password) {
-      if($info) {
-        // Log failed login event
-        $this->events->log('account', 'login_fail', null, $info['id']);
-      }
+
+		// If username doesn't exist.
+		if (!$info) {
+			// Check if they are trying to login with e-mail address.
+			$this->db->select('id, password, username, email, avatar, employee, points')
+					 ->from('users')
+					 ->where('email', $username)
+					 ->limit(1);
+			$info = $this->db->get()->row_array();
+
+			if (!$info) {
+				// Neither their username nor e-mail exist.
+				return false;
+			}
+			// We don't need an else clause here as we want to fall through in the event it was an e-mail login.
+		}
+		if ($info['password'] !== $password) {
+			if($info) {
+				// Log failed login event
+				$this->events->log('account', 'login_fail', null, $info['id']);
+			}
 			return false;
 		}
 		else {
 			$this->login($info);
-      // Log succeeded login in events
-      $this->events->log('account', 'login');
+			// Login succeeded log in events
+			$this->events->log('account', 'login');
 			return true;
 		}
 	}

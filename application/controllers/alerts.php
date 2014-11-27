@@ -84,7 +84,54 @@ class Alerts extends CI_Controller {
       json_error('Sorry, could not delete alert.');
     }
   }
+  
+    /**
+     * Mark all alerts as read
+     */
+    public function mark_all_read() {
+        $json_alerts = array();
+        
+        foreach ($this->alert->get_all() as $alert) {
+            $id = $alert['id'];
+            $info = $this->alert->get_info($id);
+            
+            $this->alert->mark_as_clicked($id);
+            array_push($json_alerts, $id);
+        }
+        
+        json_output(array('ids'=>$json_alerts), true);
+    }
 
+    /**
+     * Delete all alerts
+     */
+    public function delete_all() {
+        $json_alerts = array();
+        
+        $success = true;
+                
+        foreach ($this->alert->get_all() as $alert) {
+            $id = $alert['id'];
+            $info = $this->alert->get_info($id);
+            
+            if (!info || $this->php_session->get('userid') !== $info['to']) {
+                // Ignore ones that don't exist.
+            }
+            elseif ($this->alert->delete($id)) {
+                array_push($json_alerts, $id);
+            }
+            else {
+                $success = false;
+            }      
+        }
+        
+        if (!$success) {
+            json_error('Sorry, could not delete all the alerts.');
+        }
+        else {
+            json_output(array('ids'=>$json_alerts), true);
+        }
+    }
 }
 
 /* End of file alerts.php */
