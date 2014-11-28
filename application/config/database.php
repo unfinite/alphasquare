@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'db';
+$db['default']['hostname'] = '0.0.0.0';
+$db['default']['username'] = 'alphasquare1';
 $db['default']['password'] = '';
-$db['default']['database'] = 'alphasquare';
+$db['default']['database'] = 'c9';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
