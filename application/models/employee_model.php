@@ -39,7 +39,7 @@ class Employee_model extends CI_Model {
    * Check if user is staff
    *
    * @param string $username The user's username
-   * @return int 0: no, 1: yes
+   * @return bool If the user is staff or not
    * 
    */
   
@@ -55,7 +55,15 @@ class Employee_model extends CI_Model {
     $result = $this->db->get()->row_array();
 
     // return 0 or 1
-    return $result['employee'];
+    switch($result['employee']) {
+      
+      case 1:
+        return true;
+        
+      case 0:
+        return false;
+      
+    }
 
   }
 
