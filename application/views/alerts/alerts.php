@@ -1,8 +1,9 @@
 <section class="alerts">
-    <p id="alerts-controls" class="text-right <? if(count($alerts) == 0) echo 'hidden'; ?>">
-        <span class="glyphicon glyphicon-ok mark-all-read" data-toggle="tooltip" data-placement="left" data-animation="false"></span><span class="control-text mark-all-read">Mark All As Read</span>
-        <span class="glyphicon glyphicon-trash delete-all" data-toggle="tooltip" data-placement="left" data-animation="false"></span><span class="control-text delete-all">Delete All</span>
-    </p>
+
+ <ul class="dropdown-menu" id="alerts-ctrls">
+    <li><span class="glyphicon glyphicon-ok mark-all-read" data-toggle="tooltip" data-placement="left" data-animation="false"></span><span class="mark-all-read">Mark All As Read</span></li>
+    <li><span class="glyphicon glyphicon-trash delete-all" data-toggle="tooltip" data-placement="left" data-animation="false"></span><span class="delete-all">Delete All</span></li>
+ </ul>
 
   <p id="no-alerts" class="text-center text-muted <? if(count($alerts) > 0) echo 'hidden'; ?>">
     <span class="glyphicon glyphicon-bell" style="font-size:60px;"></span>
