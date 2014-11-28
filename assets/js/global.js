@@ -193,15 +193,15 @@ var Alp = {
      */
     open: function() {
       AjaxModal({
-        title: 'Alerts <a href="#" class="text-muted alert-control-gear dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span</a>',
+        title: 'Alerts',
         url: 'alerts/modal',
         limitToWindowSize: true,
         backdrop: true,
         callback: function() {
           $('.alert-container .delete').click(Alp.alerts.remove.click);
           $('.alert-container .mark-read').click(Alp.alerts.markRead.click);
-          $('#alerts-ctrls .delete-all').click(Alp.alerts.removeall.click);
-          $('#alerts-ctrls .mark-all-read').click(Alp.alerts.markallread.click);
+          $('#alerts-controls .delete-all').click(Alp.alerts.removeall.click);
+          $('#alerts-controls .mark-all-read').click(Alp.alerts.markallread.click);
           Alp.counts.updateAlerts(0);
           Alp.mobileSearch(false);
         }
