@@ -22,6 +22,7 @@ class Alerts extends CI_Controller {
    */
   public function index() {
     $data['title'] = 'Alerts';
+    $data['alerts'] = $this->alert->get_all();
     $this->load->view('alerts/page', $data);
   }
 
