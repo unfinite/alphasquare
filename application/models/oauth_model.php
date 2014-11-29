@@ -85,7 +85,7 @@ class Oauth_model extends CI_Model {
    * @param  string $username
    * @return bool Whether or not the creation succeeded.
    */
-  public function create($oauth_provider, $oauth_uid, $name, $username, $email, $location, $photo) {
+  public function create($oauth_provider, $oauth_uid, $name, $username, $email, $location) {
     $this->load->helper('avatar_helper');
     $photo_url = avatar_from_url($photo);
     $data = array(
@@ -93,8 +93,7 @@ class Oauth_model extends CI_Model {
       'username' => $username,
       'email' => $email,
       'location' => $location,
-      'joined' => time(),
-      'avatar' => $photo_url
+      'joined' => time()
     );
     $insert = $this->db->insert('users', $data);
     if($insert) {
