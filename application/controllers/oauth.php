@@ -235,8 +235,7 @@ class Oauth extends CI_Controller {
       $name, 
       $username, 
       $email,
-      $user_profile['country'],
-      $user_profile['photoURL']
+      $user_profile['country']
     );
 
     if(!$info) {
