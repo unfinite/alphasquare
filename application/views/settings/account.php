@@ -5,7 +5,10 @@
   <div class="panel-body">
     <span style="font-size:15px;"><?=$username?></span>
     <br />
+    
     <em>Looking for bio, name, and birthday? You can find those settings on your <a href="<?=profile_url()?>/about">about page</a>.</em>
+    <br>
+     <em>Want to change your profile picture? Go to Gravatar.com and make an account, it will auto-sync from there.</em>
   </div>
 </div>
 
