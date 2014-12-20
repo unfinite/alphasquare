@@ -5,6 +5,8 @@
  * @copright Copyright (c) 2014 Alphasquare
  */
 
+mixpanel.track("Pageview/Alp.object");
+        
 var Alp = {
   config: {},
   setupConfig: function(config) {
