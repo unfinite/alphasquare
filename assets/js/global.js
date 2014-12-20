@@ -166,6 +166,7 @@ var Alp = {
        * Send the ajax request
        */
       ajax: function() {
+        mixpanel.track("Alert poll (global)");
         $.get(Alp.config.base+'dashboard/update_counts')
           .success(Alp.counts.poll.ajaxCallback)
           .always(function() {
