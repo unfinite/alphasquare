@@ -11,6 +11,7 @@
   		<span>or</span>
 	</div> 
     <a href="http://alphasquare.us/login" class="btn btn-lg btn-block btn-default">Sign in &raquo;</a>
+    </div>
 </div> <!-- /.panel -->
 
 <? endif; ?>
