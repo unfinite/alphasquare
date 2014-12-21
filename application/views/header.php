@@ -41,11 +41,13 @@ $(function() {
 	if(session_get("loggedin")) {
 
 		$uid = session_get("userid");
+		$username = session_get("username");
 		$points = session_get("points");
+
 		echo "<script>";
 		echo "var uid = ".$uid.";";
 		echo "mixpanel.identify(uid);";
-		echo 'mixpanel.people.set({"points": '.$points.'});';
+		echo 'mixpanel.people.set({"points": '.$points.', "username": '.$username.'});';
 		echo "</script>";
 
 	}
