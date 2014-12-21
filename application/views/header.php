@@ -47,7 +47,7 @@ $(function() {
 		echo "<script>";
 		echo "var uid = ".$uid.";";
 		echo "mixpanel.identify(uid);";
-		echo 'mixpanel.people.set({"points": '.$points.', "username": '.$username.'});';
+		echo 'mixpanel.people.set({"points": '.$points.', "username": "'.$username.'"});';
 		echo "</script>";
 
 	}
