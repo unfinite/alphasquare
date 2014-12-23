@@ -1,3 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><span class="glyphicon glyphicon-flash"></span> Merry Christmas!</h3>
+  </div>
+  <div class="panel-body">
+    <p>Happy holidays from the Alphasquare.us team! Here's a little present for you all!</p>
+    <br> <a onclick="turnoff()" class="btn btn-lg btn-block btn-success">Turn the lights off and make it snow!</a>
+    <center><div class="hr" style="width:15%;">
+      <span>or</span>
+  </div> 
+    <a onclick="window.location.reload()" class="btn btn-lg btn-block btn-default">Turn them back on</a>
+    </div>
+</div> <!-- /.panel -->
+
+
 <? if(!session_get('loggedin')): ?>
 
 <div class="panel panel-default">

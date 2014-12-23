@@ -11,6 +11,9 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:200,300,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
+<!-- Make it snow! -->
+<script src="<?= base_url('assets/js/snowstorm.js'); ?>"></script>
+
 <!-- Stylesheets -->
 <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" />
 <link href="<?= base_url('assets/css/global.css'); ?>" rel="stylesheet" />
@@ -53,6 +56,40 @@ $(function() {
 	}
 
 ?>
+
+<script>
+snowStorm.autoStart = true;
+
+function turnoff() {
+   javascript: (
+   function () { 
+   // the css we are going to inject
+   var css = 'html {-webkit-filter: invert(100%);' +
+       '-moz-filter: invert(100%);' + 
+       '-o-filter: invert(100%);' + 
+       '-ms-filter: invert(100%); }',
+
+   head = document.getElementsByTagName('head')[0],
+   style = document.createElement('style');
+
+   // a hack, so you can "invert back" clicking the bookmarklet again
+   if (!window.counter) { window.counter = 1;} else  { window.counter ++;
+   if (window.counter % 2 == 0) { var css ='html {-webkit-filter: invert(0%); -moz-filter:    invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }'}
+    };
+
+   style.type = 'text/css';
+   if (style.styleSheet){
+   style.styleSheet.cssText = css;
+   } else {
+   style.appendChild(document.createTextNode(css));
+   }
+
+   //injecting the css to the head
+   head.appendChild(style);
+   }());
+   snowStorm.start();
+}
+</script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
