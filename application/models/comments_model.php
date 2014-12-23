@@ -72,6 +72,23 @@ class Comments_model extends CI_Model {
       $data['id'] = $this->db->insert_id();
       // Update comments count row
       $this->sync_comments_count($postid);
+
+      $this->load->library('mentions');
+      $this->load->library('alert');
+
+      $mentions = $this->mentions->list_mentions($content);
+
+      if ($mentions) {
+        foreach ($mentions as $m) {
+          
+          if ($this->mentions->user_exists($m)) {
+            $userid = $this->mentions->get_userid($m);
+            $this->alert->create($userid, 'mention', 'comment', $data['id']);
+          }
+
+        }
+      }
+
       return $data;
     }
   }
