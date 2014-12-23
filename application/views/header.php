@@ -1,33 +1,3 @@
-<!-- Happy Holidays! -->
-<!-- 
-
-           *             ,
-                       _/^\_
-                      <     >
-     *                 /.-.\         *
-              *        `/&\`                   *
-                      ,@.*;@,
-                     /_o.I %_\    *
-        *           (`'--:o(_@;
-                   /`;--.,__ `')             *
-                  ;@`o % O,*`'`&\ 
-            *    (`'--)_@ ;o %'()\      *
-                 /`;--._`''--._O'@;
-                /&*,()~o`;-.,_ `""`)
-     *          /`,@ ;+& () o*`;-';\
-               (`""--.,_0 +% @' &()\
-               /-.,_    ``''--....-'`)  *
-          *    /@%;o`:;'--,.__   __.'\
-              ;*,&(); @ % &^;~`"`o;@();         *
-              /(); o^~; & ().o@*&`;&%O\
-        jgs   `"="==""==,,,.,="=="==="`
-           __.----.(\-''#####---...___...-----._
-         '`         \)_`"""""`
-                 .--' ')
-               o(  )_-\
-                 `"""` `
- 
--->
 <!-- Meta -->
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,17 +53,6 @@ $(function() {
 	}
 
 ?>
-
-<script>
-
-function showlink(){;
-  newwindow=window.open('http://alphasquare.us/labs/tree.txt','Seasons Greetings');
-	if (window.focus) {newwindow.focus()}
-	return false;
-}
-
-
-</script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
