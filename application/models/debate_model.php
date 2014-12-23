@@ -142,6 +142,23 @@ class Debate_model extends CI_Model {
       $post_html = $this->post_html($data);
     }
     $return = array('html' => $post_html);
+
+    $this->load->library('mentions');
+    $this->load->library('alert');
+
+    $mentions = $this->mentions->list_mentions($content);
+
+    if ($mentions) {
+      foreach ($mentions as $m) {
+        
+        if ($this->mentions->user_exists($m)) {
+          $userid = $this->mentions->get_userid($m);
+          $this->alert->create($userid, 'mention', 'debate', $data['id']);
+        }
+
+      }
+    }
+
     return $insert ? $return : false;
   }
 

@@ -23,6 +23,18 @@ if(!function_exists('format_post')) {
     // Parse &tags
     $text = str_replace('&amp;', '&', $text);
     $text = preg_replace(REGEX_TAG, '<a href="'.base_url().'search?q=%26$1">&amp;$1</a>', $text);
+    // Parse mentions
+    $CI->load->library('mentions');
+    $mentions = $CI->mentions->list_mentions($text);
+
+    if ($mentions) {
+      foreach ($mentions as $m) {
+        if ($CI->mentions->user_exists($m)) {
+          $text = str_replace("@$m", '<a href="'.base_url().'people/'.$m.'">@'.$m.'</a>', $text);
+        }
+      }
+    }
+
     return $text;
   }
 }

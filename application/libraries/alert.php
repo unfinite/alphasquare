@@ -146,6 +146,7 @@ class Alert {
     switch($data['action']) {
       case 'like':
       case 'dislike':
+      case 'mention':
         $this->CI->db->select('d.time, u.username')
                      ->from('debates d')
                      ->join('users u', 'd.userid = u.id', 'inner')
@@ -252,6 +253,9 @@ class Alert {
       break;
       case 'dislike':
         $text = 'dislikes your';
+      break;
+      case 'mention':
+        $text = 'mentioned you on a';
       break;
       case 'follow':
         $url = false;
