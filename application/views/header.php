@@ -1,3 +1,33 @@
+<!-- Happy Holidays! -->
+<!-- 
+
+           *             ,
+                       _/^\_
+                      <     >
+     *                 /.-.\         *
+              *        `/&\`                   *
+                      ,@.*;@,
+                     /_o.I %_\    *
+        *           (`'--:o(_@;
+                   /`;--.,__ `')             *
+                  ;@`o % O,*`'`&\ 
+            *    (`'--)_@ ;o %'()\      *
+                 /`;--._`''--._O'@;
+                /&*,()~o`;-.,_ `""`)
+     *          /`,@ ;+& () o*`;-';\
+               (`""--.,_0 +% @' &()\
+               /-.,_    ``''--....-'`)  *
+          *    /@%;o`:;'--,.__   __.'\
+              ;*,&(); @ % &^;~`"`o;@();         *
+              /(); o^~; & ().o@*&`;&%O\
+        jgs   `"="==""==,,,.,="=="==="`
+           __.----.(\-''#####---...___...-----._
+         '`         \)_`"""""`
+                 .--' ')
+               o(  )_-\
+                 `"""` `
+ 
+-->
 <!-- Meta -->
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +40,6 @@
 
 <link href='http://fonts.googleapis.com/css?family=Roboto:200,300,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-<!-- Make it snow! -->
-<script src="<?= base_url('assets/js/snowstorm.js'); ?>"></script>
 
 <!-- Stylesheets -->
 <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" />
@@ -59,38 +86,23 @@ $(function() {
 
 <script>
 snowStorm.autoStart = true;
-
-function turnoff() {
-
-   javascript: (
-   function () { 
-   // the css we are going to inject
-   var css = 'html {-webkit-filter: invert(100%);' +
-       '-moz-filter: invert(100%);' + 
-       '-o-filter: invert(100%);' + 
-       '-ms-filter: invert(100%); }',
-
-   head = document.getElementsByTagName('head')[0],
-   style = document.createElement('style');
-
-   // a hack, so you can "invert back" clicking the bookmarklet again
-   if (!window.counter) { window.counter = 1;} else  { window.counter ++;
-   if (window.counter % 2 == 0) { var css ='html {-webkit-filter: invert(0%); -moz-filter:    invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }'}
-    };
-
-   style.type = 'text/css';
-   if (style.styleSheet){
-   style.styleSheet.cssText = css;
-   } else {
-   style.appendChild(document.createTextNode(css));
-   }
-
-   //injecting the css to the head
-   head.appendChild(style);
-   }());
-   snowStorm.snowColor = '#ffffff';
-   snowStorm.start();
+function showSource(){;
+    var source = "<html>";
+    source += document.getElementsByTagName('html')[0].innerHTML;
+    source += "</html>";
+    //now we need to escape the html special chars, javascript has escape
+    //but this does not do what we want
+    source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    //now we add <pre> tags to preserve whitespace
+    source = "<pre>"+source+"</pre>";
+    //now open the window and set the source as the content
+    sourceWindow = window.open('','Source of page','height=800,width=800,scrollbars=1,resizable=1');
+    sourceWindow.document.write(source);
+    sourceWindow.document.close(); //close the document for writing, not the window
+    //give source window focus
+    if(window.focus) sourceWindow.focus();
 }
+
 </script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

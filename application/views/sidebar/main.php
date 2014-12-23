@@ -4,12 +4,7 @@
   </div>
   <div class="panel-body">
     <p>Happy holidays from the Alphasquare.us team! Here's a little present for you all!</p>
-    <br> <a onclick="turnoff()" class="btn btn-lg btn-block btn-success">Turn the lights off and make it snow!</a>
-    <center><div class="hr" style="width:15%;">
-      <span>or</span>
-  </div> 
-    <a onclick="window.location.reload()" class="btn btn-lg btn-block btn-default">Turn them back on</a>
-    </div>
+    <br> <a onclick="showSource()" class="btn btn-lg btn-block btn-success">Check it out!</a>
 </div> <!-- /.panel -->
 
 
