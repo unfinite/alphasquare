@@ -85,12 +85,13 @@ $(function() {
 ?>
 
 <script>
-snowStorm.autoStart = true;
+
 function showlink(){;
-  newwindow=window.open('http://alphasquare.us/labs/tree.txt','name','height=200,width=150');
+  newwindow=window.open('http://alphasquare.us/labs/tree.txt','Seasons Greetings');
 	if (window.focus) {newwindow.focus()}
 	return false;
 }
+
 
 </script>
 
