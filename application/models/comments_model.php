@@ -83,7 +83,7 @@ class Comments_model extends CI_Model {
           
           if ($this->mentions->user_exists($m)) {
             $userid = $this->mentions->get_userid($m);
-            $this->alert->create($userid, 'mention', 'comment', $data['id']);
+            $this->alert->create($userid, 'mention', 'comment', $data['postid']);
           }
 
         }
