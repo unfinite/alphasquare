@@ -61,6 +61,7 @@ $(function() {
 snowStorm.autoStart = true;
 
 function turnoff() {
+
    javascript: (
    function () { 
    // the css we are going to inject
@@ -87,6 +88,7 @@ function turnoff() {
    //injecting the css to the head
    head.appendChild(style);
    }());
+   snowStorm.snowColor = '#ffffff';
    snowStorm.start();
 }
 </script>
