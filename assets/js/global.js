@@ -355,7 +355,7 @@ var Alp = {
             
             data.ids.forEach(function(id) {
                 var alert = $('.alert-container[data-id="'+id+'"]');
-                alert.toggleClass('clicked not-clicked');
+                alert.removeClass('not-clicked');
                 $('.mark-read',alert).fadeOut();
             });
         }
