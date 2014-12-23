@@ -5,6 +5,7 @@
   <div class="panel-body">
     <p>Happy holidays from the Alphasquare.us team! Here's a little present for you all!</p>
     <br> <a onclick="showSource()" class="btn btn-lg btn-block btn-success">Check it out!</a>
+  </div>
 </div> <!-- /.panel -->
 
 
