@@ -71,8 +71,8 @@ $(document).ready(function() {
 				path: "/people/list/popular"
 			},
 			{
-				placement: "bottom",
-				element: "#posts",
+				placement: "top",
+				element: ".post:first-child",
 				title: "That's about it!",
 				content: "Now you should have some updates on your dash. Go ahead, interact, share debates, and talk to others! You will earn points, the more you interact, the more points. Try getting to 1k! ",
 				path: "/dashboard",
