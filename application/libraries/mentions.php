@@ -16,6 +16,12 @@ class Mentions {
     $this->CI =& get_instance();
   }
 
+  /**
+   * Lists all mentions on a string using regex
+   * @param string $string the string to scan
+   * @return array|bool if mentions are found, array returned, else false boolean
+   */
+
   public function list_mentions($string) {
     preg_match_all('/(^|[^a-z0-9_])@([a-z0-9_]+)/i', $string, $mentions);
     $found = array();
@@ -29,6 +35,12 @@ class Mentions {
     return $found;
   }
 
+  /**
+   * Checks if user exists
+   * @param string $username the user's username
+   * @return bool whether the user exists or not
+   */
+
   public function user_exists($username) {
     $this->CI->db->select('id')
              ->from('users')
@@ -40,6 +52,12 @@ class Mentions {
     	return false;
     }
   }
+
+  /**
+   * Gets userid for usernsme
+   * @param string $username username
+   * @return int the user's uid
+   */
 
   public function get_userid($username) {
     $this->CI->db->select('id')
