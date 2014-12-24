@@ -134,6 +134,7 @@ class Account extends CI_Controller {
     	        // Show an alert box
     	        msg("<strong>Welcome to Alphasquare!</strong> Get started by posting a debate. Go ahead; don't be shy!", 'info', 'text-align:center;font-size:15px;');
     	        // Go to dashboard
+              $this->php_session->set('tour', true);
     	        redirect(REGISTER_REDIRECT);
     	      }
     	      else {
@@ -231,7 +232,24 @@ class Account extends CI_Controller {
   }
 
   
-
+ /**
+   * Processes tours
+   * URL: /account/tour
+   */
+  public function tour($boolean) {
+    switch ($boolean) {
+      case "true":
+        $this->php_session->set('tour', true);
+        echo "ok";
+        break;
+      
+      case "false":
+        echo "no";
+        $this->php_session->set('tour', false);
+        break;
+    }
+  }
+    
 
   /**
    * Processes the forgot password form.
