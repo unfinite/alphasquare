@@ -26,6 +26,7 @@ mixpanel.init("a33260663116496a21198829ac80e801");</script><!-- end Mixpanel -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="<?= base_url('assets/js/libs/packaged.js'); ?>"></script>
 <script src="<?= base_url('assets/js/global.js'); ?>"></script>
+<script src="<?= base_url('assets/js/emojify.min.js'); ?>"></script>
 <script>
 $(function() {
   Alp.init({
@@ -34,6 +35,20 @@ $(function() {
     userid: <?= session_get("userid") ? session_get("userid") : 0; ?>
   });
 });
+
+emojify.setConfig({
+    img_dir          : '/img/emoji',  
+    ignored_tags     : {                
+        'SCRIPT'  : 1,
+        'TEXTAREA': 1,
+        'A'       : 1,
+        'PRE'     : 1,
+        'CODE'    : 1
+    }
+});
+
+emojify.run();
+
 </script>
 
 <?php if($this->php_session->get('tour')): ?>
