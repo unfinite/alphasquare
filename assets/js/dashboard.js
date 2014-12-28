@@ -43,6 +43,7 @@ var Dashboard = {
       }
       Dashboard.post.ajax(content);
       e.preventDefault();
+      emojify.run();
       return false;
     },
     ajax: function(content) {
@@ -343,6 +344,7 @@ var Dashboard = {
       var data = { postid: this.postid, content: comment };
       $.post(Alp.config.base+'comments/create', data, this.ajaxCallback, 'json');
       mixpanel.track("Comment posted");
+      emojify.run();
     },
     ajaxCallback: function(data) {
       var id = Dashboard.comment.postid;
