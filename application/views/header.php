@@ -36,7 +36,7 @@ $(function() {
   });
 
   emojify.setConfig({
-      img_dir          : '/img/emoji',  
+      img_dir          : '/assets/img/emoji',  
       ignored_tags     : {                
           'SCRIPT'  : 1,
           'TEXTAREA': 1,
@@ -47,7 +47,7 @@ $(function() {
   });
 
   emojify.run();
-  
+
 });
 
 </script>
