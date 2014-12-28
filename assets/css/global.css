@@ -530,13 +530,15 @@ textarea.autosize {
   padding: 15px;
   margin: 0;
 }
-#comments .comment img {
+/* Little class hack to fix comments */
+.cmnt-img {
   width: 40px;
   height: 40px;
   float: left;
   margin-left: -55px;
   margin-top: 10px;
 }
+
 #comments .comment footer {
   padding: 0 15px 10px;
   font-size: 13px;

@@ -2,7 +2,7 @@
 
 <article class="comment" data-id="<?=$comment['id']?>">
   <a href="<?=profile_url($comment['username'])?>" title="<?=$comment['username']?>">
-    <img src="<?=gravatar_url($comment['email'])?>" class="profile img-circle" />
+    <img src="<?=gravatar_url($comment['email'])?>" class="cmnt-img profile img-circle" />
   </a>
   <p class="readmore"><?=format_post($comment['content'])?></p>
   <footer>
