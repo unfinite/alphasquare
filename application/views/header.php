@@ -34,20 +34,21 @@ $(function() {
     loggedin: <?= session_get("loggedin") ? "true" : "false"; ?>,
     userid: <?= session_get("userid") ? session_get("userid") : 0; ?>
   });
-});
 
-emojify.setConfig({
-    img_dir          : '/img/emoji',  
-    ignored_tags     : {                
-        'SCRIPT'  : 1,
-        'TEXTAREA': 1,
-        'A'       : 1,
-        'PRE'     : 1,
-        'CODE'    : 1
-    }
-});
+  emojify.setConfig({
+      img_dir          : '/img/emoji',  
+      ignored_tags     : {                
+          'SCRIPT'  : 1,
+          'TEXTAREA': 1,
+          'A'       : 1,
+          'PRE'     : 1,
+          'CODE'    : 1
+      }
+  });
 
-emojify.run();
+  emojify.run();
+  
+});
 
 </script>
 
