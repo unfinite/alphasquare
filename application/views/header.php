@@ -12,8 +12,8 @@
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
 <!-- Stylesheets -->
-<link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" />
-<link href="<?= base_url('assets/css/global.css'); ?>" rel="stylesheet" />
+<link href="//cdn.alphasquare.us/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="//cdn.alphasquare.us/assets/css/global.css" rel="stylesheet" />
 <?=$extra_stylesheets?>
 
 <!-- start Mixpanel -->
@@ -24,9 +24,9 @@ mixpanel.init("a33260663116496a21198829ac80e801");</script><!-- end Mixpanel -->
 
 <!-- JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="<?= base_url('assets/js/libs/packaged.js'); ?>"></script>
-<script src="<?= base_url('assets/js/global.js'); ?>"></script>
-<script src="<?= base_url('assets/js/emojify.min.js'); ?>"></script>
+<script src="//cdn.alphasquare.us/assets/js/libs/packaged.js"></script>
+<script src="//cdn.alphasquare.us/assets/js/global.js"></script>
+<script src="//cdn.alphasquare.us/assets/js/emojify.min.js"></script>
 <script>
 $(function() {
   Alp.init({
@@ -36,7 +36,7 @@ $(function() {
   });
 
   emojify.setConfig({
-      img_dir          : '/assets/img/emoji',  
+      img_dir          : 'http:////cdn.alphasquare.us/assets/img/emoji',  
       ignored_tags     : {                
           'SCRIPT'  : 1,
           'TEXTAREA': 1,
