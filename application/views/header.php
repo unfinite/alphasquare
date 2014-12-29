@@ -12,7 +12,7 @@
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
 <!-- Stylesheets -->
-<link href="//cdn.alphasquare.us/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="<?=base_url("/assets/css/bootstrap.min.css")?>" rel="stylesheet" />
 <link href="//cdn.alphasquare.us/assets/css/global.css" rel="stylesheet" />
 <?=$extra_stylesheets?>
 
