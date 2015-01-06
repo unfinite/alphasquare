@@ -4,7 +4,7 @@
       <h1>Sign in</h1>
     </div>
     
-    <? $this->load->view('account/oauth_buttons'); ?>
+    <?// $this->load->view('account/oauth_buttons'); ?>
 
     <form action="" method="post">
       <input type="hidden" name="next" value="<?=htmlentities($this->input->get('next'))?>" />

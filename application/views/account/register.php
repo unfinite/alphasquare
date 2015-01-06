@@ -6,7 +6,7 @@
 			<h1>Register</h1>
 		</div>
 
-		<? $this->load->view('account/oauth_buttons'); ?>
+		<? // $this->load->view('account/oauth_buttons'); ?>
 		<?php
 			if ($recaptchaerror == true) {
 
