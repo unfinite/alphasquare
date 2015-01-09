@@ -56,6 +56,7 @@
     </li>
   </ul>
   </div>
+  <div class="bs-container">
 
 </nav>
 
@@ -158,4 +159,3 @@ if($this->uri->rsegment(1) !== 'main'):
 <div id="mobile-search-overlay" class="hide fade"></div>
 
 <? endif; ?>
-<div class="bs-container">
