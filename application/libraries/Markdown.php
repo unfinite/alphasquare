@@ -2581,20 +2581,6 @@ class Markdown
 		$grafs = preg_split('/\n{2,}/', $text, -1, PREG_SPLIT_NO_EMPTY);
 
 		// Wrap <p> tags and unhashify HTML blocks
-		foreach ($grafs as $key => $value)
-		{
-			$value = trim($this->runSpanGamut($value));
-
-			// Check if this should be enclosed in a paragraph.
-			// Clean tag hashes & block tag hashes are left alone.
-			$is_p = !preg_match('/^B\x1A[0-9]+B|^C\x1A[0-9]+C$/', $value);
-
-			if ($is_p)
-			{
-				$value = "<p>$value</p>";
-			}
-			$grafs[$key] = $value;
-		}
 
 		// Join grafs in one text, then unhash HTML tags.
 		$text = implode("\n\n", $grafs);
