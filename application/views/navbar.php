@@ -56,9 +56,9 @@
     </li>
   </ul>
   </div>
-  <div class="bs-container">
 
 </nav>
+  <div class="bs-container">
 
 <? else: ?>
 
