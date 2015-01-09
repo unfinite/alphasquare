@@ -4,8 +4,6 @@
  * @type {Object}
  * @copright Copyright (c) 2014 Alphasquare
  */
-
-mixpanel.track("Pageview/Alp.object");
         
 var Alp = {
   config: {},
@@ -166,7 +164,6 @@ var Alp = {
        * Send the ajax request
        */
       ajax: function() {
-        mixpanel.track("Alert poll (global)");
         $.get(Alp.config.base+'dashboard/update_counts')
           .success(Alp.counts.poll.ajaxCallback)
           .always(function() {

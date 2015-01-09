@@ -16,8 +16,8 @@ if(!function_exists('format_post')) {
     $text = htmlspecialchars($text);
     // Convert line breaks to <br>
     $text = nl2br($text);
-    // Parse BBCode
-    $text = bbcode($text);
+    // Parse BBCode (deprecated)
+    // $text = bbcode($text);
     // Make links clickable
     $text = auto_link($text, 'url', true);
     // Parse &tags
@@ -25,7 +25,10 @@ if(!function_exists('format_post')) {
     $text = preg_replace(REGEX_TAG, '<a href="'.base_url().'search?q=%26$1">&amp;$1</a>', $text);
     // Parse mentions
     $CI->load->library('mentions');
+    $CI->load->library('markdown');
+
     $mentions = $CI->mentions->list_mentions($text);
+    $text = $CI->markdown->parse($text);
 
     if ($mentions) {
       foreach ($mentions as $m) {

@@ -2,41 +2,43 @@
 
 <!-- Navbar logged in -->
 <nav class="navbar navbar-fixed-top logged-in" role="navigation">
+<div class="bs-container">
   <div class="navbar-header pull-left">
     <a class="navbar-brand" href="<?=base_url('dashboard')?>">alphasquare</a>
   </div>
   <div class="hidden-xs">
     <!-- Icon nav -->
     <ul class="nav navbar-nav top-menu">
-      <li><a href="<?=base_url('dashboard')?>" title="Dashboard"><span class="glyphicon glyphicon-globe"></span></a></li>
+      <li><a href="<?=base_url('dashboard')?>" title="Dashboard"><span class="glyphicon glyphicon-globe glyph-action"></span></a></li>
       <li>
         <a href="<?=base_url('alerts')?>" class="alert-link" title="Alerts">
-          <span class="glyphicon glyphicon-bell"></span>
+          <span class="glyphicon glyphicon-bell glyph-action"></span>
           <span class="label label-danger menu-count alerts alert-unread-count"></span>
         </a>
       </li>
       <li>
         <a href="<?=base_url('about/soon')?>" title="Messages">
-          <span class="glyphicon glyphicon-inbox"></span>
+          <span class="glyphicon glyphicon-inbox glyph-action"></span>
           <span class="label label-danger menu-count messages"></span>
         </a>
       </li>
-      <li><a href="<?=base_url('people')?>" title="Discover"><span class="glyphicon glyphicon-user"></span></a></li>
+      <li><a href="<?=base_url('people')?>" title="Discover"><span class="glyphicon glyphicon-user glyph-action"></span></a></li>
       <!-- Search -->
-      <li>
-        <form class="navbar-form" action="<?=base_url('search')?>" method="GET">
-          <input type="text" name="q" class="form-control" autocomplete="off" placeholder="Search" <? if(isset($query)) echo 'value="'.$query.'"'; ?>/>
-        </form>
-      </li>
     </ul>
   </div>
 
   <!-- User nav -->
   <ul class="nav navbar-nav nav-user pull-right">
+    <li>
+    <div class="hidden-xs">
+        <form class="navbar-form navform" action="<?=base_url('search')?>" method="GET">
+          <input type="text" name="q" class="form-control" autocomplete="off" placeholder="Find..." <? if(isset($query)) echo 'value="'.$query.'"'; ?>/>
+        </form>
+        </div>
+    </li>
     <li class="dropdown">
       <a href="<?=profile_url()?>" class="dropdown-toggle" data-toggle="dropdown" title="<?=session_get('username')?>">
         <img src="<?=avatar_url()?>" class="img-circle" />
-        <span><?=session_get('username')?></span>
         <span class="caret"></span>
       </a>
       <!-- Begin dropdown -->
@@ -53,18 +55,21 @@
       <!-- End dropdown -->
     </li>
   </ul>
+  </div>
 
 </nav>
 
 <? else: ?>
 
 <!-- Navbar logged out -->
-<nav class="navbar navbar-fixed-top logged-out" role="navigation">
-  <a class="navbar-brand" href="<?=base_url()?>" >alphasquare</a>
-  <div class="navbar-text pull-right">
-    <a href="<?=base_url('login')?>">Have an account? <span>Sign in &raquo;</span></a>
-  </div>
-</nav>
+    <nav class="navbar navbar-fixed-top logged-out" role="navigation">
+      <div class="bs-container">
+      <a class="navbar-brand" href="/">alphasquare</a>
+      <div class="navbar-text pull-right">
+        <a href="login"><strong>Already a user? </strong><span>Sign in &raquo;</span></a>
+      </div>
+    </div>
+    </nav>
 
 <? endif; ?>
 
@@ -153,3 +158,4 @@ if($this->uri->rsegment(1) !== 'main'):
 <div id="mobile-search-overlay" class="hide fade"></div>
 
 <? endif; ?>
+<div class="bs-container">

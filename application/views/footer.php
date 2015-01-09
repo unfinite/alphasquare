@@ -1,3 +1,4 @@
+</div>
 <footer id="footer">
 	© <?=date("Y");?> Alphasquare
 	<span class="links">

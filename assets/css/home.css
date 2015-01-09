@@ -1,54 +1,173 @@
 /* Homepage CSS */
 
-body {
-	background-color: white;
-	margin-top: 165px;
+body{
+	margin-top: 70px;
 }
-
 .container-fluid {
 	padding: 0;
 }
 
-.navbar {
-	margin: 0;
+.navbar-text a {
+	color: white;
+	text-decoration: none;
+	background-color: #52B3D9;
+	border: 7px solid #52B3D9;
+	border-radius: 3px;
+	padding-bottom: 2px;
 }
 
+.navbar {
+	margin: 0;
+	font-family: 'Lato';
+	font-weight: 400;
+	background-color: white;
+	height: 70px;
+	padding-top: 10px;
+	color: white;
+}
+
+.navbar-brand {	
+	font-family: 'Lobster';
+	color: #52B3D9;
+	font-size: 23px;
+}
 .alert {
 	margin: 0 auto 60px;
 	text-align: center;
 	width: 50%;
 }
 
+.calltoaction {
+	background-color: #52B3D9;
+	width: 100%;
+	height: 200px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 0px;
+}
+.calltoaction a {
+	margin: 0 auto;
+}
+.calltoaction h2 {
+	font-family: 'Lato';
+	font-weight: 900;
+	color: white;
+	margin-bottom: 25px;
+}
+.section {
+	background-color: white;
+	width: 100%;
+	height: 444px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+    font-family: 'Raleway';
+    margin-top: -150;
+}
+
+.section h4 {
+	font-weight: 700;
+}
+.section span {
+	font-size: 14px;
+}
+.section h2 {
+	font-family: 'Lato';
+	font-weight: 700;
+	margin-bottom: -10px;
+	padding-bottom: -200px;
+	margin-top: 0px;
+}
+.section h3 {
+	font-family: 'Lato';
+	font-weight: 200;
+	color: gray;
+	padding-bottom: 50px;
+}
 /* Hero Unit */
-#main-hero {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+#jumbotron-main {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
   width: 100%;
   border-radius: 0;
+  font-weight: 200;
+  padding-top: 150px;
   margin: 0 auto;
   text-align: center;
-  height: 70vh;
+  height: 89.5vh;
   min-height: 500px;
-  color: #3498db;
+  background-color: #52B3D9;
+  color: white;
 }
-#main-hero h1 {
+#jumbotron-main h1 {
 	font-size: 60px;
-	font-weight: 100;
+	font-weight: 900;
 	margin: 0 auto;
-	font-family: 'Lobster', Helvetica, Arial, sans-serif;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
-#main-hero p {
+#jumbotron-main p {
 	font-size: 25px;
+	font-weight: 400;
+	margin: 25px 0 30px;
+	margin-bottom: 5px;
+	-webkit-font-smoothing: antialiased;
+}
+#jumbotron-main #two {
+	font-size: 25px;
+	font-family: 'Raleway';
 	font-weight: 200;
 	margin: 25px 0 30px;
+	-webkit-font-smoothing: antialiased;
+	padding-bottom: 10px;
 }
-#main-hero a {
-	color: #3498db;
+#jumbotron-main a.mini-outlined {
+	color: #52B3D9;
 	font-size: 20px;
 	text-decoration: none;
 }
-#main-hero a.create-account {
+#jumbotron-main a {
+	color: white;
+	text-decoration: none;
+}
+#jumbotron-main a.scroll {
+	border: 1px solid white;
+	margin: 0 auto 10px;
+	width: 40px;
+	padding-top: 7px;
+	padding-right: 2px;
+	padding-left: 1px;
+	border-radius: 50px;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	display: inline-block;
+	color: white;
+	height: 40px;
+	font-size: 20px;
+}
+#jumbotron-main a.create-account {
 	width: 230px;
-	border: 1px solid #3498db;
+	border: 1px solid white;
+	margin: 0 auto 10px;
+	padding: 15px 30px;
+	border-radius: 3px;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s;
+	display: block;
+	color: white;
+}
+#jumbotron-main a.create-account:hover {
+	background-color: white;
+	color: #52B3D9;
+}
+#jumbotron-main a.mini-outlined {
+	width: 220px;
+	border: 1px solid white;
 	margin: 0 auto 10px;
 	padding: 15px 30px;
 	border-radius: 4px;
@@ -57,12 +176,14 @@ body {
 	-moz-transition: all .4s;
 	transition: all .4s;
 	display: block;
-}
-#main-hero a.create-account:hover {
-	background-color: #3498db;
 	color: white;
 }
-#main-hero a.sign-in {
+ #jumbotron-main a.mini-outlined:hover {
+	background-color: white;
+	color: #52B3D9;
+}
+
+#jumbotron-main a.sign-in {
 	font-weight: 200;
 }
 
@@ -99,4 +220,22 @@ body {
 	100%{
 		opacity: 1;
 	}
+}
+
+a.outlined-button {
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 700;
+}
+.outlined-button {
+	width: 220px;
+	border: 1px solid white;
+	margin: 0 auto 10px;
+	padding: 15px 30px;
+	text-align: center;
+	border-radius: 4px;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	display: block;
+	color: white;
 }

@@ -12,12 +12,12 @@ html {
 body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 100px;
-  margin-top: 78px;
+  margin-top: 100px;
   background-color: rgb(236, 240, 241);
 }
 
 .contain {
-  background-color: #3498db;
+  background-color: #52B3D9;
   color: white
 }
 /* Overrides */
@@ -148,6 +148,8 @@ textarea.autosize {
 /* Navbar */
 .navbar {
   border-radius: 0;
+
+  padding-top: 10px;
 }
 .navbar.logged-in {
   background-color: #fff;
@@ -157,13 +159,15 @@ textarea.autosize {
 }
 /* Glyphicons */
 .navbar.logged-in div .nav li a .glyphicon {
-  font-size: 18px;
 }
 .navbar.logged-in div .nav li a.alerts .glyphicon {
-  font-size: 20px;
+  font-size: 22px;
 }
 .navbar.logged-in div .nav li a:hover {
   background: none;
+}
+.navbar.logged-in .nav.pull-right .dropdown-menu li a:hover {
+  background-color: #52B3D9;
 }
 /* Profile picture */
 .navbar.logged-in .nav li a img {
@@ -194,9 +198,9 @@ textarea.autosize {
 .navbar .navbar-form input {
   display: inline-block;
   vertical-align: middle;
-  border-radius: 20px;
+  border-radius: 3px;
   padding-left: 16px;
-  height: 31px;
+  height: 33px;
   width: 250px;
   margin-top: 3px;
   -webkit-transition: width 0.30s ease-in-out;
@@ -221,7 +225,7 @@ textarea.autosize {
   z-index: 1100;
   background: #fff;
   padding: 20px;
-  border-bottom: 2px solid #3498db;
+  border-bottom: 2px solid #52B3D9;
 }
 #mobile-search-overlay {
   height: 100%;
@@ -243,7 +247,7 @@ textarea.autosize {
 }
 
 .navbar .navbar-brand {
-  color: #3498db;
+  color: #52B3D9;
   font-size: 23px;
 }
 .navbar .navbar-brand, .alphasquare {
@@ -303,7 +307,7 @@ textarea.autosize {
   line-height: 1;
 }
 .navbar.bottom-menu ul.nav li.active a {
-  color: #3498db;
+  color: #52B3D9;
 }
 .navbar.bottom-menu span.glyphicon {
   font-size: 21px;
@@ -335,22 +339,52 @@ textarea.autosize {
   color: #217dbb;
 }
 
-.navbar.logged-out {
+.bs-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .bs-container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .bs-container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .bs-container {
+    width: 1170px;
+  }
+}
+
+
+ .navbar.logged-out .navbar-text a {
+  text-decoration: none;
+  background-color: #52B3D9;
+  border: 7px solid #52B3D9;
+  border-radius: 3px;
+  padding-bottom: 2px;
+  color: white;
+}
+
+.navbar .logged-out {
+  margin: 0;
+  font-family: 'Lato';
+  font-weight: 400;
   background-color: white;
-  border: 0;
+  height: 70px;
+  padding-top: 10px;
+  color: white;
 }
-.navbar.logged-out .navbar-brand {
-  color: #3498db;
-}
-.navbar.logged-out a {
-  text-decoration:none;
-  color:#3498db;
-}
-.navbar.logged-out a:hover span {
-  text-decoration: underline;
-}
-.navbar.logged-out .navbar-text {
-  padding-right: 5px;
+
+.navbar .logged-out .navbar-brand { 
+  font-family: 'Lobster';
+  color: #52B3D9;
+  font-size: 23px;
 }
 
 /* Slingshot */
@@ -398,11 +432,11 @@ textarea.autosize {
 #post-bar textarea {
   height: 50px;
   width: 100%;
-  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 20px;
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 3px;
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
   resize: none;
@@ -590,7 +624,6 @@ textarea.autosize {
 #people-list div.user span.name {
   font-size: 16px;
   width: 55%;
-  display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -663,7 +696,7 @@ textarea.autosize {
 /* Alert Bar */
 .notify {
   width: 100%;
-  background-color: #3498db;
+  background-color: #52B3D9;
   display: flex;
   max-height: 50px;
   text-align: center;
@@ -685,7 +718,7 @@ textarea.autosize {
   text-align: center;
   padding: 10px 0;
   cursor: pointer;
-  background-color: #3498db;
+  background-color: #52B3D9;
 }
 
 .jquery-notify-bar.bottom {
@@ -900,4 +933,69 @@ textarea.autosize {
     height: 1.5em;
     display: inline-block;
     margin-bottom: -0.25em;
+}
+.navbar-text a {
+  color: white;
+  text-decoration: none;
+  background-color: #52B3D9;
+  border: 7px solid #52B3D9;
+  border-radius: 3px;
+  padding-bottom: 2px;
+}
+
+.navbar {
+  margin: 0;
+  font-family: 'Lato';
+  font-weight: 400;
+  background-color: white;
+  height: 70px;
+  padding-top: 9.5px;
+  color: white;
+}
+
+.navbar-brand { 
+  font-family: 'Lobster';
+  color: #52B3D9;
+  font-size: 23px;
+}
+
+.form-control {
+  border-radius: 3px;
+}
+
+.glyph-action {
+  font-size: 20px;
+  color: #52B3D9;
+}
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
 }

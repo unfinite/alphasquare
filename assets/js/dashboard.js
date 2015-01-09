@@ -8,7 +8,6 @@ var Dashboard = {
 
   init: function() {
     this.bind();
-    mixpanel.track("DashObject loaded");
   },
 
   bind: function() {
@@ -54,11 +53,9 @@ var Dashboard = {
         Dashboard.post.ajaxCallback,
         'json'
         );
-      mixpanel.track("Post Submit");
     },
     ajaxCallback: function(data) {
       if(!data.success) {
-        mixpanel.track("Failed post");
         Alp.bar(data.error);
         return false;
       }
@@ -128,7 +125,6 @@ var Dashboard = {
         this.setIntervalObject = setTimeout(this.ajax, this.interval);
       },
       ajax: function() {
-        mixpanel.track("AlpEngine poll, dashboard");
         var latestId = $('#posts .post').first().data('id');
         var type = $('#posts').data('type');
         var data = { latest_id: latestId, type: type };
@@ -190,12 +186,10 @@ var Dashboard = {
         ajax: function(id) {
           var data = { id: id };
           $.post(Alp.config.base+'debate/delete', data, Dashboard.post.actions.remove.ajaxCallback, 'json');
-          mixpanel.track("Post deleted");
         },
         ajaxCallback: function(data) {
           if(!data.success) {
             Alp.bar(data.error);
-            mixpanel.track("Post deletion failure");
             return false;
           }
           $('.post[data-id='+data.id+'], #comments').slideUp(function() {
@@ -343,13 +337,11 @@ var Dashboard = {
     post: function(comment) {
       var data = { postid: this.postid, content: comment };
       $.post(Alp.config.base+'comments/create', data, this.ajaxCallback, 'json');
-      mixpanel.track("Comment posted");
     },
     ajaxCallback: function(data) {
       var id = Dashboard.comment.postid;
       if(!data.success) {
         Alp.bar(data.error);
-        mixpanel.track("Comment post failure");
         return false;
       }
       // If load all comments link is present
@@ -404,7 +396,6 @@ var Dashboard = {
         setTimeout(this.ajax, this.interval);
       },
       ajax: function() {
-        mixpanel.track("AlpEngine comment update");
         var startId = $('#comments-container .comment').last().data('id');
         var data = { startid: startId, postid: Dashboard.comment.postid };
         $.get(Alp.config.base+'comments/poll', data)

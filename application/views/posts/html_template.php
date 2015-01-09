@@ -58,18 +58,18 @@
     </p>
     <footer>
 
-      <button class="btn btn-xs <?=$post['vote'] == 1 ? 'btn-primary' : 'btn-success'?> vote" data-type="up" title="Like">
+      <button class="btn btn-xs btn-outline <?=$post['vote'] == 1 ? 'btn-primary' : 'btn-success'?> vote" data-type="up" title="Like">
         <span class="glyphicon glyphicon-thumbs-up"></span>
         <span class="count"><?=$post['up_votes']?></span>
       </button>
-      <button class="btn btn-xs <?=$post['vote'] == -1 ? 'btn-danger' : 'btn-success'?> vote" data-type="down" title="Dislike">
+      <button class="btn btn-xs btn-outline <?=$post['vote'] == -1 ? 'btn-danger' : 'btn-success'?> vote" data-type="down" title="Dislike">
         <span class="glyphicon glyphicon-thumbs-down"></span>
         <span class="count"><?=$post['down_votes']?></span>
       </button>
 
       <? if(!isset($post['debate_page'])): ?>
       &nbsp;
-      <a href="<?=base_url('debate/'.strtolower($post['username']).'/'.$post['time'])?>" class="btn btn-xs btn-info">
+      <a href="<?=base_url('debate/'.strtolower($post['username']).'/'.$post['time'])?>" class="btn btn-xs btn-info btn-outline">
         <span class="glyphicon glyphicon-comment"></span>
         <strong><?=$post['comments_count']?></strong>
       </a>

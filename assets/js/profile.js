@@ -48,7 +48,7 @@ var Profile = {
       $('.count.followers[data-id="'+id+'"]').text(parseInt($('.count.followers[data-id="'+id+'"]').text())+1);
 
       btn.removeClass('follow')
-         .addClass('unfollow btn-primary')
+         .addClass('unfollow btn-primary btn-outline')
          .text('Following');
       $('.follower-count[data-id='+id+']').text()
     }

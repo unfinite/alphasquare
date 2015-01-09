@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->model('debate_model');
 		$this->load->model('people_model');
+		$this->load->model('comments_model');
 	}
 
 	/**
@@ -25,6 +26,8 @@ class Dashboard extends CI_Controller {
 		$posts = $this->debate_model->get_posts('dashboard');
 		// Turn $posts array into HTML
 		$data['posts_html'] = $this->debate_model->post_html($posts, true);
+		// Turn $posts array into HTML
+
 		// Get the number of people user is following
 		$following = $this->people_model->get_follow_count('following');
 		$data['show_follow_msg'] = $following < 1;
