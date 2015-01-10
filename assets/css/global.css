@@ -622,7 +622,6 @@ textarea.autosize {
   height: 80px;
 }
 #people-list div.user span.name {
-  font-size: 16px;
   width: 55%;
   overflow: hidden;
   text-overflow: ellipsis;
