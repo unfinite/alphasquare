@@ -57,9 +57,8 @@ class Debate_model extends CI_Model {
 
     $this->db->order_by('d.time', 'desc');
 
-    if($limit) {
-      $this->db->limit($limit, $offset);
-    }
+    if(!$limit) $limit = POST_DISPLAY_LIMIT; 
+    $this->db->limit($limit, $offset);
 
     $results = $this->db->get()->result_array();
     return $results;
