@@ -2,7 +2,7 @@
       <h1>Let's discuss the web</h1>
       <p>Meet Alphasquare, the premier hub for programming discussion and debates.</p>
       <span id="two">Discuss code, share your opinions, and lead the evolution of the web.</span><br><br>
-      <a class="mini-outlined" href="#" data-text-swap="Let's go! &raquo;">Create a profile</a>
+      <a class="mini-outlined" href="register" data-text-swap="Let's go! &raquo;">Create a profile</a>
       ...or keep scrolling to <strong><a href="#learnmore">learn more</a></strong>
   	</div>
     <div class="section" id="learnmore">
