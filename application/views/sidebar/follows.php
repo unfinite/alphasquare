@@ -5,7 +5,7 @@
     <h3 class="panel-title slab">Following</h3>
   </div>
   <div class="panel-body" id="my-following-list">
-    <? $following = $this->people_model->get_follows('following', null, 10); ?>
+    <? $following = $this->people_model->get_follows('following', null, 12); ?>
 
     <? foreach($following as $user): ?>
       <a href="<?=profile_url($user['username'])?>">
