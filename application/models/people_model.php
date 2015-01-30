@@ -221,7 +221,7 @@ class People_model extends CI_Model {
    * @param int $id The user ID
    * @return array Array of followers/following
    */
-  public function get_follows($type, $id = 0) {
+  public function get_follows($type, $id = 0, $limit = 0) {
     if(!$id) {
       $id = $this->php_session->get('userid');
     }
@@ -232,6 +232,9 @@ class People_model extends CI_Model {
                        u.followers,
                        f2.followid as is_following')
              ->from('following f');
+    if ($limit !== 0) {
+      $this->db->limit($limit);
+    }
     // If type is following
     if($type == 'following') {
       $this->db->where('f.userid', $id);
