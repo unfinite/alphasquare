@@ -6,19 +6,19 @@
 
 			<h3>Basic Information</h3>
 
-			<? if($is_owner): ?>
+			<?php if($is_owner): ?>
 			<button class="btn btn-sm btn-default edit" data-edit="basic">
 				<span class="glyphicon glyphicon-pencil"></span>
 				Edit
 			</button>
-			<? endif; ?>
+			<?php endif; ?>
 
-			<? if($name): ?>
+			<?php if($name): ?>
 			<div class="block">
 				<strong>Name</strong>
 				<span><?=htmlspecialchars($name)?></span>
 			</div>
-			<? endif; ?>
+			<?php endif; ?>
 
 			<div class="block">
 				<strong>Username</strong>
@@ -35,37 +35,37 @@
 		<div class="panel panel-default">
 			<h3>About</h3>
 
-			<? if($is_owner): ?>
+			<?php if($is_owner): ?>
 			<button class="btn btn-sm btn-default edit" data-edit="about">
 				<span class="glyphicon glyphicon-pencil"></span>
 				Edit
 			</button>
-			<? endif; ?>
+			<?php endif; ?>
 
 			<div class="block">
 				<strong>Tagline</strong>
-				<? if($tagline): ?>
+				<?php if($tagline): ?>
 				<span><?=htmlspecialchars($tagline)?></span>
-				<? else: ?>
+				<?php else: ?>
 				<span class="text-muted">No tagline.</span>
-				<? endif; ?>
+				<?php endif; ?>
 			</div>
 
 			<div class="block">
 				<strong>Bio</strong>
-				<? if($bio): ?>
+				<?php if($bio): ?>
 				<span class="readmore"><?=nl2br(htmlspecialchars($bio))?></span>
-				<? else: ?>
+				<?php else: ?>
 				<span class="text-muted">No bio.</span>
-				<? endif; ?>
+				<?php endif; ?>
 			</div>
 
-			<? if($birthday): ?>
+			<?php if($birthday): ?>
 			<div class="block">
 				<strong>Birthday</strong>
 				<span><?=$birthday_formatted?> - <?=$age?> years old</span>
 			</div>
-			<? endif; ?>
+			<?php endif; ?>
 
 			<div class="block">
 				<strong>Location</strong>
@@ -81,35 +81,35 @@
 		<div class="panel panel-default">
 			<h3>Links</h3>
 
-			<? if($is_owner): ?>
+			<?php if($is_owner): ?>
 			<button class="btn btn-sm btn-default edit" data-edit="links">
 				<span class="glyphicon glyphicon-pencil"></span>
 				Edit
 			</button>
-			<? endif; ?>
+			<?php endif; ?>
 
 			<div class="block">
 				<strong>Website</strong>
-				<? if($website_url): ?>
+				<?php if($website_url): ?>
 				<span>
 					<a href="<?=$website_url?>" target="_blank"><?= $website_title ? htmlspecialchars($website_title) : $website_url ?></a>
 				</span>
-				<? else: ?>
+				<?php else: ?>
 				<span class="text-muted">N/A</span>
-				<? endif; ?>
+				<?php endif; ?>
 			</div>
 
 			<div class="block">
 
 				<strong>Other Links</strong>
 
-				<? if(count($links) < 1): ?>
+				<?php if(count($links) < 1): ?>
 				<span class="text-muted">No links.</span>
-				<? endif; ?>
+				<?php endif; ?>
 
-				<? foreach($links as $row): ?>
+				<?php foreach($links as $row): ?>
 				<span><a href="<?=$row['url']?>" target="_blank"><?=htmlspecialchars($row['text'])?></a></span>
-				<? endforeach; ?>
+				<?php endforeach; ?>
 
 			</div>
 
@@ -118,47 +118,47 @@
 		<div class="panel panel-default">
 			<h3>Favorites</h3>
 
-			<? if($is_owner): ?>
+			<?php if($is_owner): ?>
 			<button class="btn btn-sm btn-default edit" data-edit="favorites">
 				<span class="glyphicon glyphicon-pencil"></span>
 				Edit
 			</button>
-			<? endif; ?>
+			<?php endif; ?>
 
 			<div class="block">
 				<strong>Movies</strong>
-				<? if($favorite_movies): ?>
+				<?php if($favorite_movies): ?>
 				<span class="readmore"><?=htmlspecialchars($favorite_movies)?></span>
-				<? else: ?>
+				<?php else: ?>
 				<span class="text-muted">N/A</span>
-				<? endif; ?>
+				<?php endif; ?>
 			</div>
 
 			<div class="block">
 				<strong>TV Shows</strong>
-				<? if($favorite_tv): ?>
+				<?php if($favorite_tv): ?>
 				<span class="readmore"><?=htmlspecialchars($favorite_tv)?></span>
-				<? else: ?>
+				<?php else: ?>
 				<span class="text-muted">N/A</span>
-				<? endif; ?>
+				<?php endif; ?>
 			</div>
 
 			<div class="block">
 				<strong>Music</strong>
-				<? if($favorite_music): ?>
+				<?php if($favorite_music): ?>
 				<span class="readmore"><?=htmlspecialchars($favorite_music)?></span>
-				<? else: ?>
+				<?php else: ?>
 				<span class="text-muted">N/A</span>
-				<? endif; ?>
+				<?php endif; ?>
 			</div>
 
 			<div class="block">
 				<strong>Quotes</strong>
-				<? if($favorite_quotes): ?>
+				<?php if($favorite_quotes): ?>
 				<span class="readmore"><?=nl2br(htmlspecialchars($favorite_quotes))?></span>
-				<? else: ?>
+				<?php else: ?>
 				<span class="text-muted">N/A</span>
-				<? endif; ?>
+				<?php endif; ?>
 			</div>
 
 		</div>

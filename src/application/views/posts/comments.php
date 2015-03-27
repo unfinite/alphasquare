@@ -1,4 +1,4 @@
-<? foreach($comments as $comment): ?>
+<?php foreach($comments as $comment): ?>
 
 <article class="comment" data-id="<?=$comment['id']?>">
   <a href="<?=profile_url($comment['username'])?>" title="<?=$comment['username']?>">
@@ -11,4 +11,4 @@
   </footer>
 </article>
 
-<? endforeach; ?>
+<?php endforeach; ?>

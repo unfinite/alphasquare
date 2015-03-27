@@ -3,7 +3,7 @@
    for form error boxes
  */
 ?>
-<? if($errors): ?>
+<?php if($errors): ?>
 <div class="alert alert-danger">
   <p style="margin-bottom:5px;">
   	<strong>Oops!</strong>
@@ -13,4 +13,4 @@
     <?=$errors?>
   </ul>
 </div>
-<? endif; ?>
+<?php endif; ?>

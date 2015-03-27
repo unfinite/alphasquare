@@ -15,11 +15,11 @@
   <div class="form-group">
     <label for="name">Email Address</label>
     <input class="form-control" name="email" id="email" <?= isset($_GET['clear']) ? '' : 'value="'.$email.'"'; ?> placeholder="Enter your email address" />
-    <? if(isset($_GET['clear'])): ?>
+    <?php if(isset($_GET['clear'])): ?>
     <span class="help-block text-bold text-danger">
       Please enter an email address different from the one that is on the existing account.
     </span>
-    <? endif; ?>
+    <?php endif; ?>
   </div>
   <p>
   Once you click <b>Create Account</b>, an account will be created and 

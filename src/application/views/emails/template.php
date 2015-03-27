@@ -27,12 +27,12 @@ Hello <?=$name?>,
   Copyright &copy; 2014 Alphasquare. This email was sent to <strong><?=$to_email?></strong>.
 </div>
 
-<? if(isset($show_unsubscribe)): ?>
+<?php if(isset($show_unsubscribe)): ?>
 Don't want email notifications anymore?
 <br />
 <a href="http://alphasquare.us/account/email_unsubscribe/<?=$unsub_key?>">Unsubscribe</a>
 or <a href="http://alphasquare.us/settings/notifications">change your email preferences</a>.
-<? endif; ?>
+<?php endif; ?>
 
 </div>
 

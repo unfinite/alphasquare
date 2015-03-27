@@ -1,4 +1,4 @@
-<? show_form_errors($errors); ?>
+<?php show_form_errors($errors); ?>
 
 <div class="row">
 	<div class="col-lg-6 col-md-8 col-sm-10 col-centered">
@@ -6,7 +6,7 @@
 			<h1>Register</h1>
 		</div>
 
-		<? // $this->load->view('account/oauth_buttons'); ?>
+		<?php // $this->load->view('account/oauth_buttons'); ?>
 		<?php
 			if ($recaptchaerror == true) {
 

@@ -1,15 +1,15 @@
-<? if($is_owner): ?>
+<?php if($is_owner): ?>
 <div class="alert alert-warning">You may not report your own post.</div>
-<? else: ?>
+<?php else: ?>
 
 <form action="javascript:;" method="post">
   <div class="form-group">
     <label for="reason">Reason</label>
     <select name="reason" id="reason" class="form-control">
       <option value="0">Choose one...</option>
-      <? foreach($reasons as $key => $value): ?>
+      <?php foreach($reasons as $key => $value): ?>
       <option value="<?=$key?>"><?=$value?></option>
-      <? endforeach; ?>
+      <?php endforeach; ?>
     </select>
   </div>
 
@@ -22,4 +22,4 @@
     <br>
 </form>
 
-<? endif; ?>
+<?php endif; ?>

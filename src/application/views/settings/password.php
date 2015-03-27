@@ -1,8 +1,8 @@
 <p>
-<? if($existing_password): ?>
+<?php if($existing_password): ?>
 To change your password, type in your current password and 
 then create a new password and confirm it.
-<? else: ?>
+<?php else: ?>
 Because you registered with an OAuth account (Facebook or 
 Google) and use it to sign in, your Alphasquare account does 
 <em>not</em> have a password set. 
@@ -11,7 +11,7 @@ Google) and use it to sign in, your Alphasquare account does
 If you would like to sign in to Alphasquare with your 
 username and a password, please create a password below. 
 <b>You will still be able to sign in with any connected (OAuth) accounts.</b>
-<? endif; ?>
+<?php endif; ?>
 </p>
 
 <br />
@@ -20,12 +20,12 @@ username and a password, please create a password below.
 
     <form action="password_submit" method="post">
       
-      <? if($existing_password): ?>
+      <?php if($existing_password): ?>
       <div class="form-group">
         <label>Current Password</label>
         <input type="password" name="current" class="form-control" />
       </div>
-      <? endif; ?>
+      <?php endif; ?>
 
       <div class="form-group">
         <label>New Password</label>

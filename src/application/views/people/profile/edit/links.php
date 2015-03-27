@@ -9,14 +9,14 @@
 		<label>Other Links <small>(max. 5)</small></label>
 		<br />
 
-		<? if(count($links) < 1): ?>
+		<?php if(count($links) < 1): ?>
 		<div class="text-muted" id="no-links">No links.</div>
-		<? endif; ?>
+		<?php endif; ?>
 
 		<div id="edit-links" data-total="<?=count($links)?>">
 
-			<? $increment = 0; ?>
-			<? foreach($links as $row): ?>
+			<?php $increment = 0; ?>
+			<?php foreach($links as $row): ?>
 			<div class="link">
 
 				<div class="link-info">
@@ -34,8 +34,8 @@
 				<span class="glyphicon glyphicon-trash delete" title="Delete link"></span>
 
 			</div>
-			<? $increment++; ?>
-			<? endforeach; ?>
+			<?php $increment++; ?>
+			<?php endforeach; ?>
 
 			<script type="text/template" id="new-link-template">
 				<div class="new-link">

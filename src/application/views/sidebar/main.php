@@ -1,5 +1,5 @@
 
-<? if(!session_get('loggedin')): ?>
+<?php if(!session_get('loggedin')): ?>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -15,4 +15,4 @@
     </div>
 </div> <!-- /.panel -->
 
-<? endif; ?>
+<?php endif; ?>

@@ -6,12 +6,12 @@
 
     <div id="comments">
 
-      <? if($info['comments_count'] > COMMENT_DISPLAY_LIMIT): ?>
+      <?php if($info['comments_count'] > COMMENT_DISPLAY_LIMIT): ?>
       <a href="#" id="load-all-comments">
         View all <span><?=$info['comments_count']?></span> comments...
         <img src="<?=base_url('assets/img/spinner.gif')?>" />
       </a>
-      <? endif; ?>
+      <?php endif; ?>
 
       <div id="comments-container">
         <?= $comments ?>
