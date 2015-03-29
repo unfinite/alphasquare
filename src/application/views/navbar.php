@@ -67,7 +67,7 @@
       <div class="bs-container">
       <a class="navbar-brand" href="/">alphasquare</a>
       <div class="navbar-text pull-right">
-        <a href="login"><strong>Already a user? </strong><span>Sign in &raquo;</span></a>
+        <a href="<?=base_url('login')?>"><strong>Already a user? </strong><span>Sign in &raquo;</span></a>
       </div>
     </div>
     </nav>
