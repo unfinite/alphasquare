@@ -45,12 +45,12 @@ if(!function_exists('avatar_url')) {
 	    	$avatar = $CI->php_session->get('avatar');
 	    	$email = $CI->php_session->get('email');
 	    }
-	    if($avatar) {
-	    	$url = base_url("avatars/".$avatar);
-	    } 
-	    else {
-	    	$url = gravatar_url($email, $size);
-	    }
+	    //if($avatar) {
+	    //	$url = base_url("avatars/".$avatar);
+	    //} 
+	    //else {
+	    $url = gravatar_url($email, $size);
+	    //}
 	    return $url;
 	}
 }
