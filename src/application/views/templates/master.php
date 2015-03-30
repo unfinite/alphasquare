@@ -13,9 +13,9 @@
 
 <?php if(isset($fixed_container)): ?>
 <div id="content" class="container col-md-6 col-lg-6">
-<? else: ?>
+<?php else: ?>
 <div id="content" class="container-fluid">
-<? endif; ?>
+<?php endif; ?>
 
 
 <?php echo $msg; ?>

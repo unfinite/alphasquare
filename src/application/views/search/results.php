@@ -8,9 +8,9 @@
 
     <?=$results_html?>
 
-    <? if($results_count < 1): ?>
+    <?php if($results_count < 1): ?>
     <p>Sorry, we couldn't find any debates matching your search.</p>
-    <? endif; ?>
+    <?php endif; ?>
 
   </div>
 

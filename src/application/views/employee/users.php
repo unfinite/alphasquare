@@ -9,7 +9,7 @@
       <th>Actions</th>
     </tr>
 
-    <? foreach($users as $user): ?>
+    <?php foreach($users as $user): ?>
     <tr data-id="<?=$user['id']?>">
       <td><?=$user['id']?></td>
       <td>
@@ -40,7 +40,7 @@
 
       </td>
     </tr>
-    <? endforeach; ?>
+    <?php endforeach; ?>
 
   </table>
 </div>

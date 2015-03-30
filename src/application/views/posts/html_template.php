@@ -1,5 +1,5 @@
 
-<? foreach($posts as $post): ?>
+<?php foreach($posts as $post): ?>
 <article class="post" data-id="<?=$post['id']?>">
   <a href="<?=profile_url($post['username'])?>">
     <img src="<?=avatar_url($post['avatar'], $post['email'], 55)?>" title="<?=$post['username']?>" class="img-circle profile-picture" data-toggle="tooltip" data-placement="right" />
@@ -12,7 +12,7 @@
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="postActions">
 
-       <? if($post['userid'] == session_get('userid')): ?>
+       <?php if($post['userid'] == session_get('userid')): ?>
         <li>
           <a href="#" class="promote-post">
             <span class="glyphicon glyphicon-share-alt"></span>
@@ -26,7 +26,7 @@
             Delete
           </a>
         </li>
-        <? else: ?>
+        <?php else: ?>
 
         <li>
           <a href="#" class="report-post">
@@ -35,9 +35,9 @@
           </a>
         </li>
 
-        <? endif; ?>
+        <?php endif; ?>
 
-        <? if(session_get('employee') == 1): ?>
+        <?php if(session_get('employee') == 1): ?>
 
         <li>
 
@@ -47,7 +47,7 @@
           </a>
         </li>
 
-        <? endif; ?>
+        <?php endif; ?>
 
       </ul>
     </div>
@@ -67,13 +67,13 @@
         <span class="count"><?=$post['down_votes']?></span>
       </button>
 
-      <? if(!isset($post['debate_page'])): ?>
+      <?php if(!isset($post['debate_page'])): ?>
       &nbsp;
       <a href="<?=base_url('debate/'.strtolower($post['username']).'/'.$post['time'])?>" class="btn btn-xs btn-info btn-outline">
         <span class="glyphicon glyphicon-comment"></span>
         <strong><?=$post['comments_count']?></strong>
       </a>
-      <? endif; ?>
+      <?php endif; ?>
 
       <abbr title="<?=date('c', $post['time'])?>" class="timeago"><?=date('F j, Y g:i A', $post['time'])?></abbr>
 
@@ -81,4 +81,4 @@
   </section>
   <div class="clearfix"></div>
 </article>
-<? endforeach; ?>
+<?php endforeach; ?>

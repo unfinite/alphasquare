@@ -22,13 +22,13 @@ $config['hybridauth'] =
 
 			"Google" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "533752912361-upqcvv8dbjcb4n85nt8efu7halj765ci.apps.googleusercontent.com", "secret" => "R76zmNANmHWQxR6Mm2UpFYsD" ),
+				"keys"    => array ( "id" => "", "secret" => ""),
 				"scope"   => "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
 			),
 
 			"Facebook" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "1458764027742317", "secret" => "0edef2b6c7dcaef90ec8241cc7d194fa" ),
+				"keys"    => array ( "id" => "", "secret" => "" ),
 				"scope"   => "email"
 			),
 

@@ -18,24 +18,24 @@
     <th>IP address</th>
   </tr>
 
-  <? foreach($events as $event): ?>
+  <?php foreach($events as $event): ?>
   <tr>
     <td class="check hidden text-center">
       <input type="checkbox" value="<?=$event['id']?>" />
     </td>
     <td>
       <?=$event['object'].'.'.$event['event']?>
-      <? if($event['value']): ?>
+      <?php if($event['value']): ?>
       <br /><small>(<?=$event['value']?>)</small>
-      <? endif; ?>
+      <?php endif; ?>
     </td>
     <td><span class="timeago" title="<?=date('c', $event['time'])?>"><?=date('c', $event['time'])?></span></td>
     <td>
       <?=$event['ip']?>
-      <? if($event['ip'] == $_SERVER['REMOTE_ADDR']):?>
+      <?php if($event['ip'] == $_SERVER['REMOTE_ADDR']):?>
       <small>(you)</small>
-      <? endif; ?>
+      <?php endif; ?>
     </td>
   </tr>
-  <? endforeach; ?>
+  <?php endforeach; ?>
 </table>
