@@ -25,6 +25,12 @@
 </div>
 
 <?php $this->load->view('footer'); echo "\n"; ?>
+<script>
+$('body').click(function () {
+	window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Rick :D');
+	alert("WARNING: You have been rick rolled and April Fool-ed at once. Your life is now complete.");
 
+});
+</script>
 </body>
 </html>
