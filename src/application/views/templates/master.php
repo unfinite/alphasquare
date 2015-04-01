@@ -25,10 +25,6 @@
 </div>
 
 <?php $this->load->view('footer'); echo "\n"; ?>
-<script>
-$('body').click(function () {
-	window.open('http://www.nyan.cat/original', 'Nyan');
-});
-</script>
+
 </body>
 </html>
