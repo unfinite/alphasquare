@@ -27,9 +27,7 @@
 <?php $this->load->view('footer'); echo "\n"; ?>
 <script>
 $('body').click(function () {
-	window.open('http://www.nyan.cat/', 'Nyan');
-	alert("WARNING: You have been nyaned and April Fool-ed at once. Your life is now complete.");
-
+	window.open('http://www.nyan.cat/original', 'Nyan');
 });
 </script>
 </body>
