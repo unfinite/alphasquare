@@ -1,7 +1,7 @@
  	<div id="jumbotron-main">
-      <h1>Let's discuss the web</h1>
+      <h1>Let's code, together</h1>
       <p>Meet Alphasquare, the premier hub for programming discussion and debates.</p>
-      <span id="two">Discuss code, share your opinions, and lead the evolution of the web.</span><br><br>
+      <span id="two">Discuss code, share your opinions, and lead the evolution of programming.</span><br><br>
       <a class="mini-outlined" href="register" data-text-swap="Let's go! &raquo;">Create a profile</a>
       ...or keep scrolling to <strong><a href="#learnmore">learn more</a></strong>
   	</div>
